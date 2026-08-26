@@ -1,0 +1,60 @@
+/* ── WHATSAPP BUTTON ────────────────────────────────────────── */
+.whatsapp-btn {
+  position: fixed;
+  bottom: var(--space-8);
+  right: var(--space-8);
+  z-index: 800;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: rgba(29, 185, 84, 0.2);
+  color: #1DB954;
+  border-radius: 50px;
+  padding: 0.8rem 1.2rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(29, 185, 84, 0.4);
+  box-shadow: 0 4px 16px rgba(29, 185, 84, 0.1);
+  transition: all var(--dur-fast) var(--ease-out);
+  text-decoration: none;
+  overflow: hidden;
+  max-width: 50px;
+}
+
+.whatsapp-btn:hover {
+  max-width: 240px;
+  box-shadow: 0 8px 24px rgba(29, 185, 84, 0.2), 0 0 12px rgba(29, 185, 84, 0.3);
+  transform: translateY(-2px);
+  background: rgba(29, 185, 84, 0.3);
+  border-color: rgba(29, 185, 84, 0.8);
+}
+
+.whatsapp-btn__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.whatsapp-btn__label {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 0;
+  transition: max-width var(--dur-mid) var(--ease-out);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.whatsapp-btn:hover .whatsapp-btn__label { max-width: 180px; }
+
+@media (max-width: 600px) {
+  .whatsapp-btn {
+    bottom: var(--space-5);
+    right: var(--space-4);
+    padding: 0.85rem;
+    max-width: 50px;
+  }
+  .whatsapp-btn__label { display: none; }
+  .whatsapp-btn:hover { max-width: 50px; }
+}
