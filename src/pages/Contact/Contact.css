@@ -217,4 +217,6 @@ a.contact-info__value:hover { color: var(--clr-accent); }
 @media (max-width: 768px) {
   .contact-form__row { grid-template-columns: 1fr; gap: var(--space-6); }
   .contact-info { padding: var(--space-8); }
+  .contact-form-wrap { padding: var(--space-6); border-radius: 16px; }
+  .contact-form__submit { width: 100%; }
 }
