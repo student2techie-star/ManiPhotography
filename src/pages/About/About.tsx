@@ -76,7 +76,7 @@ export default function About() {
               <div className="about-service-area">
                 <span className="label about-service-area__label">Service Area</span>
                 <p className="body-md" style={{ color: 'var(--clr-text-mid)' }}>
-                  Based in <strong>{'{Chennai, Tamil Nadu}'}</strong> — we travel across Tamil Nadu and beyond for weddings and special occasions.
+                  Based in <strong>{'{Thirukadaiyur, Mayiladuthurai, Tamil Nadu}'}</strong> — we travel across Tamil Nadu and beyond for weddings and special occasions.
                 </p>
               </div>
             </div>

@@ -65,9 +65,9 @@ const testimonials = [
 ];
 
 const homeMeta = {
-  title: 'Mani Photography | Wedding & Event Photography in Chennai',
+  title: 'Mani Photography | Wedding & Event Photography in Thirukadaiyur, Mayiladuthurai',
   description:
-    'Mani Photography — capturing beautiful weddings, Tamil traditional ceremonies, pre-wedding shoots, baby showers, house warmings and family functions. Premium photography in Chennai.',
+    'Mani Photography — capturing beautiful weddings, Tamil traditional ceremonies, pre-wedding shoots, baby showers, house warmings and family functions. Premium photography in Thirukadaiyur, Mayiladuthurai, Tamil Nadu.',
 };
 
 export default function Home() {

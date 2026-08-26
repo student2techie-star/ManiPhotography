@@ -13,7 +13,7 @@ export const siteConfig = {
   phone: '+91 00000 00000',          // ← Replace with real phone
   whatsapp: '910000000000',          // ← Replace with WhatsApp number (no + or spaces)
   email: 'hello@maniphoto.in',       // ← Replace with real email
-  location: 'Chennai, Tamil Nadu',   // ← Replace with real location
+  location: 'Thirukadaiyur, Mayiladuthurai, Tamil Nadu',
 
   // ── Social ──────────────────────────────────────────────
   instagram: 'https://instagram.com/maniphotography',  // ← Replace

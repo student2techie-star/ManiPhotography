@@ -47,7 +47,7 @@ function validate(data: FormData): FormErrors {
 export default function Contact() {
   useDocumentHead({
     title: 'Contact & Booking | Mani Photography',
-    description: 'Get in touch with Mani Photography to book a shoot for your wedding, pre-wedding, baby shower, house warming or any special occasion. Located in Chennai, Tamil Nadu.',
+    description: 'Get in touch with Mani Photography to book a shoot for your wedding, pre-wedding, baby shower, house warming or any special occasion. Located in Thirukadaiyur, Mayiladuthurai, Tamil Nadu.',
   });
   useScrollReveal();
 
@@ -270,7 +270,7 @@ export default function Contact() {
       {/* ── MAP SECTION ─────────────────────────────────── */}
       <section className="section contact-map-section" style={{ padding: 0, marginTop: 'var(--space-8)' }}>
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.643666874839!2d80.24587!3d13.06173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526615b13cb245%3A0x673c0fbf61c342f7!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15655.485078500662!2d79.8055!3d11.0805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5538e1b12d5d85%3A0xc34a5d8b80b2a3a1!2sThirukadaiyur%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
           width="100%"
           height="450"
           style={{ border: 0, display: 'block' }}

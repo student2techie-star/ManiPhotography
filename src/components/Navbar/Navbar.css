@@ -143,6 +143,7 @@
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-sm);
   background: var(--clr-bg-soft);
+  cursor: pointer;
 }
 .navbar__hamburger:hover { color: var(--clr-accent); border-color: var(--clr-accent); }
 
@@ -163,13 +164,18 @@
   justify-content: center;
   padding-top: var(--nav-h); /* Space for navbar */
   transform: translateY(-100%);
-  transition: transform var(--dur-mid) var(--ease-out);
+  transition: transform var(--dur-mid) var(--ease-out), visibility 0s var(--dur-mid);
   border-bottom: 1px solid var(--clr-border-light);
   box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+  pointer-events: none;
+  visibility: hidden;
 }
 
 .mobile-menu--open {
   transform: translateY(0);
+  pointer-events: auto;
+  visibility: visible;
+  transition: transform var(--dur-mid) var(--ease-out);
 }
 
 .mobile-menu__nav {
