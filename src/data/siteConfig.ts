@@ -26,7 +26,7 @@ export const siteConfig = {
 
   // ── SEO ─────────────────────────────────────────────────
   siteUrl: 'https://maniphotography.in',  // ← Replace with real URL
-  ogImage: '/images/og-image.jpg',
+  ogImage: `${import.meta.env.BASE_URL}images/og-image.jpg`,
 };
 
 export default siteConfig;

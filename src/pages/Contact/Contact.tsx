@@ -137,13 +137,13 @@ export default function Contact() {
                 <span className="contact-info__social-label label">Follow Our Work</span>
                 <div className="contact-info__social-links">
                   <a href={siteConfig.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="contact-info__social-btn">
-                    <img src="/images/instagram.svg" alt="Instagram" style={{ width: 20, height: 20, opacity: 0.8 }} />
+                    <img src={`${import.meta.env.BASE_URL}images/instagram.svg`} alt="Instagram" style={{ width: 20, height: 20, opacity: 0.8 }} />
                   </a>
                   <a href={siteConfig.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="contact-info__social-btn">
-                    <img src="/images/facebook.svg" alt="Facebook" style={{ width: 20, height: 20, opacity: 0.8 }} />
+                    <img src={`${import.meta.env.BASE_URL}images/facebook.svg`} alt="Facebook" style={{ width: 20, height: 20, opacity: 0.8 }} />
                   </a>
                   <a href={siteConfig.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="contact-info__social-btn">
-                    <img src="/images/youtube.svg" alt="YouTube" style={{ width: 20, height: 20, opacity: 0.8 }} />
+                    <img src={`${import.meta.env.BASE_URL}images/youtube.svg`} alt="YouTube" style={{ width: 20, height: 20, opacity: 0.8 }} />
                   </a>
                 </div>
               </div>

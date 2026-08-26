@@ -22,7 +22,7 @@ export const services: ServiceItem[] = [
     shortDesc: 'From the first ritual to the final celebration, every emotion captured naturally.',
     fullDesc:
       'Your wedding day is one of the most important days of your life. We document every precious ritual, quiet glance, tearful blessing and joyful celebration with sensitivity and artistry. Our approach blends candid storytelling with timeless portraits to give you a complete visual narrative of your day.',
-    image: '/images/weddings/wedding-01.jpg',
+    image: `${import.meta.env.BASE_URL}images/weddings/wedding-01.jpg`,
     alt: 'Tamil wedding photography',
     icon: '💍',
     includes: [
@@ -42,7 +42,7 @@ export const services: ServiceItem[] = [
     shortDesc: 'Cinematic wedding films that preserve every emotion, ritual and celebration.',
     fullDesc:
       'Beyond photographs, our cinematic wedding films bring your story to life. From the emotional muhurtham to the lively reception, we craft films that you will treasure for generations. Our approach is documentary-style — real, authentic and beautifully edited.',
-    image: '/images/weddings/wedding-02.jpg',
+    image: `${import.meta.env.BASE_URL}images/weddings/wedding-02.jpg`,
     alt: 'Wedding cinematography',
     icon: '🎬',
     includes: [
@@ -61,7 +61,7 @@ export const services: ServiceItem[] = [
     shortDesc: 'Beautiful couple stories created around your personality, culture and connection.',
     fullDesc:
       'Before the big day, there is your story. A pre-wedding shoot is a relaxed, creative session to capture the chemistry and love between you as a couple. We choose locations that reflect your personality — from heritage architecture to temples, nature, beaches or streets.',
-    image: '/images/pre-wedding/pre-wedding-01.jpg',
+    image: `${import.meta.env.BASE_URL}images/pre-wedding/pre-wedding-01.jpg`,
     alt: 'Pre-wedding couple photography',
     icon: '💏',
     includes: [
@@ -80,7 +80,7 @@ export const services: ServiceItem[] = [
     shortDesc: 'Authentic photography celebrating Tamil traditions, rituals and heritage.',
     fullDesc:
       'Tamil weddings are rich with tradition, ritual and emotion. From the sacred thaali ceremony to the joyful oonjal, from kanyadanam to the garland exchange, we document every ritual with cultural sensitivity and photographic artistry. Your traditions deserve to be preserved beautifully.',
-    image: '/images/tamil-weddings/tamil-01.jpg',
+    image: `${import.meta.env.BASE_URL}images/tamil-weddings/tamil-01.jpg`,
     alt: 'Tamil traditional wedding photography',
     icon: '🪔',
     includes: [
@@ -99,7 +99,7 @@ export const services: ServiceItem[] = [
     shortDesc: 'Timeless portraits surrounded by architecture, tradition and spirituality.',
     fullDesc:
       'Ancient temples provide an extraordinary backdrop — carved stone pillars, flickering diyas, marigold garlands and the atmosphere of centuries of tradition. Our temple photography sessions create timeless, magazine-quality portraits that honour both the location and the person.',
-    image: '/images/temple/temple-01.jpg',
+    image: `${import.meta.env.BASE_URL}images/temple/temple-01.jpg`,
     alt: 'Temple photography portraits',
     icon: '🛕',
     includes: [
@@ -116,7 +116,7 @@ export const services: ServiceItem[] = [
     shortDesc: 'The beginning of your forever — captured with joy and emotion.',
     fullDesc:
       'An engagement ceremony marks the beautiful beginning of a new chapter. We capture the ring moment, the family celebrations, the emotional blessings and all the candid joy in between. Delivered as a complete visual story of your special day.',
-    image: '/images/events/event-01.jpg',
+    image: `${import.meta.env.BASE_URL}images/events/event-01.jpg`,
     alt: 'Engagement ceremony photography',
     icon: '💒',
     includes: [
@@ -134,7 +134,7 @@ export const services: ServiceItem[] = [
     shortDesc: 'Capturing the excitement, love and beautiful anticipation of your growing family.',
     fullDesc:
       'A baby shower is a celebration of love and the beautiful anticipation of new life. We capture the joy of the ceremony, the warmth of family, the decorations and the precious moments that make this occasion unforgettable — including maternity portraits if you wish.',
-    image: '/images/baby-shower/baby-shower-01.jpg',
+    image: `${import.meta.env.BASE_URL}images/baby-shower/baby-shower-01.jpg`,
     alt: 'Baby shower and maternity photography',
     icon: '🍼',
     includes: [
@@ -152,7 +152,7 @@ export const services: ServiceItem[] = [
     shortDesc: 'Preserving the joy and emotions of beginning a new chapter in your new home.',
     fullDesc:
       'Griha Pravesh is one of life\'s most meaningful milestones. The kolam at the doorstep, the puja, the first steps through the door, the family gathered around — these moments deserve to be preserved with care and artistry. We document every ritual and every smile.',
-    image: '/images/house-warming/house-warming-01.jpg',
+    image: `${import.meta.env.BASE_URL}images/house-warming/house-warming-01.jpg`,
     alt: 'House warming ceremony photography',
     icon: '🏠',
     includes: [
@@ -170,7 +170,7 @@ export const services: ServiceItem[] = [
     shortDesc: 'The people, laughter and moments that make every celebration special.',
     fullDesc:
       'From birthday milestones to naming ceremonies, anniversary celebrations to family portraits, we bring the same care and artistry to every occasion. Because every celebration — big or small — deserves to be beautifully remembered.',
-    image: '/images/family/family-01.jpg',
+    image: `${import.meta.env.BASE_URL}images/family/family-01.jpg`,
     alt: 'Family function photography',
     icon: '👨‍👩‍👧‍👦',
     includes: [
@@ -188,7 +188,7 @@ export const services: ServiceItem[] = [
     shortDesc: 'Natural photographs that capture real emotions without forced poses.',
     fullDesc:
       'The best photographs are the ones you didn\'t know were being taken. Our candid approach means we blend into the background of your event and capture the real, unscripted moments — the tears of joy, the laughter between cousins, the quiet tender glances.',
-    image: '/images/weddings/wedding-06.jpg',
+    image: `${import.meta.env.BASE_URL}images/weddings/wedding-06.jpg`,
     alt: 'Candid event photography',
     icon: '📸',
     includes: [

@@ -100,7 +100,7 @@ export default function Home() {
       <section className="hero" ref={heroRef} aria-label="Hero — Mani Photography">
         <div className="hero__bg">
           <video
-            src="/images/hero-video.mp4"
+            src={`${import.meta.env.BASE_URL}images/hero-video.mp4`}
             className="hero__bg-video"
             autoPlay
             loop
@@ -158,7 +158,7 @@ export default function Home() {
             <div className="intro-section__image reveal-left">
               <div className="intro-section__img-wrap">
                 <img
-                  src="/images/about/about-01.jpg"
+                  src={`${import.meta.env.BASE_URL}images/about/about-01.jpg`}
                   alt="Photography at a Tamil wedding ceremony"
                   className="img-cover"
                   loading="lazy"
@@ -276,7 +276,7 @@ export default function Home() {
       <section className="wedding-feature" aria-label="Wedding photography feature">
         <div className="wedding-feature__bg">
           <img
-            src="/images/weddings/wedding-01.jpg"
+            src={`${import.meta.env.BASE_URL}images/weddings/wedding-01.jpg`}
             alt="Tamil wedding couple during their ceremony"
             className="img-cover"
             loading="lazy"
@@ -322,7 +322,7 @@ export default function Home() {
             <div className="tamil-section__images reveal-right">
               <div className="tamil-section__img-primary">
                 <img
-                  src="/images/tamil-weddings/tamil-01.jpg"
+                  src={`${import.meta.env.BASE_URL}images/tamil-weddings/tamil-01.jpg`}
                   alt="Thaali ceremony during a Tamil wedding"
                   className="img-cover"
                   loading="lazy"
@@ -340,7 +340,7 @@ export default function Home() {
               </div>
               <div className="tamil-section__img-secondary">
                 <img
-                  src="/images/tamil-weddings/tamil-02.jpg"
+                  src={`${import.meta.env.BASE_URL}images/tamil-weddings/tamil-02.jpg`}
                   alt="Oonjal ceremony at a Tamil wedding"
                   className="img-cover"
                   loading="lazy"
@@ -368,7 +368,7 @@ export default function Home() {
             <div className="prewedding-section__images reveal-left">
               <div className="prewedding-section__img-main">
                 <img
-                  src="/images/pre-wedding/pre-wedding-01.jpg"
+                  src={`${import.meta.env.BASE_URL}images/pre-wedding/pre-wedding-01.jpg`}
                   alt="Couple at a heritage architecture location"
                   className="img-cover"
                   loading="lazy"
@@ -417,12 +417,12 @@ export default function Home() {
           />
           <div className="events-section__grid">
             {[
-              { title: 'Engagement', image: '/images/events/event-01.jpg', slug: 'events', desc: 'The beginning of your forever.' },
-              { title: 'Baby Shower', image: '/images/baby-shower/baby-shower-01.jpg', slug: 'baby-shower', desc: 'Beautiful anticipation, captured.' },
-              { title: 'House Warming', image: '/images/house-warming/house-warming-01.jpg', slug: 'house-warming', desc: 'The joy of a new beginning.' },
-              { title: 'Birthday', image: '/images/events/event-02.jpg', slug: 'events', desc: 'Milestone moments, beautifully preserved.' },
-              { title: 'Naming Ceremony', image: '/images/events/event-03.jpg', slug: 'events', desc: 'Welcoming a new life with love.' },
-              { title: 'Family Portrait', image: '/images/family/family-01.jpg', slug: 'family', desc: 'Your people, together.' },
+              { title: 'Engagement', image: `${import.meta.env.BASE_URL}images/events/event-01.jpg`, slug: 'events', desc: 'The beginning of your forever.' },
+              { title: 'Baby Shower', image: `${import.meta.env.BASE_URL}images/baby-shower/baby-shower-01.jpg`, slug: 'baby-shower', desc: 'Beautiful anticipation, captured.' },
+              { title: 'House Warming', image: `${import.meta.env.BASE_URL}images/house-warming/house-warming-01.jpg`, slug: 'house-warming', desc: 'The joy of a new beginning.' },
+              { title: 'Birthday', image: `${import.meta.env.BASE_URL}images/events/event-02.jpg`, slug: 'events', desc: 'Milestone moments, beautifully preserved.' },
+              { title: 'Naming Ceremony', image: `${import.meta.env.BASE_URL}images/events/event-03.jpg`, slug: 'events', desc: 'Welcoming a new life with love.' },
+              { title: 'Family Portrait', image: `${import.meta.env.BASE_URL}images/family/family-01.jpg`, slug: 'family', desc: 'Your people, together.' },
             ].map((event, i) => (
               <Link
                 to={`/portfolio/${event.slug}`}
@@ -532,7 +532,7 @@ export default function Home() {
       <section className="cta-section">
         <div className="cta-section__bg">
           <img
-            src="/images/temple/temple-01.jpg"
+            src={`${import.meta.env.BASE_URL}images/temple/temple-01.jpg`}
             alt="Beautiful temple photography backdrop"
             className="img-cover"
             loading="lazy"

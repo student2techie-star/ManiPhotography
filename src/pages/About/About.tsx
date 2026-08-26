@@ -38,7 +38,7 @@ export default function About() {
             <div className="about-story__image reveal-left">
               <div className="about-story__img-wrap">
                 <img
-                  src="/images/about/about-01.jpg"
+                  src={`${import.meta.env.BASE_URL}images/about/about-01.jpg`}
                   alt="Mani Photography — behind the scenes at a wedding"
                   className="img-cover"
                   loading="lazy"
@@ -128,7 +128,7 @@ export default function About() {
             <div className="about-style__images reveal-right">
               <div className="about-style__img about-style__img--tall">
                 <img
-                  src="/images/weddings/wedding-01.jpg"
+                  src={`${import.meta.env.BASE_URL}images/weddings/wedding-01.jpg`}
                   alt="Candid wedding photography example"
                   className="img-cover"
                   loading="lazy"
@@ -146,7 +146,7 @@ export default function About() {
               </div>
               <div className="about-style__img about-style__img--short">
                 <img
-                  src="/images/temple/temple-01.jpg"
+                  src={`${import.meta.env.BASE_URL}images/temple/temple-01.jpg`}
                   alt="Temple photography example"
                   className="img-cover"
                   loading="lazy"

@@ -9,7 +9,7 @@ export default function NotFound() {
     <main className="not-found">
       <div className="not-found__bg">
         <img
-          src="/images/hero.jpg"
+          src={`${import.meta.env.BASE_URL}images/hero.jpg`}
           alt="Background"
           className="img-cover"
           loading="lazy"
