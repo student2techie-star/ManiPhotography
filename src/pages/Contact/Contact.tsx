@@ -1,4 +1,4 @@
-import { useState, FormEvent } from 'react';
+import { useState, type FormEvent } from 'react';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
 import { useDocumentHead } from '../../hooks/useDocumentHead';
 import { siteConfig } from '../../data/siteConfig';
