@@ -65,7 +65,7 @@ export default function Contact() {
     setSubmitting(true);
     
     const waText = `New Enquiry from ${form.name}\nPhone: ${form.phone}\nEvent Type: ${form.eventType}\nEvent Date: ${form.eventDate || 'Not specified'}\nLocation: ${form.location || 'Not specified'}`;
-    const targetWa = '919360293815';
+    const targetWa = siteConfig.whatsapp;
     const waUrl = `https://wa.me/${targetWa}?text=${encodeURIComponent(waText)}`;
     
     // Slight delay for feedback
