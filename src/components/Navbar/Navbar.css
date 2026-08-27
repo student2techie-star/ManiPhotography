@@ -153,7 +153,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 65dvh; /* A bit more than 50% to fit items nicely */
+  height: 100dvh; /* Full screen to prevent cut-off */
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -242,7 +242,7 @@
 }
 
 /* ── Responsive ───────────────────────────────────────────── */
-@media (max-width: 960px) {
+@media (max-width: 1024px) {
   .navbar__nav {
     display: none;
   }
