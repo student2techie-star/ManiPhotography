@@ -127,10 +127,6 @@
   gap: var(--space-5);
 }
 
-.navbar__cta {
-  display: flex;
-}
-
 .navbar__hamburger {
   display: none;
   align-items: center;
@@ -244,10 +240,6 @@
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 1200px) {
   .navbar__nav {
-    display: none !important;
-  }
-
-  .navbar__cta {
     display: none !important;
   }
 
