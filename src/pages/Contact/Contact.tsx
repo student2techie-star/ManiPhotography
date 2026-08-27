@@ -11,14 +11,12 @@ interface FormData {
   eventType: string;
   eventDate: string;
   location: string;
-  message: string;
 }
 
 interface FormErrors {
   name?: string;
   phone?: string;
   eventType?: string;
-  message?: string;
 }
 
 const eventTypes = [
@@ -40,7 +38,6 @@ function validate(data: FormData): FormErrors {
   if (!data.phone.trim()) errors.phone = 'Please enter your phone number.';
   else if (!/^[+\d\s()-]{7,15}$/.test(data.phone.trim())) errors.phone = 'Please enter a valid phone number.';
   if (!data.eventType) errors.eventType = 'Please select an event type.';
-  if (!data.message.trim()) errors.message = 'Please share a few details about your event.';
   return errors;
 }
 
@@ -51,7 +48,7 @@ export default function Contact() {
   });
   useScrollReveal();
 
-  const [form, setForm] = useState<FormData>({ name: '', phone: '', eventType: '', eventDate: '', location: '', message: '' });
+  const [form, setForm] = useState<FormData>({ name: '', phone: '', eventType: '', eventDate: '', location: '' });
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -66,8 +63,15 @@ export default function Contact() {
     const errs = validate(form);
     if (Object.keys(errs).length) { setErrors(errs); return; }
     setSubmitting(true);
-    // Simulate submission — replace with real form endpoint
-    await new Promise(r => setTimeout(r, 1200));
+    
+    const waText = `New Enquiry from ${form.name}\nPhone: ${form.phone}\nEvent Type: ${form.eventType}\nEvent Date: ${form.eventDate || 'Not specified'}\nLocation: ${form.location || 'Not specified'}`;
+    const targetWa = '919360293815';
+    const waUrl = `https://wa.me/${targetWa}?text=${encodeURIComponent(waText)}`;
+    
+    // Slight delay for feedback
+    await new Promise(r => setTimeout(r, 600));
+    window.open(waUrl, '_blank');
+    
     setSubmitting(false);
     setSubmitted(true);
   };
@@ -236,20 +240,6 @@ export default function Contact() {
                       placeholder="City / Venue"
                       autoComplete="address-level2"
                     />
-                  </div>
-
-                  <div className="contact-form__field">
-                    <label className="contact-form__label" htmlFor="message">Tell Us About Your Event *</label>
-                    <textarea
-                      id="message"
-                      className={`contact-form__input contact-form__textarea ${errors.message ? 'contact-form__input--error' : ''}`}
-                      value={form.message}
-                      onChange={update('message')}
-                      placeholder="Tell us a little about your event — what's special about it, what style of photography you love, anything else you'd like us to know..."
-                      rows={5}
-                      required
-                    />
-                    {errors.message && <span className="contact-form__error" role="alert">{errors.message}</span>}
                   </div>
 
                   <button
