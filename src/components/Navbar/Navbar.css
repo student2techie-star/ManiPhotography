@@ -242,17 +242,17 @@
 }
 
 /* ── Responsive ───────────────────────────────────────────── */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .navbar__nav {
-    display: none;
+    display: none !important;
   }
 
   .navbar__cta {
-    display: none;
+    display: none !important;
   }
 
   .navbar__hamburger {
-    display: flex;
+    display: flex !important;
   }
 }
 
