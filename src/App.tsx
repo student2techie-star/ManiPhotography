@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import { LanguageProvider } from './context/LanguageContext';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton';
@@ -14,7 +15,7 @@ import Preloader from './components/Preloader/Preloader';
 
 function App() {
   return (
-    <>
+    <LanguageProvider>
       <Preloader />
       <ScrollToTop />
       <Navbar />
@@ -29,8 +30,9 @@ function App() {
       </Routes>
       <Footer />
       <WhatsAppButton />
-    </>
+    </LanguageProvider>
   );
 }
 
 export default App;
+

@@ -2,28 +2,32 @@ import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 import LogoMark from '../LogoMark';
 import { siteConfig } from '../../data/siteConfig';
+import { useLanguage } from '../../context/LanguageContext';
+import { translations } from '../../data/translations';
 import './Footer.css';
 
-const footerLinks = [
-  { label: 'Home', to: '/' },
-  { label: 'Portfolio', to: '/portfolio' },
-  { label: 'Services', to: '/services' },
-  { label: 'About', to: '/about' },
-  { label: 'Contact', to: '/contact' },
-];
-
-const portfolioLinks = [
-  { label: 'Weddings', to: '/portfolio/weddings' },
-  { label: 'Pre-Wedding', to: '/portfolio/pre-wedding' },
-  { label: 'Tamil Weddings', to: '/portfolio/tamil-weddings' },
-  { label: 'Temple', to: '/portfolio/temple' },
-  { label: 'Baby Shower', to: '/portfolio/baby-shower' },
-  { label: 'House Warming', to: '/portfolio/house-warming' },
-  { label: 'Family Functions', to: '/portfolio/family-functions' },
-];
-
 export default function Footer() {
+  const { language } = useLanguage();
+  const t = translations[language];
   const waLink = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`;
+
+  const footerNavLinks = [
+    { label: t.nav.home, to: '/' },
+    { label: t.nav.portfolio, to: '/portfolio' },
+    { label: t.nav.services, to: '/services' },
+    { label: t.nav.about, to: '/about' },
+    { label: t.nav.contact, to: '/contact' },
+  ];
+
+  const portfolioLinks = [
+    { label: t.categories['weddings'], to: '/portfolio/weddings' },
+    { label: t.categories['pre-wedding'], to: '/portfolio/pre-wedding' },
+    { label: t.categories['tamil-weddings'], to: '/portfolio/tamil-weddings' },
+    { label: t.categories['temple'], to: '/portfolio/temple' },
+    { label: t.categories['baby-shower'], to: '/portfolio/baby-shower' },
+    { label: t.categories['house-warming'], to: '/portfolio/house-warming' },
+    { label: t.categories['family-functions'], to: '/portfolio/family-functions' },
+  ];
 
   return (
     <footer className="footer" role="contentinfo">
@@ -37,10 +41,9 @@ export default function Footer() {
             </div>
           </Link>
           <span className="accent-line" aria-hidden="true" />
-          <p className="footer__tagline">Stories worth remembering.</p>
+          <p className="footer__tagline">{t.common.tagline}</p>
           <p className="footer__desc body-sm">
-            Capturing love, traditions, celebrations and the moments that become memories.
-            Based in {siteConfig.location}.
+            {t.common.footerDesc}
           </p>
           <div className="footer__socials">
             <a href={siteConfig.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="footer__social-link">
@@ -56,10 +59,10 @@ export default function Footer() {
         </div>
 
         <div className="footer__col">
-          <h3 className="footer__heading">Pages</h3>
+          <h3 className="footer__heading">{t.nav.portfolio}</h3>
           <nav aria-label="Footer navigation">
             <ul className="footer__links">
-              {footerLinks.map(link => (
+              {footerNavLinks.map(link => (
                 <li key={link.to}>
                   <Link to={link.to} className="footer__link">{link.label}</Link>
                 </li>
@@ -69,7 +72,7 @@ export default function Footer() {
         </div>
 
         <div className="footer__col">
-          <h3 className="footer__heading">Portfolio</h3>
+          <h3 className="footer__heading">{t.portfolio.browseTitle}</h3>
           <nav aria-label="Portfolio categories">
             <ul className="footer__links">
               {portfolioLinks.map(link => (
@@ -82,7 +85,7 @@ export default function Footer() {
         </div>
 
         <div className="footer__col">
-          <h3 className="footer__heading">Get in Touch</h3>
+          <h3 className="footer__heading">{t.contact.infoTitle}</h3>
           <ul className="footer__contact">
             <li>
               <a href={`tel:${siteConfig.phone}`} className="footer__contact-link">
@@ -105,20 +108,20 @@ export default function Footer() {
             <li>
               <span className="footer__contact-link">
                 <MapPin size={14} aria-hidden="true" />
-                <span>{siteConfig.location}</span>
+                <span>{t.common.location}</span>
               </span>
             </li>
           </ul>
-          <Link to="/contact" className="btn btn-primary footer__cta">Book a Shoot</Link>
+          <Link to="/contact" className="btn btn-primary footer__cta">{t.common.bookShoot}</Link>
         </div>
       </div>
 
       <div className="footer__bottom container">
         <p className="footer__copy">
-          &copy; {new Date().getFullYear()} Mani Photography. All rights reserved.
+          &copy; {new Date().getFullYear()} {t.common.allRights}
         </p>
         <p className="footer__copy">
-          Photography is a way of feeling, of touching, of loving.
+          {t.common.quoteText}
         </p>
       </div>
     </footer>

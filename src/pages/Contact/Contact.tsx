@@ -3,6 +3,8 @@ import { useScrollReveal } from '../../hooks/useScrollReveal';
 import { useDocumentHead } from '../../hooks/useDocumentHead';
 import { siteConfig } from '../../data/siteConfig';
 import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
+import { useLanguage } from '../../context/LanguageContext';
+import { translations } from '../../data/translations';
 import './Contact.css';
 
 interface FormData {
@@ -19,39 +21,59 @@ interface FormErrors {
   eventType?: string;
 }
 
-const eventTypes = [
-  'Wedding',
-  'Pre-Wedding',
-  'Engagement',
-  'Tamil Traditional Function',
-  'Temple Shoot',
-  'Baby Shower',
-  'House Warming',
-  'Birthday',
-  'Family Function',
-  'Other',
-];
-
-function validate(data: FormData): FormErrors {
-  const errors: FormErrors = {};
-  if (!data.name.trim()) errors.name = 'Please enter your name.';
-  if (!data.phone.trim()) errors.phone = 'Please enter your phone number.';
-  else if (!/^[+\d\s()-]{7,15}$/.test(data.phone.trim())) errors.phone = 'Please enter a valid phone number.';
-  if (!data.eventType) errors.eventType = 'Please select an event type.';
-  return errors;
-}
-
 export default function Contact() {
+  const { language } = useLanguage();
+  const t = translations[language];
+  const contactT = t.contact;
+
+  const eventTypes = language === 'en' ? [
+    'Wedding',
+    'Pre-Wedding',
+    'Engagement',
+    'Tamil Traditional Function',
+    'Temple Shoot',
+    'Baby Shower',
+    'House Warming',
+    'Birthday',
+    'Family Function',
+    'Other',
+  ] : [
+    'திருமணம் (Wedding)',
+    'திருமணத்திற்கு முந்தைய படம் (Pre-Wedding)',
+    'நிச்சயதார்த்தம் (Engagement)',
+    'தமிழ் பாரம்பரிய சடங்கு (Tamil Traditional)',
+    'கோயில் படப்பிடிப்பு (Temple Shoot)',
+    'வளைகாப்பு (Baby Shower)',
+    'கிரகப்பிரவேசம் (House Warming)',
+    'பிறந்த நாள் (Birthday)',
+    'குடும்ப விழா (Family Function)',
+    'மற்றவை (Other)',
+  ];
+
   useDocumentHead({
-    title: 'Contact & Booking | Mani Photography',
-    description: 'Get in touch with Mani Photography to book a shoot for your wedding, pre-wedding, baby shower, house warming or any special occasion. Located in Thirukadaiyur, Mayiladuthurai, Tamil Nadu.',
+    title: language === 'en'
+      ? 'Contact & Booking | Mani Photography'
+      : 'தொடர்பு & முன்பதிவு | மணி போட்டோகிராஃபி',
+    description: language === 'en'
+      ? 'Get in touch with Mani Photography to book a shoot for your wedding, pre-wedding, baby shower, house warming or any special occasion. Located in Thirukadaiyur, Mayiladuthurai, Tamil Nadu.'
+      : 'மணி போட்டோகிராஃபியைத் தொடர்பு கொள்ளவும். திருமணங்கள், pre-wedding, வளைகாப்பு, கிரகப்பிரவேசம் மற்றும் குடும்ப விழாக்களுக்கான முன்பதிவு. திருக்கடையூர், மயிலாடுதுறை.',
   });
+
   useScrollReveal();
 
   const [form, setForm] = useState<FormData>({ name: '', phone: '', eventType: '', eventDate: '', location: '' });
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+
+  const validate = (data: FormData): FormErrors => {
+    const errs: FormErrors = {};
+    if (!data.name.trim()) errs.name = contactT.errName;
+    if (!data.phone.trim()) errs.phone = contactT.errPhone;
+    else if (!/^[+\d\s()-]{7,15}$/.test(data.phone.trim())) errs.phone = contactT.errPhoneValid;
+    if (!data.eventType) errs.eventType = contactT.errEventType;
+    return errs;
+  };
 
   const update = (field: keyof FormData) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setForm(f => ({ ...f, [field]: e.target.value }));
@@ -83,10 +105,10 @@ export default function Contact() {
       {/* Hero */}
       <div className="page-hero page-hero--dark">
         <div className="container">
-          <span className="label page-hero__label">Get in Touch</span>
-          <h1 className="display-md page-hero__title">Let's Create Something Beautiful.</h1>
+          <span className="label page-hero__label">{contactT.heroLabel}</span>
+          <h1 className="display-md page-hero__title">{contactT.heroTitle}</h1>
           <p className="body-lg page-hero__sub">
-            Tell us about your event and we'll get back to you to discuss how we can help.
+            {contactT.heroSub}
           </p>
         </div>
       </div>
@@ -97,48 +119,48 @@ export default function Contact() {
             {/* Info Panel */}
             <div className="contact-info reveal-left">
               <h2 className="title-lg contact-info__title" style={{ color: 'var(--clr-text-dark)', marginBottom: 'var(--space-3)' }}>
-                Contact Details
+                {contactT.infoTitle}
               </h2>
               <span className="accent-line" aria-hidden="true" />
               <p className="body-md contact-info__desc">
-                Reach us through any of the channels below, or fill in the form and we'll respond promptly.
+                {contactT.infoDesc}
               </p>
 
               <ul className="contact-info__list">
                 <li className="contact-info__item">
                   <Phone size={18} className="contact-info__icon" aria-hidden="true" />
                   <div>
-                    <span className="contact-info__label">Phone</span>
+                    <span className="contact-info__label">{contactT.phoneLabel}</span>
                     <a href={`tel:${siteConfig.phone}`} className="contact-info__value">{siteConfig.phone}</a>
                   </div>
                 </li>
                 <li className="contact-info__item">
                   <MessageCircle size={18} className="contact-info__icon" aria-hidden="true" />
                   <div>
-                    <span className="contact-info__label">WhatsApp</span>
+                    <span className="contact-info__label">{contactT.waLabel}</span>
                     <a href={waLink} target="_blank" rel="noopener noreferrer" className="contact-info__value">
-                      Message on WhatsApp
+                      {t.common.chatWhatsApp}
                     </a>
                   </div>
                 </li>
                 <li className="contact-info__item">
                   <Mail size={18} className="contact-info__icon" aria-hidden="true" />
                   <div>
-                    <span className="contact-info__label">Email</span>
+                    <span className="contact-info__label">{contactT.emailLabel}</span>
                     <a href={`mailto:${siteConfig.email}`} className="contact-info__value">{siteConfig.email}</a>
                   </div>
                 </li>
                 <li className="contact-info__item">
                   <MapPin size={18} className="contact-info__icon" aria-hidden="true" />
                   <div>
-                    <span className="contact-info__label">Location</span>
-                    <span className="contact-info__value">{siteConfig.location}</span>
+                    <span className="contact-info__label">{contactT.locationLabel}</span>
+                    <span className="contact-info__value">{t.common.location}</span>
                   </div>
                 </li>
               </ul>
 
               <div className="contact-info__socials">
-                <span className="contact-info__social-label label">Follow Our Work</span>
+                <span className="contact-info__social-label label">{contactT.followLabel}</span>
                 <div className="contact-info__social-links">
                   <a href={siteConfig.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="contact-info__social-btn">
                     <img src={`${import.meta.env.BASE_URL}images/instagram.svg`} alt="Instagram" style={{ width: 20, height: 20, opacity: 0.8 }} />
@@ -158,40 +180,40 @@ export default function Contact() {
               {submitted ? (
                 <div className="contact-success" role="alert">
                   <span className="contact-success__icon" aria-hidden="true">✦</span>
-                  <h2 className="title-lg contact-success__title">Enquiry Sent!</h2>
+                  <h2 className="title-lg contact-success__title">{contactT.successTitle}</h2>
                   <p className="body-lg contact-success__msg">
-                    Thank you for reaching out. We'll review your details and get back to you shortly to discuss your photography.
+                    {contactT.successMsg}
                   </p>
                   <p className="body-md" style={{ color: 'var(--clr-text-muted)' }}>
-                    In the meantime, feel free to browse our portfolio for inspiration.
+                    {contactT.successSub}
                   </p>
                 </div>
               ) : (
                 <form className="contact-form" onSubmit={handleSubmit} noValidate>
                   <div className="contact-form__row">
                     <div className="contact-form__field">
-                      <label className="contact-form__label" htmlFor="name">Full Name *</label>
+                      <label className="contact-form__label" htmlFor="name">{contactT.formNameLabel}</label>
                       <input
                         id="name"
                         type="text"
                         className={`contact-form__input ${errors.name ? 'contact-form__input--error' : ''}`}
                         value={form.name}
                         onChange={update('name')}
-                        placeholder="Your name"
+                        placeholder={contactT.formNamePlaceholder}
                         autoComplete="name"
                         required
                       />
                       {errors.name && <span className="contact-form__error" role="alert">{errors.name}</span>}
                     </div>
                     <div className="contact-form__field">
-                      <label className="contact-form__label" htmlFor="phone">Phone Number *</label>
+                      <label className="contact-form__label" htmlFor="phone">{contactT.formPhoneLabel}</label>
                       <input
                         id="phone"
                         type="tel"
                         className={`contact-form__input ${errors.phone ? 'contact-form__input--error' : ''}`}
                         value={form.phone}
                         onChange={update('phone')}
-                        placeholder="+91 00000 00000"
+                        placeholder={contactT.formPhonePlaceholder}
                         autoComplete="tel"
                         required
                       />
@@ -199,10 +221,9 @@ export default function Contact() {
                     </div>
                   </div>
 
-
                   <div className="contact-form__row">
                     <div className="contact-form__field">
-                      <label className="contact-form__label" htmlFor="eventType">Event Type *</label>
+                      <label className="contact-form__label" htmlFor="eventType">{contactT.formEventTypeLabel}</label>
                       <select
                         id="eventType"
                         className={`contact-form__input contact-form__select ${errors.eventType ? 'contact-form__input--error' : ''}`}
@@ -210,7 +231,7 @@ export default function Contact() {
                         onChange={update('eventType')}
                         required
                       >
-                        <option value="">Select event type...</option>
+                        <option value="">{contactT.formSelectEventType}</option>
                         {eventTypes.map(et => (
                           <option key={et} value={et}>{et}</option>
                         ))}
@@ -218,7 +239,7 @@ export default function Contact() {
                       {errors.eventType && <span className="contact-form__error" role="alert">{errors.eventType}</span>}
                     </div>
                     <div className="contact-form__field">
-                      <label className="contact-form__label" htmlFor="eventDate">Event Date</label>
+                      <label className="contact-form__label" htmlFor="eventDate">{contactT.formEventDateLabel}</label>
                       <input
                         id="eventDate"
                         type="date"
@@ -230,14 +251,14 @@ export default function Contact() {
                   </div>
 
                   <div className="contact-form__field">
-                    <label className="contact-form__label" htmlFor="location">Event Location</label>
+                    <label className="contact-form__label" htmlFor="location">{contactT.formLocationLabel}</label>
                     <input
                       id="location"
                       type="text"
                       className="contact-form__input"
                       value={form.location}
                       onChange={update('location')}
-                      placeholder="City / Venue"
+                      placeholder={contactT.formLocationPlaceholder}
                       autoComplete="address-level2"
                     />
                   </div>
@@ -248,7 +269,7 @@ export default function Contact() {
                     disabled={submitting}
                     aria-busy={submitting}
                   >
-                    {submitting ? 'Sending Enquiry...' : 'Send Enquiry'}
+                    {submitting ? contactT.formSubmittingBtn : contactT.formSubmitBtn}
                   </button>
                 </form>
               )}

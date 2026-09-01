@@ -2,31 +2,42 @@ import { Link } from 'react-router-dom';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
 import { useDocumentHead } from '../../hooks/useDocumentHead';
 import SectionHeading from '../../components/SectionHeading/SectionHeading';
+import { useLanguage } from '../../context/LanguageContext';
+import { translations } from '../../data/translations';
 import './About.css';
 
-const values = [
-  { icon: '📸', title: 'Authentic', desc: 'We believe in honest photography — real emotions, real moments, real stories.' },
-  { icon: '🎨', title: 'Artistic', desc: 'Every photograph is crafted with a careful eye for light, composition and colour.' },
-  { icon: '🤝', title: 'Personal', desc: 'We take time to understand your story before we lift the camera.' },
-  { icon: '✨', title: 'Dedicated', desc: 'We bring the same passion and commitment to every shoot, large or small.' },
-];
-
 export default function About() {
+  const { language } = useLanguage();
+  const t = translations[language];
+  const aboutT = t.about;
+
   useDocumentHead({
-    title: 'About | Mani Photography — Our Story & Approach',
-    description: 'Learn about Mani Photography — our story, our approach to photography, and what makes us different. We capture authentic emotions at weddings, Tamil ceremonies, pre-wedding shoots and family celebrations.',
+    title: language === 'en'
+      ? 'About | Mani Photography — Our Story & Approach'
+      : 'எங்களைப் பற்றி | மணி போட்டோகிராஃபி — எங்கள் கதை & அணுகுமுறை',
+    description: language === 'en'
+      ? 'Learn about Mani Photography — our story, our approach to photography, and what makes us different. We capture authentic emotions at weddings, Tamil ceremonies, pre-wedding shoots and family celebrations.'
+      : 'மணி போட்டோகிராஃபி பற்றி அறியவும் — எங்கள் கதை, எங்கள் புகைப்பட அணுகுமுறை. திருமணங்கள், தமிழ் சடங்குகள், pre-wedding படப்பிடிப்புகளில் உண்மையான உணர்ச்சிகளைப் பதிவு செய்கிறோம்.',
   });
+
   useScrollReveal();
+
+  const values = [
+    { icon: '📸', title: aboutT.values.v1Title, desc: aboutT.values.v1Desc },
+    { icon: '🎨', title: aboutT.values.v2Title, desc: aboutT.values.v2Desc },
+    { icon: '🤝', title: aboutT.values.v3Title, desc: aboutT.values.v3Desc },
+    { icon: '✨', title: aboutT.values.v4Title, desc: aboutT.values.v4Desc },
+  ];
 
   return (
     <main>
       {/* Hero */}
       <div className="page-hero page-hero--dark">
         <div className="container">
-          <span className="label page-hero__label">Our Story</span>
-          <h1 className="display-md page-hero__title">About Mani Photography</h1>
+          <span className="label page-hero__label">{aboutT.heroLabel}</span>
+          <h1 className="display-md page-hero__title">{aboutT.heroTitle}</h1>
           <p className="body-lg page-hero__sub">
-            A passion for stories. A commitment to authenticity.
+            {aboutT.heroSub}
           </p>
         </div>
       </div>
@@ -58,25 +69,25 @@ export default function About() {
 
             <div className="about-story__content reveal-right">
               <SectionHeading
-                label="Who We Are"
-                title="Photography is our language."
+                label={aboutT.whoWeAreLabel}
+                title={aboutT.whoWeAreTitle}
                 dark={false}
               />
               <p className="body-lg about-story__text">
-                Mani Photography was born out of a love for stories. We believe every family, every couple and every celebration carries a story that deserves to be beautifully told.
+                {aboutT.storyP1}
               </p>
               <p className="body-md about-story__text">
-                We work across weddings, pre-weddings, Tamil traditional ceremonies, temple shoots, baby showers, house warmings, engagements and other special occasions — bringing the same dedication and artistry to every project.
+                {aboutT.storyP2}
               </p>
               <p className="body-md about-story__text">
-                What sets us apart is our genuine investment in understanding your story before we begin. We take the time to learn what matters to you, so that when the moment arrives, we are ready to capture it exactly as it was meant to be remembered.
+                {aboutT.storyP3}
               </p>
 
               {/* Service Area */}
               <div className="about-service-area">
-                <span className="label about-service-area__label">Service Area</span>
+                <span className="label about-service-area__label">{aboutT.serviceAreaLabel}</span>
                 <p className="body-md" style={{ color: 'var(--clr-text-mid)' }}>
-                  Based in <strong>{'{Thirukadaiyur, Mayiladuthurai, Tamil Nadu}'}</strong> — we travel across Tamil Nadu and beyond for weddings and special occasions.
+                  {aboutT.serviceAreaText}
                 </p>
               </div>
             </div>
@@ -88,8 +99,8 @@ export default function About() {
       <section className="section section--dark about-philosophy">
         <div className="container">
           <SectionHeading
-            label="Our Approach"
-            title="The way we see the world."
+            label={aboutT.approachLabel}
+            title={aboutT.approachTitle}
             align="center"
             className="reveal"
           />
@@ -111,18 +122,18 @@ export default function About() {
           <div className="about-style__grid">
             <div className="reveal-left">
               <SectionHeading
-                label="Our Style"
-                title="What makes our photography different."
+                label={aboutT.styleLabel}
+                title={aboutT.styleTitle}
                 dark={false}
               />
               <p className="body-lg about-style__text">
-                Our photography style blends candid documentary storytelling with beautiful, timeless portraiture. We prefer natural light wherever possible, and our editing approach is warm, clean and designed to remain beautiful for decades.
+                {aboutT.styleP1}
               </p>
               <p className="body-md about-style__text">
-                We are not looking for forced smiles or stiff poses. We are looking for the real moments — the grandmother's tears, the cousin's laughter, the bride's quiet smile before she walks in.
+                {aboutT.styleP2}
               </p>
               <p className="body-md about-style__text">
-                We cover Tamil traditional ceremonies with particular sensitivity — understanding that each ritual has deep meaning, and that documenting it well is a responsibility we take seriously.
+                {aboutT.styleP3}
               </p>
             </div>
             <div className="about-style__images reveal-right">
@@ -141,7 +152,7 @@ export default function About() {
                   }}
                 />
                 <div className="img-placeholder" style={{ display: 'none', minHeight: '300px' }}>
-                  <span className="label-light">Wedding Style</span>
+                  <span className="label-light">{t.categories.weddings}</span>
                 </div>
               </div>
               <div className="about-style__img about-style__img--short">
@@ -159,7 +170,7 @@ export default function About() {
                   }}
                 />
                 <div className="img-placeholder" style={{ display: 'none', minHeight: '200px' }}>
-                  <span className="label-light">Temple Style</span>
+                  <span className="label-light">{t.categories.temple}</span>
                 </div>
               </div>
             </div>
@@ -171,14 +182,14 @@ export default function About() {
       <section className="section section--dark" style={{ textAlign: 'center' }}>
         <div className="container">
           <h2 className="display-sm reveal" style={{ marginBottom: 'var(--space-4)' }}>
-            Let's Create Something Beautiful.
+            {t.home.ctaTitle}
           </h2>
           <p className="body-lg reveal" style={{ color: 'var(--clr-text-muted)', marginBottom: 'var(--space-8)', maxWidth: '500px', marginInline: 'auto' }}>
-            We'd love to hear about your event and how we can help preserve it beautifully.
+            {t.home.ctaDesc}
           </p>
           <div className="reveal" style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/contact" className="btn btn-primary">Get in Touch</Link>
-            <Link to="/portfolio" className="btn btn-outline">View Our Portfolio</Link>
+            <Link to="/contact" className="btn btn-primary">{t.common.getInTouch}</Link>
+            <Link to="/portfolio" className="btn btn-outline">{t.common.explorePortfolio}</Link>
           </div>
         </div>
       </section>

@@ -1,21 +1,25 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import LogoMark from '../LogoMark';
+import { useLanguage } from '../../context/LanguageContext';
+import { translations } from '../../data/translations';
 import './Navbar.css';
-
-const navLinks = [
-  { to: '/', label: 'Home' },
-  { to: '/portfolio', label: 'Portfolio' },
-  { to: '/services', label: 'Services' },
-  { to: '/about', label: 'About' },
-  { to: '/contact', label: 'Contact' },
-];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const { language, toggleLanguage } = useLanguage();
+  const t = translations[language].nav;
+
+  const navLinks = [
+    { to: '/', label: t.home },
+    { to: '/portfolio', label: t.portfolio },
+    { to: '/services', label: t.services },
+    { to: '/about', label: t.about },
+    { to: '/contact', label: t.contact },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -59,8 +63,22 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* CTA + Hamburger */}
+          {/* Actions: Language Switcher + Hamburger */}
           <div className="navbar__actions">
+            {/* Language Switcher Button */}
+            <button
+              type="button"
+              className="lang-switcher"
+              onClick={toggleLanguage}
+              title={language === 'en' ? 'Switch to Tamil (தமிழ்)' : 'Switch to English'}
+              aria-label="Toggle language between English and Tamil"
+            >
+              <Globe size={15} className="lang-switcher__icon" aria-hidden="true" />
+              <span className={`lang-switcher__option ${language === 'en' ? 'lang-switcher__option--active' : ''}`}>EN</span>
+              <span className="lang-switcher__divider">|</span>
+              <span className={`lang-switcher__option ${language === 'ta' ? 'lang-switcher__option--active' : ''}`}>தமிழ்</span>
+            </button>
+
             <button
               className="navbar__hamburger"
               onClick={() => setMenuOpen(!menuOpen)}
@@ -94,8 +112,20 @@ export default function Navbar() {
               {link.label}
             </NavLink>
           ))}
-          <Link to="/contact" className="btn btn-primary mobile-menu__cta" style={{ '--i': navLinks.length } as React.CSSProperties}>
-            Book a Shoot
+
+          {/* Mobile Language Switcher */}
+          <button
+            type="button"
+            className="lang-switcher lang-switcher--mobile"
+            onClick={toggleLanguage}
+            style={{ '--i': navLinks.length } as React.CSSProperties}
+          >
+            <Globe size={16} />
+            <span>{language === 'en' ? 'தமிழ் மொழியில் மாற்றுக' : 'Switch to English'}</span>
+          </button>
+
+          <Link to="/contact" className="btn btn-primary mobile-menu__cta" style={{ '--i': navLinks.length + 1 } as React.CSSProperties}>
+            {t.bookShoot}
           </Link>
         </nav>
       </div>

@@ -7,70 +7,26 @@ import { portfolioItems } from '../../data/portfolio';
 import { services } from '../../data/services';
 import SectionHeading from '../../components/SectionHeading/SectionHeading';
 import PortfolioGrid from '../../components/PortfolioGrid/PortfolioGrid';
+import { useLanguage } from '../../context/LanguageContext';
+import { translations } from '../../data/translations';
 import './Home.css';
 
 const featuredPortfolio = portfolioItems.filter(i => i.featured).slice(0, 9);
 
-const philosophyItems = [
-  {
-    num: '01',
-    title: 'Authentic',
-    desc: 'Real emotions over forced moments. We capture your celebration as it truly unfolds — unscripted, honest and full of life.',
-  },
-  {
-    num: '02',
-    title: 'Timeless',
-    desc: 'Images designed to remain beautiful and meaningful years from now. We avoid trends that date quickly.',
-  },
-  {
-    num: '03',
-    title: 'Cinematic',
-    desc: 'Beautiful compositions, thoughtful lighting and visual storytelling that transforms moments into art.',
-  },
-  {
-    num: '04',
-    title: 'Personal',
-    desc: 'Every couple, family and celebration is unique. Your photographs should tell your story, not anyone else\'s.',
-  },
-];
-
-const trustItems = [
-  'Professional Photography',
-  'Candid Storytelling',
-  'Traditional & Modern Styles',
-  'High-Quality Editing',
-  'Personalized Experience',
-  'Reliable Event Coverage',
-  'Digital Gallery Delivery',
-  'Experienced & Passionate Team',
-];
-
-// Placeholder testimonials — REPLACE with real client testimonials before go-live
-const testimonials = [
-  {
-    quote: 'Every photograph from our wedding tells a story. We relive our day every time we look through the album.',
-    name: 'Priya & Karthik',
-    event: 'Tamil Wedding',
-  },
-  {
-    quote: 'The pre-wedding shoot was so relaxed and natural. The photographs came out beyond what we imagined.',
-    name: 'Deepa & Arun',
-    event: 'Pre-Wedding Shoot',
-  },
-  {
-    quote: 'They captured every ritual of our house warming with such care and sensitivity. Truly beautiful work.',
-    name: 'Meena & Suresh',
-    event: 'House Warming',
-  },
-];
-
-const homeMeta = {
-  title: 'Mani Photography | Wedding & Event Photography in Thirukadaiyur, Mayiladuthurai',
-  description:
-    'Mani Photography — capturing beautiful weddings, Tamil traditional ceremonies, pre-wedding shoots, baby showers, house warmings and family functions. Premium photography in Thirukadaiyur, Mayiladuthurai, Tamil Nadu.',
-};
-
 export default function Home() {
+  const { language } = useLanguage();
+  const t = translations[language];
+  const homeT = t.home;
+
+  const homeMeta = {
+    title: language === 'en'
+      ? 'Mani Photography | Wedding & Event Photography in Thirukadaiyur, Mayiladuthurai'
+      : 'மணி போட்டோகிராஃபி | திருக்கடையூர், மயிலாடுதுறை திருமண & நிகழ்வு புகைப்படம்',
+    description: language === 'en'
+      ? 'Mani Photography — capturing beautiful weddings, Tamil traditional ceremonies, pre-wedding shoots, baby showers, house warmings and family functions. Premium photography in Thirukadaiyur, Mayiladuthurai, Tamil Nadu.'
+      : 'மணி போட்டோகிராஃபி — தமிழ் பாரம்பரிய திருமணங்கள், pre-wedding ஷூட், வளைகாப்பு, கிரகப்பிரவேசம் மற்றும் குடும்ப விழாக்களுக்கான உயர்தர புகைப்படம். திருக்கடையூர், மயிலாடுதுறை, தமிழ்நாடு.',
+  };
+
   useDocumentHead(homeMeta);
   useScrollReveal();
 
@@ -93,6 +49,30 @@ export default function Home() {
     const el = document.getElementById('intro');
     el?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const philosophyItems = [
+    { num: '01', title: homeT.philosophyItem1Title, desc: homeT.philosophyItem1Desc },
+    { num: '02', title: homeT.philosophyItem2Title, desc: homeT.philosophyItem2Desc },
+    { num: '03', title: homeT.philosophyItem3Title, desc: homeT.philosophyItem3Desc },
+    { num: '04', title: homeT.philosophyItem4Title, desc: homeT.philosophyItem4Desc },
+  ];
+
+  const trustItems = [
+    homeT.trustItem1,
+    homeT.trustItem2,
+    homeT.trustItem3,
+    homeT.trustItem4,
+    homeT.trustItem5,
+    homeT.trustItem6,
+    homeT.trustItem7,
+    homeT.trustItem8,
+  ];
+
+  const testimonials = [
+    { quote: homeT.t1Quote, name: homeT.t1Name, event: homeT.t1Event },
+    { quote: homeT.t2Quote, name: homeT.t2Name, event: homeT.t2Event },
+    { quote: homeT.t3Quote, name: homeT.t3Name, event: homeT.t3Event },
+  ];
 
   return (
     <main>
@@ -117,15 +97,15 @@ export default function Home() {
             <span className="label hero__label">Mani Photography</span>
           </div>
           <h1 className="hero__headline display-xl">
-            Stories Worth<br />
-            <em>Remembering.</em>
+            {homeT.heroTitleLine1}<br />
+            <em>{homeT.heroTitleLine2}</em>
           </h1>
           <p className="hero__sub body-lg">
-            Capturing love, traditions, celebrations and the moments that become memories.
+            {homeT.heroSub}
           </p>
           <div className="hero__ctas">
-            <Link to="/portfolio" className="btn btn-primary">View Our Work</Link>
-            <Link to="/contact" className="btn btn-outline">Book a Shoot</Link>
+            <Link to="/portfolio" className="btn btn-primary">{t.common.viewWork}</Link>
+            <Link to="/contact" className="btn btn-outline">{t.common.bookShoot}</Link>
           </div>
         </div>
 
@@ -133,15 +113,15 @@ export default function Home() {
         <div className="hero__stats" aria-label="Studio statistics">
           <div className="hero__stat">
             <span className="hero__stat-num">10+</span>
-            <span className="hero__stat-label">Years of Excellence</span>
+            <span className="hero__stat-label">{homeT.statYears}</span>
           </div>
           <div className="hero__stat">
             <span className="hero__stat-num">500+</span>
-            <span className="hero__stat-label">Weddings Captured</span>
+            <span className="hero__stat-label">{homeT.statWeddings}</span>
           </div>
           <div className="hero__stat">
             <span className="hero__stat-num">2000+</span>
-            <span className="hero__stat-label">Happy Families</span>
+            <span className="hero__stat-label">{homeT.statFamilies}</span>
           </div>
         </div>
 
@@ -171,33 +151,33 @@ export default function Home() {
                   }}
                 />
                 <div className="img-placeholder" style={{ display: 'none', minHeight: '500px' }}>
-                  <span className="label-light">Wedding Photography</span>
+                  <span className="label-light">{t.categories.weddings}</span>
                 </div>
               </div>
               <div className="intro-section__badge" aria-hidden="true">
-                <span className="label-light">Since</span>
+                <span className="label-light">{t.common.since}</span>
                 <span className="intro-section__badge-year">2015</span>
               </div>
             </div>
 
             <div className="intro-section__content reveal-right">
               <SectionHeading
-                label="About Us"
-                title="We don't just capture moments. We preserve them."
+                label={homeT.aboutLabel}
+                title={homeT.aboutTitle}
                 dark={false}
               />
               <p className="body-lg intro-section__text">
-                Mani Photography is built on one belief — that every family, every couple and every celebration deserves beautiful, authentic photographs that tell their unique story.
+                {homeT.aboutP1}
               </p>
               <p className="body-md intro-section__text">
-                We work across weddings, pre-weddings, Tamil traditional ceremonies, family functions, baby showers, house warmings, engagements and other special occasions — bringing the same passion and care to every shoot, whether it is an intimate gathering or a grand celebration.
+                {homeT.aboutP2}
               </p>
               <p className="body-md intro-section__text">
-                From quiet glances to unforgettable rituals, from laughter between cousins to a grandmother's emotional blessing — these are the moments that truly matter. We make sure you never forget them.
+                {homeT.aboutP3}
               </p>
               <div className="intro-section__ctas">
-                <Link to="/about" className="btn btn-primary">Our Story</Link>
-                <Link to="/contact" className="btn btn-outline-dark">Book a Shoot</Link>
+                <Link to="/about" className="btn btn-primary">{homeT.ourStoryBtn}</Link>
+                <Link to="/contact" className="btn btn-outline-dark">{t.common.bookShoot}</Link>
               </div>
             </div>
           </div>
@@ -208,45 +188,51 @@ export default function Home() {
       <section className="section section--dark services-home">
         <div className="container">
           <SectionHeading
-            label="What We Do"
-            title="What We Capture"
-            subtitle="From sacred rituals to candid celebrations, we document life's most meaningful moments with artistry and care."
+            label={homeT.servicesLabel}
+            title={homeT.servicesTitle}
+            subtitle={homeT.servicesSub}
             className="reveal"
           />
           <div className="services-home__grid">
-            {services.slice(0, 8).map((service, i) => (
-              <Link
-                to={`/services`}
-                key={service.id}
-                className={`service-card reveal reveal-delay-${(i % 4) + 1}`}
-              >
-                <div className="service-card__img-wrap">
-                  <img
-                    src={service.image}
-                    alt={service.alt}
-                    className="service-card__img"
-                    loading="lazy"
-                    width="600"
-                    height="400"
-                    onError={e => {
-                      (e.currentTarget as HTMLImageElement).style.display = 'none';
-                      const next = e.currentTarget.nextElementSibling as HTMLElement;
-                      if (next) next.style.display = 'flex';
-                    }}
-                  />
-                  <div className="img-placeholder service-card__placeholder" style={{ display: 'none' }}>
-                    <span className="label-light">{service.title}</span>
+            {services.slice(0, 8).map((service, i) => {
+              const localizedService = t.serviceItems[service.id as keyof typeof t.serviceItems] || {
+                title: service.title,
+                shortDesc: service.shortDesc,
+              };
+              return (
+                <Link
+                  to={`/services`}
+                  key={service.id}
+                  className={`service-card reveal reveal-delay-${(i % 4) + 1}`}
+                >
+                  <div className="service-card__img-wrap">
+                    <img
+                      src={service.image}
+                      alt={service.alt}
+                      className="service-card__img"
+                      loading="lazy"
+                      width="600"
+                      height="400"
+                      onError={e => {
+                        (e.currentTarget as HTMLImageElement).style.display = 'none';
+                        const next = e.currentTarget.nextElementSibling as HTMLElement;
+                        if (next) next.style.display = 'flex';
+                      }}
+                    />
+                    <div className="img-placeholder service-card__placeholder" style={{ display: 'none' }}>
+                      <span className="label-light">{localizedService.title}</span>
+                    </div>
+                    <div className="service-card__overlay" aria-hidden="true" />
                   </div>
-                  <div className="service-card__overlay" aria-hidden="true" />
-                </div>
-                <div className="service-card__body">
-                  <span className="service-card__icon" aria-hidden="true">{service.icon}</span>
-                  <h3 className="service-card__title title-sm">{service.title}</h3>
-                  <p className="service-card__desc body-sm">{service.shortDesc}</p>
-                  <span className="service-card__link label-light">Explore →</span>
-                </div>
-              </Link>
-            ))}
+                  <div className="service-card__body">
+                    <span className="service-card__icon" aria-hidden="true">{service.icon}</span>
+                    <h3 className="service-card__title title-sm">{localizedService.title}</h3>
+                    <p className="service-card__desc body-sm">{localizedService.shortDesc}</p>
+                    <span className="service-card__link label-light">{t.nav.explore}</span>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -256,18 +242,18 @@ export default function Home() {
         <div className="container">
           <div className="gallery-home__header reveal">
             <SectionHeading
-              label="Portfolio"
-              title="Selected Stories"
-              subtitle="A glimpse into the moments we've had the privilege of preserving."
+              label={homeT.portfolioLabel}
+              title={homeT.portfolioTitle}
+              subtitle={homeT.portfolioSub}
               dark={false}
             />
             <Link to="/portfolio" className="btn btn-outline-dark gallery-home__see-all">
-              View All Work
+              {t.common.viewAll}
             </Link>
           </div>
           <PortfolioGrid items={featuredPortfolio} columns={3} />
           <div className="gallery-home__cta reveal">
-            <Link to="/portfolio" className="btn btn-primary">Explore Full Portfolio</Link>
+            <Link to="/portfolio" className="btn btn-primary">{t.common.explorePortfolio}</Link>
           </div>
         </div>
       </section>
@@ -288,16 +274,16 @@ export default function Home() {
         </div>
         <div className="container">
           <div className="wedding-feature__content reveal">
-            <span className="label wedding-feature__label">Weddings</span>
+            <span className="label wedding-feature__label">{homeT.weddingLabel}</span>
             <span className="accent-line" aria-hidden="true" />
             <h2 className="display-md wedding-feature__title">
-              Your Wedding.<br />Your Story.<br />
-              <em>Your Way.</em>
+              {homeT.weddingTitleLine1}<br />
+              <em>{homeT.weddingTitleLine2}</em>
             </h2>
             <p className="body-lg wedding-feature__desc">
-              From quiet glances to unforgettable celebrations, we document your wedding with a balance of candid emotion, timeless portraits and authentic traditions.
+              {homeT.weddingDesc}
             </p>
-            <Link to="/portfolio/weddings" className="btn btn-primary">Explore Wedding Stories</Link>
+            <Link to="/portfolio/weddings" className="btn btn-primary">{homeT.weddingBtn}</Link>
           </div>
         </div>
       </section>
@@ -308,16 +294,16 @@ export default function Home() {
           <div className="tamil-section__grid">
             <div className="tamil-section__content reveal-left">
               <SectionHeading
-                label="Tamil Weddings"
-                title="Rooted in Tradition. Captured for Generations."
+                label={homeT.tamilLabel}
+                title={homeT.tamilTitle}
               />
               <p className="body-lg tamil-section__text">
-                Tamil weddings are among the most beautiful and meaningful ceremonies in the world — rich with ritual, colour, family and spirituality. The thaali ceremony, the muhurtham, oonjal, kanyadanam, garland exchange, temple blessings — each moment carries centuries of tradition.
+                {homeT.tamilP1}
               </p>
               <p className="body-md tamil-section__text">
-                We approach Tamil wedding photography with deep cultural respect and genuine love for the traditions we capture. Our goal is to preserve not just images, but the living heritage of your family.
+                {homeT.tamilP2}
               </p>
-              <Link to="/portfolio/tamil-weddings" className="btn btn-primary">View Tamil Wedding Stories</Link>
+              <Link to="/portfolio/tamil-weddings" className="btn btn-primary">{homeT.tamilBtn}</Link>
             </div>
             <div className="tamil-section__images reveal-right">
               <div className="tamil-section__img-primary">
@@ -335,7 +321,7 @@ export default function Home() {
                   }}
                 />
                 <div className="img-placeholder" style={{ display: 'none', minHeight: '400px' }}>
-                  <span className="label-light">Tamil Wedding</span>
+                  <span className="label-light">{t.categories['tamil-weddings']}</span>
                 </div>
               </div>
               <div className="tamil-section__img-secondary">
@@ -381,25 +367,28 @@ export default function Home() {
                   }}
                 />
                 <div className="img-placeholder" style={{ display: 'none', minHeight: '500px' }}>
-                  <span className="label-light">Pre-Wedding</span>
+                  <span className="label-light">{t.categories['pre-wedding']}</span>
                 </div>
               </div>
             </div>
             <div className="prewedding-section__content reveal-right">
               <SectionHeading
-                label="Pre-Wedding"
-                title="Before the Wedding, There Is Your Story."
+                label={homeT.preweddingLabel}
+                title={homeT.preweddingTitle}
                 dark={false}
               />
               <p className="body-lg prewedding-section__text">
-                A pre-wedding shoot is a chance to capture the quiet tenderness and joyful anticipation before the big day. We create beautiful couple stories in locations that reflect your personality and love.
+                {homeT.preweddingDesc}
               </p>
               <div className="prewedding-section__locations">
-                {['Temple', 'Heritage Architecture', 'Nature & Gardens', 'Beaches', 'City Streets', 'Traditional Locations'].map(loc => (
+                {(language === 'en'
+                  ? ['Temple', 'Heritage Architecture', 'Nature & Gardens', 'Beaches', 'City Streets', 'Traditional Locations']
+                  : ['கோயில்கள்', 'பாரம்பரிய இடங்கள்', 'இயற்கை எழில்', 'கடற்கரைகள்', 'நகர வீதிகள்', 'பாரம்பரிய இடங்கள்']
+                ).map(loc => (
                   <span key={loc} className="prewedding-section__loc-tag">{loc}</span>
                 ))}
               </div>
-              <Link to="/portfolio/pre-wedding" className="btn btn-primary">View Pre-Wedding Stories</Link>
+              <Link to="/portfolio/pre-wedding" className="btn btn-primary">{homeT.preweddingBtn}</Link>
             </div>
           </div>
         </div>
@@ -409,20 +398,20 @@ export default function Home() {
       <section className="section section--dark events-section">
         <div className="container">
           <SectionHeading
-            label="Celebrations"
-            title="Every Celebration Deserves to be Remembered"
-            subtitle="From intimate family moments to grand occasions — we photograph them all with equal care."
+            label={homeT.eventsLabel}
+            title={homeT.eventsTitle}
+            subtitle={homeT.eventsSub}
             align="center"
             className="reveal"
           />
           <div className="events-section__grid">
             {[
-              { title: 'Engagement', image: `${import.meta.env.BASE_URL}images/events/event-01.jpg`, slug: 'events', desc: 'The beginning of your forever.' },
-              { title: 'Baby Shower', image: `${import.meta.env.BASE_URL}images/baby-shower/baby-shower-01.jpg`, slug: 'baby-shower', desc: 'Beautiful anticipation, captured.' },
-              { title: 'House Warming', image: `${import.meta.env.BASE_URL}images/house-warming/house-warming-01.jpg`, slug: 'house-warming', desc: 'The joy of a new beginning.' },
-              { title: 'Birthday', image: `${import.meta.env.BASE_URL}images/events/event-02.jpg`, slug: 'events', desc: 'Milestone moments, beautifully preserved.' },
-              { title: 'Naming Ceremony', image: `${import.meta.env.BASE_URL}images/events/event-03.jpg`, slug: 'events', desc: 'Welcoming a new life with love.' },
-              { title: 'Family Portrait', image: `${import.meta.env.BASE_URL}images/family/family-01.jpg`, slug: 'family', desc: 'Your people, together.' },
+              { title: t.categories.events, image: `${import.meta.env.BASE_URL}images/events/event-01.jpg`, slug: 'events', desc: language === 'en' ? 'The beginning of your forever.' : 'உங்கள் புதிய பயணத்தின் தொடக்கம்.' },
+              { title: t.categories['baby-shower'], image: `${import.meta.env.BASE_URL}images/baby-shower/baby-shower-01.jpg`, slug: 'baby-shower', desc: language === 'en' ? 'Beautiful anticipation, captured.' : 'புதிய வரவின் எதிர்பார்ப்பு, படம் பிடிக்கப்பட்டது.' },
+              { title: t.categories['house-warming'], image: `${import.meta.env.BASE_URL}images/house-warming/house-warming-01.jpg`, slug: 'house-warming', desc: language === 'en' ? 'The joy of a new beginning.' : 'புதிய தொடக்கத்தின் மகிழ்ச்சி.' },
+              { title: language === 'en' ? 'Birthday' : 'பிறந்த நாள்', image: `${import.meta.env.BASE_URL}images/events/event-02.jpg`, slug: 'events', desc: language === 'en' ? 'Milestone moments, beautifully preserved.' : 'வாழ்வின் மைல்கல் தருணங்கள்.' },
+              { title: language === 'en' ? 'Naming Ceremony' : 'பெயர் சூட்டும் விழா', image: `${import.meta.env.BASE_URL}images/events/event-03.jpg`, slug: 'events', desc: language === 'en' ? 'Welcoming a new life with love.' : 'புதிய உயிரை அன்புடன் வரவேற்போம்.' },
+              { title: t.categories.family, image: `${import.meta.env.BASE_URL}images/family/family-01.jpg`, slug: 'family', desc: language === 'en' ? 'Your people, together.' : 'உங்கள் குடும்பம், ஒன்றாக.' },
             ].map((event, i) => (
               <Link
                 to={`/portfolio/${event.slug}`}
@@ -462,8 +451,8 @@ export default function Home() {
       <section className="section section--light philosophy-section">
         <div className="container">
           <SectionHeading
-            label="Philosophy"
-            title="Our Approach"
+            label={homeT.philosophyLabel}
+            title={homeT.philosophyTitle}
             align="center"
             dark={false}
             className="reveal"
@@ -485,8 +474,8 @@ export default function Home() {
       <section className="section section--dark trust-section">
         <div className="container">
           <SectionHeading
-            label="Why Choose Us"
-            title="Our Promise to You"
+            label={homeT.trustLabel}
+            title={homeT.trustTitle}
             align="center"
             className="reveal"
           />
@@ -502,25 +491,24 @@ export default function Home() {
       </section>
 
       {/* ── TESTIMONIALS ────────────────────────────────── */}
-      {/* NOTE: Replace placeholder testimonials below with real client reviews before launch */}
       <section className="section section--light testimonials-section">
         <div className="container">
           <SectionHeading
-            label="Kind Words"
-            title="What Our Clients Say"
+            label={homeT.testimonialsLabel}
+            title={homeT.testimonialsTitle}
             align="center"
             dark={false}
             className="reveal"
           />
           <div className="testimonials-section__grid">
-            {testimonials.map((t, i) => (
+            {testimonials.map((tItem, i) => (
               <div key={i} className={`testimonial-card reveal reveal-delay-${i + 1}`}>
                 <span className="testimonial-card__quote-mark" aria-hidden="true">"</span>
-                <blockquote className="testimonial-card__quote body-lg">{t.quote}</blockquote>
+                <blockquote className="testimonial-card__quote body-lg">{tItem.quote}</blockquote>
                 <div className="testimonial-card__author">
                   <span className="accent-line accent-line--sm" aria-hidden="true" />
-                  <span className="testimonial-card__name body-md">{t.name}</span>
-                  <span className="testimonial-card__event label-light">{t.event}</span>
+                  <span className="testimonial-card__name body-md">{tItem.name}</span>
+                  <span className="testimonial-card__event label-light">{tItem.event}</span>
                 </div>
               </div>
             ))}
@@ -543,17 +531,17 @@ export default function Home() {
           <div className="cta-section__overlay" aria-hidden="true" />
         </div>
         <div className="cta-section__content container reveal">
-          <span className="label cta-section__label">Start Your Story</span>
+          <span className="label cta-section__label">{homeT.ctaLabel}</span>
           <span className="accent-line accent-line--center" aria-hidden="true" />
           <h2 className="display-md cta-section__title">
-            Let's Create Something <em>Beautiful.</em>
+            {homeT.ctaTitle}
           </h2>
           <p className="body-lg cta-section__desc">
-            Every moment is worth remembering. Let us help you preserve yours.
+            {homeT.ctaDesc}
           </p>
           <div className="cta-section__actions">
-            <Link to="/contact" className="btn btn-primary">Send an Enquiry</Link>
-            <Link to="/portfolio" className="btn btn-outline">View Our Work</Link>
+            <Link to="/contact" className="btn btn-primary">{t.common.sendEnquiry}</Link>
+            <Link to="/portfolio" className="btn btn-outline">{t.common.viewWork}</Link>
           </div>
         </div>
       </section>
