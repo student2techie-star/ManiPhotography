@@ -1,27 +1,29 @@
-/* Floating Trigger Button (Stacked vertically above WhatsApp) */
+/* Floating Trigger Button (Positioned next to WhatsApp) */
 .chatbot-trigger {
-  position: fixed;
-  bottom: 84px;
-  right: 20px;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #D9B340 0%, #B8860B 100%);
-  color: #1A130B;
-  border: 2px solid #FFD700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 9998;
-  box-shadow: 0 4px 20px rgba(184, 134, 11, 0.45);
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 84px !important;
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, #D9B340 0%, #B8860B 100%) !important;
+  color: #1A130B !important;
+  border: 2px solid #FFD700 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  cursor: pointer !important;
+  z-index: 99999 !important;
+  box-shadow: 0 4px 20px rgba(184, 134, 11, 0.5) !important;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
 }
 
 .chatbot-trigger:hover {
-  transform: scale(1.08);
-  box-shadow: 0 6px 26px rgba(184, 134, 11, 0.65);
-  border-color: #FFFFFF;
+  transform: scale(1.08) !important;
+  box-shadow: 0 6px 26px rgba(184, 134, 11, 0.7) !important;
+  border-color: #FFFFFF !important;
 }
 
 .chatbot-trigger__badge {
@@ -37,21 +39,21 @@
 
 /* Chat Window */
 .chatbot-window {
-  position: fixed;
-  bottom: 145px;
-  right: 20px;
-  width: 360px;
-  max-width: calc(100vw - 32px);
-  height: 490px;
-  max-height: calc(100dvh - 160px);
-  background: #FFFFFF;
-  border-radius: 18px;
-  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--clr-border-light);
-  display: flex;
-  flex-direction: column;
-  z-index: 9999;
-  overflow: hidden;
+  position: fixed !important;
+  bottom: 85px !important;
+  right: 20px !important;
+  width: 360px !important;
+  max-width: calc(100vw - 32px) !important;
+  height: 490px !important;
+  max-height: calc(100dvh - 120px) !important;
+  background: #FFFFFF !important;
+  border-radius: 18px !important;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.35) !important;
+  border: 1px solid var(--clr-border-light) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  z-index: 99999 !important;
+  overflow: hidden !important;
   animation: chatbot-pop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
@@ -272,18 +274,18 @@
 
 @media (max-width: 600px) {
   .chatbot-trigger {
-    bottom: 74px;
-    right: 16px;
-    width: 48px;
-    height: 48px;
+    bottom: 16px !important;
+    right: 74px !important;
+    width: 48px !important;
+    height: 48px !important;
   }
 
   .chatbot-window {
-    right: 12px;
-    left: 12px;
-    bottom: 72px;
-    width: auto;
-    max-width: none;
-    height: 430px;
+    right: 12px !important;
+    left: 12px !important;
+    bottom: 72px !important;
+    width: auto !important;
+    max-width: none !important;
+    height: 430px !important;
   }
 }
