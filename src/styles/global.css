@@ -118,6 +118,9 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden !important;
+  width: 100%;
+  max-width: 100%;
 }
 
 body {
@@ -126,8 +129,18 @@ body {
   color: var(--clr-text);
   background: var(--clr-bg);
   line-height: 1.7;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
   -webkit-font-smoothing: antialiased;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+#root {
+  overflow-x: hidden !important;
+  width: 100%;
+  max-width: 100%;
 }
 
 img,
