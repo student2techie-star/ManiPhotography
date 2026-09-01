@@ -17,7 +17,8 @@
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
   text-decoration: none !important;
   overflow: hidden !important;
-  border: 2px solid #FFFFFF !important;
+  border: none !important;
+  outline: none !important;
 }
 
 .whatsapp-btn:hover {
