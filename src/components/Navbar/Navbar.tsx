@@ -63,12 +63,11 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Actions: Language Switcher + Hamburger */}
+          {/* Actions: Language Switcher (Desktop) + Hamburger */}
           <div className="navbar__actions">
-            {/* Language Switcher Button */}
             <button
               type="button"
-              className="lang-switcher"
+              className="lang-switcher lang-switcher--desktop"
               onClick={toggleLanguage}
               title={language === 'en' ? 'Switch to Tamil (தமிழ்)' : 'Switch to English'}
               aria-label="Toggle language between English and Tamil"
@@ -113,16 +112,25 @@ export default function Navbar() {
             </NavLink>
           ))}
 
-          {/* Mobile Language Switcher */}
-          <button
-            type="button"
-            className="lang-switcher lang-switcher--mobile"
-            onClick={toggleLanguage}
+          {/* Mobile Language Switcher (Visible inside Hamburger Menu) */}
+          <div
+            className="mobile-menu__lang-box"
             style={{ '--i': navLinks.length } as React.CSSProperties}
           >
-            <Globe size={16} />
-            <span>{language === 'en' ? 'தமிழ் மொழியில் மாற்றுக' : 'Switch to English'}</span>
-          </button>
+            <span className="mobile-menu__lang-title">
+              <Globe size={16} /> Language / மொழி
+            </span>
+            <button
+              type="button"
+              className="lang-switcher lang-switcher--mobile-pill"
+              onClick={toggleLanguage}
+              aria-label="Toggle language"
+            >
+              <span className={`lang-switcher__option ${language === 'en' ? 'lang-switcher__option--active' : ''}`}>EN (English)</span>
+              <span className="lang-switcher__divider">|</span>
+              <span className={`lang-switcher__option ${language === 'ta' ? 'lang-switcher__option--active' : ''}`}>தமிழ்</span>
+            </button>
+          </div>
 
           <Link to="/contact" className="btn btn-primary mobile-menu__cta" style={{ '--i': navLinks.length + 1 } as React.CSSProperties}>
             {t.bookShoot}
