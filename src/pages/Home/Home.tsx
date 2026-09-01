@@ -92,9 +92,28 @@ export default function Home() {
         </div>
 
         <div className="hero__content container">
-          <div className="hero__eyebrow">
-            <span className="hero__eyebrow-line" aria-hidden="true" />
-            <span className="label hero__label">Mani Photography</span>
+          <div className="hero__eyebrow" style={{ flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span className="hero__eyebrow-line" aria-hidden="true" />
+              <span className="label hero__label">Mani Photography Thirukadaiyur</span>
+            </div>
+            <span style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              background: 'linear-gradient(135deg, #D9B340 0%, #B8860B 100%)',
+              border: '1px solid #FFD700',
+              color: '#1A130B',
+              padding: '7px 16px',
+              borderRadius: '24px',
+              fontSize: '0.875rem',
+              fontWeight: 700,
+              letterSpacing: '0.02em',
+              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.35)',
+              marginTop: '6px'
+            }}>
+              👑 {language === 'en' ? 'Thirukadaiyur 60th, 70th & 80th Wedding Specialist (Shashtiapthapoorthi & Sadabishegam)' : 'திருக்கடையூர் 60, 70 & 80ஆம் கல்யாண சிறப்பு நிபுணர் (சஷ்டியப்தபூர்த்தி & சதாபிஷேகம்)'}
+            </span>
           </div>
           <h1 className="hero__headline display-xl">
             {homeT.heroTitleLine1}<br />
@@ -180,6 +199,124 @@ export default function Home() {
                 <Link to="/contact" className="btn btn-outline-dark">{t.common.bookShoot}</Link>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── THIRUKADAIYUR MILESTONE SPECIALIST SECTION ── */}
+      <section className="section section--dark thirukadaiyur-specialist" style={{
+        background: 'linear-gradient(180deg, #1C1712 0%, #2A2118 100%)',
+        borderTop: '1px solid rgba(217, 179, 64, 0.25)',
+        borderBottom: '1px solid rgba(217, 179, 64, 0.25)',
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+          <div className="section-heading section-heading--dark" style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <span className="label label-light" style={{ color: 'var(--clr-yellow)', letterSpacing: '0.1em' }}>
+              🛕 {language === 'en' ? 'Thirukadaiyur Amritaghateswarar Abirami Temple' : 'திருக்கடையூர் ஸ்ரீ அமிர்தகடேஸ்வரர் அபிராமி கோயில்'}
+            </span>
+            <h2 className="display-md" style={{ color: 'var(--clr-white)', marginTop: '0.5rem' }}>
+              {language === 'en' ? 'Specialist in 60th, 70th & 80th Milestone Weddings' : '60, 70 & 80ஆம் கல்யாண சடங்கு சிறப்பு புகைப்படக் கலைஞர்'}
+            </h2>
+            <p className="body-lg" style={{ color: 'rgba(250, 250, 248, 0.8)', maxWidth: '800px', margin: '1rem auto 0' }}>
+              {language === 'en'
+                ? 'Thirukadaiyur is world-famous for sacred longevity rituals. Located right in Thirukadaiyur, Mani Photography specializes in documenting sacred Kalasa Abhishekam, Mangalya Dharanam, and emotional family moments.'
+                : 'திருக்கடையூர் ஆயுள் விருத்தி சடங்குகளுக்கு உலகப் புகழ்பெற்ற புனித தலமாகும். திருக்கடையூரில் உள்ள மணி போட்டோகிராபி, கலசாபிஷேகம், மாங்கல்ய தாரணம் மற்றும் குடும்பத்தினரின் ஆசி பெற உதவும் உணர்ச்சிப்பூர்வமான தருணங்களைப் படம் பிடிப்பதில் முன்னணி நிபுணத்துவம் பெற்றுள்ளது.'}
+            </p>
+          </div>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gap: '1.5rem',
+            marginTop: '2rem'
+          }}>
+            {/* Card 1: 60th */}
+            <div style={{
+              background: 'rgba(255, 255, 255, 0.04)',
+              border: '1px solid rgba(217, 179, 64, 0.2)',
+              borderRadius: '16px',
+              padding: '1.75rem',
+              transition: 'transform 0.3s ease, border-color 0.3s ease',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <div style={{ fontSize: '2.25rem', marginBottom: '1rem' }}>👑</div>
+              <h3 style={{ fontFamily: 'var(--font-display)', color: 'var(--clr-yellow)', fontSize: '1.25rem', marginBottom: '0.5rem' }}>
+                {language === 'en' ? '60th Wedding (Shashtiapthapoorthi)' : '60ஆம் கல்யாணம் (சஷ்டியப்தபூர்த்தி)'}
+              </h3>
+              <p style={{ color: 'rgba(250, 250, 248, 0.75)', fontSize: '0.9375rem', lineHeight: 1.6 }}>
+                {language === 'en'
+                  ? 'Celebrating 60 years of life and marital harmony with 60 Kalasa Abhishekam and thaali re-tying ceremony at Thirukadaiyur.'
+                  : '60 ஆண்டுகள் ஆயுள் நிறைவு மற்றும் மாங்கல்ய பலம் பெற 60 கலச அபிஷேகம் மற்றும் இரண்டாம் முறை தாலி கட்டும் சடங்கு படப்பிடிப்பு.'}
+              </p>
+            </div>
+
+            {/* Card 2: 70th */}
+            <div style={{
+              background: 'rgba(255, 255, 255, 0.04)',
+              border: '1px solid rgba(217, 179, 64, 0.2)',
+              borderRadius: '16px',
+              padding: '1.75rem',
+              transition: 'transform 0.3s ease, border-color 0.3s ease',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <div style={{ fontSize: '2.25rem', marginBottom: '1rem' }}>🔱</div>
+              <h3 style={{ fontFamily: 'var(--font-display)', color: 'var(--clr-yellow)', fontSize: '1.25rem', marginBottom: '0.5rem' }}>
+                {language === 'en' ? '70th Birthday (Bhimaratha Shanthi)' : '70ஆம் கல்யாணம் (பீமரத சாந்தி)'}
+              </h3>
+              <p style={{ color: 'rgba(250, 250, 248, 0.75)', fontSize: '0.9375rem', lineHeight: 1.6 }}>
+                {language === 'en'
+                  ? 'Honouring 70 years of wisdom with sacred homam, temple rituals, and grand family gatherings in Thirukadaiyur.'
+                  : '70 ஆண்டுகள் ஆயுள் சாந்தி சடங்குகள், ஹோமங்கள் மற்றும் குடும்பத்தினர் பங்கேற்கும் புனித சடங்குகளைப் பதிவு செய்தல்.'}
+              </p>
+            </div>
+
+            {/* Card 3: 80th */}
+            <div style={{
+              background: 'rgba(255, 255, 255, 0.04)',
+              border: '1px solid rgba(217, 179, 64, 0.2)',
+              borderRadius: '16px',
+              padding: '1.75rem',
+              transition: 'transform 0.3s ease, border-color 0.3s ease',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <div style={{ fontSize: '2.25rem', marginBottom: '1rem' }}>🌕</div>
+              <h3 style={{ fontFamily: 'var(--font-display)', color: 'var(--clr-yellow)', fontSize: '1.25rem', marginBottom: '0.5rem' }}>
+                {language === 'en' ? '80th Birthday (Sadabishegam)' : '80ஆம் கல்யாணம் (சதாபிஷேகம்)'}
+              </h3>
+              <p style={{ color: 'rgba(250, 250, 248, 0.75)', fontSize: '0.9375rem', lineHeight: 1.6 }}>
+                {language === 'en'
+                  ? 'Celebrating 1000 full moons (Sahasra Chandra Darsanam), 80 Kalasa Abhishekam, and multi-generational family blessings.'
+                  : '1000 பிறை கண்ட அருமையான 80ஆம் ஆண்டு சதாபிஷேகம், 80 கலச அபிஷேகம் மற்றும் பேரக் குழந்தைகள் ஆசி பெறும் அரிய தருணங்கள்.'}
+              </p>
+            </div>
+
+            {/* Card 4: Kanakabhishekam & Temple */}
+            <div style={{
+              background: 'rgba(255, 255, 255, 0.04)',
+              border: '1px solid rgba(217, 179, 64, 0.2)',
+              borderRadius: '16px',
+              padding: '1.75rem',
+              transition: 'transform 0.3s ease, border-color 0.3s ease',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <div style={{ fontSize: '2.25rem', marginBottom: '1rem' }}>✨</div>
+              <h3 style={{ fontFamily: 'var(--font-display)', color: 'var(--clr-yellow)', fontSize: '1.25rem', marginBottom: '0.5rem' }}>
+                {language === 'en' ? 'Kanakabhishekam & Temple Shoots' : 'கனகாபிஷேகம் & கோயில் படப்பிடிப்பு'}
+              </h3>
+              <p style={{ color: 'rgba(250, 250, 248, 0.75)', fontSize: '0.9375rem', lineHeight: 1.6 }}>
+                {language === 'en'
+                  ? 'Specialized 90th & 100th milestone shoots, gold coin abhishekam, and Abirami Temple darshan memories.'
+                  : '90 மற்றும் 100ஆம் ஆண்டு கனகாபிஷேகம், பொன் நாணய அபிஷேகம் மற்றும் அபிராமி அம்மன் கோயில் தரிசன நினைவுகள்.'}
+              </p>
+            </div>
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
+            <Link to="/contact" className="btn btn-primary" style={{ padding: '0.875rem 2rem' }}>
+              {language === 'en' ? 'Book Thirukadaiyur 60th / 80th Shoot →' : 'திருக்கடையூர் சடங்கு படப்பிடிப்பை பதிவு செய்ய →'}
+            </Link>
           </div>
         </div>
       </section>

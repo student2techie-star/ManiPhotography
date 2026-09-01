@@ -3,7 +3,7 @@
    ============================================================ */
 
 /* ── Google Fonts ────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap');
 
 /* ── Design Tokens ───────────────────────────────────────── */
 :root {
@@ -46,9 +46,9 @@
   --clr-border-soft: rgba(45, 35, 24, 0.08);
   --clr-border-light: rgba(45, 35, 24, 0.04);
 
-  /* Typography */
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Typography - Poppins Warm Geometric + Noto Sans Tamil */
+  --font-display: 'Poppins', 'Noto Sans Tamil', 'Mukta Malar', sans-serif;
+  --font-body: 'Poppins', 'Noto Sans Tamil', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Fluid Font sizes (Responsive Mobile First) */
   --fs-xs: clamp(0.65rem, 1vw + 0.5rem, 0.6875rem);
@@ -337,7 +337,8 @@ h6 {
   font-weight: 700;
   border-radius: 50px;
   /* Pill shape */
-  min-height: 48px; /* Mobile touch target standard */
+  min-height: 48px;
+  /* Mobile touch target standard */
   transition: all var(--dur-mid) var(--ease-out);
   cursor: pointer;
   white-space: nowrap;
@@ -581,7 +582,8 @@ h6 {
   }
 
   .section {
-    padding-block: var(--space-12); /* Tighter padding on mobile */
+    padding-block: var(--space-12);
+    /* Tighter padding on mobile */
   }
 
   .grid-2,

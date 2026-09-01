@@ -15,6 +15,7 @@ export interface PortfolioItem {
 
 export const portfolioCategories = [
   { id: 'all', label: 'All' },
+  { id: 'shashti-poorthi', label: '60th & 80th Weddings' },
   { id: 'weddings', label: 'Weddings' },
   { id: 'pre-wedding', label: 'Pre-Wedding' },
   { id: 'tamil-weddings', label: 'Tamil Weddings' },
@@ -27,6 +28,12 @@ export const portfolioCategories = [
 
 // Replace image paths with real photos when ready
 export const portfolioItems: PortfolioItem[] = [
+  // ── 60th & 80th Weddings ─────────────────────────────────
+  { id: 'sp-01', category: 'shashti-poorthi', title: '60th Wedding (Shashtiapthapoorthi)', image: `${import.meta.env.BASE_URL}images/tamil-weddings/tamil-01.jpg`, alt: '60th wedding ceremony Thirukadaiyur', featured: true },
+  { id: 'sp-02', category: 'shashti-poorthi', title: '80th Wedding (Sathabishegam)', image: `${import.meta.env.BASE_URL}images/tamil-weddings/tamil-02.jpg`, alt: '80th wedding Sathabishegam ritual', featured: true },
+  { id: 'sp-03', category: 'shashti-poorthi', title: 'Kalasa Abhishekam Blessings', image: `${import.meta.env.BASE_URL}images/tamil-weddings/tamil-03.jpg`, alt: 'Kalasa abhishekam Thirukadaiyur temple' },
+  { id: 'sp-04', category: 'shashti-poorthi', title: 'Grandparents & Family', image: `${import.meta.env.BASE_URL}images/family/family-01.jpg`, alt: 'Multi-generational family portrait' },
+
   // ── Weddings ────────────────────────────────────────────
   { id: 'w-01', category: 'weddings', title: 'Tamil Wedding Ceremony', image: `${import.meta.env.BASE_URL}images/weddings/wedding-01.jpg`, alt: 'Tamil wedding ceremony photography', featured: true },
   { id: 'w-02', category: 'weddings', title: 'Muhurtham Moment', image: `${import.meta.env.BASE_URL}images/weddings/wedding-02.jpg`, alt: 'Muhurtham ceremony candid photography' },

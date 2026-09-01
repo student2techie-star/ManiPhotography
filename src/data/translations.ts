@@ -207,6 +207,7 @@ export const translations = {
     // ── Portfolio Categories Data ───────────────────────────
     categories: {
       all: 'All',
+      'shashti-poorthi': '60th & 80th Weddings',
       weddings: 'Weddings',
       'pre-wedding': 'Pre-Wedding',
       'tamil-weddings': 'Tamil Weddings',
@@ -220,6 +221,20 @@ export const translations = {
 
     // ── Services Content Data ───────────────────────────────
     serviceItems: {
+      'shashti-poorthi': {
+        title: '60th & 80th Wedding Speciality (Shashtiapthapoorthi & Sathabishegam)',
+        shortDesc: 'Thirukadaiyur specialists for 60th (Shashtiapthapoorthi) & 80th (Sathabishegam) milestone weddings.',
+        fullDesc: 'Thirukadaiyur is world-famous for divine milestone ceremonies — Shashtiapthapoorthi (60th Wedding), Bheemaratha Shanthi (70th Wedding), Sathabishegam (80th Wedding) and Kanakabhishekam. Based directly in Thirukadaiyur, we specialize in documenting the sacred Kalasa Abhishekam, Mangalya Dharanam, temple blessings, and emotional family moments.',
+        includes: [
+          'Thirukadaiyur Temple & Mandapam Coverage',
+          'Kalasa Abhishekam ritual photography',
+          'Mangalya Dharanam (re-tying of thaali) coverage',
+          'Multi-generational family portraits',
+          'Grandchildren & children blessing portraits',
+          'High-resolution edited gallery',
+          'Cinematic video recording optional',
+        ],
+      },
       'wedding-photography': {
         title: 'Wedding Photography',
         shortDesc: 'From the first ritual to the final celebration, every emotion captured naturally.',
@@ -551,6 +566,7 @@ export const translations = {
     // ── Portfolio Categories Data ───────────────────────────
     categories: {
       all: 'அனைத்தும்',
+      'shashti-poorthi': '60 & 80ஆம் கல்யாணம்',
       weddings: 'திருமணங்கள்',
       'pre-wedding': 'Pre-Wedding',
       'tamil-weddings': 'தமிழ் திருமணங்கள்',
@@ -564,6 +580,20 @@ export const translations = {
 
     // ── Services Content Data ───────────────────────────────
     serviceItems: {
+      'shashti-poorthi': {
+        title: '60, 70 & 80ஆம் கல்யாண சிறப்பு நிபுணர் (சஷ்டியப்தபூர்த்தி, பீமரதசாந்தி & சதாபிஷேகம்)',
+        shortDesc: 'திருக்கடையூர் அமிர்தகடேஸ்வரர்-அபிராமி கோயிலில் 60, 70 மற்றும் 80ஆம் கல்யாண சடங்குகளைப் படம் பிடிப்பதில் முன்னணி நிபுணர்.',
+        fullDesc: 'திருக்கடையூர் ஸ்ரீ அமிர்தகடேஸ்வரர் அபிராமி அம்மன் திருக்கோயில் 60ஆம் கல்யாணம் (சஷ்டியப்தபூர்த்தி), 70ஆம் கல்யாணம் (பீமரத சாந்தி), 80ஆம் கல்யாணம் (சதாபிஷேகம்) மற்றும் கனகாபிஷேகம் ஆகிய ஆயுள் விருத்தி சடங்குகளுக்கு உலகப் புகழ்பெற்ற தலமாகும். திருக்கடையூரில் அமைந்திருக்கும் மணி போட்டோகிராபி, கலசாபிஷேகம், மாங்கல்ய தாரணம் (இரண்டாம் முறை தாலி கட்டுதல்), அபிராமி அம்மன் தரிசன நினைவுகள் மற்றும் பேரக் குழந்தைகள் ஆசி பெறும் உணர்ச்சிப்பூர்வமான தருணங்களைப் படம் பிடிப்பதில் முன்னணி நிபுணத்துவம் பெற்றுள்ளது.',
+        includes: [
+          'திருக்கடையூர் கோயில் மற்றும் மண்டப படப்பிடிப்பு',
+          'புனித கலசாபிஷேக சடங்கு புகைப்படம்',
+          'மாங்கல்ய தாரணம் (தாலி கட்டுதல்) சிறப்பு படங்கள்',
+          'தலைமுறை கடந்த குடும்ப புகைப்படங்கள் (Multi-Generational)',
+          'பேரக் குழந்தைகள் & மக்கள் ஆசி பெறும் தருணங்கள்',
+          'உயர்தர எடிட் செய்யப்பட்ட புகைப்பட கேலரி',
+          'சினிமா பாணி வீடியோ பதிவு (தேவைப்பட்டால்)',
+        ],
+      },
       'wedding-photography': {
         title: 'திருமண புகைப்படம் (Wedding Photography)',
         shortDesc: 'முதல் சடங்கு முதல் இறுதி கொண்டாட்டம் வரை, ஒவ்வொரு உணர்ச்சியும் இயல்பாகப் படம் பிடிக்கப்படுகிறது.',

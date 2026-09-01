@@ -27,25 +27,27 @@ export default function Contact() {
   const contactT = t.contact;
 
   const eventTypes = language === 'en' ? [
-    'Wedding',
-    'Pre-Wedding',
-    'Engagement',
-    'Tamil Traditional Function',
-    'Temple Shoot',
-    'Baby Shower',
-    'House Warming',
-    'Birthday',
+    '60th Marriage (Shashtiapthapoorthi)',
+    '70th Birthday (Bhimaratha Shanthi)',
+    '80th Birthday (Sadabishegam)',
+    'Wedding Photography',
+    'Pre-Wedding Shoot',
+    'Engagement Ceremony',
+    'Thirukadaiyur Temple Shoot',
+    'Baby Shower (Seemantham)',
+    'House Warming (Grihapravesam)',
     'Family Function',
-    'Other',
+    'Other Event',
   ] : [
-    'திருமணம் (Wedding)',
+    '60ஆம் கல்யாணம் (சஷ்டியப்தபூர்த்தி)',
+    '70ஆம் கல்யாணம் (பீமரத சாந்தி)',
+    '80ஆம் கல்யாணம் (சதாபிஷேகம்)',
+    'திருமணம் (Wedding Photography)',
     'திருமணத்திற்கு முந்தைய படம் (Pre-Wedding)',
     'நிச்சயதார்த்தம் (Engagement)',
-    'தமிழ் பாரம்பரிய சடங்கு (Tamil Traditional)',
-    'கோயில் படப்பிடிப்பு (Temple Shoot)',
-    'வளைகாப்பு (Baby Shower)',
-    'கிரகப்பிரவேசம் (House Warming)',
-    'பிறந்த நாள் (Birthday)',
+    'திருக்கடையூர் கோயில் படப்பிடிப்பு',
+    'வளைகாப்பு (Seemantham)',
+    'கிரகப்பிரவேசம் (Grihapravesam)',
     'குடும்ப விழா (Family Function)',
     'மற்றவை (Other)',
   ];
@@ -154,7 +156,9 @@ export default function Contact() {
                   <MapPin size={18} className="contact-info__icon" aria-hidden="true" />
                   <div>
                     <span className="contact-info__label">{contactT.locationLabel}</span>
-                    <span className="contact-info__value">{t.common.location}</span>
+                    <a href={siteConfig.mapsUrl} target="_blank" rel="noopener noreferrer" className="contact-info__value" style={{ textDecoration: 'underline' }}>
+                      {t.common.location}
+                    </a>
                   </div>
                 </li>
               </ul>
@@ -281,14 +285,14 @@ export default function Contact() {
       {/* ── MAP SECTION ─────────────────────────────────── */}
       <section className="section contact-map-section" style={{ padding: 0, marginTop: 'var(--space-8)' }}>
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15655.485078500662!2d79.8055!3d11.0805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5538e1b12d5d85%3A0xc34a5d8b80b2a3a1!2sThirukadaiyur%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+          src={siteConfig.googleMapsEmbed}
           width="100%"
           height="450"
           style={{ border: 0, display: 'block' }}
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Mani Photography Studio Location"
+          title="Mani Thirukkadaiyur Photography Studio Location"
         />
       </section>
     </main>

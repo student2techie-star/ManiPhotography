@@ -90,6 +90,32 @@ export default function About() {
                   {aboutT.serviceAreaText}
                 </p>
               </div>
+
+              {/* Thirukadaiyur Milestone Speciality Box */}
+              <div style={{
+                marginTop: '1.75rem',
+                background: 'linear-gradient(135deg, rgba(184, 134, 11, 0.08) 0%, rgba(184, 134, 11, 0.15) 100%)',
+                border: '1px solid rgba(184, 134, 11, 0.3)',
+                borderRadius: '12px',
+                padding: '1.25rem 1.5rem'
+              }}>
+                <span style={{
+                  display: 'inline-block',
+                  color: 'var(--clr-yellow-deep)',
+                  fontWeight: 600,
+                  fontSize: '0.8125rem',
+                  letterSpacing: '0.05em',
+                  textTransform: 'uppercase',
+                  marginBottom: '0.35rem'
+                }}>
+                  🛕 {language === 'en' ? 'Thirukadaiyur Temple Ritual Specialist' : 'திருக்கடையூர் கோயில் சடங்கு சிறப்பு நிபுணர்'}
+                </span>
+                <p className="body-sm" style={{ color: 'var(--clr-text-dark)', fontWeight: 500, margin: 0 }}>
+                  {language === 'en'
+                    ? 'Specializing in 60th Birthday / Marriage (Shashtiapthapoorthi), 70th Birthday (Bhimaratha Shanthi), 80th Birthday (Sadabishegam) and Kanakabhishekam photography at Amritaghateswarar Abirami Temple.'
+                    : 'திருக்கடையூர் ஸ்ரீ அமிர்தகடேஸ்வரர் அபிராமி திருக்கோயிலில் 60ஆம் கல்யாணம் (சஷ்டியப்தபூர்த்தி), 70ஆம் கல்யாணம் (பீமரத சாந்தி), 80ஆம் கல்யாணம் (சதாபிஷேகம்) மற்றும் கனகாபிஷேக சடங்குகளைப் படம் பிடிப்பதில் முன்னணி அனுபவம்.'}
+                </p>
+              </div>
             </div>
           </div>
         </div>

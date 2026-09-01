@@ -16,6 +16,26 @@ export interface ServiceItem {
 
 export const services: ServiceItem[] = [
   {
+    id: 'shashti-poorthi',
+    slug: 'shashti-poorthi',
+    title: '60th & 80th Wedding Photography (Sashtiapthapoorthi & Sathabishegam)',
+    shortDesc: 'Thirukadaiyur specialists for 60th (Shashtiapthapoorthi) and 80th (Sathabishegam) milestone weddings.',
+    fullDesc:
+      'Thirukadaiyur is world-renowned for sacred milestone wedding ceremonies — Shashtiapthapoorthi (60th Wedding), Bheemaratha Shanthi (70th Wedding), Sathabishegam (80th Wedding) and Kanakabhishekam. Based right in Thirukadaiyur, we are specialists in documenting these divine rituals, sacred kalasa abhishekam, re-tying of the thaali, family blessings and emotional multi-generational moments.',
+    image: `${import.meta.env.BASE_URL}images/tamil-weddings/tamil-01.jpg`,
+    alt: '60th and 80th wedding photography Thirukadaiyur',
+    icon: '👑',
+    includes: [
+      'Thirukadaiyur Temple & Mandapam Coverage',
+      'Kalasa Abhishekam ritual photography',
+      'Mangalya Dharanam (re-tying of thaali) coverage',
+      'Multi-generational family portraits',
+      'Grandchildren & children blessing portraits',
+      'High-resolution edited gallery',
+      'Cinematic video recording optional',
+    ],
+  },
+  {
     id: 'wedding-photography',
     slug: 'wedding-photography',
     title: 'Wedding Photography',

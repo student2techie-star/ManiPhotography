@@ -106,10 +106,10 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <span className="footer__contact-link">
+              <a href={siteConfig.mapsUrl} target="_blank" rel="noopener noreferrer" className="footer__contact-link">
                 <MapPin size={14} aria-hidden="true" />
                 <span>{t.common.location}</span>
-              </span>
+              </a>
             </li>
           </ul>
           <Link to="/contact" className="btn btn-primary footer__cta">{t.common.bookShoot}</Link>
