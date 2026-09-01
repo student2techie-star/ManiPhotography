@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { X, Send, Sparkles } from 'lucide-react';
+import { X, Send } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 import { siteConfig } from '../../data/siteConfig';
 import './Chatbot.css';
@@ -9,6 +9,23 @@ interface Message {
   sender: 'bot' | 'user';
   text: string;
   options?: { label: string; action: string }[];
+}
+
+function RobotCameraIcon({ size = 24 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="12" cy="2" r="1.5" fill="#FFD700" />
+      <line x1="12" y1="3.5" x2="12" y2="6" stroke="#FFD700" strokeWidth="1.5" strokeLinecap="round" />
+      <rect x="3.5" y="6" width="17" height="11" rx="3" fill="#1C1917" stroke="#FFD700" strokeWidth="1.5" />
+      <circle cx="8" cy="11.5" r="2.2" fill="#D9B340" />
+      <circle cx="8" cy="11.5" r="1" fill="#1C1917" />
+      <circle cx="16" cy="11.5" r="2.2" fill="#22C55E" />
+      <circle cx="16" cy="11.5" r="1" fill="#1C1917" />
+      <rect x="10.5" y="7" width="3" height="1.5" rx="0.5" fill="#FFD700" />
+      <path d="M6 17.5h12a1 1 0 011 1v2a1 1 0 01-1 1H6a1 1 0 01-1-1v-2a1 1 0 011-1z" fill="#B8860B" stroke="#FFD700" strokeWidth="0.8" />
+      <circle cx="12" cy="19.5" r="1" fill="#FFFFFF" />
+    </svg>
+  );
 }
 
 export default function Chatbot() {
@@ -25,8 +42,8 @@ export default function Chatbot() {
       id: 'welcome',
       sender: 'bot',
       text: language === 'en'
-        ? 'Welcome to Mani Photography Thirukadaiyur! 🛕 How can we assist with your photography booking today?'
-        : 'திருக்கடையூர் மணி போட்டோகிராஃபிக்கு நல்வரவு! 🛕 உங்கள் சடங்கு போட்டோகிராபி பற்றி எமிதி கேள்விகள் உள்ளதா?',
+        ? 'Welcome to Mani Photography Thirukadaiyur! 🤖 Camera Robot Assistant is here. How can we assist your booking today?'
+        : 'திருக்கடையூர் மணி போட்டோகிராஃபி கேமரா ரோபோ உதவியாளருக்கு நல்வரவு! 🤖 உங்களுக்கு எப்படி உதவ முடியும்?',
       options: [
         {
           label: language === 'en' ? '🛕 60th & 80th Weddings' : '🛕 60 & 80ஆம் கல்யாணம்',
@@ -194,11 +211,11 @@ export default function Chatbot() {
         type="button"
         className={`chatbot-trigger ${isOpen ? 'chatbot-trigger--active' : ''}`}
         onClick={() => setIsOpen(!isOpen)}
-        aria-label="Open Thirukadaiyur Assistant Chat"
-        title="Mani Photography AI Assistant"
+        aria-label="Open Camera Robot Assistant Chat"
+        title="Camera Robot AI Assistant"
       >
         <span className="chatbot-trigger__badge" aria-hidden="true" />
-        {isOpen ? <X size={22} /> : <Sparkles size={22} />}
+        {isOpen ? <X size={22} /> : <RobotCameraIcon size={26} />}
       </button>
 
       {/* Chatbot Window */}
@@ -207,9 +224,11 @@ export default function Chatbot() {
           {/* Header */}
           <div className="chatbot-header">
             <div className="chatbot-header__title">
-              <div className="chatbot-header__avatar">🛕</div>
+              <div className="chatbot-header__avatar">
+                <RobotCameraIcon size={22} />
+              </div>
               <div>
-                <span className="chatbot-header__name">Mani Photography AI</span>
+                <span className="chatbot-header__name">Camera Robot AI</span>
                 <span className="chatbot-header__status">
                   <span className="chatbot-header__dot" /> Thirukadaiyur Assistant
                 </span>
