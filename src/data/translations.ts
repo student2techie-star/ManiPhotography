@@ -193,6 +193,31 @@ export const translations = {
       successSub: 'In the meantime, feel free to browse our portfolio for inspiration.',
     },
 
+    // ── FAQ Section (SEO Ranking) ─────────────────────────
+    faq: {
+      label: 'Frequently Asked Questions',
+      title: 'Thirukadaiyur Photography FAQs',
+      sub: 'Everything you need to know about booking 60th (Shashtiapthapoorthi), 70th (Bhimaratha Shanthi) & 80th (Sadabishegam) photography in Thirukadaiyur.',
+      items: [
+        {
+          q: 'Why is Thirukadaiyur famous for 60th and 80th birthday weddings?',
+          a: 'Thirukadaiyur Amritaghateswarar Abirami Temple is divine and world-famous for granting health, longevity, and marital bliss. Couples celebrate Shashtiapthapoorthi (60th Marriage), Bhimaratha Shanthi (70th Birthday), and Sadabishegam (80th Birthday - 1000 full moons) here.',
+        },
+        {
+          q: 'How do I book Mani Photography for a Thirukadaiyur temple ceremony?',
+          a: 'You can call or WhatsApp us directly at +91 93602 93815 or submit an enquiry on our website. Located right in Thirukadaiyur, we handle complete temple & mandapam photography.',
+        },
+        {
+          q: 'What is included in the 60th & 80th wedding photography package?',
+          a: 'Our packages include complete coverage of Kalasa Abhishekam, Mangalya Dharanam (thaali re-tying), priest rituals, mandapam celebrations, multi-generational family group photos, and high-resolution edited photo galleries with optional cinematic video.',
+        },
+        {
+          q: 'Do you provide photography services across Mayiladuthurai and Tamil Nadu?',
+          a: 'Yes! While based directly in Thirukadaiyur, we travel for weddings and family functions across Mayiladuthurai, Kumbakonam, Tanjore, Chennai, Puducherry and all over Tamil Nadu.',
+        },
+      ],
+    },
+
     // ── Portfolio & Categories ──────────────────────────────
     portfolio: {
       heroLabel: 'Our Work',
@@ -550,6 +575,31 @@ export const translations = {
       successTitle: 'கோரிக்கை அனுப்பப்பட்டது!',
       successMsg: 'தொடர்பு கொண்டதற்கு நன்றி. உங்கள் விவரங்களை மதிப்பாய்வு செய்து விரைவில் உங்களைத் தொடர்பு கொள்வோம்.',
       successSub: 'இதற்கிடையில், எங்கள் போர்ட்ஃபோலியோவை உலாவிப் பார்க்கலாம்.',
+    },
+
+    // ── FAQ Section (SEO Ranking) ─────────────────────────
+    faq: {
+      label: 'அடிக்கடி கேட்கப்படும் கேள்விகள்',
+      title: 'திருக்கடையூர் போட்டோகிராபி தகவல்கள்',
+      sub: 'திருக்கடையூரில் 60, 70 மற்றும் 80ஆம் கல்யாண சடங்கு படப்பிடிப்பு பற்றிய சந்தேகங்கள் & பதில்கள்.',
+      items: [
+        {
+          q: 'திருக்கடையூர் 60 மற்றும் 80ஆம் கல்யாண சடங்குகளுக்கு ஏன் புகழ்பெற்றது?',
+          a: 'திருக்கடையூர் ஸ்ரீ அமிர்தகடேஸ்வரர் அபிராமி திருக்கோயில் ஆயுள் விருத்திக்கும் மாங்கல்ய பலத்திற்கும் புகழ்பெற்ற தலமாகும். 60ஆம் கல்யாணம் (சஷ்டியப்தபூர்த்தி), 70ஆம் கல்யாணம் (பீமரத சாந்தி) மற்றும் 80ஆம் கல்யாணம் (சதாபிஷேகம்) சடங்குகள் இங்கு சிறப்பாக நடைபெறுகின்றன.',
+        },
+        {
+          q: 'மணி போட்டோகிராபியை படப்பிடிப்பிற்கு எவ்வாறு பதிவு செய்வது?',
+          a: '+91 93602 93815 என்ற எண்ணில் நேரடியாக எங்களை அழைக்கலாம் அல்லது வாட்ஸ்அப்பில் தொடர்பு கொள்ளலாம். திருக்கடையூரில் அமைந்துள்ள நாங்கள் கோயில் மற்றும் மண்டப படப்பிடிப்புகளை சிறப்பாக செய்து தருகிறோம்.',
+        },
+        {
+          q: '60 & 80ஆம் கல்யாண படப்பிடிப்பில் என்னென்ன சேர்க்கப்பட்டுள்ளன?',
+          a: 'கலசாபிஷேகம், மாங்கல்ய தாரணம் (தாலி கட்டுதல்), கோயில் தரிசனம், பேரக் குழந்தைகள் ஆசி பெறும் தலைமுறை புகைப்படங்கள் மற்றும் உயர்தர எடிட் செய்யப்பட்ட ஆல்பம் படங்கள் இதில் அடங்கும்.',
+        },
+        {
+          q: 'தமிழ்நாடு முழுவதும் படப்பிடிப்பு சேவை வழங்குகிறீர்களா?',
+          a: 'ஆம்! திருக்கடையூர் மட்டுமின்றி மயிலாடுதுறை, கும்பகோணம், தஞ்சாவூர், சென்னை, புதுச்சேரி மற்றும் தமிழ்நாடு முழுவதும் சேவை வழங்குகிறோம்.',
+        },
+      ],
     },
 
     // ── Portfolio & Categories ──────────────────────────────

@@ -235,13 +235,14 @@
 
 .mobile-menu__link {
   font-family: var(--font-display);
-  font-size: var(--fs-lg);
-  font-weight: 500;
+  font-size: 0.95rem;
+  font-weight: 600;
   color: var(--clr-text-mid);
   transition: color var(--dur-fast);
   opacity: 0;
   transform: translateY(12px);
   letter-spacing: 0.02em;
+  padding: 4px 0;
 }
 
 .mobile-menu--open .mobile-menu__link {
@@ -406,6 +407,6 @@
 
 @media (max-width: 480px) {
   .mobile-menu__link {
-    font-size: var(--fs-2xl);
+    font-size: 0.9rem !important;
   }
 }

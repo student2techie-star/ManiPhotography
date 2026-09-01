@@ -7,6 +7,7 @@ import { portfolioItems } from '../../data/portfolio';
 import { services } from '../../data/services';
 import SectionHeading from '../../components/SectionHeading/SectionHeading';
 import PortfolioGrid from '../../components/PortfolioGrid/PortfolioGrid';
+import FaqSection from '../../components/FaqSection/FaqSection';
 import { useLanguage } from '../../context/LanguageContext';
 import { translations } from '../../data/translations';
 import './Home.css';
@@ -104,15 +105,16 @@ export default function Home() {
               background: 'linear-gradient(135deg, #D9B340 0%, #B8860B 100%)',
               border: '1px solid #FFD700',
               color: '#1A130B',
-              padding: '7px 16px',
+              padding: '6px 14px',
               borderRadius: '24px',
-              fontSize: '0.875rem',
+              fontSize: 'clamp(0.72rem, 2.5vw, 0.85rem)',
               fontWeight: 700,
               letterSpacing: '0.02em',
               boxShadow: '0 4px 16px rgba(0, 0, 0, 0.35)',
-              marginTop: '6px'
+              marginTop: '6px',
+              maxWidth: '100%'
             }}>
-              👑 {language === 'en' ? 'Thirukadaiyur 60th, 70th & 80th Wedding Specialist (Shashtiapthapoorthi & Sadabishegam)' : 'திருக்கடையூர் 60, 70 & 80ஆம் கல்யாண சிறப்பு நிபுணர் (சஷ்டியப்தபூர்த்தி & சதாபிஷேகம்)'}
+              👑 {language === 'en' ? 'Thirukadaiyur 60th, 70th & 80th Wedding Photography Specialist (Shashtiapthapoorthi & Sadabishegam)' : 'திருக்கடையூர் 60, 70 & 80ஆம் கல்யாண சிறப்பு புகைப்படக் கலைஞர் (சஷ்டியப்தபூர்த்தி & சதாபிஷேகம்)'}
             </span>
           </div>
           <h1 className="hero__headline display-xl">
@@ -653,8 +655,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── FAQ SECTION (SEO RANKING) ──────────────────── */}
+      <FaqSection />
+
       {/* ── CTA SECTION ─────────────────────────────────── */}
-      <section className="cta-section">
+      <section className="section cta-section">
         <div className="cta-section__bg">
           <img
             src={`${import.meta.env.BASE_URL}images/temple/temple-01.jpg`}

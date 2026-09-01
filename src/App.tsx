@@ -3,6 +3,7 @@ import { LanguageProvider } from './context/LanguageContext';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton';
+import Chatbot from './components/Chatbot/Chatbot';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home/Home';
 import Portfolio from './pages/Portfolio/Portfolio';
@@ -30,6 +31,7 @@ function App() {
       </Routes>
       <Footer />
       <WhatsAppButton />
+      <Chatbot />
     </LanguageProvider>
   );
 }
