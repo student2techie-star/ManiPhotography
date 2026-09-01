@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://student2techie-star.github.io/ManiPhotography/sitemap.xml
