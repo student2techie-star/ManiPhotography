@@ -63,20 +63,26 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Actions: Language Switcher (Desktop) + Hamburger */}
+          {/* Actions: Segmented Language Switcher (Desktop) + Hamburger */}
           <div className="navbar__actions">
-            <button
-              type="button"
-              className="lang-switcher lang-switcher--desktop"
-              onClick={toggleLanguage}
-              title={language === 'en' ? 'Switch to Tamil (தமிழ்)' : 'Switch to English'}
-              aria-label="Toggle language between English and Tamil"
-            >
-              <Globe size={15} className="lang-switcher__icon" aria-hidden="true" />
-              <span className={`lang-switcher__option ${language === 'en' ? 'lang-switcher__option--active' : ''}`}>EN</span>
-              <span className="lang-switcher__divider">|</span>
-              <span className={`lang-switcher__option ${language === 'ta' ? 'lang-switcher__option--active' : ''}`}>தமிழ்</span>
-            </button>
+            <div className="segmented-lang-switch segmented-lang-switch--desktop" role="group" aria-label="Language selection">
+              <button
+                type="button"
+                className={`segmented-lang-switch__btn ${language === 'en' ? 'segmented-lang-switch__btn--active' : ''}`}
+                onClick={() => language !== 'en' && toggleLanguage()}
+                aria-label="Switch to English"
+              >
+                EN
+              </button>
+              <button
+                type="button"
+                className={`segmented-lang-switch__btn ${language === 'ta' ? 'segmented-lang-switch__btn--active' : ''}`}
+                onClick={() => language !== 'ta' && toggleLanguage()}
+                aria-label="Switch to Tamil"
+              >
+                தமிழ்
+              </button>
+            </div>
 
             <button
               className="navbar__hamburger"
@@ -127,7 +133,7 @@ export default function Navbar() {
             </NavLink>
           ))}
 
-          {/* Mobile Language Switcher */}
+          {/* Mobile Language Switcher (Segmented Switch Pill) */}
           <div
             className="mobile-menu__lang-box"
             style={{ '--i': navLinks.length } as React.CSSProperties}
@@ -135,16 +141,22 @@ export default function Navbar() {
             <span className="mobile-menu__lang-title">
               <Globe size={15} /> Language / மொழி
             </span>
-            <button
-              type="button"
-              className="lang-switcher lang-switcher--mobile-pill"
-              onClick={toggleLanguage}
-              aria-label="Toggle language"
-            >
-              <span className={`lang-switcher__option ${language === 'en' ? 'lang-switcher__option--active' : ''}`}>EN</span>
-              <span className="lang-switcher__divider">|</span>
-              <span className={`lang-switcher__option ${language === 'ta' ? 'lang-switcher__option--active' : ''}`}>தமிழ்</span>
-            </button>
+            <div className="segmented-lang-switch segmented-lang-switch--full" role="group" aria-label="Mobile language selection">
+              <button
+                type="button"
+                className={`segmented-lang-switch__btn ${language === 'en' ? 'segmented-lang-switch__btn--active' : ''}`}
+                onClick={() => language !== 'en' && toggleLanguage()}
+              >
+                English
+              </button>
+              <button
+                type="button"
+                className={`segmented-lang-switch__btn ${language === 'ta' ? 'segmented-lang-switch__btn--active' : ''}`}
+                onClick={() => language !== 'ta' && toggleLanguage()}
+              >
+                தமிழ்
+              </button>
+            </div>
           </div>
 
           <Link to="/contact" className="btn btn-primary mobile-menu__cta" style={{ '--i': navLinks.length + 1 } as React.CSSProperties}>

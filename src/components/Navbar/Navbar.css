@@ -289,49 +289,56 @@
   to { opacity: 1; }
 }
 
-/* ── Language Switcher ────────────────────────────────────── */
-.lang-switcher {
+/* ── Segmented Language Switcher Pill ─────────────────────── */
+.segmented-lang-switch {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background: rgba(212, 175, 55, 0.08);
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  padding: 6px 12px;
-  border-radius: var(--radius-full, 999px);
-  cursor: pointer;
-  color: var(--clr-text-dark);
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 600;
-  transition: all var(--dur-fast) var(--ease-out);
+  background: rgba(45, 35, 24, 0.05);
+  border: 1px solid var(--clr-border-soft);
+  padding: 3px;
+  border-radius: 999px;
+  position: relative;
   user-select: none;
 }
 
-.lang-switcher:hover {
-  background: rgba(212, 175, 55, 0.18);
-  border-color: var(--clr-accent);
-  transform: translateY(-1px);
-  box-shadow: 0 2px 10px rgba(212, 175, 55, 0.15);
-}
-
-.lang-switcher__icon {
-  color: var(--clr-accent-dark);
-  flex-shrink: 0;
-}
-
-.lang-switcher__option {
+.segmented-lang-switch__btn {
+  padding: 5px 14px;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  border-radius: 20px;
   color: var(--clr-text-muted);
-  transition: color var(--dur-fast);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  line-height: 1.2;
 }
 
-.lang-switcher__option--active {
-  color: var(--clr-accent-dark);
+.segmented-lang-switch__btn:hover {
+  color: var(--clr-text-dark);
+}
+
+.segmented-lang-switch__btn--active {
+  background: linear-gradient(135deg, #D9B340 0%, #B8860B 100%);
+  color: #1A130B !important;
   font-weight: 700;
+  box-shadow: 0 2px 8px rgba(184, 134, 11, 0.3);
 }
 
-.lang-switcher__divider {
-  color: var(--clr-border);
-  opacity: 0.7;
+.segmented-lang-switch--full {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background: #FFFFFF;
+  border-color: var(--clr-border);
+}
+
+.segmented-lang-switch--full .segmented-lang-switch__btn {
+  flex: 1;
+  text-align: center;
+  padding: 8px 12px;
+  font-size: 0.85rem;
 }
 
 /* ── Mobile Menu Language Box ─────────────────────────────── */
@@ -391,6 +398,7 @@
 }
 
 @media (max-width: 768px) {
+  .segmented-lang-switch--desktop,
   .lang-switcher--desktop {
     display: none !important;
   }
