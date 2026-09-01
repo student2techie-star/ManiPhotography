@@ -91,7 +91,7 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu (Half Screen Side Drawer with Close Icon) */}
       <div
         id="mobile-menu"
         className={`mobile-menu ${menuOpen ? 'mobile-menu--open' : ''}`}
@@ -99,6 +99,21 @@ export default function Navbar() {
         aria-label="Mobile navigation"
         aria-modal="true"
       >
+        <div className="mobile-menu__header">
+          <div className="mobile-menu__brand">
+            <LogoMark className="mobile-menu__brand-icon" />
+            <span className="mobile-menu__brand-text">Mani Photography</span>
+          </div>
+          <button
+            type="button"
+            className="mobile-menu__close-btn"
+            onClick={() => setMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            <X size={22} />
+          </button>
+        </div>
+
         <nav className="mobile-menu__nav" aria-label="Mobile navigation links">
           {navLinks.map((link, i) => (
             <NavLink
@@ -112,13 +127,13 @@ export default function Navbar() {
             </NavLink>
           ))}
 
-          {/* Mobile Language Switcher (Visible inside Hamburger Menu) */}
+          {/* Mobile Language Switcher */}
           <div
             className="mobile-menu__lang-box"
             style={{ '--i': navLinks.length } as React.CSSProperties}
           >
             <span className="mobile-menu__lang-title">
-              <Globe size={16} /> Language / மொழி
+              <Globe size={15} /> Language / மொழி
             </span>
             <button
               type="button"
@@ -126,7 +141,7 @@ export default function Navbar() {
               onClick={toggleLanguage}
               aria-label="Toggle language"
             >
-              <span className={`lang-switcher__option ${language === 'en' ? 'lang-switcher__option--active' : ''}`}>EN (English)</span>
+              <span className={`lang-switcher__option ${language === 'en' ? 'lang-switcher__option--active' : ''}`}>EN</span>
               <span className="lang-switcher__divider">|</span>
               <span className={`lang-switcher__option ${language === 'ta' ? 'lang-switcher__option--active' : ''}`}>தமிழ்</span>
             </button>
