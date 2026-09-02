@@ -215,7 +215,7 @@ export default function Chatbot() {
         title="Camera Robot AI Assistant"
       >
         <span className="chatbot-trigger__badge" aria-hidden="true" />
-        {isOpen ? <X size={22} /> : <RobotCameraIcon size={26} />}
+        {isOpen ? <X size={18} /> : <RobotCameraIcon size={22} />}
       </button>
 
       {/* Chatbot Window */}
