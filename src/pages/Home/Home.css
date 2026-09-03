@@ -40,8 +40,7 @@
   object-fit: cover;
   object-position: center;
   z-index: 1;
-  transform: scale(1.04);
-  animation: hero-zoom 14s ease-out forwards;
+  transform: none;
 }
 
 @keyframes hero-zoom {

@@ -82,7 +82,7 @@ export default function Home() {
         <div className="hero__bg">
           <div className="hero__bg-fallback" aria-hidden="true" />
           <video
-            src={`${import.meta.env.BASE_URL}videos/thirukadaiyur-showcase.mp4`}
+            src={`${import.meta.env.BASE_URL}images/hero-video-stabilized.mp4`}
             className="hero__bg-video"
             autoPlay
             loop
@@ -221,7 +221,7 @@ export default function Home() {
           overflow: 'hidden'
         }}>
           <video
-            src={`${import.meta.env.BASE_URL}videos/thirukadaiyur-showcase.mp4`}
+            src={`${import.meta.env.BASE_URL}videos/thirukadaiyur-stabilized.mp4`}
             autoPlay
             loop
             muted
