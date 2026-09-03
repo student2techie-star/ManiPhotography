@@ -114,6 +114,10 @@ export const translations = {
       ctaLabel: 'Start Your Story',
       ctaTitle: "Let's Create Something Beautiful.",
       ctaDesc: 'Every moment is worth remembering. Let us help you preserve yours.',
+
+      videoShowcaseLabel: 'Featured Film',
+      videoShowcaseTitle: 'Cinematic Thirukadaiyur & Ritual Highlights',
+      videoShowcaseSub: 'Watch our high-definition highlight reel showcasing sacred temple moments, traditional 60th/80th rituals, and emotional family blessings in Thirukadaiyur.',
     },
 
     // ── About Page ──────────────────────────────────────────
@@ -498,6 +502,10 @@ export const translations = {
       ctaLabel: 'உங்கள் கதையைத் தொடங்குங்கள்',
       ctaTitle: 'அழகான ஒன்றை உருவாக்குவோம்.',
       ctaDesc: 'ஒவ்வொரு தருணமும் நினைவில் கொள்ளத்தக்கது. அதை அழகாகப் பாதுகாக்க நாங்கள் உதவுகிறோம்.',
+
+      videoShowcaseLabel: 'சிறப்பு வீடியோ',
+      videoShowcaseTitle: 'திருக்கடையூர் கோயில் சடங்குகள் வீடியோ பதிவு',
+      videoShowcaseSub: 'திருக்கடையூர் கோயில் தரிசனம், 60/80ஆம் கல்யாண சடங்குகள் மற்றும் குடும்பத்தினரின் மகிழ்ச்சியான தருணங்களின் வீடியோ பதிவைக் கண்டு மகிழுங்கள்.',
     },
 
     // ── About Page ──────────────────────────────────────────

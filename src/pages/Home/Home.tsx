@@ -323,6 +323,75 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── CINEMATIC VIDEO SHOWCASE ───────────────────── */}
+      <section className="section section--dark video-showcase-section" style={{
+        background: 'linear-gradient(180deg, #120E0B 0%, #1A140E 100%)',
+        paddingBlock: '5rem',
+        borderBottom: '1px solid rgba(217, 179, 64, 0.2)',
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
+        <div className="container">
+          <SectionHeading
+            label={homeT.videoShowcaseLabel}
+            title={homeT.videoShowcaseTitle}
+            subtitle={homeT.videoShowcaseSub}
+            align="center"
+            className="reveal"
+          />
+
+          <div className="video-showcase__wrapper reveal" style={{
+            maxWidth: '1000px',
+            margin: '2.5rem auto 0',
+            position: 'relative',
+            borderRadius: '20px',
+            overflow: 'hidden',
+            boxShadow: '0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(217, 179, 64, 0.15)',
+            border: '1px solid rgba(217, 179, 64, 0.35)',
+            background: '#0D0A07'
+          }}>
+            {/* Header Badge */}
+            <div style={{
+              position: 'absolute',
+              top: '16px',
+              left: '16px',
+              zIndex: 10,
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              background: 'rgba(26, 19, 11, 0.85)',
+              backdropFilter: 'blur(8px)',
+              border: '1px solid rgba(255, 215, 0, 0.4)',
+              borderRadius: '30px',
+              padding: '6px 14px',
+              fontSize: '0.75rem',
+              fontWeight: 700,
+              color: '#FFD700',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.4)',
+              pointerEvents: 'none'
+            }}>
+              <span>🎬</span>
+              <span>{language === 'en' ? 'Thirukadaiyur Event & Temple Highlights' : 'திருக்கடையூர் சடங்குகள் & கோயில் காட்சிகள்'}</span>
+            </div>
+
+            <video
+              src={`${import.meta.env.BASE_URL}videos/thirukadaiyur-showcase.mp4`}
+              poster={`${import.meta.env.BASE_URL}images/thirukadaiyur-video-poster.jpg`}
+              controls
+              preload="metadata"
+              playsInline
+              style={{
+                width: '100%',
+                display: 'block',
+                maxHeight: '600px',
+                objectFit: 'contain',
+                background: '#000'
+              }}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* ── SERVICES ────────────────────────────────────── */}
       <section className="section section--dark services-home">
         <div className="container">
