@@ -80,15 +80,15 @@ export default function Home() {
       {/* ── HERO ───────────────────────────────────────── */}
       <section className="hero" ref={heroRef} aria-label="Hero — Mani Photography">
         <div className="hero__bg">
+          <div className="hero__bg-fallback" aria-hidden="true" />
           <video
-            src={`${import.meta.env.BASE_URL}images/hero-video.mp4`}
+            src={`${import.meta.env.BASE_URL}videos/thirukadaiyur-showcase.mp4`}
             className="hero__bg-video"
             autoPlay
             loop
             muted
             playsInline
           />
-          <div className="hero__bg-fallback" aria-hidden="true" />
           <div className="hero__overlay" aria-hidden="true" />
         </div>
 
@@ -207,12 +207,40 @@ export default function Home() {
 
       {/* ── THIRUKADAIYUR MILESTONE SPECIALIST SECTION ── */}
       <section className="section section--dark thirukadaiyur-specialist" style={{
-        background: 'linear-gradient(180deg, #1C1712 0%, #2A2118 100%)',
+        position: 'relative',
+        overflow: 'hidden',
         borderTop: '1px solid rgba(217, 179, 64, 0.25)',
         borderBottom: '1px solid rgba(217, 179, 64, 0.25)',
-        position: 'relative',
-        overflow: 'hidden'
       }}>
+        {/* Background Video Layer */}
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          zIndex: 1,
+          pointerEvents: 'none',
+          overflow: 'hidden'
+        }}>
+          <video
+            src={`${import.meta.env.BASE_URL}videos/thirukadaiyur-showcase.mp4`}
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center',
+              filter: 'brightness(0.35) contrast(1.1) saturate(1.1)'
+            }}
+          />
+          <div style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'radial-gradient(ellipse at center, rgba(20, 16, 12, 0.72) 0%, rgba(15, 12, 8, 0.92) 100%)'
+          }} />
+        </div>
+
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <div className="section-heading section-heading--dark" style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <span className="label label-light" style={{ color: 'var(--clr-yellow)', letterSpacing: '0.1em' }}>
@@ -236,12 +264,12 @@ export default function Home() {
           }}>
             {/* Card 1: 60th */}
             <div style={{
-              background: 'rgba(255, 255, 255, 0.04)',
-              border: '1px solid rgba(217, 179, 64, 0.2)',
+              background: 'rgba(255, 255, 255, 0.05)',
+              border: '1px solid rgba(217, 179, 64, 0.3)',
               borderRadius: '16px',
               padding: '1.75rem',
               transition: 'transform 0.3s ease, border-color 0.3s ease',
-              backdropFilter: 'blur(10px)'
+              backdropFilter: 'blur(12px)'
             }}>
               <div style={{ fontSize: '2.25rem', marginBottom: '1rem' }}>👑</div>
               <h3 style={{ fontFamily: 'var(--font-display)', color: 'var(--clr-yellow)', fontSize: '1.25rem', marginBottom: '0.5rem' }}>
@@ -256,12 +284,12 @@ export default function Home() {
 
             {/* Card 2: 70th */}
             <div style={{
-              background: 'rgba(255, 255, 255, 0.04)',
-              border: '1px solid rgba(217, 179, 64, 0.2)',
+              background: 'rgba(255, 255, 255, 0.05)',
+              border: '1px solid rgba(217, 179, 64, 0.3)',
               borderRadius: '16px',
               padding: '1.75rem',
               transition: 'transform 0.3s ease, border-color 0.3s ease',
-              backdropFilter: 'blur(10px)'
+              backdropFilter: 'blur(12px)'
             }}>
               <div style={{ fontSize: '2.25rem', marginBottom: '1rem' }}>🔱</div>
               <h3 style={{ fontFamily: 'var(--font-display)', color: 'var(--clr-yellow)', fontSize: '1.25rem', marginBottom: '0.5rem' }}>
@@ -276,12 +304,12 @@ export default function Home() {
 
             {/* Card 3: 80th */}
             <div style={{
-              background: 'rgba(255, 255, 255, 0.04)',
-              border: '1px solid rgba(217, 179, 64, 0.2)',
+              background: 'rgba(255, 255, 255, 0.05)',
+              border: '1px solid rgba(217, 179, 64, 0.3)',
               borderRadius: '16px',
               padding: '1.75rem',
               transition: 'transform 0.3s ease, border-color 0.3s ease',
-              backdropFilter: 'blur(10px)'
+              backdropFilter: 'blur(12px)'
             }}>
               <div style={{ fontSize: '2.25rem', marginBottom: '1rem' }}>🌕</div>
               <h3 style={{ fontFamily: 'var(--font-display)', color: 'var(--clr-yellow)', fontSize: '1.25rem', marginBottom: '0.5rem' }}>
@@ -296,12 +324,12 @@ export default function Home() {
 
             {/* Card 4: Kanakabhishekam & Temple */}
             <div style={{
-              background: 'rgba(255, 255, 255, 0.04)',
-              border: '1px solid rgba(217, 179, 64, 0.2)',
+              background: 'rgba(255, 255, 255, 0.05)',
+              border: '1px solid rgba(217, 179, 64, 0.3)',
               borderRadius: '16px',
               padding: '1.75rem',
               transition: 'transform 0.3s ease, border-color 0.3s ease',
-              backdropFilter: 'blur(10px)'
+              backdropFilter: 'blur(12px)'
             }}>
               <div style={{ fontSize: '2.25rem', marginBottom: '1rem' }}>✨</div>
               <h3 style={{ fontFamily: 'var(--font-display)', color: 'var(--clr-yellow)', fontSize: '1.25rem', marginBottom: '0.5rem' }}>
@@ -319,75 +347,6 @@ export default function Home() {
             <Link to="/contact" className="btn btn-primary" style={{ padding: '0.875rem 2rem' }}>
               {language === 'en' ? 'Book Thirukadaiyur 60th / 80th Shoot →' : 'திருக்கடையூர் சடங்கு படப்பிடிப்பை பதிவு செய்ய →'}
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ── CINEMATIC VIDEO SHOWCASE ───────────────────── */}
-      <section className="section section--dark video-showcase-section" style={{
-        background: 'linear-gradient(180deg, #120E0B 0%, #1A140E 100%)',
-        paddingBlock: '5rem',
-        borderBottom: '1px solid rgba(217, 179, 64, 0.2)',
-        position: 'relative',
-        overflow: 'hidden'
-      }}>
-        <div className="container">
-          <SectionHeading
-            label={homeT.videoShowcaseLabel}
-            title={homeT.videoShowcaseTitle}
-            subtitle={homeT.videoShowcaseSub}
-            align="center"
-            className="reveal"
-          />
-
-          <div className="video-showcase__wrapper reveal" style={{
-            maxWidth: '1000px',
-            margin: '2.5rem auto 0',
-            position: 'relative',
-            borderRadius: '20px',
-            overflow: 'hidden',
-            boxShadow: '0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(217, 179, 64, 0.15)',
-            border: '1px solid rgba(217, 179, 64, 0.35)',
-            background: '#0D0A07'
-          }}>
-            {/* Header Badge */}
-            <div style={{
-              position: 'absolute',
-              top: '16px',
-              left: '16px',
-              zIndex: 10,
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-              background: 'rgba(26, 19, 11, 0.85)',
-              backdropFilter: 'blur(8px)',
-              border: '1px solid rgba(255, 215, 0, 0.4)',
-              borderRadius: '30px',
-              padding: '6px 14px',
-              fontSize: '0.75rem',
-              fontWeight: 700,
-              color: '#FFD700',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.4)',
-              pointerEvents: 'none'
-            }}>
-              <span>🎬</span>
-              <span>{language === 'en' ? 'Thirukadaiyur Event & Temple Highlights' : 'திருக்கடையூர் சடங்குகள் & கோயில் காட்சிகள்'}</span>
-            </div>
-
-            <video
-              src={`${import.meta.env.BASE_URL}videos/thirukadaiyur-showcase.mp4`}
-              poster={`${import.meta.env.BASE_URL}images/thirukadaiyur-video-poster.jpg`}
-              controls
-              preload="metadata"
-              playsInline
-              style={{
-                width: '100%',
-                display: 'block',
-                maxHeight: '600px',
-                objectFit: 'contain',
-                background: '#000'
-              }}
-            />
           </div>
         </div>
       </section>
