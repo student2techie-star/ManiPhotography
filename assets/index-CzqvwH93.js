@@ -12,15 +12,31 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
 ✦ Key rituals: Ganapathy/Ayush Homam, 60/108 Kalasa Abhishekam, Mangalya Dharanam (Thaali re-tying) & Garland exchange.
 ✦ We specialize in capturing candid homam moments, sacred water drops, and 3 to 4-generation family portraits!`:`🛕 **60ஆம் கல்யாணம் (சஷ்டியப்தபூர்த்தி)** & **80ஆம் கல்யாணம் (சதாபிஷேகம்)** ஆயுள் விருத்திக்கான புனித விழாக்களாகும்.
 ✦ முக்கிய சடங்குகள்: கணபதி/ஆயுஷ் ஹோமம், கலசாபிஷேகம், மாங்கல்ய தாரணம் & மாலை மாற்றுதல்.
-✦ 3-4 தலைமுறை குடும்பப் படங்களை படம் பிடிப்பதில் நாங்கள் முதன்மை நிபுணர்கள்!`,options:[{label:e===`en`?`📖 Read 60th Guide`:`📖 60ஆம் கல்யாண வழிகாட்டி`,action:`guide-60`},{label:e===`en`?`📖 Read 80th Guide`:`📖 80ஆம் கல்யாண வழிகாட்டி`,action:`guide-80`},{label:e===`en`?`💬 WhatsApp Booking`:`💬 வாட்ஸ்அப் பதிவு`,action:`whatsapp`}]};else if(t===`travel`)n={id:(Date.now()+1).toString(),sender:`bot`,text:e===`en`?`✈️ **How to Reach Thirukadaiyur**:
-• **Nearest Airport**: Tiruchirappalli (TRZ - 145 km) or Chennai (MAA - 285 km).
-• **Nearest Railway**: Mayiladuthurai Junction (MV - 24 km, 35 mins drive) with daily trains from Chennai, Bangalore & Coimbatore.
-• **Buses**: Direct SETC/Private sleeper buses from Chennai & Bangalore along ECR.
-• **Car**: Scenic ECR route (Chennai → Pondicherry → Chidambaram → Thirukadaiyur).`:`✈️ **திருக்கடையூர் அடைவது எப்படி**:
-• **விமானம்**: திருச்சி (TRZ - 145 கி.மீ) அல்லது சென்னை (MAA - 285 கி.மீ).
-• **ரயில்**: மயிலாடுதுறை ஜங்ஷன் (MV - 24 கி.மீ, 35 நிமிடம்).
-• **பஸ்**: சென்னை & பெங்களூருவிலிருந்து நேரடி பேருந்துகள்.
-• **கார்**: ECR சாலை (சென்னை → புதுச்சேரி → சிதம்பரம் → திருக்கடையூர்).`,options:[{label:e===`en`?`📖 Read Full Travel Guide`:`📖 பயண வழிகாட்டியைப் படிக்க`,action:`guide-travel`},{label:e===`en`?`🗺️ Google Maps Location`:`🗺️ கூகிள் மேப்ஸ் அமைவிடம்`,action:`maps`}]};else if(t===`thirunallar`)n={id:(Date.now()+1).toString(),sender:`bot`,text:e===`en`?`🪐 **Thirunallar Saneeswarar Temple** (25 km from Thirukadaiyur):
+✦ 3-4 தலைமுறை குடும்பப் படங்களை படம் பிடிப்பதில் நாங்கள் முதன்மை நிபுணர்கள்!`,options:[{label:e===`en`?`📖 Read 60th Guide`:`📖 60ஆம் கல்யாண வழிகாட்டி`,action:`guide-60`},{label:e===`en`?`📖 Read 80th Guide`:`📖 80ஆம் கல்யாண வழிகாட்டி`,action:`guide-80`},{label:e===`en`?`💬 WhatsApp Booking`:`💬 வாட்ஸ்அப் பதிவு`,action:`whatsapp`}]};else if(t===`travel`)n={id:(Date.now()+1).toString(),sender:`bot`,text:e===`en`?`✈️ **How to Reach Thirukadaiyur Temple**:
+Please select your preferred mode of travel below for step-by-step directions:`:`✈️ **திருக்கடையூர் கோயில் அடைவது எப்படி**:
+உங்கள் பயண வழியை கீழே தேர்ந்தெடுக்கவும்:`,options:[{label:e===`en`?`✈️ By Flight / Air`:`✈️ விமானம் மூலம்`,action:`travel-flight`},{label:e===`en`?`🚆 By Train`:`🚆 ரயில் மூலம்`,action:`travel-train`},{label:e===`en`?`🚌 By Bus`:`🚌 பஸ் மூலம்`,action:`travel-bus`},{label:e===`en`?`🚗 By Car / Driving`:`🚗 கார் மூலம்`,action:`travel-car`},{label:e===`en`?`📖 Full Travel Guide`:`📖 முழு வழிகாட்டி`,action:`guide-travel`}]};else if(t===`travel-flight`)n={id:(Date.now()+1).toString(),sender:`bot`,text:e===`en`?`✈️ **By Flight / Air Route Guide**:
+• **Tiruchirappalli International Airport (TRZ - 145 km, 3.5 hrs drive)**: Nearest airport with direct flights from Singapore, Malaysia, Dubai, Colombo & major Indian cities. Taxis available directly from Trichy airport to Thirukadaiyur.
+• **Chennai International Airport (MAA - 285 km, 6 hrs drive)**: Major hub for all domestic & international flights.`:`✈️ **விமானம் மூலம் பயண வழிகாட்டி**:
+• **திருச்சி சர்வதேச விமான நிலையம் (TRZ - 145 கி.மீ, 3.5 மணி நேரம்)**: மிக அருகில் உள்ள விமான நிலையம். சிங்கப்பூர், மலேசியா, துபாய் மற்றும் இந்திய நகரங்களிலிருந்து நேரடி விமானங்கள் உண்டு. விமான நிலையத்திலிருந்து டாக்ஸிகள் கிடைக்கின்றன.
+• **சென்னை விமான நிலையம் (MAA - 285 கி.மீ, 6 மணி நேரம்)**: அனைத்து உள்நாடு & சர்வதேச விமானங்களுக்கான முதன்மை மையம்.`,options:[{label:e===`en`?`🚆 Check Train Routes`:`🚆 ரயில் வழி பார்க்க`,action:`travel-train`},{label:e===`en`?`🚌 Check Bus Routes`:`🚌 பஸ் வழி பார்க்க`,action:`travel-bus`},{label:e===`en`?`🗺️ Google Maps`:`🗺️ கூகிள் மேப்ஸ்`,action:`maps`}]};else if(t===`travel-train`)n={id:(Date.now()+1).toString(),sender:`bot`,text:e===`en`?`🚆 **By Train Route Guide**:
+• **Mayiladuthurai Junction (MV - 24 km, 35 mins drive)**: Nearest major railway station.
+• Daily direct trains from Chennai Egmore (Chozhan Express, Uzhavan Express, Rockfort Express), Bangalore (Mysore-Mayiladuthurai Express), Coimbatore (Janshatabdi Express), Trichy & Madurai.
+• Taxis and shuttle buses run every 10 mins from Mayiladuthurai station to Thirukadaiyur.`:`🚆 **ரயில் மூலம் பயண வழிகாட்டி**:
+• **மயிலாடுதுறை ஜங்ஷன் (MV - 24 கி.மீ, 35 நிமிடம்)**: மிக அருகில் உள்ள பிரதான ரயில் நிலையம்.
+• சென்னை (சோழன், உழவன், ராக்ஃபோர்ட் எக்ஸ்பிரஸ்), பெங்களூரு, கோயம்புத்தூர், திருச்சி, மதுரையில் இருந்து தினசரி ரயில்கள் உள்ளன.
+• மயிலாடுதுறை நிலையத்திலிருந்து 10 நிமிடத்திற்கு ஒருமுறை பஸ் மற்றும் டாக்ஸிகள் உண்டு.`,options:[{label:e===`en`?`🚌 Check Bus Routes`:`🚌 பஸ் வழி பார்க்க`,action:`travel-bus`},{label:e===`en`?`🚗 Check Car Routes`:`🚗 கார் வழி பார்க்க`,action:`travel-car`},{label:e===`en`?`📖 Full Travel Guide`:`📖 முழு வழிகாட்டி`,action:`guide-travel`}]};else if(t===`travel-bus`)n={id:(Date.now()+1).toString(),sender:`bot`,text:e===`en`?`🚌 **By Bus Route Guide**:
+• **From Chennai**: Frequent SETC, PRTC & AC Sleeper buses (KPN, Rathimeena) from CMBT / Kilambakkam directly to Thirukadaiyur via ECR (6-7 hrs).
+• **From Bangalore**: Daily night AC sleeper buses via KSRTC & private buses to Mayiladuthurai & Karaikal.
+• **Local Buses**: Local shuttle buses run every 10 mins between Mayiladuthurai Bus Stand & Karaikal, stopping right in front of Thirukadaiyur Temple.`:`🚌 **பஸ் மூலம் பயண வழிகாட்டி**:
+• **சென்னையிலிருந்து**: கிளாம்பாக்கம் / கோயம்பேட்டிலிருந்து நேரடி ECR ஏசி ஸ்லீப்பர் பேருந்துகள் (6-7 மணி நேரம்).
+• **பெங்களூருவிலிருந்து**: KSRTC & பிரைவேட் ஸ்லீப்பர் பஸ்கள் தினமும் இரவு இயங்குகின்றன.
+• **உள்ளூர் பஸ்கள்**: மயிலாடுதுறையிலிருந்து 10 நிமிடத்திற்கு ஒருமுறை திருக்கடையூர் கோயில் பஸ் நிறுத்தம் வரை பேருந்துகள் உண்டு.`,options:[{label:e===`en`?`🚗 Check Car Routes`:`🚗 கார் வழி பார்க்க`,action:`travel-car`},{label:e===`en`?`✈️ Check Flights`:`✈️ விமான வழி பார்க்க`,action:`travel-flight`},{label:e===`en`?`📖 Full Travel Guide`:`📖 முழு வழிகாட்டி`,action:`guide-travel`}]};else if(t===`travel-car`)n={id:(Date.now()+1).toString(),sender:`bot`,text:e===`en`?`🚗 **By Car / Driving Route Guide**:
+• **From Chennai (285 km | 6 hrs)**: Scenic ECR Highway (Chennai → Mahabalipuram → Puducherry → Cuddalore → Chidambaram → Sirkazhi → Thirukadaiyur).
+• **From Bangalore (430 km | 8.5 hrs)**: Bangalore → Hosur → Krishnagiri → Salem → Attur → Perambalur → Jayankondam → Mayiladuthurai → Thirukadaiyur.
+• **From Trichy (145 km | 3.5 hrs)**: Trichy → Thanjavur → Kumbakonam → Mayiladuthurai → Thirukadaiyur.`:`🚗 **கார் / டாக்ஸி சுயப் பயண வழிகாட்டி**:
+• **சென்னையிலிருந்து (285 கி.மீ | 6 மணி நேரம்)**: ECR சாலை வழி: சென்னை → மகாபலிபுரம் → புதுச்சேரி → கடலூர் → சிதம்பரம் → சீர்காழி → திருக்கடையூர்.
+• **பெங்களூருவிலிருந்து (430 கி.மீ | 8.5 மணி நேரம்)**: பெங்களூரு → சேலம் → ஆத்தூர் → பெரம்பலூர் → ஜெயங்கொண்டம் → மயிலாடுதுறை → திருக்கடையூர்.
+• **திருச்சியிலிருந்து (145 கி.மீ | 3.5 மணி நேரம்)**: திருச்சி → தஞ்சாவூர் → கும்பகோணம் → மயிலாடுதுறை → திருக்கடையூர்.`,options:[{label:e===`en`?`🗺️ Open Google Maps`:`🗺️ கூகிள் மேப்ஸ்`,action:`maps`},{label:e===`en`?`💬 WhatsApp Support`:`💬 வாட்ஸ்அப் உதவி`,action:`whatsapp`}]};else if(t===`thirunallar`)n={id:(Date.now()+1).toString(),sender:`bot`,text:e===`en`?`🪐 **Thirunallar Saneeswarar Temple** (25 km from Thirukadaiyur):
 ✦ Famous for Nala Theertham holy dip, Til Oil Lamp lighting & Saturn Parihara Poojas.
 ✦ Mani Photography provides full-day combined photography packages covering both Thirukadaiyur Abirami Temple & Thirunallar Temple!`:`🪐 **திருநள்ளாறு சனீஸ்வரன் கோயில்** (திருக்கடையூரிலிருந்து 25 கி.மீ):
 ✦ நள தீர்த்த குளியல், எள்ளு தீபம் மற்றும் பரிகார பூஜைகளுக்கான புனித தலம்.
