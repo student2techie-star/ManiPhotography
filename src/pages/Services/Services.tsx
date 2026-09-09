@@ -14,11 +14,11 @@ export default function Services() {
 
   useDocumentHead({
     title: language === 'en'
-      ? 'Services | Mani Photography — Wedding, Pre-Wedding & Event Photography'
-      : 'சேவைகள் | மணி போட்டோகிராஃபி — திருமண & நிகழ்வு புகைப்பட சேவைகள்',
+      ? 'Thirukadaiyur 60th, 70th & 80th Marriage Photography Packages | Mani Photography'
+      : 'திருக்கடையூர் 60, 70 & 80ஆம் கல்யாண போட்டோகிராஃபி பேக்கேஜ்கள் | மணி போட்டோகிராஃபி',
     description: language === 'en'
-      ? 'Mani Photography offers wedding photography & cinematography, pre-wedding shoots, Tamil traditional photography, temple shoots, baby shower, house warming, engagement and family function photography.'
-      : 'மணி போட்டோகிராஃபி வழங்கும் திருமண புகைப்படம், cinematography, pre-wedding ஷூட், தமிழ் சடங்கு படங்கள், கோயில் படங்கள், வளைகாப்பு, கிரகப்பிரவேசம் & குடும்ப விழா புகைப்பட சேவைகள்.',
+      ? 'Specialist packages for Thirukadaiyur 60th Wedding (Shashtiapthapoorthi), 70th (Bhimaratha Shanthi) & 80th (Sadabishegam) ritual photography & LED candid videos at Amritaghateswarar Abirami Temple.'
+      : 'திருக்கடையூர் 60ஆம் கல்யாணம் (சஷ்டியப்தபூர்த்தி), 70ஆம் கல்யாணம் & 80ஆம் கல்யாண (சதாபிஷேகம்) சடங்கு புகைப்படங்கள், LED & candid வீடியோ பேக்கேஜ்கள்.',
   });
 
   useScrollReveal();

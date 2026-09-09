@@ -13,11 +13,11 @@ export default function About() {
 
   useDocumentHead({
     title: language === 'en'
-      ? 'About | Mani Photography — Our Story & Approach'
-      : 'எங்களைப் பற்றி | மணி போட்டோகிராஃபி — எங்கள் கதை & அணுகுமுறை',
+      ? 'About Mani Photography Thirukadaiyur | Temple Specialist Photographer'
+      : 'மணி போட்டோகிராஃபி பற்றி | திருக்கடையூர் கோயில் ஸ்பெஷலிஸ்ட் போட்டோகிராபர்',
     description: language === 'en'
-      ? 'Learn about Mani Photography — our story, our approach to photography, and what makes us different. We capture authentic emotions at weddings, Tamil ceremonies, pre-wedding shoots and family celebrations.'
-      : 'மணி போட்டோகிராஃபி பற்றி அறியவும் — எங்கள் கதை, எங்கள் புகைப்பட அணுகுமுறை. திருமணங்கள், தமிழ் சடங்குகள், pre-wedding படப்பிடிப்புகளில் உண்மையான உணர்ச்சிகளைப் பதிவு செய்கிறோம்.',
+      ? 'Meet Mani Photography — Thirukadaiyur Amritaghateswarar Abirami Temple specialist photographer with decades of expertise in 60th, 70th & 80th milestone wedding rituals.'
+      : 'மணி போட்டோகிராஃபி பற்றி அறியவும் — திருக்கடையூர் அமிர்தகடேஸ்வரர் அபிராமி அம்மன் கோயிலில் 60, 70, 80ஆம் கல்யாண சடங்குகளை சிறப்பான முறையில் படம்பிடிக்கும் போட்டோகிராபர்.',
   });
 
   useScrollReveal();

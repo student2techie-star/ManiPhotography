@@ -54,11 +54,11 @@ export default function Contact() {
 
   useDocumentHead({
     title: language === 'en'
-      ? 'Contact & Booking | Mani Photography'
-      : 'தொடர்பு & முன்பதிவு | மணி போட்டோகிராஃபி',
+      ? 'Book Thirukadaiyur 60th, 70th & 80th Photographer | Mani Photography (+91 93602 93815)'
+      : 'திருக்கடையூர் போட்டோகிராஃபர் முன்பதிவு | மணி போட்டோகிராஃபி (+91 93602 93815)',
     description: language === 'en'
-      ? 'Get in touch with Mani Photography to book a shoot for your wedding, pre-wedding, baby shower, house warming or any special occasion. Located in Thirukadaiyur, Mayiladuthurai, Tamil Nadu.'
-      : 'மணி போட்டோகிராஃபியைத் தொடர்பு கொள்ளவும். திருமணங்கள், pre-wedding, வளைகாப்பு, கிரகப்பிரவேசம் மற்றும் குடும்ப விழாக்களுக்கான முன்பதிவு. திருக்கடையூர், மயிலாடுதுறை.',
+      ? 'Book your Thirukadaiyur 60th Wedding (Shashtiapthapoorthi), 70th & 80th (Sadabishegam) photoshoot. Call +91 93602 93815 or send a WhatsApp message to Mani Photography Thirukadaiyur.'
+      : 'திருக்கடையூர் 60ஆம் கல்யாணம் (சஷ்டியப்தபூர்த்தி), 70ஆம் கல்யாணம் & 80ஆம் கல்யாண (சதாபிஷேகம்) புகைப்பட முன்பதிவுக்கு அழைக்கவும்: +91 93602 93815 (மணி போட்டோகிராஃபி).',
   });
 
   useScrollReveal();

@@ -16,11 +16,11 @@ export default function Portfolio() {
 
   useDocumentHead({
     title: language === 'en'
-      ? 'Portfolio | Mani Photography — Wedding, Pre-Wedding & Event Gallery'
-      : 'போர்ட்ஃபோலியோ | மணி போட்டோகிராஃபி — புகைப்பட கேலரி',
+      ? 'Thirukadaiyur Photography Portfolio | 60th, 70th & 80th Marriage Photos — Mani Photography'
+      : 'திருக்கடையூர் போட்டோ கேலரி | 60, 70 & 80ஆம் கல்யாண படங்கள் — மணி போட்டோகிராஃபி',
     description: language === 'en'
-      ? 'Browse our complete portfolio of weddings, Tamil traditional ceremonies, pre-wedding shoots, temple photography, baby showers, house warmings and family functions.'
-      : 'எங்கள் புகைப்பட கேலரியைப் பார்க்கவும் — திருமணங்கள், தமிழ் பாரம்பரிய சடங்குகள், pre-wedding, கோயில் படங்கள், வளைகாப்பு, கிரகப்பிரவேசம் & குடும்ப விழாக்கள்.',
+      ? 'Explore our photography portfolio of 60th Marriage (Shashtiapthapoorthi), 70th (Bhimaratha Shanthi) & 80th (Sadabishegam) ceremonies at Thirukadaiyur Abirami Temple.'
+      : 'திருக்கடையூர் அபிராமி அம்மன் கோயிலில் நடந்த 60ஆம் கல்யாணம் (சஷ்டியப்தபூர்த்தி), 70ஆம் கல்யாணம் & 80ஆம் கல்யாண (சதாபிஷேகம்) புகைப்பட கேலரி.',
   });
 
   useScrollReveal();
