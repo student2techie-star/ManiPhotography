@@ -42,19 +42,27 @@ export default function Chatbot() {
       id: 'welcome',
       sender: 'bot',
       text: language === 'en'
-        ? 'Welcome to Mani Photography Thirukadaiyur! 🤖 Camera Robot Assistant is here. How can we assist your booking today?'
-        : 'திருக்கடையூர் மணி போட்டோகிராஃபி கேமரா ரோபோ உதவியாளருக்கு நல்வரவு! 🤖 உங்களுக்கு எப்படி உதவ முடியும்?',
+        ? 'Welcome to Mani Photography Thirukadaiyur! 🤖 I am your AI Guide & Booking Assistant. Ask me anything about ceremonies, travel routes, rules, or packages!'
+        : 'திருக்கடையூர் மணி போட்டோகிராஃபி கேமரா ரோபோ உதவியாளருக்கு நல்வரவு! 🤖 விழாக்கள், பயண வழிகள், கோயில் விதிகள் அல்லது பேக்கேஜ்கள் குறித்து எதுவேண்டுமானாலும் கேட்கலாம்!',
       options: [
         {
           label: language === 'en' ? '🛕 60th & 80th Weddings' : '🛕 60 & 80ஆம் கல்யாணம்',
           action: 'shashti',
         },
         {
-          label: language === 'en' ? '📍 Studio & Temple Location' : '📍 கோயில் & கடை அமைவிடம்',
-          action: 'location',
+          label: language === 'en' ? '✈️ How to Reach Thirukadaiyur' : '✈️ திருக்கடையூர் செல்ல வழி',
+          action: 'travel',
         },
         {
-          label: language === 'en' ? '💰 Package Details & Booking' : '💰 கட்டணம் & முன்பதிவு',
+          label: language === 'en' ? '🪐 Thirunallar Temple Guide' : '🪐 திருநள்ளாறு சனீஸ்வரன் கோயில்',
+          action: 'thirunallar',
+        },
+        {
+          label: language === 'en' ? '📸 Temple Photography Rules' : '📸 கோயில் போட்டோகிராஃபி விதிகள்',
+          action: 'rules',
+        },
+        {
+          label: language === 'en' ? '💰 Packages & Booking' : '💰 கட்டணம் & முன்பதிவு',
           action: 'booking',
         },
         {
@@ -72,7 +80,6 @@ export default function Chatbot() {
   }, [messages, isTyping]);
 
   const handleSendOption = (action: string, labelText: string) => {
-    // Add user message
     const userMsg: Message = {
       id: Date.now().toString(),
       sender: 'user',
@@ -89,11 +96,48 @@ export default function Chatbot() {
           id: (Date.now() + 1).toString(),
           sender: 'bot',
           text: language === 'en'
-            ? 'We are Thirukadaiyur Amritaghateswarar Abirami Temple specialists for Shashtiapthapoorthi (60th), Bhimaratha Shanthi (70th) & Sadabishegam (80th) ceremonies! We capture Kalasa Abhishekam, Mangalya Dharanam re-tying & family blessings.'
-            : 'திருக்கடையூர் அபிராமி திருக்கோயிலில் 60ஆம் கல்யாணம் (சஷ்டியப்தபூர்த்தி), 70ஆம் கல்யாணம் (பீமரத சாந்தி) மற்றும் 80ஆம் கல்யாணம் (சதாபிஷேகம்) சடங்குகளை சிறப்பான முறையில் படம் பிடிப்பதில் முன்னணி நிபுணர்.',
+            ? '🛕 **60th (Shashtiapthapoorthi)** & **80th (Sadabishegam)** ceremonies celebrate health & longevity at Thirukadaiyur Temple.\n✦ Key rituals: Ganapathy/Ayush Homam, 60/108 Kalasa Abhishekam, Mangalya Dharanam (Thaali re-tying) & Garland exchange.\n✦ We specialize in capturing candid homam moments, sacred water drops, and 3 to 4-generation family portraits!'
+            : '🛕 **60ஆம் கல்யாணம் (சஷ்டியப்தபூர்த்தி)** & **80ஆம் கல்யாணம் (சதாபிஷேகம்)** ஆயுள் விருத்திக்கான புனித விழாக்களாகும்.\n✦ முக்கிய சடங்குகள்: கணபதி/ஆயுஷ் ஹோமம், கலசாபிஷேகம், மாங்கல்ய தாரணம் & மாலை மாற்றுதல்.\n✦ 3-4 தலைமுறை குடும்பப் படங்களை படம் பிடிப்பதில் நாங்கள் முதன்மை நிபுணர்கள்!',
           options: [
-            { label: language === 'en' ? '📞 Call Us Now' : '📞 எங்களை அழைக்க', action: 'call' },
+            { label: language === 'en' ? '📖 Read 60th Guide' : '📖 60ஆம் கல்யாண வழிகாட்டி', action: 'guide-60' },
+            { label: language === 'en' ? '📖 Read 80th Guide' : '📖 80ஆம் கல்யாண வழிகாட்டி', action: 'guide-80' },
             { label: language === 'en' ? '💬 WhatsApp Booking' : '💬 வாட்ஸ்அப் பதிவு', action: 'whatsapp' },
+          ],
+        };
+      } else if (action === 'travel') {
+        botResponse = {
+          id: (Date.now() + 1).toString(),
+          sender: 'bot',
+          text: language === 'en'
+            ? '✈️ **How to Reach Thirukadaiyur**:\n• **Nearest Airport**: Tiruchirappalli (TRZ - 145 km) or Chennai (MAA - 285 km).\n• **Nearest Railway**: Mayiladuthurai Junction (MV - 24 km, 35 mins drive) with daily trains from Chennai, Bangalore & Coimbatore.\n• **Buses**: Direct SETC/Private sleeper buses from Chennai & Bangalore along ECR.\n• **Car**: Scenic ECR route (Chennai → Pondicherry → Chidambaram → Thirukadaiyur).'
+            : '✈️ **திருக்கடையூர் அடைவது எப்படி**:\n• **விமானம்**: திருச்சி (TRZ - 145 கி.மீ) அல்லது சென்னை (MAA - 285 கி.மீ).\n• **ரயில்**: மயிலாடுதுறை ஜங்ஷன் (MV - 24 கி.மீ, 35 நிமிடம்).\n• **பஸ்**: சென்னை & பெங்களூருவிலிருந்து நேரடி பேருந்துகள்.\n• **கார்**: ECR சாலை (சென்னை → புதுச்சேரி → சிதம்பரம் → திருக்கடையூர்).',
+          options: [
+            { label: language === 'en' ? '📖 Read Full Travel Guide' : '📖 பயண வழிகாட்டியைப் படிக்க', action: 'guide-travel' },
+            { label: language === 'en' ? '🗺️ Google Maps Location' : '🗺️ கூகிள் மேப்ஸ் அமைவிடம்', action: 'maps' },
+          ],
+        };
+      } else if (action === 'thirunallar') {
+        botResponse = {
+          id: (Date.now() + 1).toString(),
+          sender: 'bot',
+          text: language === 'en'
+            ? '🪐 **Thirunallar Saneeswarar Temple** (25 km from Thirukadaiyur):\n✦ Famous for Nala Theertham holy dip, Til Oil Lamp lighting & Saturn Parihara Poojas.\n✦ Mani Photography provides full-day combined photography packages covering both Thirukadaiyur Abirami Temple & Thirunallar Temple!'
+            : '🪐 **திருநள்ளாறு சனீஸ்வரன் கோயில்** (திருக்கடையூரிலிருந்து 25 கி.மீ):\n✦ நள தீர்த்த குளியல், எள்ளு தீபம் மற்றும் பரிகார பூஜைகளுக்கான புனித தலம்.\n✦ இரண்டு கோயில்களையும் ஒரே நாளில் கவர் செய்யும் சிறப்பு புகைப்பட பேக்கேஜ்கள் எங்களிடம் உண்டு!',
+          options: [
+            { label: language === 'en' ? '📖 Read Thirunallar Guide' : '📖 திருநள்ளாறு வழிகாட்டி', action: 'guide-thirunallar' },
+            { label: language === 'en' ? '💬 Book Combined Package' : '💬 பேக்கேஜ் விசாரிக்க', action: 'whatsapp' },
+          ],
+        };
+      } else if (action === 'rules') {
+        botResponse = {
+          id: (Date.now() + 1).toString(),
+          sender: 'bot',
+          text: language === 'en'
+            ? '📸 **Temple Photography Rules & Best Timings**:\n• **Best Hours**: 6:00 AM – 9:00 AM for soft golden sunlight.\n• **Attire**: Traditional Pattu Veshti for men & Kanchipuram Silk Sarees for women.\n• **Permissions**: Allowed in homam halls, mandapams & outer courtyards. Sanctum photography is restricted.'
+            : '📸 **கோயில் போட்டோகிராஃபி விதிகள் & சிறந்த நேரங்கள்**:\n• **சிறந்த நேரம்**: காலை 6:00 - 9:00 மணி வரை.\n• **ஆடை முறை**: ஆண்கள் பட்டு வேஷ்டி, பெண்கள் காஞ்சிபுரம் பட்டுப்புடவை.\n• மண்டபங்கள் மற்றும் ஹோம கூடங்களில் படம் எடுக்க அனுமதிக்கப்படும்.',
+          options: [
+            { label: language === 'en' ? '📖 Read Rules Guide' : '📖 விதிகள் வழிகாட்டி', action: 'guide-rules' },
+            { label: language === 'en' ? '📞 Call Photographer' : '📞 போட்டோகிராஃபரை அழைக்க', action: 'call' },
           ],
         };
       } else if (action === 'location') {
@@ -101,7 +145,7 @@ export default function Chatbot() {
           id: (Date.now() + 1).toString(),
           sender: 'bot',
           text: language === 'en'
-            ? 'We are located right near Amritaghateswarar Abirami Temple, Thirukadaiyur, Mayiladuthurai, Tamil Nadu 609311.'
+            ? 'We are located right near Sri Amritaghateswarar Abirami Temple, Thirukadaiyur, Mayiladuthurai district, Tamil Nadu 609311.'
             : 'நாங்கள் திருக்கடையூர் ஸ்ரீ அமிர்தகடேஸ்வரர் அபிராமி அம்மன் திருக்கோயில் அருகே அமைந்துளோம்.',
           options: [
             { label: language === 'en' ? '🗺️ Open Google Maps' : '🗺️ கூகிள் மேப்ஸ் திறக்க', action: 'maps' },
@@ -112,12 +156,28 @@ export default function Chatbot() {
           id: (Date.now() + 1).toString(),
           sender: 'bot',
           text: language === 'en'
-            ? 'Our packages cover temple Kalasa Abhishekam, mandapam photography, high-resolution edited galleries and optional cinematic videos. Contact us for custom quotes!'
+            ? 'Our packages cover temple Kalasa Abhishekam, mandapam photography, high-resolution edited galleries and optional cinematic LED videos. Contact us for custom quotes!'
             : 'எங்கள் பேக்கேஜ்களில் கோயில் அபிஷேகம், மண்டப சடங்குகள், உயர்தர எடிட் ஆல்பம் மற்றும் சினிமா வீடியோக்கள் அடங்கும்.',
           options: [
+            { label: language === 'en' ? '📞 Call +91 93602 93815' : '📞 அழைக்க +91 93602 93815', action: 'call' },
             { label: language === 'en' ? '💬 Chat on WhatsApp' : '💬 வாட்ஸ்அப்பில் கேட்க', action: 'whatsapp' },
           ],
         };
+      } else if (action === 'guide-60') {
+        window.location.href = '/guides/thirukadaiyur-60th-marriage-shashtiapthapoorthi-guide';
+        botResponse = { id: (Date.now() + 1).toString(), sender: 'bot', text: 'Opening 60th Marriage Guide...' };
+      } else if (action === 'guide-80') {
+        window.location.href = '/guides/thirukadaiyur-80th-marriage-sadabishegam-guide';
+        botResponse = { id: (Date.now() + 1).toString(), sender: 'bot', text: 'Opening 80th Marriage Guide...' };
+      } else if (action === 'guide-travel') {
+        window.location.href = '/guides/how-to-reach-thirukadaiyur-travel-guide-bus-train-car-flight';
+        botResponse = { id: (Date.now() + 1).toString(), sender: 'bot', text: 'Opening Travel Route Guide...' };
+      } else if (action === 'guide-thirunallar') {
+        window.location.href = '/guides/thirunallar-saneeswarar-temple-parihara-pooja-photography-guide';
+        botResponse = { id: (Date.now() + 1).toString(), sender: 'bot', text: 'Opening Thirunallar Temple Guide...' };
+      } else if (action === 'guide-rules') {
+        window.location.href = '/guides/thirukadaiyur-temple-photography-rules-timings-tips';
+        botResponse = { id: (Date.now() + 1).toString(), sender: 'bot', text: 'Opening Temple Rules Guide...' };
       } else if (action === 'call') {
         window.location.href = `tel:${siteConfig.phone}`;
         botResponse = {
@@ -179,23 +239,78 @@ export default function Chatbot() {
       const lower = userText.toLowerCase();
       let botResponse: Message;
 
-      if (lower.includes('price') || lower.includes('cost') || lower.includes('rate') || lower.includes('பணம்') || lower.includes('கட்டணம்')) {
+      if (lower.includes('reach') || lower.includes('travel') || lower.includes('flight') || lower.includes('airport') || lower.includes('train') || lower.includes('bus') || lower.includes('car') || lower.includes('route') || lower.includes('செல்ல வழி') || lower.includes('பயணம்') || lower.includes('ரயில்')) {
+        botResponse = {
+          id: Date.now().toString(),
+          sender: 'bot',
+          text: language === 'en'
+            ? '✈️ **Nearest Airport**: Tiruchirappalli (TRZ - 145 km) or Chennai (MAA - 285 km).\n🚆 **Nearest Railway**: Mayiladuthurai Junction (MV - 24 km, 35 mins drive).\n🚌 **Buses**: Direct sleeper buses from Chennai & Bangalore.\n🚗 **Car**: ECR Route via Pondicherry & Chidambaram.'
+            : '✈️ **அருகில் உள்ள விமான நிலையம்**: திருச்சி (TRZ - 145 கி.மீ) அல்லது சென்னை (MAA - 285 கி.மீ).\n🚆 **அருகில் உள்ள ரயில் நிலையம்**: மயிலாடுதுறை ஜங்ஷன் (MV - 24 கி.மீ).\n🚌 **பஸ்**: சென்னை & பெங்களூருவிலிருந்து நேரடி பஸ்கள்.',
+          options: [
+            { label: language === 'en' ? '📖 Read Full Travel Guide' : '📖 முழு வழிகாட்டி படிக்க', action: 'guide-travel' },
+            { label: language === 'en' ? '🗺️ Google Maps Location' : '🗺️ மேப்ஸ் பார்க்க', action: 'maps' },
+          ],
+        };
+      } else if (lower.includes('60') || lower.includes('80') || lower.includes('shashti') || lower.includes('sadabishegam') || lower.includes('bhimaratha') || lower.includes('70') || lower.includes('wedding') || lower.includes('marriage') || lower.includes('கல்யாணம்') || lower.includes('சஷ்டியப்தபூர்த்தி') || lower.includes('சதாபிஷேகம்')) {
+        botResponse = {
+          id: Date.now().toString(),
+          sender: 'bot',
+          text: language === 'en'
+            ? '🛕 We specialize in 60th (Shashtiapthapoorthi), 70th (Bhimaratha Shanthi) & 80th (Sadabishegam) ritual photography & LED candid videos at Thirukadaiyur Temple!'
+            : '🛕 திருக்கடையூர் 60, 70 மற்றும் 80ஆம் கல்யாண சடங்குகளை படம் பிடிப்பதில் மணி போட்டோகிராஃபி முன்னணி நிபுணர்!',
+          options: [
+            { label: '📖 60th Marriage Guide', action: 'guide-60' },
+            { label: '📖 80th Marriage Guide', action: 'guide-80' },
+            { label: '💬 Book Photographer', action: 'whatsapp' },
+          ],
+        };
+      } else if (lower.includes('thirunallar') || lower.includes('saneeswarar') || lower.includes('shani') || lower.includes('parihara') || lower.includes('திருநள்ளாறு') || lower.includes('சனீஸ்வரன்')) {
+        botResponse = {
+          id: Date.now().toString(),
+          sender: 'bot',
+          text: language === 'en'
+            ? '🪐 Thirunallar Saneeswarar Temple is just 25 km from Thirukadaiyur! We offer full day combined photography packages for both temples.'
+            : '🪐 திருநள்ளாறு சனீஸ்வரன் கோயில் திருக்கடையூரிலிருந்து 25 கி.மீ தொலைவில் உள்ளது! இரண்டு கோயில்களுக்கும் ஒரே நாளில் புகைப்பட சேவை வழங்குகிறோம்.',
+          options: [
+            { label: '📖 Thirunallar Guide', action: 'guide-thirunallar' },
+            { label: '💬 Enquire Package', action: 'whatsapp' },
+          ],
+        };
+      } else if (lower.includes('rules') || lower.includes('timing') || lower.includes('dress') || lower.includes('attire') || lower.includes('camera') || lower.includes('நேரங்கள்') || lower.includes('ஆடை') || lower.includes('விதிகள்')) {
+        botResponse = {
+          id: Date.now().toString(),
+          sender: 'bot',
+          text: language === 'en'
+            ? '📸 Best photography hours: 6:00 AM – 9:00 AM. Attire: Pattu Veshti (Dhoti) & Kanchipuram Silk Sarees. Photography permitted in mandapams & homam halls.'
+            : '📸 சிறந்த புகைப்பட நேரம்: காலை 6:00 - 9:00 மணி. ஆடை: பட்டு வேஷ்டி & காஞ்சிபுரம் பட்டுப்புடவை.',
+          options: [
+            { label: '📖 Read Temple Rules', action: 'guide-rules' },
+            { label: '💬 WhatsApp Chat', action: 'whatsapp' },
+          ],
+        };
+      } else if (lower.includes('price') || lower.includes('cost') || lower.includes('rate') || lower.includes('package') || lower.includes('பணம்') || lower.includes('கட்டணம்') || lower.includes('விலை')) {
         botResponse = {
           id: Date.now().toString(),
           sender: 'bot',
           text: language === 'en'
             ? 'For custom ceremony photography quotes and special package offers, please chat with us on WhatsApp or call +91 93602 93815!'
             : 'சிறப்பு பேக்கேஜ் கட்டண விவரங்களுக்கு எங்களை +91 93602 93815 என்ற எண்ணில் தொடர்பு கொள்ளவும்.',
-          options: [{ label: '💬 WhatsApp Chat', action: 'whatsapp' }],
+          options: [
+            { label: '📞 Call +91 93602 93815', action: 'call' },
+            { label: '💬 WhatsApp Chat', action: 'whatsapp' },
+          ],
         };
       } else {
         botResponse = {
           id: Date.now().toString(),
           sender: 'bot',
           text: language === 'en'
-            ? 'Thank you for your inquiry! Our Thirukadaiyur team is ready to help you. Speak directly with us on WhatsApp for instant assistance.'
-            : 'உங்கள் செய்திக்கு நன்றி! எங்களை வாட்ஸ்அப் மூலம் தொடர்பு கொண்டு உடனடி தகவல் பெறலாம்.',
-          options: [{ label: '💬 Talk on WhatsApp', action: 'whatsapp' }],
+            ? 'Thank you for your inquiry! Our Thirukadaiyur team is ready to help you. Speak directly with us on WhatsApp or call +91 93602 93815 for instant assistance.'
+            : 'உங்கள் செய்திக்கு நன்றி! எங்களை வாட்ஸ்அப் அல்லது +91 93602 93815 என்ற எண்ணில் தொடர்பு கொண்டு உடனடி தகவல் பெறலாம்.',
+          options: [
+            { label: '📞 Call Us', action: 'call' },
+            { label: '💬 Talk on WhatsApp', action: 'whatsapp' },
+          ],
         };
       }
 
