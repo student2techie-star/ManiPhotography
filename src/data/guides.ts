@@ -299,7 +299,133 @@ export const guidesData: GuidePost[] = [
         }
       ]
     }
+  },
+  {
+    id: '5',
+    slug: 'how-to-reach-thirukadaiyur-travel-guide-bus-train-car-flight',
+    category: 'Travel & Routes Guide',
+    categoryTa: 'பயண வழிகாட்டி',
+    titleEn: 'How to Reach Thirukadaiyur Temple: Complete Directions by Flight, Train, Bus & Car',
+    titleTa: 'திருக்கடையூர் கோயில் அடைவது எப்படி? பஸ், ரயில், கார் & விமான பயண வழிகாட்டி',
+    summaryEn: 'Complete travel route guide to Thirukadaiyur Amritaghateswarar Abirami Temple from Chennai, Bangalore, Trichy, Coimbatore, Pondicherry, and overseas via Flight, Train, Bus, and Self-drive Car.',
+    summaryTa: 'சென்னை, பெங்களூரு, திருச்சி, கோயம்புத்தூர் போன்ற நகரங்களில் இருந்து திருக்கடையூர் அமிர்தகடேஸ்வரர் கோயிலுக்கு பஸ், ரயில், கார் மற்றும் விமானம் மூலம் வரும் முழுமையான பயண வழிகாட்டி.',
+    readTime: '6 min read',
+    publishDate: '2026-09-09',
+    coverImage: '/images/temple/temple-01.jpg',
+    galleryImages: [
+      '/images/temple/temple-01.jpg',
+      '/images/temple/temple-02.jpg',
+      '/images/guides/thirunallar-temple.png'
+    ],
+    keywords: [
+      'How to reach Thirukadaiyur',
+      'Nearest airport to Thirukadaiyur',
+      'Nearest railway station to Thirukadaiyur',
+      'Chennai to Thirukadaiyur route',
+      'Bangalore to Thirukadaiyur bus car train',
+      'திருக்கடையூர் பஸ் ரயில் வழிகள்',
+      'திருக்கடையூர் செல்ல வழி'
+    ],
+    contentEn: {
+      intro: 'Thirukadaiyur Sri Amritaghateswarar Abirami Temple is situated in Mayiladuthurai District along the East Coast of Tamil Nadu, located between Sirkazhi and Karaikal. Whether you are traveling from major Indian metros like Chennai, Bangalore, and Hyderabad, or flying in from abroad (USA, Singapore, Malaysia) for your parents 60th, 70th, or 80th wedding ceremony, here is the complete step-by-step travel route guide by Air, Train, Bus, and Car.',
+      sections: [
+        {
+          heading: '1. By Flight / Air (Nearest Airports)',
+          body: 'For NRI families and devotees flying in from outside Tamil Nadu:',
+          bulletPoints: [
+            'Tiruchirappalli International Airport (TRZ) - NEAREST AIRPORT (~145 km, 3.5 hrs drive): Direct international flights from Singapore, Malaysia, Dubai, Colombo, and domestic connections from major Indian cities. Taxis & buses available from Trichy Airport directly to Thirukadaiyur via Thanjavur & Kumbakonam.',
+            'Chennai International Airport (MAA) (~285 km, 6 hrs drive): Major international hub with direct flights nationwide and globally. From Chennai, you can take a private taxi via ECR (East Coast Road), a direct train to Mayiladuthurai, or an AC sleeper bus.',
+            'Puducherry Airport (PNY) (~130 km, 3 hrs drive): Regional airport with flights from Bangalore and Hyderabad. From Pondicherry, take ECR highway to Thirukadaiyur via Cuddalore & Chidambaram.'
+          ]
+        },
+        {
+          heading: '2. By Train (Nearest Railway Stations)',
+          body: 'Traveling by train is comfortable and convenient for families traveling with elders:',
+          bulletPoints: [
+            'Mayiladuthurai Junction (MV) - NEAREST MAJOR RAILWAY STATION (~24 km, 35 mins drive): Connected directly with daily express and superfast trains from Chennai Egmore (Chozhan Express, Uzhavan Express, Rockfort Express), Bangalore (Mysore-Mayiladuthurai Express), Coimbatore (Janshatabdi Express), Trichy, and Madurai. Taxis and local buses run every 10 minutes from Mayiladuthurai station to Thirukadaiyur.',
+            'Sirkazhi Railway Station (SY) (~30 km, 40 mins drive): Stops for several express trains on the Main Line.',
+            'Karaikal Railway Station (KIK) (~25 km, 35 mins drive): Convenient if coming via Nagapattinam / Velankanni railway line.'
+          ]
+        },
+        {
+          heading: '3. By Bus (Direct Government & Private Buses)',
+          body: 'Thirukadaiyur is located directly on the Main East Coast Highway (ECR / State Highway 49) connecting Chidambaram and Karaikal:',
+          bulletPoints: [
+            'From Chennai (CMBT / Kilambakkam Bus Terminus): Frequent SETC, PRTC, and luxury AC Sleeper buses (KPN, Rathimeena, Universal) operate directly from Chennai to Thirukadaiyur / Karaikal / Nagapattinam via ECR or Vikravandi-Jayankondam route (Travel time: 6 to 7 hours).',
+            'From Bangalore (Shantinagar / Satellite Bus Stand): KSRTC and private AC sleeper buses operate daily night buses to Mayiladuthurai and Karaikal.',
+            'From Pondicherry, Cuddalore, Chidambaram, Kumbakonam, Thanjavur, Trichy, Coimbatore, and Madurai: Continuous government and private buses available throughout the day.',
+            'Local Shuttle Buses: Local buses ply every 10 minutes between Mayiladuthurai New Bus Stand and Karaikal / Nagapattinam, dropping passengers right in front of the Thirukadaiyur Temple bus stop.'
+          ]
+        },
+        {
+          heading: '4. By Car / Taxi / Driving Directions',
+          body: 'Driving to Thirukadaiyur is a pleasant journey through coastal countryside and temple towns. Recommended driving routes:',
+          bulletPoints: [
+            'From Chennai (~285 km | 6 Hours): Route 1 (Scenic ECR): Chennai → Mahabalipuram → Puducherry → Cuddalore → Chidambaram → Sirkazhi → Thirukadaiyur. Route 2 (NH32 via Panruti): Chennai → Tindivanam → Vikravandi → Panruti → Vridhachalam → Jayankondam → Mayiladuthurai → Thirukadaiyur.',
+            'From Bangalore (~430 km | 8.5 Hours): Bangalore → Hosur → Krishnagiri → Dharmapuri → Salem → Attur → Perambalur → Jayankondam → Mayiladuthurai → Thirukadaiyur.',
+            'From Trichy (~145 km | 3.5 Hours): Trichy → Thanjavur → Kumbakonam → Mayiladuthurai → Thirukadaiyur.',
+            'From Coimbatore (~330 km | 7 Hours): Coimbatore → Karur → Trichy → Thanjavur → Kumbakonam → Mayiladuthurai → Thirukadaiyur.'
+          ]
+        },
+        {
+          heading: '5. Photography & Accommodation Arrangements',
+          body: 'Once you reach Thirukadaiyur, we recommend reaching your lodge or homam mandapam at least 1 to 2 hours prior to your scheduled muhurtham time. Mani Photography (+91 93602 93815) provides end-to-end photography coverage right from your hotel arrival, mandapam homam, Kalasa Abhishekam, Mangalya Dharanam, to outer temple portraits.'
+        }
+      ],
+      faqs: [
+        {
+          question: 'What is the nearest airport to Thirukadaiyur Temple?',
+          answer: 'Tiruchirappalli International Airport (TRZ) is the nearest airport to Thirukadaiyur, located approximately 145 km away (3.5 hours drive by taxi or bus).'
+        },
+        {
+          question: 'What is the nearest railway station to Thirukadaiyur?',
+          answer: 'Mayiladuthurai Junction (MV) is the nearest major railway station, located just 24 km from Thirukadaiyur Temple. Buses and taxis are available outside the station every 10 minutes.'
+        }
+      ]
+    },
+    contentTa: {
+      intro: 'திருக்கடையூர் ஸ்ரீ அமிர்தகடேஸ்வரர் அபிராமி அம்மன் திருக்கோயில் மயிலாடுதுறை மாவட்டத்தில் சீர்காழிக்கும் காரைக்காலுக்கும் இடையே கிழக்கு கடற்கரை சாலையில் அமைந்துள்ளது. சென்னை, பெங்களூரு, கோவை, திருச்சி போன்ற நகரங்களில் இருந்தும் அல்லது வெளிநாடுகளில் இருந்தும் 60, 70, 80ஆம் கல்யாண விழாக்களுக்காக குடும்பத்துடன் வருவோருக்கான முழுமையான பயண வழிகாட்டி இதோ.',
+      sections: [
+        {
+          heading: '1. விமானம் மூலம் வருவதற்கு (அருகில் உள்ள விமான நிலையங்கள்)',
+          body: 'வெளிநாடுகள் மற்றும் பிற மாநிலங்களிலிருந்து வருவோருக்கு அருகில் உள்ள விமான நிலையங்கள்:',
+          bulletPoints: [
+            'திருச்சி சர்வதேச விமான நிலையம் (TRZ) - மிக அருகில் உள்ள விமான நிலையம் (~145 கி.மீ, 3.5 மணி நேரம்): சிங்கப்பூர், மலேசியா, துபாய் மற்றும் இந்திய நகரங்களிலிருந்தும் நேரடி விமானங்கள் உள்ளன. திருச்சியில் இருந்து கார்/டாக்ஸி மூலம் தஞ்சாவூர்-கும்பகோணம் வழியாக திருக்கடையூர் வரலாம்.',
+            'சென்னை சர்வதேச விமான நிலையம் (MAA) (~285 கி.மீ, 6 மணி நேரம்): சென்னையில் இருந்து ECR கடற்கரை சாலை வழியாக கார், நேரடி ரயில் அல்லது ஏசி பஸ் மூலம் திருக்கடையூர் வரலாம்.',
+            'புதுச்சேரி விமான நிலையம் (PNY) (~130 கி.மீ, 3 மணி நேரம்): பெங்களூரு மற்றும் ஹைதராபாத்திலிருந்து விமானங்கள் இயக்கப்படுகின்றன.'
+          ]
+        },
+        {
+          heading: '2. ரயில் மூலம் வருவதற்கு (அருகில் உள்ள ரயில் நிலையங்கள்)',
+          body: 'வயதான பெற்றோருடன் பயணிப்பவர்களுக்கு ரயில் பயணம் மிகவும் வசதியானது:',
+          bulletPoints: [
+            'மயிலாடுதுறை ஜங்ஷன் (MV) - மிக அருகில் உள்ள பிரதான ரயில் நிலையம் (~24 கி.மீ, 35 நிமிடங்கள்): சென்னை எழும்பூர் (சோழன் எக்ஸ்பிரஸ், உழவன் எக்ஸ்பிரஸ், ராக்ஃபோர்ட்), பெங்களூரு, கோயம்புத்தூர், திருச்சி, மதுரையில் இருந்து தினசரி ரயில்கள் உள்ளன. மயிலாடுதுறை ரயில் நிலையத்திலிருந்து 10 நிமிடத்திற்கு ஒருமுறை திருக்கடையூருக்கு பஸ் மற்றும் டாக்ஸிகள் கிடைக்கின்றன.',
+            'சீர்காழி ரயில் நிலையம் (SY) (~30 கி.மீ).',
+            'காரைக்கால் ரயில் நிலையம் (KIK) (~25 கி.மீ).'
+          ]
+        },
+        {
+          heading: '3. பஸ் மூலம் வருவதற்கு (அரசு & தனியார் பேருந்துகள்)',
+          body: 'திருக்கடையூர் கிழக்கு கடற்கரை சாலையில் (ECR) நேரிடையாக அமைந்துள்ளது:',
+          bulletPoints: [
+            'சென்னையிலிருந்து (கிளாம்பாக்கம் / கோயம்பேடு): SETC, PRTC மற்றும் தனியார் ஸ்லீப்பர் பஸ்கள் நேரடி திருக்கடையூர் / காரைக்கால் பேருந்துகள் இயங்குகின்றன.',
+            'பெங்களூருவில் இருந்து: KSRTC மற்றும் பிரைவேட் ஸ்லீப்பர் பஸ்கள் மயிலாடுதுறை/காரைக்காலுக்கு தினமும் இரவு இயக்கப்படுகின்றன.',
+            'திருச்சி, கும்பகோணம், தஞ்சாவூர், புதுச்சேரி, கோவை, மதுரையிலிருந்து: தொடர்ச்சியான பேருந்து வசதிகள் உள்ளன.'
+          ]
+        },
+        {
+          heading: '4. கார் / டாக்ஸி சுயப் பயணம் செய்வோருக்கு',
+          body: 'காரில் திருக்கடையூர் வருவதற்கான சிறந்த பாதைகள்:',
+          bulletPoints: [
+            'சென்னையிலிருந்து (285 கி.மீ | 6 மணி நேரம்): ECR சாலை வழி: சென்னை → மகாபலிபுரம் → புதுச்சேரி → கடலூர் → молоко → சிதம்பரம் → சீர்காழி → திருக்கடையூர்.',
+            'பெங்களூருவிலிருந்து (430 கி.மீ | 8.5 மணி நேரம்): பெங்களூரு → சேலம் → ஆத்தூர் → பெரம்பலூர் → ஜெயங்கொண்டம் → மயிலாடுதுறை → திருக்கடையூர்.',
+            'திருச்சியிலிருந்து (145 கி.மீ | 3.5 மணி நேரம்): திருச்சி → தஞ்சாவூர் → கும்பகோணம் → மயிலாடுதுறை → திருக்கடையூர்.'
+          ]
+        }
+      ]
+    }
   }
 ];
 
 export default guidesData;
+
