@@ -11,6 +11,8 @@ import PortfolioCategory from './pages/PortfolioCategory/PortfolioCategory';
 import Services from './pages/Services/Services';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
+import Guides from './pages/Guides/Guides';
+import GuideDetail from './pages/GuideDetail/GuideDetail';
 import NotFound from './pages/NotFound/NotFound';
 import Preloader from './components/Preloader/Preloader';
 
@@ -25,6 +27,8 @@ function App() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/portfolio/:category" element={<PortfolioCategory />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/guides" element={<Guides />} />
+        <Route path="/guides/:slug" element={<GuideDetail />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
