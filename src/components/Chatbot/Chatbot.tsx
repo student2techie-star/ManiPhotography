@@ -11,6 +11,25 @@ interface Message {
   options?: { label: string; action: string }[];
 }
 
+function renderFormattedText(text: string) {
+  const lines = text.split('\n');
+  return lines.map((line, lineIdx) => {
+    const parts = line.split('**');
+    return (
+      <span key={lineIdx}>
+        {parts.map((part, partIdx) =>
+          partIdx % 2 === 1 ? (
+            <strong key={partIdx} className="chatbot-bold">{part}</strong>
+          ) : (
+            part
+          )
+        )}
+        {lineIdx < lines.length - 1 && <br />}
+      </span>
+    );
+  });
+}
+
 function RobotCameraIcon({ size = 24 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -124,8 +143,8 @@ export default function Chatbot() {
           id: (Date.now() + 1).toString(),
           sender: 'bot',
           text: language === 'en'
-            ? '✈️ By Flight / Air Route Guide:\n\n• Tiruchirappalli International Airport (TRZ - 145 km, 3.5 hrs drive):\nNearest airport with direct flights from Singapore, Malaysia, Dubai, Colombo & major Indian cities. Taxis available directly from Trichy airport to Thirukadaiyur.\n\n• Chennai International Airport (MAA - 285 km, 6 hrs drive):\nMajor hub for all domestic & international flights.'
-            : '✈️ விமானம் மூலம் பயண வழிகாட்டி:\n\n• திருச்சி சர்வதேச விமான நிலையம் (TRZ - 145 கி.மீ, 3.5 மணி நேரம்):\nமிக அருகில் உள்ள விமான நிலையம். சிங்கப்பூர், மலேசியா, துபாய் மற்றும் இந்திய நகரங்களிலிருந்து நேரடி விமானங்கள் உண்டு. விமான நிலையத்திலிருந்து டாக்ஸிகள் கிடைக்கின்றன.\n\n• சென்னை விமான நிலையம் (MAA - 285 கி.மீ, 6 மணி நேரம்):\nஅனைத்து உள்நாடு & சர்வதேச விமானங்களுக்கான முதன்மை மையம்.',
+            ? '✈️ **By Flight / Air Route Guide**:\n\n• **Tiruchirappalli International Airport (TRZ - 145 km, 3.5 hrs)**:\nNearest operational airport with direct flights from **Singapore**, **Malaysia**, **Dubai**, **Colombo** & major Indian cities. Taxis available directly from **Trichy Airport** to **Thirukadaiyur**.\n\n• **Chennai International Airport (MAA - 285 km, 6 hrs)**:\nMajor international hub for all domestic & international flights.'
+            : '✈️ **விமானம் மூலம் பயண வழிகாட்டி**:\n\n• **திருச்சி சர்வதேச விமான நிலையம் (TRZ - 145 கி.மீ)**:\nமிக அருகில் உள்ள விமான நிலையம். **சிங்கப்பூர்**, **மலேசியா**, **துபாய்** மற்றும் இந்திய நகரங்களிலிருந்து நேரடி விமானங்கள் உண்டு. திருச்சியிலிருந்து டாக்ஸிகள் கிடைக்கின்றன.\n\n• **சென்னை விமான நிலையம் (MAA - 285 கி.மீ)**:\nஅனைத்து சர்வதேச விமானங்களுக்கான முதன்மை மையம்.',
           options: [
             { label: language === 'en' ? '🚆 Check Train Routes' : '🚆 ரயில் வழி பார்க்க', action: 'travel-train' },
             { label: language === 'en' ? '🚌 Check Bus Routes' : '🚌 பஸ் வழி பார்க்க', action: 'travel-bus' },
@@ -137,8 +156,8 @@ export default function Chatbot() {
           id: (Date.now() + 1).toString(),
           sender: 'bot',
           text: language === 'en'
-            ? '🚆 By Train Route Guide:\n\n• Mayiladuthurai Junction (MV - 24 km, 35 mins drive):\nNearest major railway station.\n\n• Daily direct trains available from Chennai Egmore (Chozhan, Uzhavan, Rockfort Express), Bangalore (Mysore-Mayiladuthurai Express), Coimbatore (Janshatabdi Express), Trichy & Madurai.\n\n• Taxis and shuttle buses run every 10 mins from Mayiladuthurai station to Thirukadaiyur.'
-            : '🚆 ரயில் மூலம் பயண வழிகாட்டி:\n\n• மயிலாடுதுறை ஜங்ஷன் (MV - 24 கி.மீ, 35 நிமிடம்):\nமிக அருகில் உள்ள பிரதான ரயில் நிலையம்.\n\n• சென்னை (சோழன், உழவன், ராக்ஃபோர்ட் எக்ஸ்பிரஸ்), பெங்களூரு, கோயம்புத்தூர், திருச்சி, மதுரையில் இருந்து தினசரி ரயில்கள் உள்ளன.\n\n• மயிலாடுதுறை நிலையத்திலிருந்து 10 நிமிடத்திற்கு ஒருமுறை பஸ் மற்றும் டாக்ஸிகள் உண்டு.',
+            ? '🚆 **By Train Route Guide**:\n\n• **Mayiladuthurai Junction (MV - 24 km, 35 mins)**:\nNearest major railway station.\n\n• **Direct Trains From**: **Chennai Egmore** (Chozhan, Uzhavan, Rockfort Express), **Bangalore** (Mysore-Mayiladuthurai Express), **Coimbatore** (Janshatabdi Express), **Trichy** & **Madurai**.\n\n• **Local Transport**: Taxis and shuttle buses run every 10 mins from **Mayiladuthurai Station** directly to **Thirukadaiyur**.'
+            : '🚆 **ரயில் மூலம் பயண வழிகாட்டி**:\n\n• **மயிலாடுதுறை ஜங்ஷன் (MV - 24 கி.மீ)**:\nமிக அருகில் உள்ள பிரதான ரயில் நிலையம்.\n\n• **நேரடி ரயில்கள்**: **சென்னை** (சோழன், உழவன், ராக்ஃபோர்ட் எக்ஸ்பிரஸ்), **பெங்களூரு**, **கோயம்புத்தூர்**, **திருச்சி**, **மதுரை**.\n\n• **உள்ளூர் பஸ்கள்**: மயிலாடுதுறை நிலையத்திலிருந்து 10 நிமிடத்திற்கு ஒருமுறை திருக்கடையூருக்கு பஸ்கள் உண்டு.',
           options: [
             { label: language === 'en' ? '🚌 Check Bus Routes' : '🚌 பஸ் வழி பார்க்க', action: 'travel-bus' },
             { label: language === 'en' ? '🚗 Check Car Routes' : '🚗 கார் வழி பார்க்க', action: 'travel-car' },
@@ -421,7 +440,7 @@ export default function Chatbot() {
                 className={`chatbot-msg chatbot-msg--${msg.sender}`}
               >
                 <div className="chatbot-msg__bubble">
-                  {msg.text}
+                  {renderFormattedText(msg.text)}
                 </div>
                 {msg.options && (
                   <div className="chatbot-msg__options">

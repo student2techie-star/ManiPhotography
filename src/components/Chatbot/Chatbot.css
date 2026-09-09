@@ -186,6 +186,15 @@
   box-shadow: 0 4px 12px rgba(184, 134, 11, 0.3);
 }
 
+.chatbot-bold {
+  font-weight: 700 !important;
+  color: #B8860B !important;
+}
+
+.chatbot-msg--user .chatbot-bold {
+  color: #FFFFFF !important;
+}
+
 /* Options / Action Buttons */
 .chatbot-msg__options {
   display: flex;
