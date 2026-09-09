@@ -55,6 +55,17 @@ export default function GuideDetail() {
           </div>
         </header>
 
+        {/* Featured Cover Image */}
+        {guide.coverImage && (
+          <div className="guide-detail__cover-wrap">
+            <img
+              src={guide.coverImage}
+              alt={language === 'en' ? guide.titleEn : guide.titleTa}
+              className="guide-detail__cover-img"
+            />
+          </div>
+        )}
+
         {/* Article Content */}
         <article className="guide-detail__article">
           <p className="guide-detail__intro">
@@ -77,6 +88,27 @@ export default function GuideDetail() {
               )}
             </div>
           ))}
+
+          {/* Temple Photo Gallery */}
+          {guide.galleryImages && guide.galleryImages.length > 0 && (
+            <div className="guide-detail__gallery">
+              <h3 className="guide-detail__gallery-title">
+                {language === 'en' ? 'Temple & Ceremony Gallery Highlights' : 'கோயில் & சடங்கு புகைப்படங்கள்'}
+              </h3>
+              <div className="guide-detail__gallery-grid">
+                {guide.galleryImages.map((img, iidx) => (
+                  <div key={iidx} className="guide-detail__gallery-item">
+                    <img
+                      src={img}
+                      alt={`Thirukadaiyur temple photo ${iidx + 1}`}
+                      className="guide-detail__gallery-img"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* CTA Box */}
           <div className="guide-detail__cta">

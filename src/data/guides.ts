@@ -10,6 +10,7 @@ export interface GuidePost {
   readTime: string;
   publishDate: string;
   coverImage: string;
+  galleryImages: string[];
   keywords: string[];
   contentEn: {
     intro: string;
@@ -49,7 +50,12 @@ export const guidesData: GuidePost[] = [
     summaryTa: 'திருக்கடையூர் அமிர்தகடேஸ்வரர் அபிராமி அம்மன் கோயிலில் 60ஆம் கல்யாணம் (சஷ்டியப்தபூர்த்தி) நடத்தும் முறை, கலச அபிஷேகம், மாங்கல்ய தாரணம் மற்றும் புகைப்பட வழிகாட்டி.',
     readTime: '6 min read',
     publishDate: '2026-09-05',
-    coverImage: '/images/shashtiapthapoorthi-main.jpg',
+    coverImage: '/images/tamil-weddings/tamil-01.jpg',
+    galleryImages: [
+      '/images/tamil-weddings/tamil-01.jpg',
+      '/images/tamil-weddings/tamil-03.jpg',
+      '/images/temple/temple-01.jpg'
+    ],
     keywords: [
       'Thirukadaiyur 60th wedding photography',
       'Shashtiapthapoorthi photographer Thirukadaiyur',
@@ -144,7 +150,12 @@ export const guidesData: GuidePost[] = [
     summaryTa: '1000 பௌர்ணமிகளைக் கண்ட பாக்கியசாலிகளான பெற்றோருக்கு திருக்கடையூரில் சதாபிஷேகம் (80ஆம் கல்யாணம்) மற்றும் பீமரத சாந்தி (70ஆம் கல்யாணம்) நடத்தும் முறை.',
     readTime: '5 min read',
     publishDate: '2026-09-06',
-    coverImage: '/images/sadabishegam-main.jpg',
+    coverImage: '/images/tamil-weddings/tamil-02.jpg',
+    galleryImages: [
+      '/images/tamil-weddings/tamil-02.jpg',
+      '/images/tamil-weddings/tamil-04.jpg',
+      '/images/family/family-01.jpg'
+    ],
     keywords: [
       'Sadabishegam photographer Thirukadaiyur',
       '80th wedding photography Thirukadaiyur',
@@ -186,7 +197,12 @@ export const guidesData: GuidePost[] = [
     summaryTa: 'திருக்கடையூர் வரும் குடும்பங்களுக்கான வழிகாட்டி — காலை ஹோம நேரங்கள், ஆடை கட்டுப்பாடுகள், மண்டபத் தேர்வு மற்றும் போட்டோகிராபி குறிப்புகள்.',
     readTime: '4 min read',
     publishDate: '2026-09-07',
-    coverImage: '/images/temple-tips-main.jpg',
+    coverImage: '/images/temple/temple-01.jpg',
+    galleryImages: [
+      '/images/temple/temple-01.jpg',
+      '/images/temple/temple-02.jpg',
+      '/images/temple/temple-03.jpg'
+    ],
     keywords: [
       'Thirukadaiyur temple photography rules',
       'Thirukadaiyur temple darshan timing',
@@ -227,7 +243,12 @@ export const guidesData: GuidePost[] = [
     summaryTa: 'திருநள்ளாறு ஸ்ரீ தர்பாரண்யேஸ்வரர் சனீஸ்வரன் கோயிலில் எள்ளு தீபம், நள தீர்த்த குளியல், பரிகார பூஜைகள் மற்றும் போட்டோகிராஃபி விவரங்கள்.',
     readTime: '5 min read',
     publishDate: '2026-09-08',
-    coverImage: '/images/thirunallar-main.jpg',
+    coverImage: '/images/temple/temple-02.jpg',
+    galleryImages: [
+      '/images/temple/temple-02.jpg',
+      '/images/temple/temple-03.jpg',
+      '/images/temple/temple-01.jpg'
+    ],
     keywords: [
       'Thirunallar Saneeswarar Temple photography',
       'Thirunallar photographer',

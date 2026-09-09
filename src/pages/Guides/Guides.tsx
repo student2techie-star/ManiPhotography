@@ -56,6 +56,12 @@ export default function Guides() {
             {guidesData.map(guide => (
               <article key={guide.id} className="guide-card reveal">
                 <div className="guide-card__img-wrap">
+                  <img
+                    src={guide.coverImage}
+                    alt={language === 'en' ? guide.titleEn : guide.titleTa}
+                    className="guide-card__img"
+                    loading="lazy"
+                  />
                   <div className="guide-card__badge">
                     {language === 'en' ? guide.category : guide.categoryTa}
                   </div>
