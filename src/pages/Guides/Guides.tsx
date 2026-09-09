@@ -45,7 +45,7 @@ export default function Guides() {
       <section className="section section--dark">
         <div className="container">
           <SectionHeading
-            badge={language === 'en' ? 'Articles & Advice' : 'கட்டுரைகள் & ஆலோசனைகள்'}
+            label={language === 'en' ? 'Articles & Advice' : 'கட்டுரைகள் & ஆலோசனைகள்'}
             title={language === 'en' ? 'Thirukadaiyur Ceremony Guides' : 'திருக்கடையூர் விழா வழிகாட்டிகள்'}
             subtitle={language === 'en'
               ? 'Everything you need to plan a memorable 60th, 70th & 80th wedding ceremony'
