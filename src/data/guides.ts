@@ -215,6 +215,69 @@ export const guidesData: GuidePost[] = [
         }
       ]
     }
+  },
+  {
+    id: '4',
+    slug: 'thirunallar-saneeswarar-temple-parihara-pooja-photography-guide',
+    category: 'Thirunallar Saneeswarar Temple',
+    categoryTa: 'திருநள்ளாறு சனீஸ்வரன் கோயில்',
+    titleEn: 'Thirunallar Saneeswarar Temple Parihara Pooja & Photography Guide',
+    titleTa: 'திருநள்ளாறு சனீஸ்வரன் கோயில் பரிகார பூஜை & புகைப்பட வழிகாட்டி',
+    summaryEn: 'Complete guide to Thirunallar Sri Darbaranyeswarar Saneeswara Temple — Nala Theertham holy bath, Til Homam / Parihara Pooja, Saturday rush timings, and professional family photography.',
+    summaryTa: 'திருநள்ளாறு ஸ்ரீ தர்பாரண்யேஸ்வரர் சனீஸ்வரன் கோயிலில் எள்ளு தீபம், நள தீர்த்த குளியல், பரிகார பூஜைகள் மற்றும் போட்டோகிராஃபி விவரங்கள்.',
+    readTime: '5 min read',
+    publishDate: '2026-09-08',
+    coverImage: '/images/thirunallar-main.jpg',
+    keywords: [
+      'Thirunallar Saneeswarar Temple photography',
+      'Thirunallar photographer',
+      'Thirunallar Parihara Pooja photographer',
+      'Nala Theertham Thirunallar',
+      'திருநள்ளாறு சனீஸ்வரன் கோயில் போட்டோகிராஃபி',
+      'திருநள்ளாறு பரிகார பூஜை'
+    ],
+    contentEn: {
+      intro: 'Located just 25 km from Thirukadaiyur in Karaikal, Thirunallar Sri Darbaranyeswarar Saneeswarar Temple is world-famous as the foremost temple for Lord Shani (Saneeswara Bhagavan). Devotees visit Thirunallar to perform Parihara Poojas, take a holy dip in Nala Theertham to dispel Saturn doshas, and seek health, wealth, and peace for their families.',
+      sections: [
+        {
+          heading: '1. Significance of Thirunallar Saneeswarar Temple',
+          body: 'Lord Shani resides as a benevolent deity (Anugraha Murthy) in Thirunallar. It is the sacred sthalam where King Nala was liberated from Saturn’s influence after bathing in Nala Theertham.'
+        },
+        {
+          heading: '2. Major Rituals & Family Photography Moments',
+          body: 'Our photography service covers all important family moments during your Thirunallar visit:',
+          bulletPoints: [
+            'Nala Theertham Sacred Dip: Documenting family members after taking the holy bath.',
+            'Til Deepam (Sesame Oil Lamps): Warm candid portraits as family members light sesame oil lamps.',
+            'Saneeswara Abhishekam & Archana: Documenting temple visit and family traditional portraits.',
+            'Combined Thirukadaiyur & Thirunallar Package: Full day photography covering both sacred temples.'
+          ]
+        },
+        {
+          heading: '3. Saturday Rush & Best Visiting Timings',
+          body: 'Saturdays are peak days at Thirunallar. For peaceful family photography and quick darshan, early morning hours (5:00 AM – 8:00 AM) or weekdays (Monday to Thursday) are highly recommended.'
+        }
+      ],
+      faqs: [
+        {
+          question: 'Do you offer photography coverage for Thirunallar Temple trips from Thirukadaiyur?',
+          answer: 'Yes! Mani Photography (+91 93602 93815) provides full-day combined photography packages covering both Thirukadaiyur Abirami Temple and Thirunallar Saneeswarar Temple.'
+        }
+      ]
+    },
+    contentTa: {
+      intro: 'திருக்கடையூரில் இருந்து வெறும் 25 கி.மீ தொலைவில் காரைக்காலில் அமைந்துள்ள திருநள்ளாறு ஸ்ரீ தர்பாரண்யேஸ்வரர் சனீஸ்வரன் கோயில் நள தீர்த்தத்தில் நீராடி சனீஸ்வர பகவானை தரிசித்து ஏழரை சனி, அஷ்டம சனி தோஷங்களிலிருந்து நிவாரணம் பெற லட்சக்கணக்கான பக்தர்கள் வரும் தலமாகும்.',
+      sections: [
+        {
+          heading: '1. திருநள்ளாறு சனீஸ்வரன் கோயில் சிறப்புகள்',
+          body: 'நள சக்கரவர்த்தி சனீஸ்வரனின் பிடியிலிருந்து விடுபட்டு அமைதி பெற்ற புனிதத் தலம் இதுவாகும். இங்கு எள்ளு தீபம் ஏற்றி வழிபடுவது குடும்பத்திற்கு பெரு நன்மைகளைத் தரும்.'
+        },
+        {
+          heading: '2. சனீஸ்வரன் கோயில் சடங்குகள் & போட்டோகிராஃபி',
+          body: 'மணி போட்டோகிராஃபி மூலம் திருக்கடையூர் மற்றும் திருநள்ளாறு இரண்டு கோயில்களையும் ஒரே நாளில் கவர் செய்யும் சிறப்பு புகைப்பட பேக்கேஜ்கள் வழங்கப்படுகின்றன.'
+        }
+      ]
+    }
   }
 ];
 
