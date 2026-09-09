@@ -50,10 +50,10 @@ export const guidesData: GuidePost[] = [
     summaryTa: 'திருக்கடையூர் அமிர்தகடேஸ்வரர் அபிராமி அம்மன் கோயிலில் 60ஆம் கல்யாணம் (சஷ்டியப்தபூர்த்தி) நடத்தும் முறை, கலச அபிஷேகம், மாங்கல்ய தாரணம் மற்றும் புகைப்பட வழிகாட்டி.',
     readTime: '6 min read',
     publishDate: '2026-09-05',
-    coverImage: '/images/tamil-weddings/tamil-01.jpg',
+    coverImage: '/images/guides/shashtiapthapoorthi-60th.png',
     galleryImages: [
+      '/images/guides/shashtiapthapoorthi-60th.png',
       '/images/tamil-weddings/tamil-01.jpg',
-      '/images/tamil-weddings/tamil-03.jpg',
       '/images/temple/temple-01.jpg'
     ],
     keywords: [
@@ -150,10 +150,10 @@ export const guidesData: GuidePost[] = [
     summaryTa: '1000 பௌர்ணமிகளைக் கண்ட பாக்கியசாலிகளான பெற்றோருக்கு திருக்கடையூரில் சதாபிஷேகம் (80ஆம் கல்யாணம்) மற்றும் பீமரத சாந்தி (70ஆம் கல்யாணம்) நடத்தும் முறை.',
     readTime: '5 min read',
     publishDate: '2026-09-06',
-    coverImage: '/images/tamil-weddings/tamil-02.jpg',
+    coverImage: '/images/guides/sadabishegam-80th.png',
     galleryImages: [
+      '/images/guides/sadabishegam-80th.png',
       '/images/tamil-weddings/tamil-02.jpg',
-      '/images/tamil-weddings/tamil-04.jpg',
       '/images/family/family-01.jpg'
     ],
     keywords: [
@@ -243,11 +243,11 @@ export const guidesData: GuidePost[] = [
     summaryTa: 'திருநள்ளாறு ஸ்ரீ தர்பாரண்யேஸ்வரர் சனீஸ்வரன் கோயிலில் எள்ளு தீபம், நள தீர்த்த குளியல், பரிகார பூஜைகள் மற்றும் போட்டோகிராஃபி விவரங்கள்.',
     readTime: '5 min read',
     publishDate: '2026-09-08',
-    coverImage: '/images/temple/temple-02.jpg',
+    coverImage: '/images/guides/thirunallar-temple.png',
     galleryImages: [
+      '/images/guides/thirunallar-temple.png',
       '/images/temple/temple-02.jpg',
-      '/images/temple/temple-03.jpg',
-      '/images/temple/temple-01.jpg'
+      '/images/temple/temple-03.jpg'
     ],
     keywords: [
       'Thirunallar Saneeswarar Temple photography',
