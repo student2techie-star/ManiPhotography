@@ -333,9 +333,9 @@ export const guidesData: GuidePost[] = [
           heading: '1. By Flight / Air (Nearest Airports)',
           body: 'For NRI families and devotees flying in from outside Tamil Nadu:',
           bulletPoints: [
-            'Tiruchirappalli International Airport (TRZ) - NEAREST AIRPORT (~145 km, 3.5 hrs drive): Direct international flights from Singapore, Malaysia, Dubai, Colombo, and domestic connections from major Indian cities. Taxis & buses available from Trichy Airport directly to Thirukadaiyur via Thanjavur & Kumbakonam.',
-            'Chennai International Airport (MAA) (~285 km, 6 hrs drive): Major international hub with direct flights nationwide and globally. From Chennai, you can take a private taxi via ECR (East Coast Road), a direct train to Mayiladuthurai, or an AC sleeper bus.',
-            'Puducherry Airport (PNY) (~130 km, 3 hrs drive): Regional airport with flights from Bangalore and Hyderabad. From Pondicherry, take ECR highway to Thirukadaiyur via Cuddalore & Chidambaram.'
+            'Tiruchirappalli International Airport (TRZ) - NEAREST OPERATIONAL AIRPORT (~145 km, 3.5 hrs drive): Direct international flights from Singapore, Malaysia, Dubai, Colombo, and domestic flights from major Indian cities. Taxis & buses are easily available from Trichy Airport directly to Thirukadaiyur via Thanjavur & Kumbakonam.',
+            'Chennai International Airport (MAA) (~285 km, 6 hrs drive): Major international hub with direct flights nationwide and globally. From Chennai, you can take a private taxi via ECR (East Coast Road), a direct express train to Mayiladuthurai, or an AC sleeper bus.',
+            'Madurai Airport (IXM) (~220 km, 4.5 hrs drive): Connected with flights from Mumbai, Delhi, Hyderabad, and Bangalore.'
           ]
         },
         {
@@ -388,11 +388,11 @@ export const guidesData: GuidePost[] = [
       sections: [
         {
           heading: '1. விமானம் மூலம் வருவதற்கு (அருகில் உள்ள விமான நிலையங்கள்)',
-          body: 'வெளிநாடுகள் மற்றும் பிற மாநிலங்களிலிருந்து வருவோருக்கு அருகில் உள்ள விமான நிலையங்கள்:',
+          body: 'வெளிநாடுகள் மற்றும் பிற மாநிலங்களிலிருந்து வருவோருக்கு அருகில் உள்ள முக்கிய விமான நிலையங்கள்:',
           bulletPoints: [
-            'திருச்சி சர்வதேச விமான நிலையம் (TRZ) - மிக அருகில் உள்ள விமான நிலையம் (~145 கி.மீ, 3.5 மணி நேரம்): சிங்கப்பூர், மலேசியா, துபாய் மற்றும் இந்திய நகரங்களிலிருந்தும் நேரடி விமானங்கள் உள்ளன. திருச்சியில் இருந்து கார்/டாக்ஸி மூலம் தஞ்சாவூர்-கும்பகோணம் வழியாக திருக்கடையூர் வரலாம்.',
+            'திருச்சி சர்வதேச விமான நிலையம் (TRZ) - மிக அருகில் உள்ள இயங்கும் விமான நிலையம் (~145 கி.மீ, 3.5 மணி நேரம்): சிங்கப்பூர், மலேசியா, துபாய் மற்றும் இந்திய நகரங்களிலிருந்தும் நேரடி விமானங்கள் உள்ளன. திருச்சியில் இருந்து கார்/டாக்ஸி மூலம் தஞ்சாவூர்-கும்பகோணம் வழியாக திருக்கடையூர் வரலாம்.',
             'சென்னை சர்வதேச விமான நிலையம் (MAA) (~285 கி.மீ, 6 மணி நேரம்): சென்னையில் இருந்து ECR கடற்கரை சாலை வழியாக கார், நேரடி ரயில் அல்லது ஏசி பஸ் மூலம் திருக்கடையூர் வரலாம்.',
-            'புதுச்சேரி விமான நிலையம் (PNY) (~130 கி.மீ, 3 மணி நேரம்): பெங்களூரு மற்றும் ஹைதராபாத்திலிருந்து விமானங்கள் இயக்கப்படுகின்றன.'
+            'மதுரை விமான நிலையம் (IXM) (~220 கி.மீ, 4.5 மணி நேரம்): மும்பை, டெல்லி, ஹைதராபாத் நகரங்களில் இருந்து விமானங்கள் உள்ளன.'
           ]
         },
         {
@@ -417,7 +417,7 @@ export const guidesData: GuidePost[] = [
           heading: '4. கார் / டாக்ஸி சுயப் பயணம் செய்வோருக்கு',
           body: 'காரில் திருக்கடையூர் வருவதற்கான சிறந்த பாதைகள்:',
           bulletPoints: [
-            'சென்னையிலிருந்து (285 கி.மீ | 6 மணி நேரம்): ECR சாலை வழி: சென்னை → மகாபலிபுரம் → புதுச்சேரி → கடலூர் → молоко → சிதம்பரம் → சீர்காழி → திருக்கடையூர்.',
+            'சென்னையிலிருந்து (285 கி.மீ | 6 மணி நேரம்): ECR சாலை வழி: சென்னை → மகாபலிபுரம் → புதுச்சேரி → கடலூர் → சிதம்பரம் → சீர்காழி → திருக்கடையூர்.',
             'பெங்களூருவிலிருந்து (430 கி.மீ | 8.5 மணி நேரம்): பெங்களூரு → சேலம் → ஆத்தூர் → பெரம்பலூர் → ஜெயங்கொண்டம் → மயிலாடுதுறை → திருக்கடையூர்.',
             'திருச்சியிலிருந்து (145 கி.மீ | 3.5 மணி நேரம்): திருச்சி → தஞ்சாவூர் → கும்பகோணம் → மயிலாடுதுறை → திருக்கடையூர்.'
           ]
