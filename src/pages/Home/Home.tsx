@@ -22,11 +22,11 @@ export default function Home() {
 
   const homeMeta = {
     title: language === 'en'
-      ? 'Mani Photography | Wedding & Event Photography in Thirukadaiyur, Mayiladuthurai'
-      : 'மணி போட்டோகிராஃபி | திருக்கடையூர், மயிலாடுதுறை திருமண & நிகழ்வு புகைப்படம்',
+      ? 'Thirukadaiyur Photography & Wedding | Mani Photography'
+      : 'மணி போட்டோகிராஃபி | திருக்கடையூர் திருமண புகைப்படங்கள்',
     description: language === 'en'
-      ? 'Mani Photography — capturing beautiful weddings, Tamil traditional ceremonies, pre-wedding shoots, baby showers, house warmings and family functions. Premium photography in Thirukadaiyur, Mayiladuthurai, Tamil Nadu.'
-      : 'மணி போட்டோகிராஃபி — தமிழ் பாரம்பரிய திருமணங்கள், pre-wedding ஷூட், வளைகாப்பு, கிரகப்பிரவேசம் மற்றும் குடும்ப விழாக்களுக்கான உயர்தர புகைப்படம். திருக்கடையூர், மயிலாடுதுறை, தமிழ்நாடு.',
+      ? 'Mani Photography Thirukadaiyur — Specialist for 60th, 70th & 80th Marriage, Tamil Weddings & Temple Shoots in Thirukadaiyur. Call +91 81110 85865.'
+      : 'திருக்கடையூர் 60, 70 & 80ஆம் கல்யாணம், தமிழ் திருமணங்கள் & கோயில் சடங்கு போட்டோகிராஃபி முன்பதிவுக்கு அழைக்க: +91 81110 85865 (மணி போட்டோகிராஃபி).',
     structuredData: [getLocalBusinessSchema(), getWebSiteSchema()],
   };
 
