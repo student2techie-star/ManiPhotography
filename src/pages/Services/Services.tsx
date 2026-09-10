@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
 import { useDocumentHead } from '../../hooks/useDocumentHead';
-import { services } from '../../data/services';
+import { allServices as services } from '../../data/services';
+import type { ServiceItem } from '../../data/services';
 import SectionHeading from '../../components/SectionHeading/SectionHeading';
 import { useLanguage } from '../../context/LanguageContext';
 import { translations } from '../../data/translations';
@@ -39,7 +40,7 @@ export default function Services() {
       {/* Services List */}
       <section className="section section--dark services-page">
         <div className="container">
-          {services.map((service, i) => {
+          {services.map((service: ServiceItem, i: number) => {
             const localized = t.serviceItems[service.id as keyof typeof t.serviceItems] || {
               title: service.title,
               fullDesc: service.fullDesc,

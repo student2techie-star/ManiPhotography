@@ -4,7 +4,8 @@ import { ChevronDown } from 'lucide-react';
 import { useDocumentHead } from '../../hooks/useDocumentHead';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
 import { portfolioItems } from '../../data/portfolio';
-import { services } from '../../data/services';
+import { allServices as services } from '../../data/services';
+import { getLocalBusinessSchema, getWebSiteSchema } from '../../components/SEO/JsonLd';
 import SectionHeading from '../../components/SectionHeading/SectionHeading';
 import PortfolioGrid from '../../components/PortfolioGrid/PortfolioGrid';
 import FaqSection from '../../components/FaqSection/FaqSection';
@@ -26,6 +27,7 @@ export default function Home() {
     description: language === 'en'
       ? 'Mani Photography — capturing beautiful weddings, Tamil traditional ceremonies, pre-wedding shoots, baby showers, house warmings and family functions. Premium photography in Thirukadaiyur, Mayiladuthurai, Tamil Nadu.'
       : 'மணி போட்டோகிராஃபி — தமிழ் பாரம்பரிய திருமணங்கள், pre-wedding ஷூட், வளைகாப்பு, கிரகப்பிரவேசம் மற்றும் குடும்ப விழாக்களுக்கான உயர்தர புகைப்படம். திருக்கடையூர், மயிலாடுதுறை, தமிழ்நாடு.',
+    structuredData: [getLocalBusinessSchema(), getWebSiteSchema()],
   };
 
   useDocumentHead(homeMeta);
@@ -83,6 +85,7 @@ export default function Home() {
           <div className="hero__bg-fallback" aria-hidden="true" />
           <video
             src={`${import.meta.env.BASE_URL}videos/thirukadaiyur-showcase.mp4`}
+            poster={`${import.meta.env.BASE_URL}images/thirukadaiyur-video-poster.webp`}
             className="hero__bg-video"
             autoPlay
             loop
@@ -368,7 +371,7 @@ export default function Home() {
               };
               return (
                 <Link
-                  to={`/services`}
+                  to={service.dedicatedRoute || `/services/${service.slug}`}
                   key={service.id}
                   className={`service-card reveal reveal-delay-${(i % 4) + 1}`}
                 >

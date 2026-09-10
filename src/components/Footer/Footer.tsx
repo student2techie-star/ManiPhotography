@@ -29,6 +29,15 @@ export default function Footer() {
     { label: t.categories['family-functions'], to: '/portfolio/family-functions' },
   ];
 
+  const serviceLinks = [
+    { label: language === 'en' ? '60th Birthday Photography' : '60ஆம் கல்யாணம்', to: '/60th-birthday-photography-thirukadaiyur' },
+    { label: language === 'en' ? '70th Birthday Photography' : '70ஆம் கல்யாணம்', to: '/70th-birthday-photography-thirukadaiyur' },
+    { label: language === 'en' ? '80th Birthday Photography' : '80ஆம் கல்யாணம்', to: '/80th-birthday-photography-thirukadaiyur' },
+    { label: language === 'en' ? 'Wedding Photography' : 'திருமண போட்டோகிராஃபி', to: '/wedding-photography-thirukadaiyur' },
+    { label: language === 'en' ? 'Temple Photography' : 'கோயில் போட்டோகிராஃபி', to: '/temple-photography-thirukadaiyur' },
+    { label: language === 'en' ? 'Wedding Videography' : 'திருமண வீடியோகிராஃபி', to: '/wedding-videography-thirukadaiyur' },
+  ];
+
   return (
     <footer className="footer" role="contentinfo">
       <div className="footer__top container">
@@ -59,10 +68,23 @@ export default function Footer() {
         </div>
 
         <div className="footer__col">
-          <h3 className="footer__heading">{t.nav.portfolio}</h3>
+          <h3 className="footer__heading">{language === 'en' ? 'Quick Links' : 'விரைவு இணைப்புகள்'}</h3>
           <nav aria-label="Footer navigation">
             <ul className="footer__links">
               {footerNavLinks.map(link => (
+                <li key={link.to}>
+                  <Link to={link.to} className="footer__link">{link.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+
+        <div className="footer__col">
+          <h3 className="footer__heading">{language === 'en' ? 'Our Services' : 'எங்கள் சேவைகள்'}</h3>
+          <nav aria-label="Service pages">
+            <ul className="footer__links">
+              {serviceLinks.map(link => (
                 <li key={link.to}>
                   <Link to={link.to} className="footer__link">{link.label}</Link>
                 </li>

@@ -50,11 +50,11 @@ export const guidesData: GuidePost[] = [
     summaryTa: 'திருக்கடையூர் அமிர்தகடேஸ்வரர் அபிராமி அம்மன் கோயிலில் 60ஆம் கல்யாணம் (சஷ்டியப்தபூர்த்தி) நடத்தும் முறை, கலச அபிஷேகம், மாங்கல்ய தாரணம் மற்றும் புகைப்பட வழிகாட்டி.',
     readTime: '6 min read',
     publishDate: '2026-09-05',
-    coverImage: '/images/guides/shashtiapthapoorthi-60th.png',
+    coverImage: '/images/guides/thirukadaiyur-60th-birthday-shashtiapthapoorthi-guide.webp',
     galleryImages: [
-      '/images/guides/shashtiapthapoorthi-60th.png',
-      '/images/tamil-weddings/tamil-01.jpg',
-      '/images/temple/temple-01.jpg'
+      '/images/guides/thirukadaiyur-60th-birthday-shashtiapthapoorthi-guide.webp',
+      '/images/tamil-weddings/thirukadaiyur-60th-birthday-shashtiapthapoorthi-photography.webp',
+      '/images/temple/thirukadaiyur-amritaghateswarar-abirami-temple-photography.webp'
     ],
     keywords: [
       'Thirukadaiyur 60th wedding photography',
@@ -100,7 +100,7 @@ export const guidesData: GuidePost[] = [
       faqs: [
         {
           question: 'What is the best photographer for 60th marriage in Thirukadaiyur?',
-          answer: 'Mani Photography Thirukadaiyur (+91 93602 93815) is the leading specialist photographer for 60th Marriage (Shashtiapthapoorthi), 70th & 80th (Sadabishegam) milestone weddings at Amritaghateswarar Abirami Temple.'
+          answer: 'Mani Photography Thirukadaiyur (+91 81110 85865) is the leading specialist photographer for 60th Marriage (Shashtiapthapoorthi), 70th & 80th (Sadabishegam) milestone weddings at Amritaghateswarar Abirami Temple.'
         },
         {
           question: 'Is photography allowed inside Thirukadaiyur Temple?',
@@ -150,11 +150,11 @@ export const guidesData: GuidePost[] = [
     summaryTa: '1000 பௌர்ணமிகளைக் கண்ட பாக்கியசாலிகளான பெற்றோருக்கு திருக்கடையூரில் சதாபிஷேகம் (80ஆம் கல்யாணம்) மற்றும் பீமரத சாந்தி (70ஆம் கல்யாணம்) நடத்தும் முறை.',
     readTime: '5 min read',
     publishDate: '2026-09-06',
-    coverImage: '/images/guides/sadabishegam-80th.png',
+    coverImage: '/images/guides/thirukadaiyur-80th-birthday-sadabishegam-photography.webp',
     galleryImages: [
-      '/images/guides/sadabishegam-80th.png',
-      '/images/tamil-weddings/tamil-02.jpg',
-      '/images/family/family-01.jpg'
+      '/images/guides/thirukadaiyur-80th-birthday-sadabishegam-photography.webp',
+      '/images/tamil-weddings/thirukadaiyur-70th-birthday-bhimaratha-shanthi-photography.webp',
+      '/images/family/thirukadaiyur-multi-generational-family-portrait.webp'
     ],
     keywords: [
       'Sadabishegam photographer Thirukadaiyur',
@@ -243,11 +243,11 @@ export const guidesData: GuidePost[] = [
     summaryTa: 'திருநள்ளாறு ஸ்ரீ தர்பாரண்யேஸ்வரர் சனீஸ்வரன் கோயிலில் எள்ளு தீபம், நள தீர்த்த குளியல், பரிகார பூஜைகள் மற்றும் போட்டோகிராஃபி விவரங்கள்.',
     readTime: '5 min read',
     publishDate: '2026-09-08',
-    coverImage: '/images/guides/thirunallar-temple.png',
+    coverImage: '/images/guides/thirunallar-saneeswarar-temple-photography-guide.webp',
     galleryImages: [
-      '/images/guides/thirunallar-temple.png',
-      '/images/temple/temple-02.jpg',
-      '/images/temple/temple-03.jpg'
+      '/images/guides/thirunallar-saneeswarar-temple-photography-guide.webp',
+      '/images/temple/thirukadaiyur-temple-courtyard-candid-portrait.webp',
+      '/images/temple/thirukadaiyur-temple-sanctum-blessings-shoot.webp'
     ],
     keywords: [
       'Thirunallar Saneeswarar Temple photography',
@@ -282,7 +282,7 @@ export const guidesData: GuidePost[] = [
       faqs: [
         {
           question: 'Do you offer photography coverage for Thirunallar Temple trips from Thirukadaiyur?',
-          answer: 'Yes! Mani Photography (+91 93602 93815) provides full-day combined photography packages covering both Thirukadaiyur Abirami Temple and Thirunallar Saneeswarar Temple.'
+          answer: 'Yes! Mani Photography (+91 81110 85865) provides full-day combined photography packages covering both Thirukadaiyur Abirami Temple and Thirunallar Saneeswarar Temple.'
         }
       ]
     },
@@ -369,7 +369,7 @@ export const guidesData: GuidePost[] = [
         },
         {
           heading: '5. Photography & Accommodation Arrangements',
-          body: 'Once you reach Thirukadaiyur, we recommend reaching your lodge or homam mandapam at least 1 to 2 hours prior to your scheduled muhurtham time. Mani Photography (+91 93602 93815) provides end-to-end photography coverage right from your hotel arrival, mandapam homam, Kalasa Abhishekam, Mangalya Dharanam, to outer temple portraits.'
+          body: 'Once you reach Thirukadaiyur, we recommend reaching your lodge or homam mandapam at least 1 to 2 hours prior to your scheduled muhurtham time. Mani Photography (+91 81110 85865) provides end-to-end photography coverage right from your hotel arrival, mandapam homam, Kalasa Abhishekam, Mangalya Dharanam, to outer temple portraits.'
         }
       ],
       faqs: [

@@ -3,29 +3,89 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://thirukadaiyurmaniphotography.in/</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://thirukadaiyurmaniphotography.in/" />
     <xhtml:link rel="alternate" hreflang="ta" href="https://thirukadaiyurmaniphotography.in/" />
   </url>
+
+  <!-- Dedicated Service SEO Landing Pages -->
+  <url>
+    <loc>https://thirukadaiyurmaniphotography.in/wedding-photography-thirukadaiyur</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://thirukadaiyurmaniphotography.in/60th-birthday-photography-thirukadaiyur</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://thirukadaiyurmaniphotography.in/70th-birthday-photography-thirukadaiyur</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://thirukadaiyurmaniphotography.in/80th-birthday-photography-thirukadaiyur</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://thirukadaiyurmaniphotography.in/shashtiapthapoorthi-photography</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://thirukadaiyurmaniphotography.in/temple-photography-thirukadaiyur</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thirukadaiyurmaniphotography.in/wedding-videography-thirukadaiyur</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Core Pages -->
   <url>
     <loc>https://thirukadaiyurmaniphotography.in/portfolio</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thirukadaiyurmaniphotography.in/services</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thirukadaiyurmaniphotography.in/contact</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://thirukadaiyurmaniphotography.in/about</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Guides / Blog Content -->
+  <url>
     <loc>https://thirukadaiyurmaniphotography.in/guides</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thirukadaiyurmaniphotography.in/guides/thirukadaiyur-60th-marriage-shashtiapthapoorthi-guide</loc>
@@ -55,18 +115,6 @@
     <loc>https://thirukadaiyurmaniphotography.in/guides/how-to-reach-thirukadaiyur-travel-guide-bus-train-car-flight</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://thirukadaiyurmaniphotography.in/about</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://thirukadaiyurmaniphotography.in/contact</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 </urlset>

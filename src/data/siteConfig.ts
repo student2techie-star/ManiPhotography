@@ -10,8 +10,8 @@ export const siteConfig = {
     'Mani Photography captures authentic emotions, beautiful details, traditional moments and unforgettable celebrations across weddings, pre-weddings, Tamil ceremonies, family functions and more.',
 
   // ── Contact ─────────────────────────────────────────────
-  phone: '+91 93602 93815',
-  whatsapp: '919360293815',
+  phone: '+91 81110 85865',
+  whatsapp: '918111085865',
   email: 'hello@maniphoto.in',       // ← Replace with real email
   location: 'Thirukadaiyur, Mayiladuthurai, Tamil Nadu',
   mapsUrl: 'https://maps.app.goo.gl/Y1nbyGyD19nHdTVRA',

@@ -232,7 +232,7 @@ export default function Chatbot() {
             ? 'Our packages cover temple Kalasa Abhishekam, mandapam photography, high-resolution edited galleries and optional cinematic LED videos. Contact us for custom quotes!'
             : 'எங்கள் பேக்கேஜ்களில் கோயில் அபிஷேகம், மண்டப சடங்குகள், உயர்தர எடிட் ஆல்பம் மற்றும் சினிமா வீடியோக்கள் அடங்கும்.',
           options: [
-            { label: language === 'en' ? '📞 Call +91 93602 93815' : '📞 அழைக்க +91 93602 93815', action: 'call' },
+            { label: language === 'en' ? '📞 Call +91 81110 85865' : '📞 அழைக்க +91 81110 85865', action: 'call' },
             { label: language === 'en' ? '💬 Chat on WhatsApp' : '💬 வாட்ஸ்அப்பில் கேட்க', action: 'whatsapp' },
           ],
         };
@@ -284,8 +284,8 @@ export default function Chatbot() {
           id: (Date.now() + 1).toString(),
           sender: 'bot',
           text: language === 'en'
-            ? 'Thank you! You can reach us directly via phone (+91 93602 93815) or WhatsApp.'
-            : 'நன்றி! எங்களை +91 93602 93815 என்ற எண்ணில் நேரடியாக அழைக்கலாம்.',
+            ? 'Thank you! You can reach us directly via phone (+91 81110 85865) or WhatsApp.'
+            : 'நன்றி! எங்களை +91 81110 85865 என்ற எண்ணில் நேரடியாக அழைக்கலாம்.',
         };
       }
 
@@ -366,10 +366,10 @@ export default function Chatbot() {
           id: Date.now().toString(),
           sender: 'bot',
           text: language === 'en'
-            ? 'For custom ceremony photography quotes and special package offers, please chat with us on WhatsApp or call +91 93602 93815!'
-            : 'சிறப்பு பேக்கேஜ் கட்டண விவரங்களுக்கு எங்களை +91 93602 93815 என்ற எண்ணில் தொடர்பு கொள்ளவும்.',
+            ? 'For custom ceremony photography quotes and special package offers, please chat with us on WhatsApp or call +91 81110 85865!'
+            : 'சிறப்பு பேக்கேஜ் கட்டண விவரங்களுக்கு எங்களை +91 81110 85865 என்ற எண்ணில் தொடர்பு கொள்ளவும்.',
           options: [
-            { label: '📞 Call +91 93602 93815', action: 'call' },
+            { label: '📞 Call +91 81110 85865', action: 'call' },
             { label: '💬 WhatsApp Chat', action: 'whatsapp' },
           ],
         };
@@ -378,8 +378,8 @@ export default function Chatbot() {
           id: Date.now().toString(),
           sender: 'bot',
           text: language === 'en'
-            ? 'Thank you for your inquiry! Our Thirukadaiyur team is ready to help you. Speak directly with us on WhatsApp or call +91 93602 93815 for instant assistance.'
-            : 'உங்கள் செய்திக்கு நன்றி! எங்களை வாட்ஸ்அப் அல்லது +91 93602 93815 என்ற எண்ணில் தொடர்பு கொண்டு உடனடி தகவல் பெறலாம்.',
+            ? 'Thank you for your inquiry! Our Thirukadaiyur team is ready to help you. Speak directly with us on WhatsApp or call +91 81110 85865 for instant assistance.'
+            : 'உங்கள் செய்திக்கு நன்றி! எங்களை வாட்ஸ்அப் அல்லது +91 81110 85865 என்ற எண்ணில் தொடர்பு கொண்டு உடனடி தகவல் பெறலாம்.',
           options: [
             { label: '📞 Call Us', action: 'call' },
             { label: '💬 Talk on WhatsApp', action: 'whatsapp' },

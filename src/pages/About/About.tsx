@@ -49,8 +49,8 @@ export default function About() {
             <div className="about-story__image reveal-left">
               <div className="about-story__img-wrap">
                 <img
-                  src={`${import.meta.env.BASE_URL}images/about/about-01.jpg`}
-                  alt="Mani Photography — behind the scenes at a wedding"
+                  src={`${import.meta.env.BASE_URL}images/about/thirukadaiyur-lead-photographer-mani.webp`}
+                  alt="Mani Photography — Lead Photographer in Thirukadaiyur"
                   className="img-cover"
                   loading="lazy"
                   width="800"

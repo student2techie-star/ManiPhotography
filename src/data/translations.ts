@@ -210,7 +210,7 @@ export const translations = {
         },
         {
           q: 'How do I book Mani Photography for a Thirukadaiyur temple ceremony?',
-          a: 'You can call or WhatsApp us directly at +91 93602 93815 or submit an enquiry on our website. Located right in Thirukadaiyur, we handle complete temple & mandapam photography.',
+          a: 'You can call or WhatsApp us directly at +91 81110 85865 or submit an enquiry on our website. Located right in Thirukadaiyur, we handle complete temple & mandapam photography.',
         },
         {
           q: 'What is included in the 60th & 80th wedding photography package?',
@@ -599,7 +599,7 @@ export const translations = {
         },
         {
           q: 'மணி போட்டோகிராபியை படப்பிடிப்பிற்கு எவ்வாறு பதிவு செய்வது?',
-          a: '+91 93602 93815 என்ற எண்ணில் நேரடியாக எங்களை அழைக்கலாம் அல்லது வாட்ஸ்அப்பில் தொடர்பு கொள்ளலாம். திருக்கடையூரில் அமைந்துள்ள நாங்கள் கோயில் மற்றும் மண்டப படப்பிடிப்புகளை சிறப்பாக செய்து தருகிறோம்.',
+          a: '+91 81110 85865 என்ற எண்ணில் நேரடியாக எங்களை அழைக்கலாம் அல்லது வாட்ஸ்அப்பில் தொடர்பு கொள்ளலாம். திருக்கடையூரில் அமைந்துள்ள நாங்கள் கோயில் மற்றும் மண்டப படப்பிடிப்புகளை சிறப்பாக செய்து தருகிறோம்.',
         },
         {
           q: '60 & 80ஆம் கல்யாண படப்பிடிப்பில் என்னென்ன சேர்க்கப்பட்டுள்ளன?',

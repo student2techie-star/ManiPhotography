@@ -54,11 +54,11 @@ export default function Contact() {
 
   useDocumentHead({
     title: language === 'en'
-      ? 'Book Thirukadaiyur 60th, 70th & 80th Photographer | Mani Photography (+91 93602 93815)'
-      : 'திருக்கடையூர் போட்டோகிராஃபர் முன்பதிவு | மணி போட்டோகிராஃபி (+91 93602 93815)',
+      ? 'Book Thirukadaiyur 60th, 70th & 80th Photographer | Mani Photography (+91 81110 85865)'
+      : 'திருக்கடையூர் போட்டோகிராஃபர் முன்பதிவு | மணி போட்டோகிராஃபி (+91 81110 85865)',
     description: language === 'en'
-      ? 'Book your Thirukadaiyur 60th Wedding (Shashtiapthapoorthi), 70th & 80th (Sadabishegam) photoshoot. Call +91 93602 93815 or send a WhatsApp message to Mani Photography Thirukadaiyur.'
-      : 'திருக்கடையூர் 60ஆம் கல்யாணம் (சஷ்டியப்தபூர்த்தி), 70ஆம் கல்யாணம் & 80ஆம் கல்யாண (சதாபிஷேகம்) புகைப்பட முன்பதிவுக்கு அழைக்கவும்: +91 93602 93815 (மணி போட்டோகிராஃபி).',
+      ? 'Book your Thirukadaiyur 60th Wedding (Shashtiapthapoorthi), 70th & 80th (Sadabishegam) photoshoot. Call +91 81110 85865 or send a WhatsApp message to Mani Photography Thirukadaiyur.'
+      : 'திருக்கடையூர் 60ஆம் கல்யாணம் (சஷ்டியப்தபூர்த்தி), 70ஆம் கல்யாணம் & 80ஆம் கல்யாண (சதாபிஷேகம்) புகைப்பட முன்பதிவுக்கு அழைக்கவும்: +91 81110 85865 (மணி போட்டோகிராஃபி).',
   });
 
   useScrollReveal();
