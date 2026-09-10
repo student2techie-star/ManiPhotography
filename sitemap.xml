@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://thirukadaiyurmaniphotography.in/</loc>
     <lastmod>2026-09-10</lastmod>
@@ -8,6 +9,10 @@
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://thirukadaiyurmaniphotography.in/" />
     <xhtml:link rel="alternate" hreflang="ta" href="https://thirukadaiyurmaniphotography.in/" />
+    <image:image>
+      <image:loc>https://thirukadaiyurmaniphotography.in/images/og-image.jpg</image:loc>
+      <image:title>Mani Photography Thirukadaiyur</image:title>
+    </image:image>
   </url>
 
   <!-- Dedicated Service SEO Landing Pages -->
@@ -16,42 +21,70 @@
     <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://thirukadaiyurmaniphotography.in/images/weddings/thirukadaiyur-wedding-photography-muhurtham.webp</image:loc>
+      <image:title>Traditional Tamil Wedding Photography in Thirukadaiyur</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://thirukadaiyurmaniphotography.in/60th-birthday-photography-thirukadaiyur/</loc>
     <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://thirukadaiyurmaniphotography.in/images/guides/thirukadaiyur-60th-birthday-shashtiapthapoorthi-guide.webp</image:loc>
+      <image:title>Thirukadaiyur 60th Marriage Shashtiapthapoorthi Photography</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://thirukadaiyurmaniphotography.in/70th-birthday-photography-thirukadaiyur/</loc>
     <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://thirukadaiyurmaniphotography.in/images/tamil-weddings/thirukadaiyur-70th-birthday-bhimaratha-shanthi-photography.webp</image:loc>
+      <image:title>Thirukadaiyur 70th Birthday Bhimaratha Shanthi Photography</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://thirukadaiyurmaniphotography.in/80th-birthday-photography-thirukadaiyur/</loc>
     <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://thirukadaiyurmaniphotography.in/images/guides/thirukadaiyur-80th-birthday-sadabishegam-photography.webp</image:loc>
+      <image:title>Thirukadaiyur 80th Marriage Sadabishegam Photography</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://thirukadaiyurmaniphotography.in/shashtiapthapoorthi-photography/</loc>
     <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://thirukadaiyurmaniphotography.in/images/guides/thirukadaiyur-60th-birthday-shashtiapthapoorthi-guide.webp</image:loc>
+      <image:title>Shashtiapthapoorthi 60th Marriage Photographer Thirukadaiyur</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://thirukadaiyurmaniphotography.in/temple-photography-thirukadaiyur/</loc>
     <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://thirukadaiyurmaniphotography.in/images/temple/thirukadaiyur-amritaghateswarar-abirami-temple-photography.webp</image:loc>
+      <image:title>Thirukadaiyur Amritaghateswarar Abirami Temple Photography</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://thirukadaiyurmaniphotography.in/wedding-videography-thirukadaiyur/</loc>
     <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://thirukadaiyurmaniphotography.in/images/weddings/thirukadaiyur-wedding-photography-muhurtham.webp</image:loc>
+      <image:title>Thirukadaiyur 4K Cinematic Wedding Videography</image:title>
+    </image:image>
   </url>
 
   <!-- Core Pages & Categories -->
@@ -60,12 +93,20 @@
     <lastmod>2026-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://thirukadaiyurmaniphotography.in/images/og-image.jpg</image:loc>
+      <image:title>Mani Photography Thirukadaiyur Portfolio Showcase</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://thirukadaiyurmaniphotography.in/portfolio/weddings/</loc>
     <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://thirukadaiyurmaniphotography.in/images/weddings/thirukadaiyur-wedding-photography-muhurtham.webp</image:loc>
+      <image:title>Tamil Wedding Photography Portfolio</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://thirukadaiyurmaniphotography.in/portfolio/pre-wedding/</loc>
@@ -78,6 +119,10 @@
     <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://thirukadaiyurmaniphotography.in/images/temple/thirukadaiyur-amritaghateswarar-abirami-temple-photography.webp</image:loc>
+      <image:title>Temple Photography Gallery Thirukadaiyur</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://thirukadaiyurmaniphotography.in/portfolio/baby-shower/</loc>
@@ -128,12 +173,20 @@
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://thirukadaiyurmaniphotography.in/images/guides/thirukadaiyur-60th-birthday-shashtiapthapoorthi-guide.webp</image:loc>
+      <image:title>Thirukadaiyur 60th Marriage Shashtiapthapoorthi Guide</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://thirukadaiyurmaniphotography.in/guides/thirukadaiyur-80th-marriage-sadabishegam-guide/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://thirukadaiyurmaniphotography.in/images/guides/thirukadaiyur-80th-birthday-sadabishegam-photography.webp</image:loc>
+      <image:title>Thirukadaiyur 80th Marriage Sadabishegam Guide</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://thirukadaiyurmaniphotography.in/guides/thirukadaiyur-temple-photography-rules-timings-tips/</loc>
@@ -146,6 +199,10 @@
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://thirukadaiyurmaniphotography.in/images/guides/thirunallar-saneeswarar-temple-photography-guide.webp</image:loc>
+      <image:title>Thirunallar Saneeswarar Temple Photography Guide</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://thirukadaiyurmaniphotography.in/guides/how-to-reach-thirukadaiyur-travel-guide-bus-train-car-flight/</loc>
