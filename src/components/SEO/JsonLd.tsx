@@ -3,7 +3,7 @@ import { siteConfig } from '../../data/siteConfig';
 export function getLocalBusinessSchema() {
   return {
     '@context': 'https://schema.org',
-    '@type': 'Photographer',
+    '@type': 'LocalBusiness',
     '@id': `${siteConfig.siteUrl}/#organization`,
     name: 'Mani Photography Thirukadaiyur',
     url: siteConfig.siteUrl,
