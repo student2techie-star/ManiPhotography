@@ -159,6 +159,27 @@ function generateHTML(route) {
     `<meta name="twitter:image" content="${ogImage}" />`
   );
 
+  // Inject route-specific Service schema for landing pages
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    'name': route.title,
+    'serviceType': route.title,
+    'description': route.description,
+    'provider': {
+      '@id': `${SITE_URL}/#organization`
+    },
+    'url': canonical,
+    'image': ogImage,
+    'areaServed': {
+      '@type': 'AdministrativeArea',
+      'name': 'Thirukadaiyur, Mayiladuthurai, Tamil Nadu'
+    }
+  };
+
+  const schemaScript = `\n  <script type="application/ld+json">\n  ${JSON.stringify(serviceSchema, null, 2).replace(/\n/g, '\n  ')}\n  </script>\n</head>`;
+  html = html.replace('</head>', schemaScript);
+
   return html;
 }
 
