@@ -33,22 +33,30 @@ async function submitIndexNow() {
     urlList: urlList
   };
 
-  try {
-    const response = await fetch('https://api.indexnow.org/indexnow', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json; charset=utf-8'
-      },
-      body: JSON.stringify(payload)
-    });
+  const endpoints = [
+    'https://www.bing.com/indexnow',
+    'https://api.indexnow.org/indexnow'
+  ];
 
-    if (response.ok || response.status === 200 || response.status === 202) {
-      console.log(`✅ Successfully submitted ${urlList.length} URLs to IndexNow API! (Status: ${response.status})`);
-    } else {
-      console.log(`⚠️ IndexNow returned HTTP ${response.status}: ${response.statusText}`);
+  for (const endpoint of endpoints) {
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (response.ok || response.status === 200 || response.status === 202) {
+        console.log(`✅ Successfully submitted ${urlList.length} URLs to IndexNow via ${endpoint}! (Status: ${response.status})`);
+        return;
+      } else {
+        console.log(`⚠️ ${endpoint} returned HTTP ${response.status}: ${response.statusText}`);
+      }
+    } catch (error) {
+      console.error(`❌ Error submitting to ${endpoint}:`, error.message);
     }
-  } catch (error) {
-    console.error(`❌ IndexNow submission error:`, error.message);
   }
 }
 
