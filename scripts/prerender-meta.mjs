@@ -90,6 +90,56 @@ const routes = [
     description: 'Comprehensive guides to Thirukadaiyur 60th (Shashtiapthapoorthi), 70th (Bhimaratha Shanthi) & 80th (Sadabishegam) marriage rituals, timings, and photography tips.',
     ogImage: '/images/og-image.jpg',
   },
+  // Guide Post Pages
+  {
+    path: '/guides/thirukadaiyur-60th-marriage-shashtiapthapoorthi-guide',
+    title: '60th Marriage (Shashtiapthapoorthi) Rituals Guide Thirukadaiyur',
+    description: 'Complete guide to celebrating your parents 60th Wedding (Shashtiapthapoorthi) at Thirukadaiyur Abirami Temple — Kalasa Abhishekam, Thaali re-tying & photography tips.',
+    ogImage: '/images/guides/thirukadaiyur-60th-birthday-shashtiapthapoorthi-guide.webp',
+  },
+  {
+    path: '/guides/thirukadaiyur-80th-marriage-sadabishegam-guide',
+    title: '80th Marriage (Sadabishegam) & 70th Photography Guide Thirukadaiyur',
+    description: 'Guide to celebrating Sadabishegam (seeing 1000 full moons / 80th Marriage) and Bhimaratha Shanthi (70th Birthday) at Thirukadaiyur Temple.',
+    ogImage: '/images/guides/thirukadaiyur-80th-birthday-sadabishegam-photography.webp',
+  },
+  {
+    path: '/guides/thirukadaiyur-temple-photography-rules-timings-tips',
+    title: 'Thirukadaiyur Temple Photography Rules, Timings & Tips',
+    description: 'Essential guide for families visiting Thirukadaiyur — morning homam timings, traditional clothing guidelines, mandapams & professional photography tips.',
+    ogImage: '/images/temple/temple-01.jpg',
+  },
+  {
+    path: '/guides/thirunallar-saneeswarar-temple-parihara-pooja-photography-guide',
+    title: 'Thirunallar Saneeswarar Temple Parihara Pooja & Photography Guide',
+    description: 'Complete guide to Thirunallar Sri Darbaranyeswarar Saneeswara Temple — Nala Theertham holy bath, Parihara Pooja & family photography.',
+    ogImage: '/images/guides/thirunallar-saneeswarar-temple-photography-guide.webp',
+  },
+  {
+    path: '/guides/how-to-reach-thirukadaiyur-travel-guide-bus-train-car-flight',
+    title: 'How to Reach Thirukadaiyur Temple: Directions by Air, Train, Bus & Car',
+    description: 'Complete travel route guide to Thirukadaiyur Temple from Chennai, Bangalore, Trichy, Coimbatore, Pondicherry via Flight, Train, Bus, and Car.',
+    ogImage: '/images/temple/temple-01.jpg',
+  },
+  // Portfolio Categories
+  {
+    path: '/portfolio/weddings',
+    title: 'Wedding Photography Portfolio Thirukadaiyur | Mani Photography',
+    description: 'View traditional Tamil wedding and muhurtham photography portfolio in Thirukadaiyur and Mayiladuthurai by Mani Photography.',
+    ogImage: '/images/weddings/wedding-01.jpg',
+  },
+  {
+    path: '/portfolio/pre-wedding',
+    title: 'Pre-Wedding Photography Portfolio Thirukadaiyur | Mani Photography',
+    description: 'Pre-wedding outdoor and couple portraiture portfolio in Thirukadaiyur and surrounding scenic locations.',
+    ogImage: '/images/prewedding/prewedding-01.jpg',
+  },
+  {
+    path: '/portfolio/temple-photography',
+    title: 'Temple Photography Portfolio Thirukadaiyur | Mani Photography',
+    description: 'Sacred temple photography portfolio at Thirukadaiyur Sri Amritaghateswarar Abirami Temple and Thirunallar Saneeswarar Temple.',
+    ogImage: '/images/temple/temple-01.jpg',
+  },
 ];
 
 function generateHTML(route) {
