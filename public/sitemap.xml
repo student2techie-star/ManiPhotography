@@ -87,6 +87,48 @@
     </image:image>
   </url>
 
+  <!-- High-Intent Cultural Keyword Landing Pages -->
+  <url>
+    <loc>https://thirukadaiyurmaniphotography.in/sashti-abda-poorthi-photography/</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://thirukadaiyurmaniphotography.in/images/guides/thirukadaiyur-60th-birthday-shashtiapthapoorthi-guide.webp</image:loc>
+      <image:title>Sashti Abda Poorthi 60th Marriage Photography Thirukadaiyur</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://thirukadaiyurmaniphotography.in/bhima-ratha-shanthi-photography/</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://thirukadaiyurmaniphotography.in/images/tamil-weddings/thirukadaiyur-70th-birthday-bhimaratha-shanthi-photography.webp</image:loc>
+      <image:title>Bhima Ratha Shanthi 70th Birthday Photography Thirukadaiyur</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://thirukadaiyurmaniphotography.in/sadhabishegam-photography/</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://thirukadaiyurmaniphotography.in/images/guides/thirukadaiyur-80th-birthday-sadabishegam-photography.webp</image:loc>
+      <image:title>Sadhabishegam 80th Marriage Photography Thirukadaiyur</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://thirukadaiyurmaniphotography.in/thirukadaiyur-temple-wedding-photography/</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://thirukadaiyurmaniphotography.in/images/weddings/thirukadaiyur-wedding-photography-muhurtham.webp</image:loc>
+      <image:title>Thirukadaiyur Temple Wedding Photography</image:title>
+    </image:image>
+  </url>
+
   <!-- Core Pages & Categories -->
   <url>
     <loc>https://thirukadaiyurmaniphotography.in/portfolio/</loc>

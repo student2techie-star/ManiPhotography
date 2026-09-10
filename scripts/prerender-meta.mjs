@@ -60,6 +60,31 @@ const routes = [
     description: 'Cinematic wedding videography & 4K video recording in Thirukadaiyur. Covering 60th, 70th, 80th milestone weddings, traditional Tamil marriages & LED screen setups.',
     ogImage: '/images/weddings/wedding-02.jpg',
   },
+  // Cultural Keyword Alias Routes
+  {
+    path: '/sashti-abda-poorthi-photography',
+    title: 'Sashti Abda Poorthi Photography Thirukadaiyur | 60th Marriage Specialist',
+    description: 'Specialist Sashti Abda Poorthi (60th marriage) photographer at Thirukadaiyur Sri Amritaghateswarar Abirami Temple. Kalasa Abhishekam & Thaali re-tying coverage.',
+    ogImage: '/images/guides/thirukadaiyur-60th-birthday-shashtiapthapoorthi-guide.webp',
+  },
+  {
+    path: '/bhima-ratha-shanthi-photography',
+    title: 'Bhima Ratha Shanthi Photography Thirukadaiyur | 70th Birthday Specialist',
+    description: 'Specialist Bhima Ratha Shanthi (70th birthday) ceremony photography in Thirukadaiyur. Documenting 70th marriage homams & family portraits.',
+    ogImage: '/images/tamil-weddings/thirukadaiyur-70th-birthday-bhimaratha-shanthi-photography.webp',
+  },
+  {
+    path: '/sadhabishegam-photography',
+    title: 'Sadhabishegam Photography Thirukadaiyur | 80th Birthday Specialist',
+    description: 'Specialist Sadhabishegam (80th birthday / 1000 full moons) photographer at Thirukadaiyur Abirami Temple. Capturing 80 Kalasams & family lineage photos.',
+    ogImage: '/images/guides/thirukadaiyur-80th-birthday-sadabishegam-photography.webp',
+  },
+  {
+    path: '/thirukadaiyur-temple-wedding-photography',
+    title: 'Thirukadaiyur Temple Wedding Photography | Mani Photography',
+    description: 'Professional traditional temple wedding photography in Thirukadaiyur & Mayiladuthurai. Muhurtham, Thaali ceremony & mandapam shoots.',
+    ogImage: '/images/weddings/thirukadaiyur-wedding-photography-muhurtham.webp',
+  },
   {
     path: '/portfolio',
     title: 'Photography Portfolio | Mani Photography Thirukadaiyur',

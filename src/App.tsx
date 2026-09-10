@@ -28,10 +28,14 @@ function App() {
         
         {/* Dedicated Service SEO Landing Pages */}
         <Route path="/wedding-photography-thirukadaiyur" element={<DedicatedService routeSlug="wedding-photography-thirukadaiyur" />} />
+        <Route path="/thirukadaiyur-temple-wedding-photography" element={<DedicatedService routeSlug="wedding-photography-thirukadaiyur" />} />
         <Route path="/60th-birthday-photography-thirukadaiyur" element={<DedicatedService routeSlug="60th-birthday-photography-thirukadaiyur" />} />
-        <Route path="/70th-birthday-photography-thirukadaiyur" element={<DedicatedService routeSlug="70th-birthday-photography-thirukadaiyur" />} />
-        <Route path="/80th-birthday-photography-thirukadaiyur" element={<DedicatedService routeSlug="80th-birthday-photography-thirukadaiyur" />} />
         <Route path="/shashtiapthapoorthi-photography" element={<DedicatedService routeSlug="shashtiapthapoorthi-photography" />} />
+        <Route path="/sashti-abda-poorthi-photography" element={<DedicatedService routeSlug="shashtiapthapoorthi-photography" />} />
+        <Route path="/70th-birthday-photography-thirukadaiyur" element={<DedicatedService routeSlug="70th-birthday-photography-thirukadaiyur" />} />
+        <Route path="/bhima-ratha-shanthi-photography" element={<DedicatedService routeSlug="70th-birthday-photography-thirukadaiyur" />} />
+        <Route path="/80th-birthday-photography-thirukadaiyur" element={<DedicatedService routeSlug="80th-birthday-photography-thirukadaiyur" />} />
+        <Route path="/sadhabishegam-photography" element={<DedicatedService routeSlug="80th-birthday-photography-thirukadaiyur" />} />
         <Route path="/temple-photography-thirukadaiyur" element={<DedicatedService routeSlug="temple-photography-thirukadaiyur" />} />
         <Route path="/wedding-videography-thirukadaiyur" element={<DedicatedService routeSlug="wedding-videography-thirukadaiyur" />} />
 
