@@ -144,7 +144,8 @@ const routes = [
 
 function generateHTML(route) {
   const indexHtml = readFileSync(join(DIST, 'index.html'), 'utf-8');
-  const canonical = `${SITE_URL}${route.path}`;
+  const routePath = route.path === '/' ? '/' : (route.path.endsWith('/') ? route.path : `${route.path}/`);
+  const canonical = `${SITE_URL}${routePath}`;
   const ogImage = `${SITE_URL}${route.ogImage}`;
 
   // Replace title

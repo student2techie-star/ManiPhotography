@@ -39,7 +39,14 @@ export function useDocumentHead({ title, description, ogImage, ogUrl, ogType, ca
     // Set og:type (defaults to 'website')
     setMeta('og:type', ogType || 'website', true);
 
-    const currentCanonical = canonicalUrl || ogUrl || `https://thirukadaiyurmaniphotography.in${window.location.pathname}`;
+    let rawPath = window.location.pathname;
+    if (rawPath !== '/' && !rawPath.endsWith('/')) {
+      rawPath += '/';
+    }
+    let currentCanonical = canonicalUrl || ogUrl || `https://thirukadaiyurmaniphotography.in${rawPath}`;
+    if (!currentCanonical.endsWith('/') && !currentCanonical.includes('?')) {
+      currentCanonical += '/';
+    }
     setMeta('og:url', currentCanonical, true);
 
     let canonicalEl = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
