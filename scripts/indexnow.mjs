@@ -11,7 +11,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const HOST = 'thirukadaiyurmaniphotography.in';
-const KEY = 'c74b891e42e047518bc25316f7a6349d';
+const KEY = '850af6865aa649b4b0226a0d764f362d';
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 
 // Extract all URLs from sitemap.xml
