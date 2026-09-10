@@ -15,6 +15,7 @@ export default function Footer() {
     { label: t.nav.home, to: '/' },
     { label: t.nav.portfolio, to: '/portfolio' },
     { label: t.nav.services, to: '/services' },
+    { label: language === 'en' ? 'Ceremony Guides' : 'வழிகாட்டிகள்', to: '/guides' },
     { label: t.nav.about, to: '/about' },
     { label: t.nav.contact, to: '/contact' },
   ];
@@ -31,6 +32,7 @@ export default function Footer() {
 
   const serviceLinks = [
     { label: language === 'en' ? '60th Birthday Photography' : '60ஆம் கல்யாணம்', to: '/60th-birthday-photography-thirukadaiyur' },
+    { label: language === 'en' ? 'Shashtiapthapoorthi 60th' : 'சஷ்டியப்தபூர்த்தி', to: '/shashtiapthapoorthi-photography' },
     { label: language === 'en' ? '70th Birthday Photography' : '70ஆம் கல்யாணம்', to: '/70th-birthday-photography-thirukadaiyur' },
     { label: language === 'en' ? '80th Birthday Photography' : '80ஆம் கல்யாணம்', to: '/80th-birthday-photography-thirukadaiyur' },
     { label: language === 'en' ? 'Wedding Photography' : 'திருமண போட்டோகிராஃபி', to: '/wedding-photography-thirukadaiyur' },
