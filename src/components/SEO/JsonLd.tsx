@@ -103,6 +103,8 @@ export function getServiceSchema(serviceName: string, description: string, url: 
       '@type': 'AdministrativeArea',
       name: 'Thirukadaiyur, Mayiladuthurai, Tamil Nadu',
     },
+    datePublished: '2026-09-01T00:00:00+05:30',
+    dateModified: '2026-09-10T08:55:00+05:30',
   };
 }
 

@@ -174,7 +174,9 @@ function generateHTML(route) {
     'areaServed': {
       '@type': 'AdministrativeArea',
       'name': 'Thirukadaiyur, Mayiladuthurai, Tamil Nadu'
-    }
+    },
+    'datePublished': '2026-09-01T00:00:00+05:30',
+    'dateModified': '2026-09-10T08:55:00+05:30'
   };
 
   const schemaScript = `\n  <script type="application/ld+json">\n  ${JSON.stringify(serviceSchema, null, 2).replace(/\n/g, '\n  ')}\n  </script>\n</head>`;

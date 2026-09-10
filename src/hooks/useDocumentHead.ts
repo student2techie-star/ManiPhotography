@@ -53,6 +53,13 @@ export function useDocumentHead({ title, description, ogImage, ogUrl, ogType, ca
     setMeta('og:title', title, true);
     setMeta('twitter:title', title);
 
+    const publishedDate = '2026-09-01T00:00:00+05:30';
+    const modifiedDate = new Date().toISOString();
+    setMeta('publish_date', publishedDate);
+    setMeta('article:published_time', publishedDate, true);
+    setMeta('article:modified_time', modifiedDate, true);
+    setMeta('og:updated_time', modifiedDate, true);
+
     let schemaScript = document.querySelector<HTMLScriptElement>('script[data-dynamic-schema="true"]');
     if (schema) {
       if (!schemaScript) {
