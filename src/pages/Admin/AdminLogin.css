@@ -1,0 +1,109 @@
+/* AdminLogin.css */
+.admin-login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--clr-bg);
+  padding: var(--space-8) var(--space-5);
+  font-family: var(--font-body);
+}
+
+.admin-login-card {
+  width: 100%;
+  max-width: 28rem;
+  background: var(--clr-bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  border: 1px solid var(--clr-border-light);
+}
+
+.admin-login-header {
+  padding: var(--space-8);
+  text-align: center;
+  border-bottom: 1px solid var(--clr-border-light);
+  background: var(--clr-bg-soft);
+}
+
+.admin-login-header h1 {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  color: var(--clr-text-dark);
+  margin-bottom: var(--space-2);
+}
+
+.admin-login-header p {
+  color: var(--clr-accent-dark);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.admin-login-body {
+  padding: var(--space-8);
+}
+
+.admin-form-group {
+  margin-bottom: var(--space-6);
+}
+
+.admin-form-group label {
+  display: block;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--clr-text-mid);
+  margin-bottom: var(--space-2);
+}
+
+.admin-input-wrapper {
+  position: relative;
+}
+
+.admin-input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--clr-text-subtle);
+  display: flex;
+  align-items: center;
+}
+
+.admin-input {
+  display: block;
+  width: 100%;
+  padding: 1rem 1rem 1rem 2.75rem;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius);
+  font-size: var(--fs-base);
+  color: var(--clr-text-dark);
+  background: var(--clr-white);
+  transition: all var(--dur-fast) var(--ease-out);
+  box-sizing: border-box;
+}
+
+.admin-input:focus {
+  outline: none;
+  border-color: var(--clr-accent);
+  box-shadow: var(--shadow-glow);
+}
+
+.admin-error {
+  margin-bottom: var(--space-6);
+  padding: var(--space-4);
+  background-color: rgba(220, 38, 38, 0.05);
+  color: #dc2626;
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-sm);
+  text-align: center;
+}
+
+/* Utilize the global button styles */
+.admin-login-body button {
+  width: 100%;
+  margin-top: var(--space-4);
+}
