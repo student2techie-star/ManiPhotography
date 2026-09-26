@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, MessageCircle, User } from 'lucide-react';
+import { Star, User } from 'lucide-react';
 import { useGoogleReviews } from '../hooks/useGoogleReviews';
 import './GoogleReviews.css'; // Let's add some basic CSS
 

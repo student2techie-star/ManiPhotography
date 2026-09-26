@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { supabase } from '../../lib/supabase';
+// import { supabase } from '../../lib/supabase';
 import { Camera, Image as ImageIcon, Lock, Phone } from 'lucide-react';
 import './ClientPortal.css';
 
