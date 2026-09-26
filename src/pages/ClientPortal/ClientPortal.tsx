@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { supabase } from '../../lib/supabase';
+import { supabase } from '../../lib/supabase';
 import { Camera, Image as ImageIcon, Lock, Phone } from 'lucide-react';
 import './ClientPortal.css';
 
@@ -21,19 +21,23 @@ const ClientPortal: React.FC = () => {
     setError(null);
 
     try {
-      // HARDCODED DEMONSTRATION LOGIC
-      setTimeout(() => {
-        if (phoneNumber === '9876543210' && password === 'Mani2026') {
-          setClientData({
-            customer_name: 'Arun & Priya',
-            wetransfer_url: 'https://we.tl/t-examplelink'
-          });
-        } else {
-          setError('Invalid credentials! (Try Phone: 9876543210, Password: Mani2026)');
-        }
-        setLoading(false);
-      }, 800);
-      
+      const { data, error: rpcError } = await supabase.rpc('client_login', {
+        p_phone: phoneNumber,
+        p_password: password
+      });
+
+      if (rpcError) throw rpcError;
+
+      const result = data?.[0];
+
+      if (result?.success) {
+        setClientData({
+          customer_name: result.customer_name,
+          wetransfer_url: result.wetransfer_url
+        });
+      } else {
+        setError(result?.message || 'Login failed.');
+      }
     } catch (err: any) {
       console.error('Login error:', err);
       setError('An error occurred connecting to the server. Please try again.');

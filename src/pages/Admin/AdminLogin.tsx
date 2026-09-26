@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import { supabase } from '../../lib/supabase';
+import { supabase } from '../../lib/supabase';
 import { useNavigate } from 'react-router-dom';
 import { Lock, Mail } from 'lucide-react';
 import './AdminLogin.css';
@@ -12,12 +12,11 @@ const AdminLogin: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Disabled Supabase auth check for hardcoded demo
-    // supabase.auth.getSession().then(({ data: { session } }) => {
-    //   if (session) {
-    //     navigate('/admin/dashboard');
-    //   }
-    // });
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session) {
+        navigate('/admin/dashboard');
+      }
+    });
   }, [navigate]);
 
   const handleLogin = async (e: React.FormEvent) => {
@@ -26,19 +25,17 @@ const AdminLogin: React.FC = () => {
     setError(null);
 
     try {
-      // HARDCODED DEMONSTRATION LOGIC
-      setTimeout(() => {
-        if (email === 'admin@maniphotography.in' && password === 'admin123') {
-          navigate('/admin/dashboard');
-        } else {
-          setError('Invalid email or password. (Try Email: admin@maniphotography.in, Password: admin123)');
-        }
-        setLoading(false);
-      }, 800);
+      const { error: signInError } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+
+      if (signInError) throw signInError;
       
+      navigate('/admin/dashboard');
     } catch (err: any) {
       console.error('Admin login error:', err);
-      setError('Invalid email or password.');
+      setError(err.message || 'Invalid email or password.');
     } finally {
       setLoading(false);
     }

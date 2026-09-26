@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import { supabase } from '../../lib/supabase';
+import { supabase } from '../../lib/supabase';
 import { useNavigate } from 'react-router-dom';
 import { LogOut, Plus, Search, Edit2, Trash2, X } from 'lucide-react';
 import './AdminDashboard.css';
@@ -35,42 +35,33 @@ const AdminDashboard: React.FC = () => {
   }, []);
 
   const checkUser = async () => {
-    // HARDCODED DEMO - Bypass auth check
-    // const { data: { session } } = await supabase.auth.getSession();
-    // if (!session) {
-    //   navigate('/admin/login');
-    // }
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session) {
+      navigate('/admin/login');
+    }
   };
 
   const handleLogout = async () => {
-    // await supabase.auth.signOut();
+    await supabase.auth.signOut();
     navigate('/admin/login');
   };
 
   const fetchClients = async () => {
     setLoading(true);
-    // HARDCODED DEMO DATA
-    setTimeout(() => {
-      setClients([
-        {
-          id: '1',
-          customer_name: 'Arun & Priya',
-          phone_number: '9876543210',
-          wetransfer_url: 'https://we.tl/t-examplelink',
-          status: 'active',
-          created_at: new Date().toISOString()
-        },
-        {
-          id: '2',
-          customer_name: 'Suresh Family',
-          phone_number: '9360293815',
-          wetransfer_url: 'https://we.tl/t-12345678',
-          status: 'active',
-          created_at: new Date(Date.now() - 86400000).toISOString()
-        }
-      ]);
+    try {
+      const { data, error } = await supabase
+        .from('clients')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (error) throw error;
+      setClients(data || []);
+    } catch (error) {
+      console.error('Error fetching clients:', error);
+      alert('Failed to fetch clients from database.');
+    } finally {
       setLoading(false);
-    }, 500);
+    }
   };
 
   const openModal = (client?: Client) => {
@@ -100,16 +91,46 @@ const AdminDashboard: React.FC = () => {
   const handleSaveClient = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // HARDCODED DEMO - Just close modal and alert
-    alert("DEMO MODE: Client would be saved to database here!");
-    closeModal();
+    try {
+      if (editingClient) {
+        const { error } = await supabase.rpc('admin_update_client', {
+          p_id: editingClient.id,
+          p_customer_name: customerName,
+          p_phone: phoneNumber,
+          p_password: password || null,
+          p_wetransfer_url: wetransferUrl,
+          p_status: status
+        });
+        if (error) throw error;
+      } else {
+        const { error } = await supabase.rpc('admin_create_client', {
+          p_customer_name: customerName,
+          p_phone: phoneNumber,
+          p_password: password,
+          p_wetransfer_url: wetransferUrl,
+          p_status: status
+        });
+        if (error) throw error;
+      }
+      
+      closeModal();
+      fetchClients();
+    } catch (error: any) {
+      console.error('Error saving client:', error);
+      alert(`Error saving client: ${error.message}`);
+    }
   };
 
   const handleDelete = async (id: string, name: string) => {
     if (window.confirm(`Are you sure you want to delete ${name}?`)) {
-      alert("DEMO MODE: Client would be deleted from database here!");
-      // Remove from local state for demo
-      setClients(clients.filter(c => c.id !== id));
+      try {
+        const { error } = await supabase.from('clients').delete().eq('id', id);
+        if (error) throw error;
+        setClients(clients.filter(c => c.id !== id));
+      } catch (error: any) {
+        console.error('Error deleting client:', error);
+        alert('Failed to delete client.');
+      }
     }
   };
 
