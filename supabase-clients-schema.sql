@@ -5,7 +5,7 @@ CREATE EXTENSION IF NOT EXISTS pgcrypto;
 CREATE TABLE clients (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     customer_name TEXT NOT NULL,
-    phone_number TEXT NOT NULL UNIQUE,
+    phone_number TEXT NOT NULL,
     password_hash TEXT NOT NULL,
     wetransfer_url TEXT,
     status TEXT NOT NULL DEFAULT 'active' CHECK (status IN ('active', 'inactive')),
@@ -42,22 +42,37 @@ SECURITY DEFINER -- Runs with elevated privileges so it can read the table despi
 AS $$
 DECLARE
     v_client clients%ROWTYPE;
+    v_found BOOLEAN := false;
 BEGIN
-    -- Find the client by phone number
-    SELECT * INTO v_client FROM clients WHERE phone_number = p_phone;
-
-    -- Check if client exists and password matches
-    IF v_client.id IS NOT NULL AND v_client.password_hash = crypt(p_password, v_client.password_hash) THEN
-        -- Check if account is active
-        IF v_client.status = 'active' THEN
-            RETURN QUERY SELECT true, v_client.customer_name, v_client.wetransfer_url, 'Success'::TEXT;
-        ELSE
-            -- Valid credentials, but inactive
-            RETURN QUERY SELECT false, NULL::TEXT, NULL::TEXT, 'This photo access is currently unavailable. Please contact the photography studio.'::TEXT;
+    -- Loop through all clients with this phone number
+    FOR v_client IN SELECT * FROM clients WHERE phone_number = p_phone LOOP
+        -- Check if password matches for this specific entry
+        IF v_client.password_hash = crypt(p_password, v_client.password_hash) THEN
+            IF v_client.status = 'active' THEN
+                success := true;
+                customer_name := v_client.customer_name;
+                wetransfer_url := v_client.wetransfer_url;
+                message := 'Success';
+                v_found := true;
+                RETURN NEXT;
+            ELSE
+                success := false;
+                customer_name := NULL;
+                wetransfer_url := NULL;
+                message := 'This photo access is currently unavailable. Please contact the photography studio.';
+                v_found := true;
+                RETURN NEXT;
+            END IF;
         END IF;
-    ELSE
-        -- Invalid phone or password (Generic error to prevent enumeration)
-        RETURN QUERY SELECT false, NULL::TEXT, NULL::TEXT, 'Phone number or password is incorrect. Please check your details and try again.'::TEXT;
+    END LOOP;
+
+    -- If no matching phone + password combination was found
+    IF NOT v_found THEN
+        success := false;
+        customer_name := NULL;
+        wetransfer_url := NULL;
+        message := 'Phone number or password is incorrect. Please check your details and try again.';
+        RETURN NEXT;
     END IF;
 END;
 $$;
