@@ -14,7 +14,7 @@ CREATE OR REPLACE FUNCTION public.admin_create_client(
 RETURNS UUID
 LANGUAGE plpgsql
 SECURITY DEFINER
-SET search_path = public
+SET search_path = public, extensions
 AS $$
 DECLARE
     v_id UUID;
@@ -49,7 +49,7 @@ CREATE OR REPLACE FUNCTION public.admin_update_client(
 RETURNS VOID
 LANGUAGE plpgsql
 SECURITY DEFINER
-SET search_path = public
+SET search_path = public, extensions
 AS $$
 BEGIN
     IF p_password IS NOT NULL AND trim(p_password) != '' THEN

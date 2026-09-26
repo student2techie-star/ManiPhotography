@@ -16,6 +16,7 @@ export default function Footer() {
     { label: t.nav.portfolio, to: '/portfolio' },
     { label: t.nav.services, to: '/services' },
     { label: language === 'en' ? 'Ceremony Guides' : 'வழிகாட்டிகள்', to: '/guides' },
+    { label: t.nav.images, to: '/images' },
     { label: t.nav.about, to: '/about' },
     { label: t.nav.contact, to: '/contact' },
   ];

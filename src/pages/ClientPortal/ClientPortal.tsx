@@ -21,14 +21,19 @@ const ClientPortal: React.FC = () => {
     setError(null);
 
     try {
+      console.log('Attempting login with phone:', phoneNumber, 'password length:', password.length);
+      
       const { data, error: rpcError } = await supabase.rpc('client_login', {
         p_phone: phoneNumber,
         p_password: password
       });
 
+      console.log('RPC response - data:', JSON.stringify(data), 'error:', rpcError);
+
       if (rpcError) throw rpcError;
 
       const result = data?.[0];
+      console.log('Result:', result);
 
       if (result?.success) {
         setClientData({
@@ -40,7 +45,7 @@ const ClientPortal: React.FC = () => {
       }
     } catch (err: any) {
       console.error('Login error:', err);
-      setError('An error occurred connecting to the server. Please try again.');
+      setError(`Error: ${err.message}`);
     } finally {
       setLoading(false);
     }

@@ -161,6 +161,25 @@ export default function Contact() {
                     </a>
                   </div>
                 </li>
+                <li className="contact-info__item">
+                  <img
+                    src={`${import.meta.env.BASE_URL}images/justdial.svg`}
+                    alt="JustDial"
+                    style={{ width: 18, height: 18, opacity: 0.85, flexShrink: 0 }}
+                    aria-hidden="true"
+                  />
+                  <div>
+                    <span className="contact-info__label">{language === 'en' ? 'JustDial' : 'ஜஸ்ட் டயல்'}</span>
+                    <a
+                      href="https://www.justdial.com/Mayiladuthurai/Mani-Photography-Tirucadaiyur/9999P4364-4364-230128175613-F5L3_BZDET"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="contact-info__value"
+                    >
+                      {language === 'en' ? 'View on JustDial' : 'JustDial-ல் பார்க்க'}
+                    </a>
+                  </div>
+                </li>
               </ul>
 
               <div className="contact-info__socials">
