@@ -1,8 +1,13 @@
+-- ============================================================
+-- CLIENTS TABLE & AUTH FUNCTIONS
+-- Run this file in Supabase SQL Editor to set up the clients system
+-- ============================================================
+
 -- Enable the pgcrypto extension for password hashing
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
--- Create clients table
-CREATE TABLE clients (
+-- Create clients table (phone_number is NOT unique to allow multiple events)
+CREATE TABLE public.clients (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     customer_name TEXT NOT NULL,
     phone_number TEXT NOT NULL,
@@ -14,65 +19,64 @@ CREATE TABLE clients (
 );
 
 -- Enable Row Level Security
-ALTER TABLE clients ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.clients ENABLE ROW LEVEL SECURITY;
 
--- Admin access policy (Requires standard Supabase Auth session)
--- Only authenticated users (admins) can view, insert, update, or delete clients.
+-- Admin access policy: only authenticated users (admins) can read/write directly
 CREATE POLICY "Admins can do everything on clients"
-    ON clients
+    ON public.clients
     FOR ALL
     TO authenticated
     USING (true)
     WITH CHECK (true);
 
--- No public access policies to the table itself. 
--- Public access is strictly mediated through the secure RPC function below.
-
--- RPC Function for Client Login
--- This function securely verifies the phone and password without exposing the table.
-CREATE OR REPLACE FUNCTION client_login(p_phone TEXT, p_password TEXT)
+-- ============================================================
+-- CLIENT LOGIN FUNCTION
+-- Securely verifies phone + password without exposing the table to anon users
+-- ============================================================
+CREATE OR REPLACE FUNCTION public.client_login(p_phone TEXT, p_password TEXT)
 RETURNS TABLE (
     success BOOLEAN,
     customer_name TEXT,
     wetransfer_url TEXT,
     message TEXT
-) 
+)
 LANGUAGE plpgsql
-SECURITY DEFINER -- Runs with elevated privileges so it can read the table despite RLS
+SECURITY DEFINER
+SET search_path = public
 AS $$
 DECLARE
-    v_client clients%ROWTYPE;
-    v_found BOOLEAN := false;
+    v_client public.clients%ROWTYPE;
 BEGIN
-    -- Loop through all clients with this phone number
-    FOR v_client IN SELECT * FROM clients WHERE phone_number = p_phone LOOP
-        -- Check if password matches for this specific entry
-        IF v_client.password_hash = crypt(p_password, v_client.password_hash) THEN
-            IF v_client.status = 'active' THEN
-                success := true;
-                customer_name := v_client.customer_name;
-                wetransfer_url := v_client.wetransfer_url;
-                message := 'Success';
-                v_found := true;
-                RETURN NEXT;
-            ELSE
-                success := false;
-                customer_name := NULL;
-                wetransfer_url := NULL;
-                message := 'This photo access is currently unavailable. Please contact the photography studio.';
-                v_found := true;
-                RETURN NEXT;
-            END IF;
-        END IF;
-    END LOOP;
+    -- Find client by phone number AND matching password in one query
+    SELECT * INTO v_client
+    FROM public.clients
+    WHERE public.clients.phone_number = p_phone
+      AND public.clients.password_hash = crypt(p_password, public.clients.password_hash)
+    LIMIT 1;
 
-    -- If no matching phone + password combination was found
-    IF NOT v_found THEN
-        success := false;
-        customer_name := NULL;
-        wetransfer_url := NULL;
-        message := 'Phone number or password is incorrect. Please check your details and try again.';
-        RETURN NEXT;
+    IF v_client.id IS NOT NULL THEN
+        IF v_client.status = 'active' THEN
+            RETURN QUERY SELECT
+                true::BOOLEAN,
+                v_client.customer_name::TEXT,
+                v_client.wetransfer_url::TEXT,
+                'Success'::TEXT;
+        ELSE
+            RETURN QUERY SELECT
+                false::BOOLEAN,
+                NULL::TEXT,
+                NULL::TEXT,
+                'This photo access is currently unavailable. Please contact the photography studio.'::TEXT;
+        END IF;
+    ELSE
+        RETURN QUERY SELECT
+            false::BOOLEAN,
+            NULL::TEXT,
+            NULL::TEXT,
+            'Phone number or password is incorrect. Please check your details and try again.'::TEXT;
     END IF;
 END;
 $$;
+
+-- Grant execute permission to anon and authenticated roles
+GRANT EXECUTE ON FUNCTION public.client_login(TEXT, TEXT) TO anon, authenticated;
