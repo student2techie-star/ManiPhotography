@@ -162,7 +162,7 @@ export default function Home() {
             <div className="intro-section__image reveal-left">
               <div className="intro-section__img-wrap">
                 <img
-                  src={`${import.meta.env.BASE_URL}images/about/about-01.jpg`}
+                  src={`${import.meta.env.BASE_URL}images/tamil-weddings/tamil_60th_marriage.jpg`}
                   alt="Photography at a Tamil wedding ceremony"
                   className="img-cover"
                   loading="lazy"
@@ -432,7 +432,7 @@ export default function Home() {
       <section className="wedding-feature" aria-label="Wedding photography feature">
         <div className="wedding-feature__bg">
           <img
-            src={`${import.meta.env.BASE_URL}images/weddings/wedding-01.jpg`}
+            src={`${import.meta.env.BASE_URL}images/weddings/tamil_wedding_muhurtham.jpg`}
             alt="Tamil wedding couple during their ceremony"
             className="img-cover"
             loading="lazy"
@@ -478,7 +478,7 @@ export default function Home() {
             <div className="tamil-section__images reveal-right">
               <div className="tamil-section__img-primary">
                 <img
-                  src={`${import.meta.env.BASE_URL}images/tamil-weddings/tamil-01.jpg`}
+                  src={`${import.meta.env.BASE_URL}images/weddings/thirukadaiyur-kalyanam-mangalya-dharanam.webp`}
                   alt="Thaali ceremony during a Tamil wedding"
                   className="img-cover"
                   loading="lazy"
@@ -496,7 +496,7 @@ export default function Home() {
               </div>
               <div className="tamil-section__img-secondary">
                 <img
-                  src={`${import.meta.env.BASE_URL}images/tamil-weddings/tamil-02.jpg`}
+                  src={`${import.meta.env.BASE_URL}images/weddings/thirukadaiyur-traditional-tamil-wedding-couple.webp`}
                   alt="Oonjal ceremony at a Tamil wedding"
                   className="img-cover"
                   loading="lazy"
@@ -524,7 +524,7 @@ export default function Home() {
             <div className="prewedding-section__images reveal-left">
               <div className="prewedding-section__img-main">
                 <img
-                  src={`${import.meta.env.BASE_URL}images/pre-wedding/pre-wedding-01.jpg`}
+                  src={`${import.meta.env.BASE_URL}images/pre-wedding/thirukadaiyur-traditional-attire-couple-portrait.webp`}
                   alt="Couple at a heritage architecture location"
                   className="img-cover"
                   loading="lazy"
@@ -576,12 +576,12 @@ export default function Home() {
           />
           <div className="events-section__grid">
             {[
-              { title: t.categories.events, image: `${import.meta.env.BASE_URL}images/events/event-01.jpg`, slug: 'events', desc: language === 'en' ? 'The beginning of your forever.' : 'உங்கள் புதிய பயணத்தின் தொடக்கம்.' },
-              { title: t.categories['baby-shower'], image: `${import.meta.env.BASE_URL}images/baby-shower/baby-shower-01.jpg`, slug: 'baby-shower', desc: language === 'en' ? 'Beautiful anticipation, captured.' : 'புதிய வரவின் எதிர்பார்ப்பு, படம் பிடிக்கப்பட்டது.' },
-              { title: t.categories['house-warming'], image: `${import.meta.env.BASE_URL}images/house-warming/house-warming-01.jpg`, slug: 'house-warming', desc: language === 'en' ? 'The joy of a new beginning.' : 'புதிய தொடக்கத்தின் மகிழ்ச்சி.' },
-              { title: language === 'en' ? 'Birthday' : 'பிறந்த நாள்', image: `${import.meta.env.BASE_URL}images/events/event-02.jpg`, slug: 'events', desc: language === 'en' ? 'Milestone moments, beautifully preserved.' : 'வாழ்வின் மைல்கல் தருணங்கள்.' },
-              { title: language === 'en' ? 'Naming Ceremony' : 'பெயர் சூட்டும் விழா', image: `${import.meta.env.BASE_URL}images/events/event-03.jpg`, slug: 'events', desc: language === 'en' ? 'Welcoming a new life with love.' : 'புதிய உயிரை அன்புடன் வரவேற்போம்.' },
-              { title: t.categories.family, image: `${import.meta.env.BASE_URL}images/family/family-01.jpg`, slug: 'family', desc: language === 'en' ? 'Your people, together.' : 'உங்கள் குடும்பம், ஒன்றாக.' },
+              { title: t.categories.events, image: `${import.meta.env.BASE_URL}images/events/thirukadaiyur-traditional-function-celebration.webp`, slug: 'events', desc: language === 'en' ? 'The beginning of your forever.' : 'உங்கள் புதிய பயணத்தின் தொடக்கம்.' },
+              { title: t.categories['baby-shower'], image: `${import.meta.env.BASE_URL}images/baby-shower/thirukadaiyur-seemantham-baby-shower-photography.webp`, slug: 'baby-shower', desc: language === 'en' ? 'Beautiful anticipation, captured.' : 'புதிய வரவின் எதிர்பார்ப்பு, படம் பிடிக்கப்பட்டது.' },
+              { title: t.categories['house-warming'], image: `${import.meta.env.BASE_URL}images/house-warming/house_warming.jpg`, slug: 'house-warming', desc: language === 'en' ? 'The joy of a new beginning.' : 'புதிய தொடக்கத்தின் மகிழ்ச்சி.' },
+              { title: language === 'en' ? 'Birthday' : 'பிறந்த நாள்', image: `${import.meta.env.BASE_URL}images/events/thirukadaiyur-birthday-party-event-photography.webp`, slug: 'events', desc: language === 'en' ? 'Milestone moments, beautifully preserved.' : 'வாழ்வின் மைல்கல் தருணங்கள்.' },
+              { title: language === 'en' ? 'Naming Ceremony' : 'பெயர் சூட்டும் விழா', image: `${import.meta.env.BASE_URL}images/events/thirukadaiyur-traditional-function-celebration.webp`, slug: 'events', desc: language === 'en' ? 'Welcoming a new life with love.' : 'புதிய உயிரை அன்புடன் வரவேற்போம்.' },
+              { title: t.categories.family, image: `${import.meta.env.BASE_URL}images/tamil-weddings/tamil_60th_marriage.jpg`, slug: 'family', desc: language === 'en' ? 'Your people, together.' : 'உங்கள் குடும்பம், ஒன்றாக.' },
             ].map((event, i) => (
               <Link
                 to={`/portfolio/${event.slug}`}
@@ -693,7 +693,7 @@ export default function Home() {
       <section className="section cta-section">
         <div className="cta-section__bg">
           <img
-            src={`${import.meta.env.BASE_URL}images/temple/temple-01.jpg`}
+            src={`${import.meta.env.BASE_URL}images/temple/thirukadaiyur-amritaghateswarar-abirami-temple-photography.webp`}
             alt="Beautiful temple photography backdrop"
             className="img-cover"
             loading="lazy"

@@ -399,7 +399,7 @@ export const allServices: ServiceItem[] = [
     metaDescTa: 'திருக்கடையூரில் பிறந்தநாள், பெயர் சூட்டு விழா மற்றும் குடும்ப விழாக்கள்.',
     shortDesc: 'The people, laughter and moments that make every celebration special.',
     fullDesc: 'From birthday milestones to naming ceremonies, anniversary celebrations to family portraits, we bring the same care and artistry to every occasion. Because every celebration — big or small — deserves to be beautifully remembered.',
-    image: `${import.meta.env.BASE_URL}images/family/family-01.jpg`,
+    image: `${import.meta.env.BASE_URL}images/family/thirukadaiyur-multi-generational-family-portrait.webp`,
     alt: 'Family function photography',
     icon: '👨‍👩‍👧‍👦',
     includes: [

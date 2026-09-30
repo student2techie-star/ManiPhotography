@@ -16,7 +16,7 @@ export default function NotFound() {
     <main className="not-found">
       <div className="not-found__bg">
         <img
-          src={`${import.meta.env.BASE_URL}images/hero.jpg`}
+          src={`${import.meta.env.BASE_URL}images/temple/thirukadaiyur-amritaghateswarar-abirami-temple-photography.webp`}
           alt="Background"
           className="img-cover"
           loading="lazy"
