@@ -197,11 +197,11 @@ export const guidesData: GuidePost[] = [
     summaryTa: 'திருக்கடையூர் வரும் குடும்பங்களுக்கான வழிகாட்டி — காலை ஹோம நேரங்கள், ஆடை கட்டுப்பாடுகள், மண்டபத் தேர்வு மற்றும் போட்டோகிராபி குறிப்புகள்.',
     readTime: '4 min read',
     publishDate: '2026-09-07',
-    coverImage: '/images/temple/temple-01.jpg',
+    coverImage: '/images/temple/thirukadaiyur-temple-gopuram.jpg',
     galleryImages: [
-      '/images/temple/temple-01.jpg',
-      '/images/temple/temple-02.jpg',
-      '/images/temple/temple-03.jpg'
+      '/images/temple/thirukadaiyur-temple-gopuram.jpg',
+      '/images/temple/chidambaram-natarajar-temple-gopuram.jpg',
+      '/images/temple/mayiladuthurai-mayuranathar-temple-gopuram.jpg'
     ],
     keywords: [
       'Thirukadaiyur temple photography rules',
@@ -311,10 +311,10 @@ export const guidesData: GuidePost[] = [
     summaryTa: 'சென்னை, பெங்களூரு, திருச்சி, கோயம்புத்தூர் போன்ற நகரங்களில் இருந்து திருக்கடையூர் அமிர்தகடேஸ்வரர் கோயிலுக்கு பஸ், ரயில், கார் மற்றும் விமானம் மூலம் வரும் முழுமையான பயண வழிகாட்டி.',
     readTime: '6 min read',
     publishDate: '2026-09-09',
-    coverImage: '/images/temple/temple-01.jpg',
+    coverImage: '/images/temple/thirukadaiyur-temple-gopuram.jpg',
     galleryImages: [
-      '/images/temple/temple-01.jpg',
-      '/images/temple/temple-02.jpg',
+      '/images/temple/thirukadaiyur-temple-gopuram.jpg',
+      '/images/temple/chidambaram-natarajar-temple-gopuram.jpg',
       '/images/guides/thirunallar-temple.png'
     ],
     keywords: [

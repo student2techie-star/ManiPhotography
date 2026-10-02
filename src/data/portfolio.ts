@@ -55,9 +55,10 @@ export const portfolioItems: PortfolioItem[] = [
   { id: 'tw-05', category: 'tamil-weddings', title: 'Family Blessings Ritual', image: `${import.meta.env.BASE_URL}images/tamil-weddings/thirukadaiyur-60th-marriage-family-blessings.webp`, alt: 'Family blessings during 60th marriage' },
 
   // ── Temple ──────────────────────────────────────────────
-  { id: 't-01', category: 'temple', title: 'Abirami Temple Courtyard', image: `${import.meta.env.BASE_URL}images/temple/thirukadaiyur-amritaghateswarar-abirami-temple-photography.webp`, alt: 'Thirukadaiyur Amritaghateswarar Abirami temple photography', featured: true },
-  { id: 't-02', category: 'temple', title: 'Gopuram Pillar Portrait', image: `${import.meta.env.BASE_URL}images/temple/thirukadaiyur-temple-courtyard-candid-portrait.webp`, alt: 'Temple gopuram pillar portrait photography' },
-  { id: 't-03', category: 'temple', title: 'Sanctum Diya Lighting', image: `${import.meta.env.BASE_URL}images/temple/thirukadaiyur-temple-sanctum-blessings-shoot.webp`, alt: 'Thirukadaiyur temple sanctum blessings shoot' },
+  { id: 't-01', category: 'temple', title: 'Thirukadaiyur Abirami Temple Gopuram', image: `${import.meta.env.BASE_URL}images/temple/thirukadaiyur-temple-gopuram.jpg`, alt: 'Thirukadaiyur Amritaghateswarar Abirami temple gopuram photography', featured: true },
+  { id: 't-02', category: 'temple', title: 'Chidambaram Natarajar Temple Gopuram', image: `${import.meta.env.BASE_URL}images/temple/chidambaram-natarajar-temple-gopuram.jpg`, alt: 'Chidambaram Natarajar temple main gopuram photography', featured: true },
+  { id: 't-03', category: 'temple', title: 'Thirunallar Saneeswarar Temple Gopuram', image: `${import.meta.env.BASE_URL}images/temple/thirunallar-saneeswarar-temple-gopuram.jpg`, alt: 'Thirunallar Saneeswarar Dharbaranyeeswarar temple gopuram and sacred tank' },
+  { id: 't-04', category: 'temple', title: 'Mayiladuthurai Mayuranathar Temple Gopuram', image: `${import.meta.env.BASE_URL}images/temple/mayiladuthurai-mayuranathar-temple-gopuram.jpg`, alt: 'Mayiladuthurai Mayuranathaswami temple majestic gopuram photography' },
 
   // ── Baby Shower ─────────────────────────────────────────
   { id: 'bs-01', category: 'baby-shower', title: 'Seemantham Celebration', image: `${import.meta.env.BASE_URL}images/baby-shower/thirukadaiyur-seemantham-baby-shower-photography.webp`, alt: 'Thirukadaiyur Seemantham baby shower photography', featured: true },
@@ -75,10 +76,10 @@ export const portfolioItems: PortfolioItem[] = [
   { id: 'f-03', category: 'family', title: 'Family Function Gathering', image: `${import.meta.env.BASE_URL}images/family/thirukadaiyur-family-reunion-event-photography.webp`, alt: 'Family function gathering photography Thirukadaiyur' },
 
   // ── Events ──────────────────────────────────────────────
-  { id: 'e-01', category: 'events', title: 'Traditional Function', image: `${import.meta.env.BASE_URL}images/events/thirukadaiyur-traditional-function-celebration.webp`, alt: 'Thirukadaiyur traditional function celebration photography', featured: true },
-  { id: 'e-02', category: 'events', title: 'Cultural Stage Event', image: `${import.meta.env.BASE_URL}images/events/thirukadaiyur-cultural-event-stage-photography.webp`, alt: 'Cultural event stage photography' },
-  { id: 'e-03', category: 'events', title: 'Birthday Celebration', image: `${import.meta.env.BASE_URL}images/events/thirukadaiyur-birthday-party-event-photography.webp`, alt: 'Birthday party event photography Thirukadaiyur' },
-  { id: 'e-04', category: 'events', title: 'Reception Stage Setup', image: `${import.meta.env.BASE_URL}images/events/thirukadaiyur-traditional-reception-catering-setup.webp`, alt: 'Traditional reception stage setup photography' },
+  { id: 'e-01', category: 'events', title: 'Traditional Nadaswaram & Mangala Isai', image: `${import.meta.env.BASE_URL}images/events/thirukadaiyur-traditional-function-celebration.webp`, alt: 'Traditional South Indian Nadaswaram and Mangala Isai function celebration', featured: true },
+  { id: 'e-02', category: 'events', title: 'Classical Cultural Stage Performance', image: `${import.meta.env.BASE_URL}images/events/thirukadaiyur-cultural-event-stage-photography.webp`, alt: 'Classical Bharatanatyam and cultural stage event photography' },
+  { id: 'e-03', category: 'events', title: 'Engagement & Milestone Celebration', image: `${import.meta.env.BASE_URL}images/events/thirukadaiyur-birthday-party-event-photography.webp`, alt: 'Traditional Tamil engagement and milestone event celebration' },
+  { id: 'e-04', category: 'events', title: 'Traditional Reception Ceremony', image: `${import.meta.env.BASE_URL}images/events/thirukadaiyur-traditional-reception-catering-setup.webp`, alt: 'Traditional reception stage and ceremony photography' },
 ];
 
 export default portfolioItems;

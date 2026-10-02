@@ -165,7 +165,7 @@ export default function About() {
             <div className="about-style__images reveal-right">
               <div className="about-style__img about-style__img--tall">
                 <img
-                  src={`${import.meta.env.BASE_URL}images/weddings/wedding-01.jpg`}
+                  src={`${import.meta.env.BASE_URL}images/weddings/thirukadaiyur-wedding-photography-muhurtham.webp`}
                   alt="Candid wedding photography example"
                   className="img-cover"
                   loading="lazy"
@@ -183,7 +183,7 @@ export default function About() {
               </div>
               <div className="about-style__img about-style__img--short">
                 <img
-                  src={`${import.meta.env.BASE_URL}images/temple/temple-01.jpg`}
+                  src={`${import.meta.env.BASE_URL}images/temple/thirukadaiyur-amritaghateswarar-abirami-temple-photography.webp`}
                   alt="Temple photography example"
                   className="img-cover"
                   loading="lazy"

@@ -12,8 +12,8 @@ const AdminLogin: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (session) {
+    supabase.auth.getSession().then(({ data }) => {
+      if (data?.session) {
         navigate('/admin/dashboard');
       }
     });

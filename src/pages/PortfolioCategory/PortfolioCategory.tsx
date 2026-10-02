@@ -32,7 +32,7 @@ const categoryContentData: Record<string, {
       metaDesc: 'மணி போட்டோகிராஃபி வழங்கும் திருமண புகைப்படம் — சடங்குகள், வரவேற்பு மற்றும் போர்ட்ரெய்ட் படங்கள்.',
       ctaText: 'திருமண ஷூட் முன்பதிவு செய்ய',
     },
-    heroImage: `${import.meta.env.BASE_URL}images/weddings/wedding-01.jpg`,
+    heroImage: `${import.meta.env.BASE_URL}images/weddings/thirukadaiyur-wedding-photography-muhurtham.webp`,
     heroAlt: 'Tamil wedding ceremony photography',
   },
   'pre-wedding': {
@@ -52,7 +52,7 @@ const categoryContentData: Record<string, {
       metaDesc: 'மணி போட்டோகிராஃபி வழங்கும் திருமணத்திற்கு முந்தைய படப்பிடிப்பு (Pre-Wedding shoot).',
       ctaText: 'Pre-Wedding ஷூட் முன்பதிவு செய்ய',
     },
-    heroImage: `${import.meta.env.BASE_URL}images/pre-wedding/pre-wedding-01.jpg`,
+    heroImage: `${import.meta.env.BASE_URL}images/pre-wedding/thirukadaiyur-pre-wedding-couple-photoshoot.webp`,
     heroAlt: 'Pre-wedding couple photography',
   },
   'tamil-weddings': {
@@ -72,7 +72,7 @@ const categoryContentData: Record<string, {
       metaDesc: 'மணி போட்டோகிராஃபி வழங்கும் தமிழ் பாரம்பரிய திருமண புகைப்பட சேவை.',
       ctaText: 'தமிழ் திருமண ஷூட் முன்பதிவு செய்ய',
     },
-    heroImage: `${import.meta.env.BASE_URL}images/tamil-weddings/tamil-01.jpg`,
+    heroImage: `${import.meta.env.BASE_URL}images/tamil-weddings/thirukadaiyur-60th-birthday-shashtiapthapoorthi-photography.webp`,
     heroAlt: 'Tamil traditional wedding photography',
   },
   temple: {
@@ -92,7 +92,7 @@ const categoryContentData: Record<string, {
       metaDesc: 'மணி போட்டோகிராஃபி வழங்கும் கோயில் புகைப்பட சேவை.',
       ctaText: 'கோயில் ஷூட் முன்பதிவு செய்ய',
     },
-    heroImage: `${import.meta.env.BASE_URL}images/temple/temple-01.jpg`,
+    heroImage: `${import.meta.env.BASE_URL}images/temple/thirukadaiyur-amritaghateswarar-abirami-temple-photography.webp`,
     heroAlt: 'Temple photography with stone pillars and diya lamps',
   },
   'baby-shower': {
@@ -112,7 +112,7 @@ const categoryContentData: Record<string, {
       metaDesc: 'மணி போட்டோகிராஃபி வழங்கும் வளைகாப்பு மற்றும் தாய்மை புகைப்பட சேவைகள்.',
       ctaText: 'வளைகாப்பு ஷூட் முன்பதிவு செய்ய',
     },
-    heroImage: `${import.meta.env.BASE_URL}images/baby-shower/baby-shower-01.jpg`,
+    heroImage: `${import.meta.env.BASE_URL}images/baby-shower/thirukadaiyur-seemantham-baby-shower-photography.webp`,
     heroAlt: 'Baby shower photography with family',
   },
   'house-warming': {
@@ -132,7 +132,7 @@ const categoryContentData: Record<string, {
       metaDesc: 'மணி போட்டோகிராஃபி வழங்கும் கிரகப்பிரவேச புகைப்பட சேவை.',
       ctaText: 'கிரகப்பிரவேச ஷூட் முன்பதிவு செய்ய',
     },
-    heroImage: `${import.meta.env.BASE_URL}images/house-warming/house-warming-01.jpg`,
+    heroImage: `${import.meta.env.BASE_URL}images/house-warming/thirukadaiyur-grihapravesam-house-warming-photography.webp`,
     heroAlt: 'House warming ceremony photography',
   },
   'family-functions': {
@@ -152,7 +152,7 @@ const categoryContentData: Record<string, {
       metaDesc: 'மணி போட்டோகிராஃபி வழங்கும் குடும்ப விழா புகைப்பட சேவைகள்.',
       ctaText: 'குடும்ப விழா ஷூட் முன்பதிவு செய்ய',
     },
-    heroImage: `${import.meta.env.BASE_URL}images/family/family-01.jpg`,
+    heroImage: `${import.meta.env.BASE_URL}images/family/thirukadaiyur-multi-generational-family-portrait.webp`,
     heroAlt: 'Family function photography',
   },
 };
