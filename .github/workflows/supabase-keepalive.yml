@@ -1,0 +1,29 @@
+name: Supabase Keep-Alive Ping
+
+# Runs every 3 days at 08:00 UTC to prevent Supabase free-tier from pausing
+on:
+  schedule:
+    - cron: '0 8 */3 * *'   # Every 3 days at 08:00 UTC
+  workflow_dispatch:         # Allow manual trigger from GitHub Actions tab
+
+jobs:
+  keep-alive:
+    name: Ping Supabase Database
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ping Supabase REST API
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          echo "🏓 Pinging Supabase at $(date)..."
+
+          RESPONSE=$(curl --silent --show-error --fail \
+            --max-time 30 \
+            -H "apikey: $SUPABASE_ANON_KEY" \
+            -H "Authorization: Bearer $SUPABASE_ANON_KEY" \
+            "$SUPABASE_URL/rest/v1/clients?select=id&limit=1")
+
+          echo "✅ Supabase responded successfully."
+          echo "Response preview: $RESPONSE"
