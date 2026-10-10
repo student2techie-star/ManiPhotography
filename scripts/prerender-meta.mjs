@@ -160,7 +160,13 @@ const routes = [
     ogImage: '/images/prewedding/prewedding-01.jpg',
   },
   {
-    path: '/portfolio/temple-photography',
+    path: '/portfolio/tamil-weddings',
+    title: 'Tamil Wedding Photography Portfolio | Mani Photography',
+    description: 'Traditional Tamil wedding photography portfolio covering rituals, muhurtham, and receptions in Thirukadaiyur.',
+    ogImage: '/images/tamil-weddings/thirukadaiyur-60th-birthday-shashtiapthapoorthi-photography.webp',
+  },
+  {
+    path: '/portfolio/temple',
     title: 'Temple Photography Portfolio Thirukadaiyur | Mani Photography',
     description: 'Sacred temple photography portfolio at Thirukadaiyur Sri Amritaghateswarar Abirami Temple and Thirunallar Saneeswarar Temple.',
     ogImage: '/images/temple/temple-01.jpg',
