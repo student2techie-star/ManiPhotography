@@ -157,8 +157,18 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://thirukadaiyurmaniphotography.in/portfolio/temple-photography/</loc>
-    <lastmod>2026-09-10</lastmod>
+    <loc>https://thirukadaiyurmaniphotography.in/portfolio/tamil-weddings/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://thirukadaiyurmaniphotography.in/images/tamil-weddings/thirukadaiyur-60th-birthday-shashtiapthapoorthi-photography.webp</image:loc>
+      <image:title>Tamil Wedding Photography Gallery Thirukadaiyur</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://thirukadaiyurmaniphotography.in/portfolio/temple/</loc>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
