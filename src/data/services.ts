@@ -38,7 +38,7 @@ export const dedicatedServices: ServiceItem[] = [
   {
     id: 'wedding-photography-thirukadaiyur',
     slug: 'wedding-photography-thirukadaiyur',
-    dedicatedRoute: '/wedding-photography-thirukadaiyur',
+    dedicatedRoute: '/wedding-photography-thirukadaiyur/',
     title: 'Wedding Photography in Thirukadaiyur',
     titleTa: 'திருக்கடையூர் திருமண போட்டோகிராஃபி',
     heroTitle: 'Wedding Photography in Thirukadaiyur & Mayiladuthurai',
@@ -87,7 +87,7 @@ export const dedicatedServices: ServiceItem[] = [
   {
     id: '60th-birthday-photography-thirukadaiyur',
     slug: '60th-birthday-photography-thirukadaiyur',
-    dedicatedRoute: '/60th-birthday-photography-thirukadaiyur',
+    dedicatedRoute: '/60th-birthday-photography-thirukadaiyur/',
     title: '60th Birthday Photography in Thirukadaiyur (Shashtiapthapoorthi)',
     titleTa: 'திருக்கடையூர் 60ஆம் கல்யாணம் (சஷ்டியப்தபூர்த்தி) போட்டோகிராஃபி',
     heroTitle: '60th Birthday Photography in Thirukadaiyur (Shashtiapthapoorthi)',
@@ -135,7 +135,7 @@ export const dedicatedServices: ServiceItem[] = [
   {
     id: '70th-birthday-photography-thirukadaiyur',
     slug: '70th-birthday-photography-thirukadaiyur',
-    dedicatedRoute: '/70th-birthday-photography-thirukadaiyur',
+    dedicatedRoute: '/70th-birthday-photography-thirukadaiyur/',
     title: '70th Birthday Photography in Thirukadaiyur (Bhimaratha Shanthi)',
     titleTa: 'திருக்கடையூர் 70ஆம் கல்யாணம் (பீமரத சாந்தி) போட்டோகிராஃபி',
     heroTitle: '70th Birthday Photography in Thirukadaiyur (Bhimaratha Shanthi)',
@@ -174,7 +174,7 @@ export const dedicatedServices: ServiceItem[] = [
   {
     id: '80th-birthday-photography-thirukadaiyur',
     slug: '80th-birthday-photography-thirukadaiyur',
-    dedicatedRoute: '/80th-birthday-photography-thirukadaiyur',
+    dedicatedRoute: '/80th-birthday-photography-thirukadaiyur/',
     title: '80th Birthday Photography in Thirukadaiyur (Sadabishegam)',
     titleTa: 'திருக்கடையூர் 80ஆம் கல்யாணம் (சதாபிஷேகம்) போட்டோகிராஃபி',
     heroTitle: '80th Birthday Photography in Thirukadaiyur (Sadabishegam)',
@@ -212,7 +212,7 @@ export const dedicatedServices: ServiceItem[] = [
   {
     id: 'shashtiapthapoorthi-photography',
     slug: 'shashtiapthapoorthi-photography',
-    dedicatedRoute: '/shashtiapthapoorthi-photography',
+    dedicatedRoute: '/shashtiapthapoorthi-photography/',
     title: 'Shashtiapthapoorthi Photography Thirukadaiyur',
     titleTa: 'சஷ்டியப்தபூர்த்தி போட்டோகிராஃபி திருக்கடையூர்',
     heroTitle: 'Shashtiapthapoorthi (60th Marriage) Photography Specialist',
@@ -250,7 +250,7 @@ export const dedicatedServices: ServiceItem[] = [
   {
     id: 'temple-photography-thirukadaiyur',
     slug: 'temple-photography-thirukadaiyur',
-    dedicatedRoute: '/temple-photography-thirukadaiyur',
+    dedicatedRoute: '/temple-photography-thirukadaiyur/',
     title: 'Thirukadaiyur Temple Photography',
     titleTa: 'திருக்கடையூர் கோயில் போட்டோகிராஃபி',
     heroTitle: 'Thirukadaiyur Temple & Heritage Photography',
@@ -288,7 +288,7 @@ export const dedicatedServices: ServiceItem[] = [
   {
     id: 'wedding-videography-thirukadaiyur',
     slug: 'wedding-videography-thirukadaiyur',
-    dedicatedRoute: '/wedding-videography-thirukadaiyur',
+    dedicatedRoute: '/wedding-videography-thirukadaiyur/',
     title: 'Wedding Videography in Thirukadaiyur',
     titleTa: 'திருக்கடையூர் திருமண வீடியோகிராஃபி',
     heroTitle: 'Wedding Videography & Cinematic Films in Thirukadaiyur',

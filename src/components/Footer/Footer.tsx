@@ -13,32 +13,32 @@ export default function Footer() {
 
   const footerNavLinks = [
     { label: t.nav.home, to: '/' },
-    { label: t.nav.portfolio, to: '/portfolio' },
-    { label: t.nav.services, to: '/services' },
-    { label: language === 'en' ? 'Ceremony Guides' : 'வழிகாட்டிகள்', to: '/guides' },
-    { label: t.nav.images, to: '/images' },
-    { label: t.nav.about, to: '/about' },
-    { label: t.nav.contact, to: '/contact' },
+    { label: t.nav.portfolio, to: '/portfolio/' },
+    { label: t.nav.services, to: '/services/' },
+    { label: language === 'en' ? 'Ceremony Guides' : 'வழிகாட்டிகள்', to: '/guides/' },
+    { label: t.nav.images, to: '/images/' },
+    { label: t.nav.about, to: '/about/' },
+    { label: t.nav.contact, to: '/contact/' },
   ];
 
   const portfolioLinks = [
-    { label: t.categories['weddings'], to: '/portfolio/weddings' },
-    { label: t.categories['pre-wedding'], to: '/portfolio/pre-wedding' },
-    { label: t.categories['tamil-weddings'], to: '/portfolio/tamil-weddings' },
-    { label: t.categories['temple'], to: '/portfolio/temple' },
-    { label: t.categories['baby-shower'], to: '/portfolio/baby-shower' },
-    { label: t.categories['house-warming'], to: '/portfolio/house-warming' },
-    { label: t.categories['family-functions'], to: '/portfolio/family-functions' },
+    { label: t.categories['weddings'], to: '/portfolio/weddings/' },
+    { label: t.categories['pre-wedding'], to: '/portfolio/pre-wedding/' },
+    { label: t.categories['tamil-weddings'], to: '/portfolio/tamil-weddings/' },
+    { label: t.categories['temple'], to: '/portfolio/temple/' },
+    { label: t.categories['baby-shower'], to: '/portfolio/baby-shower/' },
+    { label: t.categories['house-warming'], to: '/portfolio/house-warming/' },
+    { label: t.categories['family-functions'], to: '/portfolio/family-functions/' },
   ];
 
   const serviceLinks = [
-    { label: language === 'en' ? '60th Birthday Photography' : '60ஆம் கல்யாணம்', to: '/60th-birthday-photography-thirukadaiyur' },
-    { label: language === 'en' ? 'Shashtiapthapoorthi 60th' : 'சஷ்டியப்தபூர்த்தி', to: '/shashtiapthapoorthi-photography' },
-    { label: language === 'en' ? '70th Birthday Photography' : '70ஆம் கல்யாணம்', to: '/70th-birthday-photography-thirukadaiyur' },
-    { label: language === 'en' ? '80th Birthday Photography' : '80ஆம் கல்யாணம்', to: '/80th-birthday-photography-thirukadaiyur' },
-    { label: language === 'en' ? 'Wedding Photography' : 'திருமண போட்டோகிராஃபி', to: '/wedding-photography-thirukadaiyur' },
-    { label: language === 'en' ? 'Temple Photography' : 'கோயில் போட்டோகிராஃபி', to: '/temple-photography-thirukadaiyur' },
-    { label: language === 'en' ? 'Wedding Videography' : 'திருமண வீடியோகிராஃபி', to: '/wedding-videography-thirukadaiyur' },
+    { label: language === 'en' ? '60th Birthday Photography' : '60ஆம் கல்யாணம்', to: '/60th-birthday-photography-thirukadaiyur/' },
+    { label: language === 'en' ? 'Shashtiapthapoorthi 60th' : 'சஷ்டியப்தபூர்த்தி', to: '/shashtiapthapoorthi-photography/' },
+    { label: language === 'en' ? '70th Birthday Photography' : '70ஆம் கல்யாணம்', to: '/70th-birthday-photography-thirukadaiyur/' },
+    { label: language === 'en' ? '80th Birthday Photography' : '80ஆம் கல்யாணம்', to: '/80th-birthday-photography-thirukadaiyur/' },
+    { label: language === 'en' ? 'Wedding Photography' : 'திருமண போட்டோகிராஃபி', to: '/wedding-photography-thirukadaiyur/' },
+    { label: language === 'en' ? 'Temple Photography' : 'கோயில் போட்டோகிராஃபி', to: '/temple-photography-thirukadaiyur/' },
+    { label: language === 'en' ? 'Wedding Videography' : 'திருமண வீடியோகிராஃபி', to: '/wedding-videography-thirukadaiyur/' },
   ];
 
   return (
@@ -137,7 +137,7 @@ export default function Footer() {
               </a>
             </li>
           </ul>
-          <Link to="/contact" className="btn btn-primary footer__cta">{t.common.bookShoot}</Link>
+          <Link to="/contact/" className="btn btn-primary footer__cta">{t.common.bookShoot}</Link>
         </div>
       </div>
 

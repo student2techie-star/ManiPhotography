@@ -15,11 +15,11 @@ export default function Navbar() {
 
   const navLinks = [
     { to: '/', label: t.home },
-    { to: '/portfolio', label: t.portfolio },
-    { to: '/services', label: t.services },
-    { to: '/images', label: t.images },
-    { to: '/about', label: t.about },
-    { to: '/contact', label: t.contact },
+    { to: '/portfolio/', label: t.portfolio },
+    { to: '/services/', label: t.services },
+    { to: '/images/', label: t.images },
+    { to: '/about/', label: t.about },
+    { to: '/contact/', label: t.contact },
   ];
 
   useEffect(() => {
@@ -160,7 +160,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          <Link to="/contact" className="btn btn-primary mobile-menu__cta" style={{ '--i': navLinks.length + 1 } as React.CSSProperties}>
+          <Link to="/contact/" className="btn btn-primary mobile-menu__cta" style={{ '--i': navLinks.length + 1 } as React.CSSProperties}>
             {t.bookShoot}
           </Link>
         </nav>
