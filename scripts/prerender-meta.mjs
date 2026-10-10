@@ -64,19 +64,19 @@ const routes = [
   {
     path: '/sashti-abda-poorthi-photography',
     title: 'Sashti Abda Poorthi Photography Thirukadaiyur | 60th Marriage Specialist',
-    description: 'Specialist Sashti Abda Poorthi (60th marriage) photographer at Thirukadaiyur Sri Amritaghateswarar Abirami Temple. Kalasa Abhishekam & Thaali re-tying coverage.',
+    description: 'Specialist Sashti Abda Poorthi (60th marriage) photographer in Thirukadaiyur. Kalasa Abhishekam & Thaali re-tying coverage.',
     ogImage: '/images/guides/thirukadaiyur-60th-birthday-shashtiapthapoorthi-guide.webp',
   },
   {
     path: '/bhima-ratha-shanthi-photography',
     title: 'Bhima Ratha Shanthi Photography Thirukadaiyur | 70th Birthday Specialist',
-    description: 'Specialist Bhima Ratha Shanthi (70th birthday) ceremony photography in Thirukadaiyur. Documenting 70th marriage homams & family portraits.',
+    description: 'Specialist Bhimaratha Shanthi (70th birthday) photography in Thirukadaiyur. Documenting 70th marriage homam & family gatherings.',
     ogImage: '/images/tamil-weddings/thirukadaiyur-70th-birthday-bhimaratha-shanthi-photography.webp',
   },
   {
     path: '/sadhabishegam-photography',
     title: 'Sadhabishegam Photography Thirukadaiyur | 80th Birthday Specialist',
-    description: 'Specialist Sadhabishegam (80th birthday / 1000 full moons) photographer at Thirukadaiyur Abirami Temple. Capturing 80 Kalasams & family lineage photos.',
+    description: 'Specialist Sadhabishegam (80th birthday) photographer at Thirukadaiyur Abirami Temple. Capturing 1000 full moons, 80 Kalasams & portraits.',
     ogImage: '/images/guides/thirukadaiyur-80th-birthday-sadabishegam-photography.webp',
   },
   {
