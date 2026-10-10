@@ -263,10 +263,6 @@ function generateHTML(route) {
     /<link rel="canonical" href=".*?" \/>/,
     `<link rel="canonical" href="${canonical}" />`
   );
-  html = html.replace(
-    /<link rel="alternate" hreflang="x-default" href=".*?" \/>/,
-    `<link rel="alternate" hreflang="x-default" href="${canonical}" />`
-  );
 
   // Replace OG tags
   html = html.replace(
