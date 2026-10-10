@@ -174,7 +174,7 @@ export default function PortfolioCategory() {
     title: content
       ? `${content.title} | Mani Photography`
       : `${catLabel} | Mani Photography Portfolio`,
-    description: content?.metaDesc ?? `${catLabel} photography by Mani Photography.`,
+    description: content?.metaDesc ?? `View our stunning ${catLabel} photography portfolio. Mani Photography captures beautiful, timeless moments and creates lasting memories for families in Thirukadaiyur.`,
   });
 
   useScrollReveal();

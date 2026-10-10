@@ -118,7 +118,7 @@ const routes = [
   {
     path: '/images',
     title: 'Client Portal | Mani Photography Thirukadaiyur',
-    description: 'Access your private photography galleries and event images.',
+    description: 'Access your private client portal to view, securely download, and share your high-resolution event photography galleries from Mani Photography in Thirukadaiyur.',
     ogImage: '/images/og-image.jpg',
   },
   // Guide Post Pages
@@ -180,7 +180,7 @@ const routes = [
   {
     path: '/portfolio/shashti-poorthi',
     title: '60th & 80th Weddings Portfolio Thirukadaiyur | Mani Photography',
-    description: 'Thirukadaiyur 60th and 80th marriage photography portfolio.',
+    description: 'Explore our stunning Thirukadaiyur 60th (Shashtiapthapoorthi) and 80th (Sadabishegam) marriage photography portfolio. View our traditional temple captures.',
     ogImage: '/images/tamil-weddings/thirukadaiyur-60th-birthday-shashtiapthapoorthi-photography.webp',
   },
   {
@@ -204,13 +204,13 @@ const routes = [
   {
     path: '/portfolio/family',
     title: 'Family Photography Portfolio Thirukadaiyur | Mani Photography',
-    description: 'Heartwarming family photography portfolio in Thirukadaiyur.',
+    description: 'View our heartwarming family photography portfolio. We capture beautiful, timeless moments and create stunning multi-generational memories in Thirukadaiyur.',
     ogImage: '/images/family/thirukadaiyur-multi-generational-family-portrait.webp',
   },
   {
     path: '/portfolio/events',
     title: 'Events Photography Portfolio Thirukadaiyur | Mani Photography',
-    description: 'Events and celebrations photography portfolio in Thirukadaiyur.',
+    description: 'Explore our event and celebrations photography portfolio. Mani Photography captures beautiful, timeless moments for all your family gatherings in Thirukadaiyur.',
     ogImage: '/images/events/thirukadaiyur-traditional-function-celebration.webp',
   },
   // Service Sub-pages
