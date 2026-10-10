@@ -165,6 +165,49 @@ const routes = [
     description: 'Sacred temple photography portfolio at Thirukadaiyur Sri Amritaghateswarar Abirami Temple and Thirunallar Saneeswarar Temple.',
     ogImage: '/images/temple/temple-01.jpg',
   },
+  {
+    path: '/portfolio/baby-shower',
+    title: 'Baby Shower Photography Portfolio Thirukadaiyur | Mani Photography',
+    description: 'Beautiful baby shower and seemantham photography portfolio in Thirukadaiyur.',
+    ogImage: '/images/baby-shower/thirukadaiyur-seemantham-baby-shower-photography.webp',
+  },
+  {
+    path: '/portfolio/house-warming',
+    title: 'House Warming Photography Portfolio Thirukadaiyur | Mani Photography',
+    description: 'Joyous house warming (Griha Pravesham) photography portfolio in Thirukadaiyur.',
+    ogImage: '/images/house-warming/thirukadaiyur-grihapravesam-house-warming-photography.webp',
+  },
+  {
+    path: '/portfolio/family-functions',
+    title: 'Family Function Photography Portfolio Thirukadaiyur | Mani Photography',
+    description: 'Heartwarming family function and event photography portfolio in Thirukadaiyur.',
+    ogImage: '/images/family/thirukadaiyur-multi-generational-family-portrait.webp',
+  },
+  // Service Sub-pages
+  {
+    path: '/services/pre-wedding',
+    title: 'Pre-Wedding Photography Services | Mani Photography Thirukadaiyur',
+    description: 'Professional pre-wedding photography services in Thirukadaiyur. Creative couple shoots at beautiful outdoor locations.',
+    ogImage: '/images/pre-wedding/thirukadaiyur-pre-wedding-couple-photoshoot.webp',
+  },
+  {
+    path: '/services/baby-shower',
+    title: 'Baby Shower (Seemantham) Photography Services | Mani Photography',
+    description: 'Professional Seemantham and Baby Shower photography services capturing the joy of your growing family in Thirukadaiyur.',
+    ogImage: '/images/baby-shower/thirukadaiyur-seemantham-baby-shower-photography.webp',
+  },
+  {
+    path: '/services/house-warming',
+    title: 'House Warming (Griha Pravesham) Photography | Mani Photography',
+    description: 'Expert House Warming and Griha Pravesham photography services in Thirukadaiyur. Preserve the memories of your new home.',
+    ogImage: '/images/house-warming/thirukadaiyur-grihapravesam-house-warming-photography.webp',
+  },
+  {
+    path: '/services/family-functions',
+    title: 'Family Function Photography Services | Mani Photography',
+    description: 'Specialized family event, birthday, and naming ceremony photography services in Thirukadaiyur.',
+    ogImage: '/images/family/thirukadaiyur-multi-generational-family-portrait.webp',
+  }
 ];
 
 function generateHTML(route) {
