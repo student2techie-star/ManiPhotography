@@ -240,14 +240,6 @@ function generateHTML(route) {
     `<link rel="canonical" href="${canonical}" />`
   );
   html = html.replace(
-    /<link rel="alternate" hreflang="en" href=".*?" \/>/,
-    `<link rel="alternate" hreflang="en" href="${canonical}" />`
-  );
-  html = html.replace(
-    /<link rel="alternate" hreflang="ta" href=".*?" \/>/,
-    `<link rel="alternate" hreflang="ta" href="${canonical}" />`
-  );
-  html = html.replace(
     /<link rel="alternate" hreflang="x-default" href=".*?" \/>/,
     `<link rel="alternate" hreflang="x-default" href="${canonical}" />`
   );
