@@ -148,7 +148,7 @@ const routes = [
   },
   {
     path: '/guides/how-to-reach-thirukadaiyur-travel-guide-bus-train-car-flight',
-    title: 'How to Reach Thirukadaiyur Temple: Directions by Air, Train, Bus & Car',
+    title: 'How to Reach Thirukadaiyur Temple (Travel Guide)',
     description: 'Complete travel route guide to Thirukadaiyur Temple from Chennai, Bangalore, Trichy, Coimbatore, Pondicherry via Flight, Train, Bus, and Car.',
     ogImage: '/images/temple/temple-01.jpg',
   },

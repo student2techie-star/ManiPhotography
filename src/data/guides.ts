@@ -305,7 +305,7 @@ export const guidesData: GuidePost[] = [
     slug: 'how-to-reach-thirukadaiyur-travel-guide-bus-train-car-flight',
     category: 'Travel & Routes Guide',
     categoryTa: 'பயண வழிகாட்டி',
-    titleEn: 'How to Reach Thirukadaiyur Temple: Complete Directions by Flight, Train, Bus & Car',
+    titleEn: 'How to Reach Thirukadaiyur Temple (Travel Guide)',
     titleTa: 'திருக்கடையூர் கோயில் அடைவது எப்படி? பஸ், ரயில், கார் & விமான பயண வழிகாட்டி',
     summaryEn: 'Complete travel route guide to Thirukadaiyur Amritaghateswarar Abirami Temple from Chennai, Bangalore, Trichy, Coimbatore, Pondicherry, and overseas via Flight, Train, Bus, and Self-drive Car.',
     summaryTa: 'சென்னை, பெங்களூரு, திருச்சி, கோயம்புத்தூர் போன்ற நகரங்களில் இருந்து திருக்கடையூர் அமிர்தகடேஸ்வரர் கோயிலுக்கு பஸ், ரயில், கார் மற்றும் விமானம் மூலம் வரும் முழுமையான பயண வழிகாட்டி.',

@@ -89,9 +89,14 @@ export default function Services() {
                       ))}
                     </ul>
                   </div>
-                  <Link to="/contact" className="btn btn-primary service-detail__cta">
-                    {servT.enquireService}
-                  </Link>
+                  <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                    <Link to="/contact" className="btn btn-primary service-detail__cta">
+                      {servT.enquireService}
+                    </Link>
+                    <Link to={service.dedicatedRoute || `/services/${service.slug}`} className="btn btn-outline service-detail__cta">
+                      {language === 'en' ? 'View Details' : 'மேலும் அறிய'}
+                    </Link>
+                  </div>
                 </div>
               </article>
             );
