@@ -115,6 +115,12 @@ const routes = [
     description: 'Comprehensive guides to Thirukadaiyur 60th (Shashtiapthapoorthi), 70th (Bhimaratha Shanthi) & 80th (Sadabishegam) marriage rituals, timings, and photography tips.',
     ogImage: '/images/og-image.jpg',
   },
+  {
+    path: '/images',
+    title: 'Client Portal | Mani Photography Thirukadaiyur',
+    description: 'Access your private photography galleries and event images.',
+    ogImage: '/images/og-image.jpg',
+  },
   // Guide Post Pages
   {
     path: '/guides/thirukadaiyur-60th-marriage-shashtiapthapoorthi-guide',
@@ -172,6 +178,12 @@ const routes = [
     ogImage: '/images/temple/temple-01.jpg',
   },
   {
+    path: '/portfolio/shashti-poorthi',
+    title: '60th & 80th Weddings Portfolio Thirukadaiyur | Mani Photography',
+    description: 'Thirukadaiyur 60th and 80th marriage photography portfolio.',
+    ogImage: '/images/tamil-weddings/thirukadaiyur-60th-birthday-shashtiapthapoorthi-photography.webp',
+  },
+  {
     path: '/portfolio/baby-shower',
     title: 'Baby Shower Photography Portfolio Thirukadaiyur | Mani Photography',
     description: 'Beautiful baby shower and seemantham photography portfolio in Thirukadaiyur.',
@@ -188,6 +200,18 @@ const routes = [
     title: 'Family Function Photography Portfolio Thirukadaiyur | Mani Photography',
     description: 'Heartwarming family function and event photography portfolio in Thirukadaiyur.',
     ogImage: '/images/family/thirukadaiyur-multi-generational-family-portrait.webp',
+  },
+  {
+    path: '/portfolio/family',
+    title: 'Family Photography Portfolio Thirukadaiyur | Mani Photography',
+    description: 'Heartwarming family photography portfolio in Thirukadaiyur.',
+    ogImage: '/images/family/thirukadaiyur-multi-generational-family-portrait.webp',
+  },
+  {
+    path: '/portfolio/events',
+    title: 'Events Photography Portfolio Thirukadaiyur | Mani Photography',
+    description: 'Events and celebrations photography portfolio in Thirukadaiyur.',
+    ogImage: '/images/events/thirukadaiyur-traditional-function-celebration.webp',
   },
   // Service Sub-pages
   {
