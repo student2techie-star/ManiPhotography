@@ -72,12 +72,6 @@ export default function Home() {
     homeT.trustItem8,
   ];
 
-  const testimonials = [
-    { quote: homeT.t1Quote, name: homeT.t1Name, event: homeT.t1Event },
-    { quote: homeT.t2Quote, name: homeT.t2Name, event: homeT.t2Event },
-    { quote: homeT.t3Quote, name: homeT.t3Name, event: homeT.t3Event },
-  ];
-
   return (
     <main>
       {/* ── HERO ───────────────────────────────────────── */}
@@ -661,34 +655,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── TESTIMONIALS ────────────────────────────────── */}
-      <section className="section section--light testimonials-section">
-        <div className="container">
-          <SectionHeading
-            label={homeT.testimonialsLabel}
-            title={homeT.testimonialsTitle}
-            align="center"
-            dark={false}
-            className="reveal"
-          />
-          <div className="testimonials-section__grid">
-            {testimonials.map((tItem, i) => (
-              <div key={i} className={`testimonial-card reveal reveal-delay-${i + 1}`}>
-                <span className="testimonial-card__quote-mark" aria-hidden="true">"</span>
-                <blockquote className="testimonial-card__quote body-lg">{tItem.quote}</blockquote>
-                <div className="testimonial-card__author">
-                  <span className="accent-line accent-line--sm" aria-hidden="true" />
-                  <span className="testimonial-card__name body-md">{tItem.name}</span>
-                  <span className="testimonial-card__event label-light">{tItem.event}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── GOOGLE REVIEWS SECTION ──────────────────────── */}
-      <section className="section section--light google-reviews-wrapper" style={{ paddingTop: 0 }}>
+      <section className="section section--light google-reviews-wrapper">
         <GoogleReviews />
       </section>
 

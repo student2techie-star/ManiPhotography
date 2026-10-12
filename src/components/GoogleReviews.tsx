@@ -4,7 +4,7 @@ import { useGoogleReviews } from '../hooks/useGoogleReviews';
 import './GoogleReviews.css'; // Let's add some basic CSS
 
 export const GoogleReviews: React.FC = () => {
-  const { reviews, count, fiveStarCount, fourStarCount, loading, error, hasMore, loadMore } = useGoogleReviews(6);
+  const { reviews, count, loading, error, hasMore, loadMore } = useGoogleReviews(6);
 
   if (error) {
     return (
@@ -46,10 +46,6 @@ export const GoogleReviews: React.FC = () => {
             <p className="reviews-subtitle">
               Authentic stories and experiences from families who celebrated their milestone moments with us in Thirukadaiyur.
             </p>
-            <div className="reviews-stats">
-              <span title="5-star reviews">★★★★★ {fiveStarCount} Five-Star</span>
-              {fourStarCount > 0 && <span title="4-star reviews">• ★★★★☆ {fourStarCount} Four-Star</span>}
-            </div>
           </>
         )}
       </div>
