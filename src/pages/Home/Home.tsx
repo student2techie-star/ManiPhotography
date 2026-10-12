@@ -9,6 +9,7 @@ import { getLocalBusinessSchema, getWebSiteSchema } from '../../components/SEO/J
 import SectionHeading from '../../components/SectionHeading/SectionHeading';
 import PortfolioGrid from '../../components/PortfolioGrid/PortfolioGrid';
 import FaqSection from '../../components/FaqSection/FaqSection';
+import { GoogleReviews } from '../../components/GoogleReviews';
 import { useLanguage } from '../../context/LanguageContext';
 import { translations } from '../../data/translations';
 import './Home.css';
@@ -684,6 +685,11 @@ export default function Home() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* ── GOOGLE REVIEWS SECTION ──────────────────────── */}
+      <section className="section section--light google-reviews-wrapper" style={{ paddingTop: 0 }}>
+        <GoogleReviews />
       </section>
 
       {/* ── FAQ SECTION (SEO RANKING) ──────────────────── */}
