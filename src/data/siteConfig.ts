@@ -14,8 +14,8 @@ export const siteConfig = {
   whatsapp: '918111085865',
   email: 'manidigitalmediatkdr@gmail.com',
   location: 'Thirukadaiyur, Mayiladuthurai, Tamil Nadu',
-  mapsUrl: 'https://maps.app.goo.gl/jBj2bMBfc2NAtFHv9',
-  googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.864736637385!2d79.8039706!3d11.0747031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a55190b8635bec3%3A0x82269318ef8a0e4d!2sMani%20thirukkadaiyur%20photography!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin',
+  mapsUrl: 'https://maps.app.goo.gl/Pto6ULPeHZ9jnch86',
+  googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.864736637385!2d79.8026012!3d11.0740918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a551916f56eb02f%3A0x63ca829355b2fad7!2sThirukadaiyur%20Mani%20Photography!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin',
 
   // ── Social ──────────────────────────────────────────────
   instagram: 'https://instagram.com/maniphotography',  // ← Replace

@@ -62,11 +62,12 @@
 
 .guide-detail__cover-wrap {
   width: 100%;
+  max-width: 720px;
+  max-height: 380px;
+  margin: var(--space-6) auto var(--space-8);
   aspect-ratio: 16/9;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  margin-top: var(--space-6);
-  margin-bottom: var(--space-8);
   border: 1px solid var(--clr-border);
   box-shadow: 0 8px 24px rgba(45, 35, 24, 0.08);
 }

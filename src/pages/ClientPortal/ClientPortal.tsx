@@ -64,7 +64,7 @@ const ClientPortal: React.FC = () => {
           <div className="client-portal-card">
             <div className="client-portal-header">
               <div className="client-portal-icon">
-                <ImageIcon size={32} />
+                <ImageIcon size={22} />
               </div>
               <h1>Your Photos</h1>
               <p>Enter your phone number and password to access your private photo collection.</p>
@@ -78,7 +78,7 @@ const ClientPortal: React.FC = () => {
                   <label>Phone Number</label>
                   <div className="client-input-wrapper">
                     <div className="client-input-icon">
-                      <Phone size={20} />
+                      <Phone size={16} />
                     </div>
                     <input
                       type="tel"
@@ -95,7 +95,7 @@ const ClientPortal: React.FC = () => {
                   <label>Password</label>
                   <div className="client-input-wrapper">
                     <div className="client-input-icon">
-                      <Lock size={20} />
+                      <Lock size={16} />
                     </div>
                     <input
                       type="password"
@@ -121,7 +121,7 @@ const ClientPortal: React.FC = () => {
         ) : (
           <div className="client-success-card">
             <div className="client-portal-icon">
-              <Camera size={32} />
+              <Camera size={22} />
             </div>
             
             <h2>

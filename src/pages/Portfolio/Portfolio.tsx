@@ -90,7 +90,7 @@ export default function Portfolio() {
                 to={`/portfolio/${cat.id}`}
                 className="portfolio-cat-card reveal"
               >
-                <span className="portfolio-cat-card__title title-md">{getCatLabel(cat.id)}</span>
+                <span className="portfolio-cat-card__title">{getCatLabel(cat.id)}</span>
                 <span className="portfolio-cat-card__arrow">→</span>
               </Link>
             ))}

@@ -27,7 +27,7 @@ export default function Services() {
   return (
     <main>
       {/* Hero */}
-      <div className="page-hero page-hero--dark">
+      <div className="page-hero services-hero page-hero--dark">
         <div className="container">
           <span className="label page-hero__label">{servT.heroLabel}</span>
           <h1 className="display-md page-hero__title">{servT.heroTitle}</h1>
@@ -37,70 +37,75 @@ export default function Services() {
         </div>
       </div>
 
-      {/* Services List */}
-      <section className="section section--dark services-page">
+      {/* Services Grid Section */}
+      <section className="section section--dark services-section">
         <div className="container">
-          {services.map((service: ServiceItem, i: number) => {
-            const localized = t.serviceItems[service.id as keyof typeof t.serviceItems] || {
-              title: service.title,
-              fullDesc: service.fullDesc,
-              includes: service.includes,
-            };
+          <div className="services-grid">
+            {services.map((service: ServiceItem) => {
+              const localized = t.serviceItems[service.id as keyof typeof t.serviceItems] || {
+                title: service.title,
+                fullDesc: service.fullDesc,
+                includes: service.includes,
+              };
 
-            return (
-              <article
-                key={service.id}
-                className={`service-detail reveal ${i % 2 === 0 ? 'service-detail--normal' : 'service-detail--reversed'}`}
-                id={service.slug}
-              >
-                <div className="service-detail__image">
-                  <img
-                    src={service.image}
-                    alt={service.alt}
-                    className="img-cover"
-                    loading="lazy"
-                    width="800"
-                    height="600"
-                    onError={e => {
-                      (e.currentTarget as HTMLImageElement).style.display = 'none';
-                      const next = e.currentTarget.nextElementSibling as HTMLElement;
-                      if (next) next.style.display = 'flex';
-                    }}
-                  />
-                  <div className="img-placeholder" style={{ display: 'none', minHeight: '400px' }}>
-                    <span className="label-light">{localized.title}</span>
+              return (
+                <article
+                  key={service.id}
+                  className="service-card reveal"
+                  id={service.slug}
+                >
+                  <div className="service-card__image-wrap">
+                    <img
+                      src={service.image}
+                      alt={service.alt}
+                      className="service-card__img"
+                      loading="lazy"
+                      width="600"
+                      height="400"
+                      onError={e => {
+                        (e.currentTarget as HTMLImageElement).style.display = 'none';
+                        const next = e.currentTarget.nextElementSibling as HTMLElement;
+                        if (next) next.style.display = 'flex';
+                      }}
+                    />
+                    <div className="img-placeholder" style={{ display: 'none', minHeight: '180px' }}>
+                      <span className="label-light">{localized.title}</span>
+                    </div>
+                    <span className="service-card__icon-badge">{service.icon}</span>
                   </div>
-                </div>
-                <div className="service-detail__content">
-                  <span className="service-detail__icon">{service.icon}</span>
-                  <SectionHeading
-                    label={servT.heroLabel}
-                    title={localized.title}
-                  />
-                  <p className="body-lg service-detail__full-desc">{localized.fullDesc}</p>
-                  <div className="service-detail__includes">
-                    <h3 className="service-detail__includes-title label">{servT.whatsIncluded}</h3>
-                    <ul className="service-detail__includes-list">
-                      {localized.includes.map(item => (
-                        <li key={item} className="service-detail__includes-item">
-                          <span aria-hidden="true" className="service-detail__check">✦</span>
-                          <span className="body-sm">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+
+                  <div className="service-card__body">
+                    <h2 className="service-card__title">{localized.title}</h2>
+                    <p className="service-card__desc">{localized.fullDesc}</p>
+
+                    <div className="service-card__includes">
+                      <span className="service-card__includes-label">{servT.whatsIncluded}</span>
+                      <ul className="service-card__includes-list">
+                        {localized.includes.slice(0, 3).map(item => (
+                          <li key={item} className="service-card__includes-item">
+                            <span aria-hidden="true" className="service-card__check">✦</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="service-card__actions">
+                      <Link to="/contact" className="btn btn-primary service-card__btn">
+                        {servT.enquireService}
+                      </Link>
+                      <Link
+                        to={service.dedicatedRoute || `/services/${service.slug}`}
+                        className="btn btn-outline service-card__btn"
+                      >
+                        {language === 'en' ? 'View Details' : 'மேலும் அறிய'}
+                      </Link>
+                    </div>
                   </div>
-                  <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                    <Link to="/contact" className="btn btn-primary service-detail__cta">
-                      {servT.enquireService}
-                    </Link>
-                    <Link to={service.dedicatedRoute || `/services/${service.slug}`} className="btn btn-outline service-detail__cta">
-                      {language === 'en' ? 'View Details' : 'மேலும் அறிய'}
-                    </Link>
-                  </div>
-                </div>
-              </article>
-            );
-          })}
+                </article>
+              );
+            })}
+          </div>
         </div>
       </section>
 

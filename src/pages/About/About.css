@@ -1,106 +1,208 @@
-/* ── ABOUT PAGE ─────────────────────────────────────────────── */
+/* ── ABOUT PAGE (EDITORIAL MODERN) ─────────────────────────── */
+.about-hero {
+  padding-block: var(--space-20) var(--space-16);
+  border-bottom: 1px solid rgba(217, 179, 64, 0.25);
+}
+
+.about-story { padding-block: var(--space-16); }
 .about-story__grid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: var(--space-20);
+  grid-template-columns: 1fr 1.15fr;
+  gap: var(--space-12);
   align-items: center;
 }
 
-.about-story__img-wrap {
-  aspect-ratio: 4/5;
-  overflow: hidden;
+/* Editorial Lead Artist Collage */
+.about-story-collage {
   position: relative;
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-md);
-}
-.about-story__img-wrap::before {
-  content: '';
-  position: absolute;
-  inset: 12px -12px -12px 12px;
-  border: 2px solid var(--clr-accent);
-  z-index: 0;
-  pointer-events: none;
-  border-radius: var(--radius-sm);
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
 }
 
-.about-story__content { padding-left: var(--space-8); }
-.about-story__text { color: var(--clr-text-mid); margin-bottom: var(--space-4); font-weight: 400; }
-.about-story__text:first-of-type { color: var(--clr-text-dark); font-size: var(--fs-md); }
+.about-story-collage__main {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  width: 88%;
+  max-height: 440px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1.5px solid var(--clr-border);
+}
+
+.about-story-collage__side-badge {
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+  z-index: 3;
+}
+
+.about-experience-box {
+  background: linear-gradient(145deg, #1A130B 0%, #291D11 100%);
+  border: 1.5px solid var(--clr-yellow);
+  color: var(--clr-yellow);
+  padding: 1rem 1.4rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  line-height: 1;
+}
+.about-experience-box__number {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--clr-yellow);
+  margin-bottom: 4px;
+}
+.about-experience-box__label {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+}
+
+.about-story__content { padding-left: var(--space-4); }
+.about-story__text { color: var(--clr-text-mid); margin-bottom: var(--space-4); line-height: 1.65; }
+.about-story__text:first-of-type { color: var(--clr-text-dark); font-size: 1.05rem; }
+
+/* Temple Ritual Specialist Box */
+.about-temple-badge-box {
+  margin-top: var(--space-6);
+  background: linear-gradient(135deg, rgba(217, 179, 64, 0.08) 0%, rgba(217, 179, 64, 0.16) 100%);
+  border: 1px solid var(--clr-border);
+  border-left: 3px solid var(--clr-accent);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem 1.5rem;
+}
+.about-temple-badge-box__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0.5rem;
+}
+.about-temple-badge-box__icon {
+  font-size: 1.2rem;
+}
+.about-temple-badge-box__title {
+  color: var(--clr-accent-dark);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.about-temple-badge-box__desc {
+  color: var(--clr-text-dark);
+  font-weight: 500;
+  line-height: 1.6;
+}
 
 .about-service-area {
-  margin-top: var(--space-8);
-  padding: var(--space-6) var(--space-8);
+  margin-top: var(--space-6);
+  padding: var(--space-5) var(--space-6);
   background: var(--clr-bg-card);
-  border-left: 3px solid var(--clr-accent);
+  border-left: 3px solid var(--clr-skyblue);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  box-shadow: var(--shadow-card);
 }
 .about-service-area__label {
-  color: var(--clr-accent-dark);
+  color: var(--clr-text-dark);
   display: block;
   margin-bottom: var(--space-2);
   font-size: 0.65rem;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 700;
 }
 
-/* Philosophy / Values */
-.about-philosophy .section-heading { margin-bottom: var(--space-12); }
+/* Style Section (Dual Staggered Frames) */
+.about-style { padding-block: var(--space-16); }
+.about-style__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+.about-style__text { color: var(--clr-text-mid); margin-bottom: var(--space-4); line-height: 1.65; }
+.about-style__text:first-of-type { font-size: 1.05rem; color: var(--clr-text-dark); }
+
+.about-style-collage {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 16px;
+  align-items: center;
+}
+.about-style__img {
+  position: relative;
+  overflow: hidden;
+  background: var(--clr-bg-light);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--clr-border-light);
+}
+.about-style__img--tall { aspect-ratio: 3 / 4; max-height: 380px; }
+.about-style__img--short { aspect-ratio: 4 / 5; max-height: 300px; transform: translateY(20px); }
+.about-style__img img { transition: transform 800ms var(--ease-out); }
+.about-style__img:hover img { transform: scale(1.05); }
+
+/* Core Values / Philosophy (Editorial Bento) */
+.about-philosophy { padding-block: var(--space-16); }
+.about-philosophy .section-heading { margin-bottom: var(--space-10); }
 .about-philosophy__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  gap: 16px;
 }
 .about-value {
-  padding: var(--space-8) var(--space-6);
-  background: var(--clr-bg-card);
-  border: 1px solid var(--clr-border-light);
-  transition: border-color var(--dur-mid), box-shadow var(--dur-mid);
+  padding: var(--space-6);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(217, 179, 64, 0.25);
+  transition: transform var(--dur-mid), border-color var(--dur-mid), box-shadow var(--dur-mid);
   position: relative;
   overflow: hidden;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
 }
-.about-value::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 0;
-  background: var(--clr-accent);
-  transition: height var(--dur-mid) var(--ease-out);
+.about-value:hover {
+  transform: translateY(-4px);
+  border-color: var(--clr-yellow);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
 }
-.about-value:hover { border-color: var(--clr-border); box-shadow: var(--shadow-md); }
-.about-value:hover::before { height: 100%; }
-.about-value__icon {
-  font-size: 1.8rem;
-  display: block;
+.about-value__top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: var(--space-4);
+}
+.about-value__icon {
+  font-size: 1.6rem;
   line-height: 1;
-  color: var(--clr-skyblue);
+}
+.about-value__num {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--clr-yellow);
 }
 .about-value__title {
-  color: var(--clr-text-dark);
-  margin-bottom: var(--space-3);
+  color: var(--clr-white);
+  margin-bottom: var(--space-2);
   font-family: var(--font-display);
-  font-size: var(--fs-xl);
-  font-weight: 500;
+  font-size: var(--fs-lg);
+  font-weight: 600;
 }
-.about-value__desc { color: var(--clr-text-muted); font-size: var(--fs-sm); line-height: 1.75; font-weight: 500; }
+.about-value__desc {
+  color: rgba(250, 250, 248, 0.72);
+  font-size: var(--fs-xs);
+  line-height: 1.65;
+}
 
-/* Style section */
-.about-style__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-20);
-  align-items: center;
-}
-.about-style__text { color: var(--clr-text-mid); margin-bottom: var(--space-4); font-weight: 400; }
-.about-style__text:first-of-type { font-size: var(--fs-md); color: var(--clr-text-dark); }
-.about-style__images { display: grid; grid-template-columns: 1fr; gap: 12px; }
-.about-style__img { overflow: hidden; background: var(--clr-bg-light); border-radius: var(--radius-sm); box-shadow: var(--shadow-card); }
-.about-style__img--tall  { aspect-ratio: 3/4; }
-.about-style__img--short { aspect-ratio: 4/3; }
+.about-cta-section { padding-block: var(--space-16); }
 
 /* Responsive */
 @media (max-width: 1024px) {
@@ -110,8 +212,10 @@
   .about-story__grid,
   .about-style__grid { grid-template-columns: 1fr; gap: var(--space-10); }
   .about-story__content { padding-left: 0; }
-  .about-style__img--tall { aspect-ratio: 16/9; }
+  .about-style-collage { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+  .about-style__img--short { transform: none; }
 }
 @media (max-width: 600px) {
   .about-philosophy__grid { grid-template-columns: 1fr; }
+  .about-story-collage { max-width: 320px; }
 }

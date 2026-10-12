@@ -21,8 +21,8 @@ export function getLocalBusinessSchema() {
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 11.0747031,
-      longitude: 79.8039706,
+      latitude: 11.0740865,
+      longitude: 79.8051761,
     },
     areaServed: [
       { '@type': 'AdministrativeArea', name: 'Thirukadaiyur' },

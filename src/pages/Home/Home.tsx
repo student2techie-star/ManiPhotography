@@ -150,36 +150,54 @@ export default function Home() {
         </button>
       </section>
 
-      {/* ── INTRO / ABOUT ───────────────────────────────── */}
+      {/* ── INTRO / ABOUT (EDITORIAL COLLAGE) ───────────────── */}
       <section className="section section--light intro-section" id="intro">
         <div className="container">
           <div className="intro-section__grid">
-            <div className="intro-section__image reveal-left">
-              <div className="intro-section__img-wrap">
-                <img
-                  src={`${import.meta.env.BASE_URL}images/tamil-weddings/tamil_60th_marriage.jpg`}
-                  alt="Photography at a Tamil wedding ceremony"
-                  className="img-cover"
-                  loading="lazy"
-                  width="720"
-                  height="900"
-                  onError={e => {
-                    (e.currentTarget as HTMLImageElement).style.display = 'none';
-                    const next = e.currentTarget.nextElementSibling as HTMLElement;
-                    if (next) next.style.display = 'flex';
-                  }}
-                />
-                <div className="img-placeholder" style={{ display: 'none', minHeight: '500px' }}>
-                  <span className="label-light">{t.categories.weddings}</span>
+            <div className="intro-section__collage reveal-left">
+              <div className="editorial-collage">
+                <div className="editorial-collage__main">
+                  <img
+                    src={`${import.meta.env.BASE_URL}images/tamil-weddings/tamil_60th_marriage.jpg`}
+                    alt="Photography at a Tamil wedding ceremony"
+                    className="img-cover"
+                    loading="lazy"
+                    width="720"
+                    height="900"
+                    onError={e => {
+                      (e.currentTarget as HTMLImageElement).style.display = 'none';
+                      const next = e.currentTarget.nextElementSibling as HTMLElement;
+                      if (next) next.style.display = 'flex';
+                    }}
+                  />
+                  <div className="img-placeholder" style={{ display: 'none', minHeight: '380px' }}>
+                    <span className="label-light">{t.categories.weddings}</span>
+                  </div>
+                  <span className="editorial-collage__tag">Mani Photography</span>
                 </div>
-              </div>
-              <div className="intro-section__badge" aria-hidden="true">
-                <span className="label-light">{t.common.since}</span>
-                <span className="intro-section__badge-year">2015</span>
+                <div className="editorial-collage__secondary">
+                  <img
+                    src={`${import.meta.env.BASE_URL}images/weddings/thirukadaiyur-traditional-tamil-wedding-couple.webp`}
+                    alt="Thirukadaiyur ritual moments"
+                    className="img-cover"
+                    loading="lazy"
+                    width="400"
+                    height="400"
+                    onError={e => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+                  />
+                  <div className="editorial-collage__accent-badge">
+                    <span className="editorial-collage__badge-val">10+</span>
+                    <span className="editorial-collage__badge-lbl">{homeT.statYears}</span>
+                  </div>
+                </div>
               </div>
             </div>
 
             <div className="intro-section__content reveal-right">
+              <div className="editorial-tagline-pill">
+                <span className="pill-dot">✦</span>
+                <span>{language === 'en' ? 'Authentic Moments & Temple Heritage' : 'உண்மையான உணர்ச்சிகள் & கோயில் பாரம்பரியம்'}</span>
+              </div>
               <SectionHeading
                 label={homeT.aboutLabel}
                 title={homeT.aboutTitle}
@@ -203,7 +221,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── THIRUKADAIYUR MILESTONE SPECIALIST SECTION ── */}
+      {/* ── THIRUKADAIYUR MILESTONE SPECIALIST SECTION (EDITORIAL BENTO) ── */}
       <section className="section section--dark thirukadaiyur-specialist" style={{
         position: 'relative',
         overflow: 'hidden',
@@ -229,111 +247,96 @@ export default function Home() {
               height: '100%',
               objectFit: 'cover',
               objectPosition: 'center',
-              filter: 'brightness(0.35) contrast(1.1) saturate(1.1)'
+              filter: 'brightness(0.32) contrast(1.1) saturate(1.1)'
             }}
           />
           <div style={{
             position: 'absolute',
             inset: 0,
-            background: 'radial-gradient(ellipse at center, rgba(20, 16, 12, 0.72) 0%, rgba(15, 12, 8, 0.92) 100%)'
+            background: 'radial-gradient(ellipse at center, rgba(20, 16, 12, 0.78) 0%, rgba(15, 12, 8, 0.94) 100%)'
           }} />
         </div>
 
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-          <div className="section-heading section-heading--dark" style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <span className="label label-light" style={{ color: 'var(--clr-yellow)', letterSpacing: '0.1em' }}>
+          <div className="section-heading section-heading--dark" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+            <span className="editorial-pill-label">
               🛕 {language === 'en' ? 'Thirukadaiyur Amritaghateswarar Abirami Temple' : 'திருக்கடையூர் ஸ்ரீ அமிர்தகடேஸ்வரர் அபிராமி கோயில்'}
             </span>
-            <h2 className="display-md" style={{ color: 'var(--clr-white)', marginTop: '0.5rem' }}>
+            <h2 className="display-md" style={{ color: 'var(--clr-white)', marginTop: '0.75rem', letterSpacing: '-0.02em' }}>
               {language === 'en' ? 'Specialist in 60th, 70th & 80th Milestone Weddings' : '60, 70 & 80ஆம் கல்யாண சடங்கு சிறப்பு புகைப்படக் கலைஞர்'}
             </h2>
-            <p className="body-lg" style={{ color: 'rgba(250, 250, 248, 0.8)', maxWidth: '800px', margin: '1rem auto 0' }}>
+            <p className="body-lg" style={{ color: 'rgba(250, 250, 248, 0.82)', maxWidth: '780px', margin: '0.85rem auto 0', lineHeight: 1.65 }}>
               {language === 'en'
                 ? 'Thirukadaiyur is world-famous for sacred longevity rituals. Located right in Thirukadaiyur, Mani Photography specializes in documenting sacred Kalasa Abhishekam, Mangalya Dharanam, and emotional family moments.'
                 : 'திருக்கடையூர் ஆயுள் விருத்தி சடங்குகளுக்கு உலகப் புகழ்பெற்ற புனித தலமாகும். திருக்கடையூரில் உள்ள மணி போட்டோகிராபி, கலசாபிஷேகம், மாங்கல்ய தாரணம் மற்றும் குடும்பத்தினரின் ஆசி பெற உதவும் உணர்ச்சிப்பூர்வமான தருணங்களைப் படம் பிடிப்பதில் முன்னணி நிபுணத்துவம் பெற்றுள்ளது.'}
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: '1.5rem',
-            marginTop: '2rem'
-          }}>
-            {/* Card 1: 60th */}
-            <div style={{
-              background: 'rgba(255, 255, 255, 0.05)',
-              border: '1px solid rgba(217, 179, 64, 0.3)',
-              borderRadius: '16px',
-              padding: '1.75rem',
-              transition: 'transform 0.3s ease, border-color 0.3s ease',
-              backdropFilter: 'blur(12px)'
-            }}>
-              <div style={{ fontSize: '2.25rem', marginBottom: '1rem' }}>👑</div>
-              <h3 style={{ fontFamily: 'var(--font-display)', color: 'var(--clr-yellow)', fontSize: '1.25rem', marginBottom: '0.5rem' }}>
+          {/* Editorial Bento Grid */}
+          <div className="editorial-bento-grid">
+            {/* Bento Card 1: 60th Feature (Hero item in bento) */}
+            <div className="editorial-bento-card editorial-bento-card--featured">
+              <div className="editorial-bento-card__badge-row">
+                <span className="bento-badge">👑 {language === 'en' ? 'Most Celebrated' : 'முதன்மையானது'}</span>
+                <span className="bento-number">01</span>
+              </div>
+              <h3 className="editorial-bento-card__title">
                 {language === 'en' ? '60th Wedding (Shashtiapthapoorthi)' : '60ஆம் கல்யாணம் (சஷ்டியப்தபூர்த்தி)'}
               </h3>
-              <p style={{ color: 'rgba(250, 250, 248, 0.75)', fontSize: '0.9375rem', lineHeight: 1.6 }}>
+              <p className="editorial-bento-card__desc">
                 {language === 'en'
                   ? 'Celebrating 60 years of life and marital harmony with 60 Kalasa Abhishekam and thaali re-tying ceremony at Thirukadaiyur.'
                   : '60 ஆண்டுகள் ஆயுள் நிறைவு மற்றும் மாங்கல்ய பலம் பெற 60 கலச அபிஷேகம் மற்றும் இரண்டாம் முறை தாலி கட்டும் சடங்கு படப்பிடிப்பு.'}
               </p>
+              <div className="editorial-bento-card__highlight">
+                <span>✦ 60 Kalasa Abhishekam</span>
+                <span>✦ Mangalya Dharanam</span>
+                <span>✦ Family Portraiture</span>
+              </div>
             </div>
 
-            {/* Card 2: 70th */}
-            <div style={{
-              background: 'rgba(255, 255, 255, 0.05)',
-              border: '1px solid rgba(217, 179, 64, 0.3)',
-              borderRadius: '16px',
-              padding: '1.75rem',
-              transition: 'transform 0.3s ease, border-color 0.3s ease',
-              backdropFilter: 'blur(12px)'
-            }}>
-              <div style={{ fontSize: '2.25rem', marginBottom: '1rem' }}>🔱</div>
-              <h3 style={{ fontFamily: 'var(--font-display)', color: 'var(--clr-yellow)', fontSize: '1.25rem', marginBottom: '0.5rem' }}>
+            {/* Bento Card 2: 70th */}
+            <div className="editorial-bento-card">
+              <div className="editorial-bento-card__badge-row">
+                <span className="bento-badge">🔱 70th Milestone</span>
+                <span className="bento-number">02</span>
+              </div>
+              <h3 className="editorial-bento-card__title">
                 {language === 'en' ? '70th Birthday (Bhimaratha Shanthi)' : '70ஆம் கல்யாணம் (பீமரத சாந்தி)'}
               </h3>
-              <p style={{ color: 'rgba(250, 250, 248, 0.75)', fontSize: '0.9375rem', lineHeight: 1.6 }}>
+              <p className="editorial-bento-card__desc">
                 {language === 'en'
                   ? 'Honouring 70 years of wisdom with sacred homam, temple rituals, and grand family gatherings in Thirukadaiyur.'
                   : '70 ஆண்டுகள் ஆயுள் சாந்தி சடங்குகள், ஹோமங்கள் மற்றும் குடும்பத்தினர் பங்கேற்கும் புனித சடங்குகளைப் பதிவு செய்தல்.'}
               </p>
             </div>
 
-            {/* Card 3: 80th */}
-            <div style={{
-              background: 'rgba(255, 255, 255, 0.05)',
-              border: '1px solid rgba(217, 179, 64, 0.3)',
-              borderRadius: '16px',
-              padding: '1.75rem',
-              transition: 'transform 0.3s ease, border-color 0.3s ease',
-              backdropFilter: 'blur(12px)'
-            }}>
-              <div style={{ fontSize: '2.25rem', marginBottom: '1rem' }}>🌕</div>
-              <h3 style={{ fontFamily: 'var(--font-display)', color: 'var(--clr-yellow)', fontSize: '1.25rem', marginBottom: '0.5rem' }}>
+            {/* Bento Card 3: 80th */}
+            <div className="editorial-bento-card">
+              <div className="editorial-bento-card__badge-row">
+                <span className="bento-badge">🌕 1000 Moons</span>
+                <span className="bento-number">03</span>
+              </div>
+              <h3 className="editorial-bento-card__title">
                 {language === 'en' ? '80th Birthday (Sadabishegam)' : '80ஆம் கல்யாணம் (சதாபிஷேகம்)'}
               </h3>
-              <p style={{ color: 'rgba(250, 250, 248, 0.75)', fontSize: '0.9375rem', lineHeight: 1.6 }}>
+              <p className="editorial-bento-card__desc">
                 {language === 'en'
                   ? 'Celebrating 1000 full moons (Sahasra Chandra Darsanam), 80 Kalasa Abhishekam, and multi-generational family blessings.'
                   : '1000 பிறை கண்ட அருமையான 80ஆம் ஆண்டு சதாபிஷேகம், 80 கலச அபிஷேகம் மற்றும் பேரக் குழந்தைகள் ஆசி பெறும் அரிய தருணங்கள்.'}
               </p>
             </div>
 
-            {/* Card 4: Kanakabhishekam & Temple */}
-            <div style={{
-              background: 'rgba(255, 255, 255, 0.05)',
-              border: '1px solid rgba(217, 179, 64, 0.3)',
-              borderRadius: '16px',
-              padding: '1.75rem',
-              transition: 'transform 0.3s ease, border-color 0.3s ease',
-              backdropFilter: 'blur(12px)'
-            }}>
-              <div style={{ fontSize: '2.25rem', marginBottom: '1rem' }}>✨</div>
-              <h3 style={{ fontFamily: 'var(--font-display)', color: 'var(--clr-yellow)', fontSize: '1.25rem', marginBottom: '0.5rem' }}>
+            {/* Bento Card 4: Kanakabhishekam */}
+            <div className="editorial-bento-card">
+              <div className="editorial-bento-card__badge-row">
+                <span className="bento-badge">✨ 90th & 100th Milestone</span>
+                <span className="bento-number">04</span>
+              </div>
+              <h3 className="editorial-bento-card__title">
                 {language === 'en' ? 'Kanakabhishekam & Temple Shoots' : 'கனகாபிஷேகம் & கோயில் படப்பிடிப்பு'}
               </h3>
-              <p style={{ color: 'rgba(250, 250, 248, 0.75)', fontSize: '0.9375rem', lineHeight: 1.6 }}>
+              <p className="editorial-bento-card__desc">
                 {language === 'en'
                   ? 'Specialized 90th & 100th milestone shoots, gold coin abhishekam, and Abirami Temple darshan memories.'
                   : '90 மற்றும் 100ஆம் ஆண்டு கனகாபிஷேகம், பொன் நாணய அபிஷேகம் மற்றும் அபிராமி அம்மன் கோயில் தரிசன நினைவுகள்.'}
@@ -342,7 +345,7 @@ export default function Home() {
           </div>
 
           <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
-            <Link to="/contact" className="btn btn-primary" style={{ padding: '0.875rem 2rem' }}>
+            <Link to="/contact" className="btn btn-primary" style={{ padding: '0.85rem 2.2rem' }}>
               {language === 'en' ? 'Book Thirukadaiyur 60th / 80th Shoot →' : 'திருக்கடையூர் சடங்கு படப்பிடிப்பை பதிவு செய்ய →'}
             </Link>
           </div>
@@ -471,40 +474,44 @@ export default function Home() {
               <Link to="/portfolio/tamil-weddings" className="btn btn-primary">{homeT.tamilBtn}</Link>
             </div>
             <div className="tamil-section__images reveal-right">
-              <div className="tamil-section__img-primary">
-                <img
-                  src={`${import.meta.env.BASE_URL}images/weddings/thirukadaiyur-kalyanam-mangalya-dharanam.webp`}
-                  alt="Thaali ceremony during a Tamil wedding"
-                  className="img-cover"
-                  loading="lazy"
-                  width="720"
-                  height="900"
-                  onError={e => {
-                    (e.currentTarget as HTMLImageElement).style.display = 'none';
-                    const next = e.currentTarget.nextElementSibling as HTMLElement;
-                    if (next) next.style.display = 'flex';
-                  }}
-                />
-                <div className="img-placeholder" style={{ display: 'none', minHeight: '400px' }}>
-                  <span className="label-light">{t.categories['tamil-weddings']}</span>
+              <div className="tamil-editorial-collage">
+                <div className="tamil-editorial-collage__primary">
+                  <img
+                    src={`${import.meta.env.BASE_URL}images/weddings/thirukadaiyur-kalyanam-mangalya-dharanam.webp`}
+                    alt="Thaali ceremony during a Tamil wedding"
+                    className="img-cover"
+                    loading="lazy"
+                    width="720"
+                    height="900"
+                    onError={e => {
+                      (e.currentTarget as HTMLImageElement).style.display = 'none';
+                      const next = e.currentTarget.nextElementSibling as HTMLElement;
+                      if (next) next.style.display = 'flex';
+                    }}
+                  />
+                  <div className="img-placeholder" style={{ display: 'none', minHeight: '380px' }}>
+                    <span className="label-light">{t.categories['tamil-weddings']}</span>
+                  </div>
+                  <span className="collage-badge-tag">Mangalya Dharanam</span>
                 </div>
-              </div>
-              <div className="tamil-section__img-secondary">
-                <img
-                  src={`${import.meta.env.BASE_URL}images/weddings/thirukadaiyur-traditional-tamil-wedding-couple.webp`}
-                  alt="Oonjal ceremony at a Tamil wedding"
-                  className="img-cover"
-                  loading="lazy"
-                  width="400"
-                  height="400"
-                  onError={e => {
-                    (e.currentTarget as HTMLImageElement).style.display = 'none';
-                    const next = e.currentTarget.nextElementSibling as HTMLElement;
-                    if (next) next.style.display = 'flex';
-                  }}
-                />
-                <div className="img-placeholder" style={{ display: 'none', minHeight: '200px' }}>
-                  <span className="label-light">Tamil Ritual</span>
+                <div className="tamil-editorial-collage__secondary">
+                  <img
+                    src={`${import.meta.env.BASE_URL}images/weddings/thirukadaiyur-traditional-tamil-wedding-couple.webp`}
+                    alt="Oonjal ceremony at a Tamil wedding"
+                    className="img-cover"
+                    loading="lazy"
+                    width="400"
+                    height="400"
+                    onError={e => {
+                      (e.currentTarget as HTMLImageElement).style.display = 'none';
+                      const next = e.currentTarget.nextElementSibling as HTMLElement;
+                      if (next) next.style.display = 'flex';
+                    }}
+                  />
+                  <div className="img-placeholder" style={{ display: 'none', minHeight: '180px' }}>
+                    <span className="label-light">Tamil Ritual</span>
+                  </div>
+                  <span className="collage-badge-tag collage-badge-tag--bottom">Oonjal & Muhurtham</span>
                 </div>
               </div>
             </div>
@@ -512,31 +519,60 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── PRE-WEDDING ─────────────────────────────────── */}
+      {/* ── PRE-WEDDING (EDITORIAL COLLAGE) ────────────── */}
       <section className="section section--light prewedding-section">
         <div className="container">
           <div className="prewedding-section__grid">
-            <div className="prewedding-section__images reveal-left">
-              <div className="prewedding-section__img-main">
-                <img
-                  src={`${import.meta.env.BASE_URL}images/pre-wedding/thirukadaiyur-traditional-attire-couple-portrait.webp`}
-                  alt="Couple at a heritage architecture location"
-                  className="img-cover"
-                  loading="lazy"
-                  width="720"
-                  height="900"
-                  onError={e => {
-                    (e.currentTarget as HTMLImageElement).style.display = 'none';
-                    const next = e.currentTarget.nextElementSibling as HTMLElement;
-                    if (next) next.style.display = 'flex';
-                  }}
-                />
-                <div className="img-placeholder" style={{ display: 'none', minHeight: '500px' }}>
-                  <span className="label-light">{t.categories['pre-wedding']}</span>
+            <div className="prewedding-section__collage reveal-left">
+              <div className="prewedding-editorial-collage">
+                <div className="prewedding-editorial-collage__tall">
+                  <img
+                    src={`${import.meta.env.BASE_URL}images/pre-wedding/thirukadaiyur-traditional-attire-couple-portrait.webp`}
+                    alt="Couple in traditional attire portrait"
+                    className="img-cover"
+                    loading="lazy"
+                    width="720"
+                    height="900"
+                    onError={e => {
+                      (e.currentTarget as HTMLImageElement).style.display = 'none';
+                      const next = e.currentTarget.nextElementSibling as HTMLElement;
+                      if (next) next.style.display = 'flex';
+                    }}
+                  />
+                  <div className="img-placeholder" style={{ display: 'none', minHeight: '340px' }}>
+                    <span className="label-light">{t.categories['pre-wedding']}</span>
+                  </div>
+                  <span className="collage-badge-tag">Love & Traditions</span>
+                </div>
+                <div className="prewedding-editorial-collage__side">
+                  <div className="prewedding-editorial-collage__side-top">
+                    <img
+                      src={`${import.meta.env.BASE_URL}images/weddings/tamil_wedding_muhurtham.jpg`}
+                      alt="Outdoor couple shoot"
+                      className="img-cover"
+                      loading="lazy"
+                      width="500"
+                      height="350"
+                      onError={e => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+                    />
+                  </div>
+                  <div className="prewedding-editorial-quote-card">
+                    <span className="prewedding-editorial-quote-icon">✦</span>
+                    <p className="prewedding-editorial-quote-text">
+                      {language === 'en'
+                        ? 'Every pre-wedding story is crafted around your unique journey.'
+                        : 'உங்கள் காதலின் மென்மையான தருணங்களை கவிதையாய் பதிவு செய்கிறோம்.'}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
+
             <div className="prewedding-section__content reveal-right">
+              <div className="editorial-tagline-pill">
+                <span className="pill-dot">✦</span>
+                <span>{language === 'en' ? 'Couple Chronicles' : 'காதல் கதைகள்'}</span>
+              </div>
               <SectionHeading
                 label={homeT.preweddingLabel}
                 title={homeT.preweddingTitle}
@@ -547,13 +583,16 @@ export default function Home() {
               </p>
               <div className="prewedding-section__locations">
                 {(language === 'en'
-                  ? ['Temple', 'Heritage Architecture', 'Nature & Gardens', 'Beaches', 'City Streets', 'Traditional Locations']
-                  : ['கோயில்கள்', 'பாரம்பரிய இடங்கள்', 'இயற்கை எழில்', 'கடற்கரைகள்', 'நகர வீதிகள்', 'பாரம்பரிய இடங்கள்']
+                  ? ['Temple Heritage', 'Scenic Coastal', 'Tropical Flora', 'Heritage Palaces', 'City Avenues', 'Traditional Streets']
+                  : ['கோயில்கள்', 'பாரம்பரிய இடங்கள்', 'இயற்கை எழில்', 'கடற்கரைகள்', 'நகர வீதிகள்', 'பாரம்பரிய கிராமங்கள்']
                 ).map(loc => (
                   <span key={loc} className="prewedding-section__loc-tag">{loc}</span>
                 ))}
               </div>
-              <Link to="/portfolio/pre-wedding" className="btn btn-primary">{homeT.preweddingBtn}</Link>
+              <div className="prewedding-section__ctas">
+                <Link to="/portfolio/pre-wedding" className="btn btn-primary">{homeT.preweddingBtn}</Link>
+                <Link to="/contact" className="btn btn-outline-dark">{t.common.bookShoot}</Link>
+              </div>
             </div>
           </div>
         </div>
@@ -571,12 +610,12 @@ export default function Home() {
           />
           <div className="events-section__grid">
             {[
-              { title: t.categories.events, image: `${import.meta.env.BASE_URL}images/events/thirukadaiyur-traditional-function-celebration.webp`, slug: 'events', desc: language === 'en' ? 'The beginning of your forever.' : 'உங்கள் புதிய பயணத்தின் தொடக்கம்.' },
-              { title: t.categories['baby-shower'], image: `${import.meta.env.BASE_URL}images/baby-shower/thirukadaiyur-seemantham-baby-shower-photography.webp`, slug: 'baby-shower', desc: language === 'en' ? 'Beautiful anticipation, captured.' : 'புதிய வரவின் எதிர்பார்ப்பு, படம் பிடிக்கப்பட்டது.' },
-              { title: t.categories['house-warming'], image: `${import.meta.env.BASE_URL}images/house-warming/house_warming.jpg`, slug: 'house-warming', desc: language === 'en' ? 'The joy of a new beginning.' : 'புதிய தொடக்கத்தின் மகிழ்ச்சி.' },
-              { title: language === 'en' ? 'Birthday' : 'பிறந்த நாள்', image: `${import.meta.env.BASE_URL}images/events/thirukadaiyur-birthday-party-event-photography.webp`, slug: 'events', desc: language === 'en' ? 'Milestone moments, beautifully preserved.' : 'வாழ்வின் மைல்கல் தருணங்கள்.' },
-              { title: language === 'en' ? 'Naming Ceremony' : 'பெயர் சூட்டும் விழா', image: `${import.meta.env.BASE_URL}images/events/thirukadaiyur-traditional-function-celebration.webp`, slug: 'events', desc: language === 'en' ? 'Welcoming a new life with love.' : 'புதிய உயிரை அன்புடன் வரவேற்போம்.' },
-              { title: t.categories.family, image: `${import.meta.env.BASE_URL}images/tamil-weddings/tamil_60th_marriage.jpg`, slug: 'family', desc: language === 'en' ? 'Your people, together.' : 'உங்கள் குடும்பம், ஒன்றாக.' },
+              { title: t.categories.events, image: `${import.meta.env.BASE_URL}images/events/thirukadaiyur-traditional-function-celebration.webp`, slug: 'events', desc: language === 'en' ? 'The beginning of your forever.' : 'உங்கள் புதிய பயணத்தின் தொடக்கம்.', tag: 'Ritual' },
+              { title: t.categories['baby-shower'], image: `${import.meta.env.BASE_URL}images/baby-shower/thirukadaiyur-seemantham-baby-shower-photography.webp`, slug: 'baby-shower', desc: language === 'en' ? 'Beautiful anticipation, captured.' : 'புதிய வரவின் எதிர்பார்ப்பு, படம் பிடிக்கப்பட்டது.', tag: 'Seemantham' },
+              { title: t.categories['house-warming'], image: `${import.meta.env.BASE_URL}images/house-warming/house_warming.jpg`, slug: 'house-warming', desc: language === 'en' ? 'The joy of a new beginning.' : 'புதிய தொடக்கத்தின் மகிழ்ச்சி.', tag: 'Griha Pravesham' },
+              { title: language === 'en' ? 'Birthday' : 'பிறந்த நாள்', image: `${import.meta.env.BASE_URL}images/events/thirukadaiyur-birthday-party-event-photography.webp`, slug: 'events', desc: language === 'en' ? 'Milestone moments, beautifully preserved.' : 'வாழ்வின் மைல்கல் தருணங்கள்.', tag: 'Celebration' },
+              { title: language === 'en' ? 'Naming Ceremony' : 'பெயர் சூட்டும் விழா', image: `${import.meta.env.BASE_URL}images/events/thirukadaiyur-traditional-function-celebration.webp`, slug: 'events', desc: language === 'en' ? 'Welcoming a new life with love.' : 'புதிய உயிரை அன்புடன் வரவேற்போம்.', tag: 'Tradition' },
+              { title: t.categories.family, image: `${import.meta.env.BASE_URL}images/tamil-weddings/tamil_60th_marriage.jpg`, slug: 'family', desc: language === 'en' ? 'Your people, together.' : 'உங்கள் குடும்பம், ஒன்றாக.', tag: 'Heritage' },
             ].map((event, i) => (
               <Link
                 to={`/portfolio/${event.slug}`}
@@ -600,10 +639,14 @@ export default function Home() {
                   <div className="img-placeholder event-card__placeholder" style={{ display: 'none' }}>
                     <span className="label-light">{event.title}</span>
                   </div>
+                  <span className="event-card__category-tag">{event.tag}</span>
                   <div className="event-card__overlay" aria-hidden="true" />
                 </div>
                 <div className="event-card__body">
-                  <h3 className="event-card__title title-sm">{event.title}</h3>
+                  <div className="event-card__header-row">
+                    <h3 className="event-card__title title-sm">{event.title}</h3>
+                    <span className="event-card__arrow-btn">→</span>
+                  </div>
                   <p className="event-card__desc body-sm">{event.desc}</p>
                 </div>
               </Link>

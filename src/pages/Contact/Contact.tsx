@@ -198,8 +198,13 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Form */}
+            {/* Modern Form Layout */}
             <div className="contact-form-wrap reveal-right">
+              <div className="contact-form__badge-header">
+                <span className="editorial-pill-label">✦ Direct Studio Reservation</span>
+                <span className="contact-form__step-pill">Fast 24h Response</span>
+              </div>
+
               {submitted ? (
                 <div className="contact-success" role="alert">
                   <span className="contact-success__icon" aria-hidden="true">✦</span>
@@ -213,87 +218,108 @@ export default function Contact() {
                 </div>
               ) : (
                 <form className="contact-form" onSubmit={handleSubmit} noValidate>
-                  <div className="contact-form__row">
-                    <div className="contact-form__field">
-                      <label className="contact-form__label" htmlFor="name">{contactT.formNameLabel}</label>
+                  {/* Step 1: Client Identity */}
+                  <div className="form-section-group">
+                    <span className="form-group-title">01. Contact Information</span>
+                    <div className="contact-form__row">
+                      <div className="contact-form__field">
+                        <label className="contact-form__label" htmlFor="name">
+                          {contactT.formNameLabel} <span className="req-star">*</span>
+                        </label>
+                        <input
+                          id="name"
+                          type="text"
+                          className={`contact-form__input ${errors.name ? 'contact-form__input--error' : ''}`}
+                          value={form.name}
+                          onChange={update('name')}
+                          placeholder={contactT.formNamePlaceholder}
+                          autoComplete="name"
+                          required
+                        />
+                        {errors.name && <span className="contact-form__error" role="alert">{errors.name}</span>}
+                      </div>
+                      <div className="contact-form__field">
+                        <label className="contact-form__label" htmlFor="phone">
+                          {contactT.formPhoneLabel} <span className="req-star">*</span>
+                        </label>
+                        <input
+                          id="phone"
+                          type="tel"
+                          className={`contact-form__input ${errors.phone ? 'contact-form__input--error' : ''}`}
+                          value={form.phone}
+                          onChange={update('phone')}
+                          placeholder={contactT.formPhonePlaceholder}
+                          autoComplete="tel"
+                          required
+                        />
+                        {errors.phone && <span className="contact-form__error" role="alert">{errors.phone}</span>}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Step 2: Ceremony Details */}
+                  <div className="form-section-group">
+                    <span className="form-group-title">02. Ceremony & Date</span>
+                    <div className="contact-form__row">
+                      <div className="contact-form__field">
+                        <label className="contact-form__label" htmlFor="eventType">
+                          {contactT.formEventTypeLabel} <span className="req-star">*</span>
+                        </label>
+                        <select
+                          id="eventType"
+                          className={`contact-form__input contact-form__select ${errors.eventType ? 'contact-form__input--error' : ''}`}
+                          value={form.eventType}
+                          onChange={update('eventType')}
+                          required
+                        >
+                          <option value="">{contactT.formSelectEventType}</option>
+                          {eventTypes.map(et => (
+                            <option key={et} value={et}>{et}</option>
+                          ))}
+                        </select>
+                        {errors.eventType && <span className="contact-form__error" role="alert">{errors.eventType}</span>}
+                      </div>
+                      <div className="contact-form__field">
+                        <label className="contact-form__label" htmlFor="eventDate">{contactT.formEventDateLabel}</label>
+                        <input
+                          id="eventDate"
+                          type="date"
+                          className="contact-form__input"
+                          value={form.eventDate}
+                          onChange={update('eventDate')}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="contact-form__field" style={{ marginTop: '0.75rem' }}>
+                      <label className="contact-form__label" htmlFor="location">{contactT.formLocationLabel}</label>
                       <input
-                        id="name"
+                        id="location"
                         type="text"
-                        className={`contact-form__input ${errors.name ? 'contact-form__input--error' : ''}`}
-                        value={form.name}
-                        onChange={update('name')}
-                        placeholder={contactT.formNamePlaceholder}
-                        autoComplete="name"
-                        required
-                      />
-                      {errors.name && <span className="contact-form__error" role="alert">{errors.name}</span>}
-                    </div>
-                    <div className="contact-form__field">
-                      <label className="contact-form__label" htmlFor="phone">{contactT.formPhoneLabel}</label>
-                      <input
-                        id="phone"
-                        type="tel"
-                        className={`contact-form__input ${errors.phone ? 'contact-form__input--error' : ''}`}
-                        value={form.phone}
-                        onChange={update('phone')}
-                        placeholder={contactT.formPhonePlaceholder}
-                        autoComplete="tel"
-                        required
-                      />
-                      {errors.phone && <span className="contact-form__error" role="alert">{errors.phone}</span>}
-                    </div>
-                  </div>
-
-                  <div className="contact-form__row">
-                    <div className="contact-form__field">
-                      <label className="contact-form__label" htmlFor="eventType">{contactT.formEventTypeLabel}</label>
-                      <select
-                        id="eventType"
-                        className={`contact-form__input contact-form__select ${errors.eventType ? 'contact-form__input--error' : ''}`}
-                        value={form.eventType}
-                        onChange={update('eventType')}
-                        required
-                      >
-                        <option value="">{contactT.formSelectEventType}</option>
-                        {eventTypes.map(et => (
-                          <option key={et} value={et}>{et}</option>
-                        ))}
-                      </select>
-                      {errors.eventType && <span className="contact-form__error" role="alert">{errors.eventType}</span>}
-                    </div>
-                    <div className="contact-form__field">
-                      <label className="contact-form__label" htmlFor="eventDate">{contactT.formEventDateLabel}</label>
-                      <input
-                        id="eventDate"
-                        type="date"
                         className="contact-form__input"
-                        value={form.eventDate}
-                        onChange={update('eventDate')}
+                        value={form.location}
+                        onChange={update('location')}
+                        placeholder={contactT.formLocationPlaceholder}
+                        autoComplete="address-level2"
                       />
                     </div>
                   </div>
 
-                  <div className="contact-form__field">
-                    <label className="contact-form__label" htmlFor="location">{contactT.formLocationLabel}</label>
-                    <input
-                      id="location"
-                      type="text"
-                      className="contact-form__input"
-                      value={form.location}
-                      onChange={update('location')}
-                      placeholder={contactT.formLocationPlaceholder}
-                      autoComplete="address-level2"
-                    />
+                  {/* Submit Action & Guarantee Strip */}
+                  <div className="contact-form__footer">
+                    <button
+                      type="submit"
+                      className="btn btn-primary contact-form__submit"
+                      disabled={submitting}
+                      aria-busy={submitting}
+                    >
+                      {submitting ? contactT.formSubmittingBtn : `${contactT.formSubmitBtn} →`}
+                    </button>
+                    <div className="contact-form__guarantee">
+                      <span className="guarantee-icon">🛡️</span>
+                      <span>No spam. We contact you only regarding your requested booking.</span>
+                    </div>
                   </div>
-
-                  <button
-                    type="submit"
-                    className="btn btn-primary contact-form__submit"
-                    disabled={submitting}
-                    aria-busy={submitting}
-                  >
-                    {submitting ? contactT.formSubmittingBtn : contactT.formSubmitBtn}
-                  </button>
                 </form>
               )}
             </div>

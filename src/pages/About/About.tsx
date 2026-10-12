@@ -31,10 +31,13 @@ export default function About() {
 
   return (
     <main>
-      {/* Hero */}
-      <div className="page-hero page-hero--dark">
+      {/* ── HERO ─────────────────────────────────────────── */}
+      <div className="page-hero page-hero--dark about-hero">
         <div className="container">
-          <span className="label page-hero__label">{aboutT.heroLabel}</span>
+          <div className="editorial-tagline-pill" style={{ marginBottom: '1rem' }}>
+            <span className="pill-dot">✦</span>
+            <span>{aboutT.heroLabel}</span>
+          </div>
           <h1 className="display-md page-hero__title">{aboutT.heroTitle}</h1>
           <p className="body-lg page-hero__sub">
             {aboutT.heroSub}
@@ -42,32 +45,46 @@ export default function About() {
         </div>
       </div>
 
-      {/* Story Section */}
+      {/* ── LEAD PHOTOGRAPHER STORY (EDITORIAL COLLAGE) ─── */}
       <section className="section section--light about-story">
         <div className="container">
           <div className="about-story__grid">
             <div className="about-story__image reveal-left">
-              <div className="about-story__img-wrap">
-                <img
-                  src={`${import.meta.env.BASE_URL}images/about/thirukadaiyur-lead-photographer-mani.webp`}
-                  alt="Mani Photography — Lead Photographer in Thirukadaiyur"
-                  className="img-cover"
-                  loading="lazy"
-                  width="800"
-                  height="1000"
-                  onError={e => {
-                    (e.currentTarget as HTMLImageElement).style.display = 'none';
-                    const next = e.currentTarget.nextElementSibling as HTMLElement;
-                    if (next) next.style.display = 'flex';
-                  }}
-                />
-                <div className="img-placeholder" style={{ display: 'none', minHeight: '500px' }}>
-                  <span className="label-light">Mani Photography</span>
+              <div className="about-story-collage">
+                <div className="about-story-collage__main">
+                  <img
+                    src={`${import.meta.env.BASE_URL}images/about/thirukadaiyur-lead-photographer-mani.webp`}
+                    alt="Mani Photography — Lead Photographer in Thirukadaiyur"
+                    className="img-cover"
+                    loading="lazy"
+                    width="800"
+                    height="1000"
+                    onError={e => {
+                      (e.currentTarget as HTMLImageElement).style.display = 'none';
+                      const next = e.currentTarget.nextElementSibling as HTMLElement;
+                      if (next) next.style.display = 'flex';
+                    }}
+                  />
+                  <div className="img-placeholder" style={{ display: 'none', minHeight: '450px' }}>
+                    <span className="label-light">Mani Photography</span>
+                  </div>
+                  <span className="collage-badge-tag">Lead Artist & Founder</span>
+                </div>
+
+                <div className="about-story-collage__side-badge">
+                  <div className="about-experience-box">
+                    <span className="about-experience-box__number">10+</span>
+                    <span className="about-experience-box__label">Years of Mastery</span>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div className="about-story__content reveal-right">
+              <div className="editorial-tagline-pill">
+                <span className="pill-dot">✦</span>
+                <span>{language === 'en' ? 'Our Origin & Vision' : 'எங்கள் பயணம் & பார்வை'}</span>
+              </div>
               <SectionHeading
                 label={aboutT.whoWeAreLabel}
                 title={aboutT.whoWeAreTitle}
@@ -83,6 +100,21 @@ export default function About() {
                 {aboutT.storyP3}
               </p>
 
+              {/* Thirukadaiyur Milestone Speciality Box (Editorial Badge) */}
+              <div className="about-temple-badge-box">
+                <div className="about-temple-badge-box__header">
+                  <span className="about-temple-badge-box__icon">🛕</span>
+                  <span className="about-temple-badge-box__title">
+                    {language === 'en' ? 'Thirukadaiyur Temple Ritual Specialist' : 'திருக்கடையூர் கோயில் சடங்கு சிறப்பு நிபுணர்'}
+                  </span>
+                </div>
+                <p className="body-sm about-temple-badge-box__desc">
+                  {language === 'en'
+                    ? 'Specializing in 60th Birthday / Marriage (Shashtiapthapoorthi), 70th Birthday (Bhimaratha Shanthi), 80th Birthday (Sadabishegam) and Kanakabhishekam photography at Amritaghateswarar Abirami Temple.'
+                    : 'திருக்கடையூர் ஸ்ரீ அமிர்தகடேஸ்வரர் அபிராமி திருக்கோயிலில் 60ஆம் கல்யாணம் (சஷ்டியப்தபூர்த்தி), 70ஆம் கல்யாணம் (பீமரத சாந்தி), 80ஆம் கல்யாணம் (சதாபிஷேகம்) மற்றும் கனகாபிஷேக சடங்குகளைப் படம் பிடிப்பதில் முன்னணி அனுபவம்.'}
+                </p>
+              </div>
+
               {/* Service Area */}
               <div className="about-service-area">
                 <span className="label about-service-area__label">{aboutT.serviceAreaLabel}</span>
@@ -90,63 +122,20 @@ export default function About() {
                   {aboutT.serviceAreaText}
                 </p>
               </div>
-
-              {/* Thirukadaiyur Milestone Speciality Box */}
-              <div style={{
-                marginTop: '1.75rem',
-                background: 'linear-gradient(135deg, rgba(184, 134, 11, 0.08) 0%, rgba(184, 134, 11, 0.15) 100%)',
-                border: '1px solid rgba(184, 134, 11, 0.3)',
-                borderRadius: '12px',
-                padding: '1.25rem 1.5rem'
-              }}>
-                <span style={{
-                  display: 'inline-block',
-                  color: 'var(--clr-yellow-deep)',
-                  fontWeight: 600,
-                  fontSize: '0.8125rem',
-                  letterSpacing: '0.05em',
-                  textTransform: 'uppercase',
-                  marginBottom: '0.35rem'
-                }}>
-                  🛕 {language === 'en' ? 'Thirukadaiyur Temple Ritual Specialist' : 'திருக்கடையூர் கோயில் சடங்கு சிறப்பு நிபுணர்'}
-                </span>
-                <p className="body-sm" style={{ color: 'var(--clr-text-dark)', fontWeight: 500, margin: 0 }}>
-                  {language === 'en'
-                    ? 'Specializing in 60th Birthday / Marriage (Shashtiapthapoorthi), 70th Birthday (Bhimaratha Shanthi), 80th Birthday (Sadabishegam) and Kanakabhishekam photography at Amritaghateswarar Abirami Temple.'
-                    : 'திருக்கடையூர் ஸ்ரீ அமிர்தகடேஸ்வரர் அபிராமி திருக்கோயிலில் 60ஆம் கல்யாணம் (சஷ்டியப்தபூர்த்தி), 70ஆம் கல்யாணம் (பீமரத சாந்தி), 80ஆம் கல்யாணம் (சதாபிஷேகம்) மற்றும் கனகாபிஷேக சடங்குகளைப் படம் பிடிப்பதில் முன்னணி அனுபவம்.'}
-                </p>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Philosophy */}
-      <section className="section section--dark about-philosophy">
-        <div className="container">
-          <SectionHeading
-            label={aboutT.approachLabel}
-            title={aboutT.approachTitle}
-            align="center"
-            className="reveal"
-          />
-          <div className="about-philosophy__grid">
-            {values.map((v, i) => (
-              <div key={v.title} className={`about-value reveal reveal-delay-${i + 1}`}>
-                <span className="about-value__icon">{v.icon}</span>
-                <h3 className="about-value__title title-md">{v.title}</h3>
-                <p className="about-value__desc body-sm">{v.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Photography Style */}
-      <section className="section section--light about-style">
+      {/* ── PHOTOGRAPHY STYLE & CRAFT (EDITORIAL DUAL FRAME) ── */}
+      <section className="section section--light about-style" style={{ borderTop: '1px solid var(--clr-border-light)' }}>
         <div className="container">
           <div className="about-style__grid">
             <div className="reveal-left">
+              <div className="editorial-tagline-pill">
+                <span className="pill-dot">✦</span>
+                <span>{language === 'en' ? 'Craftsmanship & Soul' : 'கலை நுணுக்கம்'}</span>
+              </div>
               <SectionHeading
                 label={aboutT.styleLabel}
                 title={aboutT.styleTitle}
@@ -161,42 +150,50 @@ export default function About() {
               <p className="body-md about-style__text">
                 {aboutT.styleP3}
               </p>
-            </div>
-            <div className="about-style__images reveal-right">
-              <div className="about-style__img about-style__img--tall">
-                <img
-                  src={`${import.meta.env.BASE_URL}images/weddings/thirukadaiyur-wedding-photography-muhurtham.webp`}
-                  alt="Candid wedding photography example"
-                  className="img-cover"
-                  loading="lazy"
-                  width="500"
-                  height="700"
-                  onError={e => {
-                    (e.currentTarget as HTMLImageElement).style.display = 'none';
-                    const next = e.currentTarget.nextElementSibling as HTMLElement;
-                    if (next) next.style.display = 'flex';
-                  }}
-                />
-                <div className="img-placeholder" style={{ display: 'none', minHeight: '300px' }}>
-                  <span className="label-light">{t.categories.weddings}</span>
-                </div>
+              <div style={{ marginTop: 'var(--space-6)' }}>
+                <Link to="/portfolio" className="btn btn-primary">{t.common.explorePortfolio}</Link>
               </div>
-              <div className="about-style__img about-style__img--short">
-                <img
-                  src={`${import.meta.env.BASE_URL}images/temple/thirukadaiyur-amritaghateswarar-abirami-temple-photography.webp`}
-                  alt="Temple photography example"
-                  className="img-cover"
-                  loading="lazy"
-                  width="500"
-                  height="400"
-                  onError={e => {
-                    (e.currentTarget as HTMLImageElement).style.display = 'none';
-                    const next = e.currentTarget.nextElementSibling as HTMLElement;
-                    if (next) next.style.display = 'flex';
-                  }}
-                />
-                <div className="img-placeholder" style={{ display: 'none', minHeight: '200px' }}>
-                  <span className="label-light">{t.categories.temple}</span>
+            </div>
+
+            <div className="about-style__images reveal-right">
+              <div className="about-style-collage">
+                <div className="about-style__img about-style__img--tall">
+                  <img
+                    src={`${import.meta.env.BASE_URL}images/weddings/thirukadaiyur-wedding-photography-muhurtham.webp`}
+                    alt="Candid wedding photography example"
+                    className="img-cover"
+                    loading="lazy"
+                    width="500"
+                    height="700"
+                    onError={e => {
+                      (e.currentTarget as HTMLImageElement).style.display = 'none';
+                      const next = e.currentTarget.nextElementSibling as HTMLElement;
+                      if (next) next.style.display = 'flex';
+                    }}
+                  />
+                  <div className="img-placeholder" style={{ display: 'none', minHeight: '320px' }}>
+                    <span className="label-light">{t.categories.weddings}</span>
+                  </div>
+                  <span className="collage-badge-tag">Sacred Muhurtham</span>
+                </div>
+                <div className="about-style__img about-style__img--short">
+                  <img
+                    src={`${import.meta.env.BASE_URL}images/temple/thirukadaiyur-amritaghateswarar-abirami-temple-photography.webp`}
+                    alt="Temple photography example"
+                    className="img-cover"
+                    loading="lazy"
+                    width="500"
+                    height="400"
+                    onError={e => {
+                      (e.currentTarget as HTMLImageElement).style.display = 'none';
+                      const next = e.currentTarget.nextElementSibling as HTMLElement;
+                      if (next) next.style.display = 'flex';
+                    }}
+                  />
+                  <div className="img-placeholder" style={{ display: 'none', minHeight: '220px' }}>
+                    <span className="label-light">{t.categories.temple}</span>
+                  </div>
+                  <span className="collage-badge-tag collage-badge-tag--bottom">Abirami Temple Architecture</span>
                 </div>
               </div>
             </div>
@@ -204,13 +201,38 @@ export default function About() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section section--dark" style={{ textAlign: 'center' }}>
+      {/* ── CORE PHILOSOPHY & VALUES (EDITORIAL BENTO) ─── */}
+      <section className="section section--dark about-philosophy">
         <div className="container">
-          <h2 className="display-sm reveal" style={{ marginBottom: 'var(--space-4)' }}>
+          <SectionHeading
+            label={aboutT.approachLabel}
+            title={aboutT.approachTitle}
+            align="center"
+            className="reveal"
+          />
+          <div className="about-philosophy__grid">
+            {values.map((v, i) => (
+              <div key={v.title} className={`about-value reveal reveal-delay-${i + 1}`}>
+                <div className="about-value__top-row">
+                  <span className="about-value__icon">{v.icon}</span>
+                  <span className="about-value__num">0{i + 1}</span>
+                </div>
+                <h3 className="about-value__title title-md">{v.title}</h3>
+                <p className="about-value__desc body-sm">{v.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CALL TO ACTION ───────────────────────────────── */}
+      <section className="section section--dark about-cta-section" style={{ textAlign: 'center', borderTop: '1px solid rgba(217, 179, 64, 0.2)' }}>
+        <div className="container">
+          <span className="editorial-pill-label" style={{ marginBottom: '1rem' }}>✦ Let's Create Timeless Art</span>
+          <h2 className="display-sm reveal" style={{ marginTop: '0.75rem', marginBottom: 'var(--space-4)', color: 'var(--clr-white)' }}>
             {t.home.ctaTitle}
           </h2>
-          <p className="body-lg reveal" style={{ color: 'var(--clr-text-muted)', marginBottom: 'var(--space-8)', maxWidth: '500px', marginInline: 'auto' }}>
+          <p className="body-lg reveal" style={{ color: 'rgba(250, 250, 248, 0.8)', marginBottom: 'var(--space-8)', maxWidth: '540px', marginInline: 'auto' }}>
             {t.home.ctaDesc}
           </p>
           <div className="reveal" style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
