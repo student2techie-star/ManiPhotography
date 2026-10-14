@@ -11,175 +11,117 @@ export default function Footer() {
   const t = translations[language];
   const waLink = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`;
 
-  const footerNavLinks = [
+  const quickLinks = [
     { label: t.nav.home, to: '/' },
     { label: t.nav.portfolio, to: '/portfolio/' },
     { label: t.nav.services, to: '/services/' },
     { label: language === 'en' ? 'Ceremony Guides' : 'வழிகாட்டிகள்', to: '/guides/' },
-    { label: t.nav.images, to: '/images/' },
     { label: t.nav.about, to: '/about/' },
     { label: t.nav.contact, to: '/contact/' },
   ];
 
-  const portfolioLinks = [
-    { label: t.categories['weddings'], to: '/portfolio/weddings/' },
-    { label: t.categories['pre-wedding'], to: '/portfolio/pre-wedding/' },
-    { label: t.categories['tamil-weddings'], to: '/portfolio/tamil-weddings/' },
-    { label: t.categories['temple'], to: '/portfolio/temple/' },
-    { label: t.categories['baby-shower'], to: '/portfolio/baby-shower/' },
-    { label: t.categories['house-warming'], to: '/portfolio/house-warming/' },
-    { label: t.categories['family-functions'], to: '/portfolio/family-functions/' },
-  ];
-
-  const serviceLinks = [
-    { label: language === 'en' ? '60th Birthday Photography' : '60ஆம் கல்யாணம்', to: '/60th-birthday-photography-thirukadaiyur/' },
-    { label: language === 'en' ? 'Shashtiapthapoorthi 60th' : 'சஷ்டியப்தபூர்த்தி', to: '/shashtiapthapoorthi-photography/' },
-    { label: language === 'en' ? '70th Birthday Photography' : '70ஆம் கல்யாணம்', to: '/70th-birthday-photography-thirukadaiyur/' },
-    { label: language === 'en' ? '80th Birthday Photography' : '80ஆம் கல்யாணம்', to: '/80th-birthday-photography-thirukadaiyur/' },
-    { label: language === 'en' ? 'Wedding Photography' : 'திருமண போட்டோகிராஃபி', to: '/wedding-photography-thirukadaiyur/' },
+  const specialistLinks = [
+    { label: language === 'en' ? '60th Birthday (Shashti)' : '60ஆம் கல்யாணம்', to: '/60th-birthday-photography-thirukadaiyur/' },
+    { label: language === 'en' ? '70th Birthday (Bhimaratha)' : '70ஆம் கல்யாணம்', to: '/70th-birthday-photography-thirukadaiyur/' },
+    { label: language === 'en' ? '80th Birthday (Sadabishegam)' : '80ஆம் கல்யாணம்', to: '/80th-birthday-photography-thirukadaiyur/' },
     { label: language === 'en' ? 'Temple Photography' : 'கோயில் போட்டோகிராஃபி', to: '/temple-photography-thirukadaiyur/' },
-    { label: language === 'en' ? 'Wedding Videography' : 'திருமண வீடியோகிராஃபி', to: '/wedding-videography-thirukadaiyur/' },
+    { label: language === 'en' ? 'Wedding Muhurtham' : 'திருமண போட்டோகிராஃபி', to: '/wedding-photography-thirukadaiyur/' },
   ];
 
   return (
     <footer className="footer" role="contentinfo">
       <div className="footer__top container">
+        {/* Col 1: Brand & Socials */}
         <div className="footer__brand">
           <Link to="/" className="footer__logo">
             <LogoMark className="footer__logo-icon" />
             <div className="footer__logo-text">
               <span className="footer__logo-main">Mani Photography</span>
-              <span className="footer__logo-sub">Premium Photography</span>
+              <span className="footer__logo-sub">Thirukadaiyur Specialist</span>
             </div>
           </Link>
-          <span className="accent-line" aria-hidden="true" />
-          <p className="footer__tagline">{t.common.tagline}</p>
-          <p className="footer__desc body-sm">
-            {t.common.footerDesc}
+          <p className="footer__desc">
+            {language === 'en'
+              ? 'Premier photography studio in Thirukadaiyur capturing sacred milestone weddings, temple rituals & weddings.'
+              : 'திருக்கடையூரில் 60, 70, 80ஆம் ஆண்டு ஆயுள் சாந்தி சடங்குகள் மற்றும் திருமணங்களை நேர்த்தியாகப் படம் பிடிக்கும் முன்னோடி ஸ்டுடியோ.'}
           </p>
           <div className="footer__socials">
             <a href={siteConfig.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="footer__social-link">
-              <img src={`${import.meta.env.BASE_URL}images/instagram.svg`} alt="Instagram" style={{ width: 16, height: 16, opacity: 0.8 }} />
+              <img src={`${import.meta.env.BASE_URL}images/instagram.svg`} alt="Instagram" width="16" height="16" />
             </a>
             <a href={siteConfig.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="footer__social-link">
-              <img src={`${import.meta.env.BASE_URL}images/facebook.svg`} alt="Facebook" style={{ width: 16, height: 16, opacity: 0.8 }} />
+              <img src={`${import.meta.env.BASE_URL}images/facebook.svg`} alt="Facebook" width="16" height="16" />
             </a>
             <a href={siteConfig.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="footer__social-link">
-              <img src={`${import.meta.env.BASE_URL}images/youtube.svg`} alt="YouTube" style={{ width: 16, height: 16, opacity: 0.8 }} />
+              <img src={`${import.meta.env.BASE_URL}images/youtube.svg`} alt="YouTube" width="16" height="16" />
             </a>
           </div>
         </div>
 
+        {/* Col 2: Navigation */}
         <div className="footer__col">
-          <h3 className="footer__heading">{language === 'en' ? 'Quick Links' : 'விரைவு இணைப்புகள்'}</h3>
-          <nav aria-label="Footer navigation">
-            <ul className="footer__links">
-              {footerNavLinks.map(link => (
-                <li key={link.to}>
-                  <Link to={link.to} className="footer__link">{link.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          <h3 className="footer__heading">{language === 'en' ? 'Explore' : 'பக்கங்கள்'}</h3>
+          <ul className="footer__links">
+            {quickLinks.map(link => (
+              <li key={link.to}>
+                <Link to={link.to} className="footer__link">{link.label}</Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
+        {/* Col 3: Milestone Ceremonies */}
         <div className="footer__col">
-          <h3 className="footer__heading">{language === 'en' ? 'Our Services' : 'எங்கள் சேவைகள்'}</h3>
-          <nav aria-label="Service pages">
-            <ul className="footer__links">
-              {serviceLinks.map(link => (
-                <li key={link.to}>
-                  <Link to={link.to} className="footer__link">{link.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          <h3 className="footer__heading">{language === 'en' ? 'Specialities' : 'சிறப்பு சடங்குகள்'}</h3>
+          <ul className="footer__links">
+            {specialistLinks.map(link => (
+              <li key={link.to}>
+                <Link to={link.to} className="footer__link">{link.label}</Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <div className="footer__col">
-          <h3 className="footer__heading">{t.portfolio.browseTitle}</h3>
-          <nav aria-label="Portfolio categories">
-            <ul className="footer__links">
-              {portfolioLinks.map(link => (
-                <li key={link.to}>
-                  <Link to={link.to} className="footer__link">{link.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-
-        <div className="footer__col">
-          <h3 className="footer__heading">{language === 'en' ? 'Ceremony Guides' : 'வழிகாட்டிகள்'}</h3>
-          <nav aria-label="Ceremony Guides">
-            <ul className="footer__links">
-              <li>
-                <Link to="/guides/thirukadaiyur-60th-marriage-shashtiapthapoorthi-guide/" className="footer__link">
-                  {language === 'en' ? '60th Marriage Guide' : '60ஆம் கல்யாண வழிகாட்டி'}
-                </Link>
-              </li>
-              <li>
-                <Link to="/guides/thirukadaiyur-80th-marriage-sadabishegam-guide/" className="footer__link">
-                  {language === 'en' ? '80th Sadabishegam Guide' : '80ஆம் சதாபிஷேக வழிகாட்டி'}
-                </Link>
-              </li>
-              <li>
-                <Link to="/guides/thirukadaiyur-temple-photography-rules-timings-tips/" className="footer__link">
-                  {language === 'en' ? 'Temple Photography Rules' : 'கோயில் புகைப்பட விதிமுறைகள்'}
-                </Link>
-              </li>
-              <li>
-                <Link to="/guides/thirunallar-saneeswarar-temple-parihara-pooja-photography-guide/" className="footer__link">
-                  {language === 'en' ? 'Thirunallar Temple Guide' : 'திருநள்ளாறு கோயில் வழிகாட்டி'}
-                </Link>
-              </li>
-              <li>
-                <Link to="/guides/how-to-reach-thirukadaiyur-travel-guide-bus-train-car-flight/" className="footer__link">
-                  {language === 'en' ? 'How to Reach Thirukadaiyur' : 'திருக்கடையூர் பயணம் வழிகாட்டி'}
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
-
-        <div className="footer__col">
+        {/* Col 4: Contact & Book */}
+        <div className="footer__col footer__col--contact">
           <h3 className="footer__heading">{t.contact.infoTitle}</h3>
           <ul className="footer__contact">
             <li>
               <a href={`tel:${siteConfig.phone}`} className="footer__contact-link">
-                <Phone size={14} aria-hidden="true" />
+                <Phone size={13} aria-hidden="true" />
                 <span>{siteConfig.phone}</span>
               </a>
             </li>
             <li>
               <a href={waLink} target="_blank" rel="noopener noreferrer" className="footer__contact-link">
-                <MessageCircle size={14} aria-hidden="true" />
-                <span>WhatsApp</span>
+                <MessageCircle size={13} aria-hidden="true" />
+                <span>WhatsApp Chat</span>
               </a>
             </li>
             <li>
               <a href={`mailto:${siteConfig.email}`} className="footer__contact-link">
-                <Mail size={14} aria-hidden="true" />
+                <Mail size={13} aria-hidden="true" />
                 <span>{siteConfig.email}</span>
               </a>
             </li>
             <li>
               <a href={siteConfig.mapsUrl} target="_blank" rel="noopener noreferrer" className="footer__contact-link">
-                <MapPin size={14} aria-hidden="true" />
+                <MapPin size={13} aria-hidden="true" />
                 <span>{t.common.location}</span>
               </a>
             </li>
           </ul>
-          <Link to="/contact/" className="btn btn-primary footer__cta">{t.common.bookShoot}</Link>
+          <Link to="/contact/" className="footer__cta">{t.common.bookShoot} →</Link>
         </div>
       </div>
 
+      {/* Footer Bottom Bar */}
       <div className="footer__bottom container">
         <p className="footer__copy">
-          &copy; {new Date().getFullYear()} {t.common.allRights}
+          &copy; {new Date().getFullYear()} Mani Photography · {t.common.allRights}
         </p>
-        <p className="footer__copy">
-          {t.common.quoteText}
+        <p className="footer__copy footer__copy--sub">
+          {siteConfig.location}
         </p>
       </div>
     </footer>

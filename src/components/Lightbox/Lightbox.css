@@ -1,15 +1,16 @@
-/* ── LIGHTBOX ───────────────────────────────────────────────── */
+/* ── LIGHTBOX (Dark Glassmorphic Theater) ───────────────────── */
 .lightbox {
   position: fixed;
   inset: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(20, 15, 10, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: lb-fade-in 350ms var(--ease-out);
+  animation: lb-fade-in 350ms var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1));
   cursor: pointer;
-  backdrop-filter: blur(12px);
 }
 
 @keyframes lb-fade-in {
@@ -20,38 +21,52 @@
 /* Close button */
 .lightbox__close {
   position: absolute;
-  top: var(--space-6);
-  right: var(--space-6);
+  top: var(--space-6, 1.5rem);
+  right: var(--space-6, 1.5rem);
   z-index: 1010;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 46px;
-  height: 46px;
-  border: 1px solid var(--clr-border);
-  color: var(--clr-text-mid);
-  transition: all var(--dur-fast);
-  background: var(--clr-bg-soft);
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-radius: 50%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  transition: all var(--dur-fast, 0.2s) ease;
 }
+
 .lightbox__close:hover {
-  border-color: var(--clr-accent);
-  color: var(--clr-white);
-  background: var(--clr-accent);
+  border-color: var(--clr-yellow, #D9B340);
+  color: #FFFFFF;
+  background: var(--clr-yellow-deep, #B8860B);
+  transform: scale(1.08);
+  box-shadow: 0 0 24px rgba(217, 179, 64, 0.45);
 }
 
 /* Counter */
 .lightbox__counter {
   position: absolute;
-  top: var(--space-6);
+  top: var(--space-6, 1.5rem);
   left: 50%;
   transform: translateX(-50%);
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   letter-spacing: 0.2em;
-  color: var(--clr-text-muted);
-  font-family: var(--font-body);
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.4rem 1.1rem;
+  border-radius: 9999px;
+  font-family: var(--font-body, inherit);
   text-transform: uppercase;
   font-weight: 600;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 
 /* Image wrap */
@@ -61,9 +76,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-4);
+  gap: var(--space-4, 1rem);
   cursor: default;
-  animation: lb-img-in 450ms var(--ease-out);
+  animation: lb-img-in 450ms var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1));
 }
 
 @keyframes lb-img-in {
@@ -75,19 +90,21 @@
   max-width: 100%;
   max-height: 84dvh;
   object-fit: contain;
-  box-shadow: var(--shadow-lg);
-  border-radius: var(--radius-sm);
-  background: var(--clr-white);
-  padding: 4px;
+  box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  background: rgba(30, 23, 16, 0.4);
+  padding: 6px;
 }
 
 .lightbox__caption {
-  font-family: var(--font-display);
-  font-size: var(--fs-md);
+  font-family: var(--font-display, 'Playfair Display', serif);
+  font-size: var(--fs-md, 1.125rem);
   font-style: italic;
-  color: var(--clr-text-dark);
+  color: #FFFFFF;
   text-align: center;
   font-weight: 500;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.02em;
 }
 
 /* Nav arrows */
@@ -98,26 +115,42 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 52px;
-  height: 52px;
-  border: 1px solid var(--clr-border);
-  color: var(--clr-text-mid);
-  background: var(--clr-bg-soft);
-  transition: all var(--dur-fast);
+  width: 54px;
+  height: 54px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all var(--dur-fast, 0.2s) ease;
   z-index: 1010;
   border-radius: 50%;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
 }
+
 .lightbox__nav:hover {
-  border-color: var(--clr-accent);
-  color: var(--clr-white);
-  background: var(--clr-accent);
-  transform: translateY(-50%) scale(1.06);
+  border-color: var(--clr-yellow, #D9B340);
+  color: #FFFFFF;
+  background: var(--clr-yellow-deep, #B8860B);
+  box-shadow: 0 0 28px rgba(217, 179, 64, 0.5), 0 8px 30px rgba(0, 0, 0, 0.4);
+  transform: translateY(-50%) scale(1.08);
 }
-.lightbox__nav--prev { left: var(--space-6); }
-.lightbox__nav--next { right: var(--space-6); }
+
+.lightbox__nav--prev { left: var(--space-6, 1.5rem); }
+.lightbox__nav--next { right: var(--space-6, 1.5rem); }
 
 @media (max-width: 600px) {
-  .lightbox__nav--prev { left: var(--space-3); }
-  .lightbox__nav--next { right: var(--space-3); }
+  .lightbox__nav--prev { left: var(--space-3, 0.75rem); }
+  .lightbox__nav--next { right: var(--space-3, 0.75rem); }
   .lightbox__nav { width: 44px; height: 44px; }
+  .lightbox__close {
+    top: var(--space-4, 1rem);
+    right: var(--space-4, 1rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox__counter {
+    top: var(--space-4, 1rem);
+  }
 }

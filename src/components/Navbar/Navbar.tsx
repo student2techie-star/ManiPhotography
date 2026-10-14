@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import LogoMark from '../LogoMark';
 import { useLanguage } from '../../context/LanguageContext';
 import { translations } from '../../data/translations';
@@ -23,7 +23,7 @@ export default function Navbar() {
   ];
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
+    const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -46,7 +46,7 @@ export default function Navbar() {
             <LogoMark className="navbar__logo-icon" />
             <div className="navbar__logo-text">
               <span className="navbar__logo-main">Mani Photography</span>
-              <span className="navbar__logo-sub">Premium Photography</span>
+              <span className="navbar__logo-sub">Thirukadaiyur · Studio</span>
             </div>
           </Link>
 
@@ -64,7 +64,7 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Actions: Segmented Language Switcher (Desktop) + Hamburger */}
+          {/* Actions: Segmented Language Switcher + Book CTA + Hamburger */}
           <div className="navbar__actions">
             <div className="segmented-lang-switch segmented-lang-switch--desktop" role="group" aria-label="Language selection">
               <button
@@ -85,6 +85,10 @@ export default function Navbar() {
               </button>
             </div>
 
+            <Link to="/contact/" className="navbar__cta-btn">
+              {t.bookShoot}
+            </Link>
+
             <button
               className="navbar__hamburger"
               onClick={() => setMenuOpen(!menuOpen)}
@@ -92,13 +96,13 @@ export default function Navbar() {
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
             >
-              {menuOpen ? <X size={22} /> : <Menu size={22} />}
+              {menuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
       </header>
 
-      {/* Mobile Menu (Half Screen Side Drawer with Close Icon) */}
+      {/* Mobile Menu */}
       <div
         id="mobile-menu"
         className={`mobile-menu ${menuOpen ? 'mobile-menu--open' : ''}`}
@@ -117,7 +121,7 @@ export default function Navbar() {
             onClick={() => setMenuOpen(false)}
             aria-label="Close menu"
           >
-            <X size={22} />
+            <X size={20} />
           </button>
         </div>
 
@@ -134,14 +138,12 @@ export default function Navbar() {
             </NavLink>
           ))}
 
-          {/* Mobile Language Switcher (Segmented Switch Pill) */}
+          {/* Mobile Language Switcher */}
           <div
             className="mobile-menu__lang-box"
             style={{ '--i': navLinks.length } as React.CSSProperties}
           >
-            <span className="mobile-menu__lang-title">
-              <Globe size={15} /> Language / மொழி
-            </span>
+            <span className="mobile-menu__lang-title">Language / மொழி</span>
             <div className="segmented-lang-switch segmented-lang-switch--full" role="group" aria-label="Mobile language selection">
               <button
                 type="button"

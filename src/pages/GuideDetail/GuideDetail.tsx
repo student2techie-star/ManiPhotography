@@ -125,7 +125,7 @@ export default function GuideDetail() {
                 <Phone size={16} /> {siteConfig.phone}
               </a>
               <a href={waLink} target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ color: '#25D366' }}>
-                <MessageCircle size={16} /> {language === 'en' ? 'Enquire on WhatsApp' : 'வாட்ஸ்அப்பில் விசாரிக்க'}
+                <MessageCircle size={16} /> {language === 'en' ? 'Book on WhatsApp' : 'வாட்ஸ்அப்பில் முன்பதிவு'}
               </a>
             </div>
           </div>

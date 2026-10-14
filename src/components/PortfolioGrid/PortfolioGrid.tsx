@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Lightbox from '../Lightbox/Lightbox';
 import type { PortfolioItem } from '../../data/portfolio';
+import { Maximize2 } from 'lucide-react';
 import './PortfolioGrid.css';
 
 interface PortfolioGridProps {
@@ -52,9 +53,18 @@ export default function PortfolioGrid({ items, columns = 3 }: PortfolioGridProps
               <div className="portfolio-grid__placeholder img-placeholder" style={{ display: 'none' }}>
                 <span className="label-light">{item.title}</span>
               </div>
+              <div className="portfolio-grid__badge">
+                <span>{item.category.replace('-', ' ')}</span>
+              </div>
               <div className="portfolio-grid__overlay" aria-hidden="true">
-                <span className="portfolio-grid__title">{item.title}</span>
-                <span className="portfolio-grid__category label-light">{item.category}</span>
+                <div className="portfolio-grid__overlay-content">
+                  <span className="portfolio-grid__category">{item.category.replace('-', ' ')}</span>
+                  <span className="portfolio-grid__title">{item.title}</span>
+                </div>
+                <div className="portfolio-grid__zoom-pill">
+                  <Maximize2 size={14} />
+                  <span>View</span>
+                </div>
               </div>
             </div>
           </button>

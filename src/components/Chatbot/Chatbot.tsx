@@ -346,7 +346,7 @@ export default function Chatbot() {
             : '🪐 திருநள்ளாறு சனீஸ்வரன் கோயில் திருக்கடையூரிலிருந்து 25 கி.மீ தொலைவில் உள்ளது! இரண்டு கோயில்களுக்கும் ஒரே நாளில் புகைப்பட சேவை வழங்குகிறோம்.',
           options: [
             { label: '📖 Thirunallar Guide', action: 'guide-thirunallar' },
-            { label: '💬 Enquire Package', action: 'whatsapp' },
+            { label: '💬 Book Package', action: 'whatsapp' },
           ],
         };
       } else if (lower.includes('rules') || lower.includes('timing') || lower.includes('dress') || lower.includes('attire') || lower.includes('camera') || lower.includes('நேரங்கள்') || lower.includes('ஆடை') || lower.includes('விதிகள்')) {

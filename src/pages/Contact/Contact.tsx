@@ -2,7 +2,7 @@ import { useState, type FormEvent } from 'react';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
 import { useDocumentHead } from '../../hooks/useDocumentHead';
 import { siteConfig } from '../../data/siteConfig';
-import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle, Send, ShieldCheck } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 import { translations } from '../../data/translations';
 import './Contact.css';
@@ -87,15 +87,14 @@ export default function Contact() {
     const errs = validate(form);
     if (Object.keys(errs).length) { setErrors(errs); return; }
     setSubmitting(true);
-    
+
     const waText = `New Enquiry from ${form.name}\nPhone: ${form.phone}\nEvent Type: ${form.eventType}\nEvent Date: ${form.eventDate || 'Not specified'}\nLocation: ${form.location || 'Not specified'}`;
     const targetWa = siteConfig.whatsapp;
     const waUrl = `https://wa.me/${targetWa}?text=${encodeURIComponent(waText)}`;
-    
-    // Slight delay for feedback
-    await new Promise(r => setTimeout(r, 600));
+
+    await new Promise(r => setTimeout(r, 400));
     window.open(waUrl, '_blank');
-    
+
     setSubmitting(false);
     setSubmitted(true);
   };
@@ -120,7 +119,7 @@ export default function Contact() {
           <div className="contact-section__grid">
             {/* Info Panel */}
             <div className="contact-info reveal-left">
-              <h2 className="title-lg contact-info__title" style={{ color: 'var(--clr-text-dark)', marginBottom: 'var(--space-3)' }}>
+              <h2 className="title-lg contact-info__title">
                 {contactT.infoTitle}
               </h2>
               <span className="accent-line" aria-hidden="true" />
@@ -156,7 +155,7 @@ export default function Contact() {
                   <MapPin size={18} className="contact-info__icon" aria-hidden="true" />
                   <div>
                     <span className="contact-info__label">{contactT.locationLabel}</span>
-                    <a href={siteConfig.mapsUrl} target="_blank" rel="noopener noreferrer" className="contact-info__value" style={{ textDecoration: 'underline' }}>
+                    <a href={siteConfig.mapsUrl} target="_blank" rel="noopener noreferrer" className="contact-info__value">
                       {t.common.location}
                     </a>
                   </div>
@@ -200,11 +199,6 @@ export default function Contact() {
 
             {/* Modern Form Layout */}
             <div className="contact-form-wrap reveal-right">
-              <div className="contact-form__badge-header">
-                <span className="editorial-pill-label">✦ Direct Studio Reservation</span>
-                <span className="contact-form__step-pill">Fast 24h Response</span>
-              </div>
-
               {submitted ? (
                 <div className="contact-success" role="alert">
                   <span className="contact-success__icon" aria-hidden="true">✦</span>
@@ -218,80 +212,76 @@ export default function Contact() {
                 </div>
               ) : (
                 <form className="contact-form" onSubmit={handleSubmit} noValidate>
-                  {/* Step 1: Client Identity */}
-                  <div className="form-section-group">
-                    <span className="form-group-title">01. Contact Information</span>
-                    <div className="contact-form__row">
-                      <div className="contact-form__field">
-                        <label className="contact-form__label" htmlFor="name">
-                          {contactT.formNameLabel} <span className="req-star">*</span>
-                        </label>
-                        <input
-                          id="name"
-                          type="text"
-                          className={`contact-form__input ${errors.name ? 'contact-form__input--error' : ''}`}
-                          value={form.name}
-                          onChange={update('name')}
-                          placeholder={contactT.formNamePlaceholder}
-                          autoComplete="name"
-                          required
-                        />
-                        {errors.name && <span className="contact-form__error" role="alert">{errors.name}</span>}
-                      </div>
-                      <div className="contact-form__field">
-                        <label className="contact-form__label" htmlFor="phone">
-                          {contactT.formPhoneLabel} <span className="req-star">*</span>
-                        </label>
-                        <input
-                          id="phone"
-                          type="tel"
-                          className={`contact-form__input ${errors.phone ? 'contact-form__input--error' : ''}`}
-                          value={form.phone}
-                          onChange={update('phone')}
-                          placeholder={contactT.formPhonePlaceholder}
-                          autoComplete="tel"
-                          required
-                        />
-                        {errors.phone && <span className="contact-form__error" role="alert">{errors.phone}</span>}
-                      </div>
+                  <div className="contact-form__row">
+                    <div className="contact-form__field">
+                      <label className="contact-form__label" htmlFor="name">
+                        {contactT.formNameLabel} <span className="req-star">*</span>
+                      </label>
+                      <input
+                        id="name"
+                        type="text"
+                        className={`contact-form__input ${errors.name ? 'contact-form__input--error' : ''}`}
+                        value={form.name}
+                        onChange={update('name')}
+                        placeholder={contactT.formNamePlaceholder}
+                        autoComplete="name"
+                        required
+                      />
+                      {errors.name && <span className="contact-form__error" role="alert">{errors.name}</span>}
+                    </div>
+
+                    <div className="contact-form__field">
+                      <label className="contact-form__label" htmlFor="phone">
+                        {contactT.formPhoneLabel} <span className="req-star">*</span>
+                      </label>
+                      <input
+                        id="phone"
+                        type="tel"
+                        className={`contact-form__input ${errors.phone ? 'contact-form__input--error' : ''}`}
+                        value={form.phone}
+                        onChange={update('phone')}
+                        placeholder={contactT.formPhonePlaceholder}
+                        autoComplete="tel"
+                        required
+                      />
+                      {errors.phone && <span className="contact-form__error" role="alert">{errors.phone}</span>}
                     </div>
                   </div>
 
-                  {/* Step 2: Ceremony Details */}
-                  <div className="form-section-group">
-                    <span className="form-group-title">02. Ceremony & Date</span>
-                    <div className="contact-form__row">
-                      <div className="contact-form__field">
-                        <label className="contact-form__label" htmlFor="eventType">
-                          {contactT.formEventTypeLabel} <span className="req-star">*</span>
-                        </label>
-                        <select
-                          id="eventType"
-                          className={`contact-form__input contact-form__select ${errors.eventType ? 'contact-form__input--error' : ''}`}
-                          value={form.eventType}
-                          onChange={update('eventType')}
-                          required
-                        >
-                          <option value="">{contactT.formSelectEventType}</option>
-                          {eventTypes.map(et => (
-                            <option key={et} value={et}>{et}</option>
-                          ))}
-                        </select>
-                        {errors.eventType && <span className="contact-form__error" role="alert">{errors.eventType}</span>}
-                      </div>
-                      <div className="contact-form__field">
-                        <label className="contact-form__label" htmlFor="eventDate">{contactT.formEventDateLabel}</label>
-                        <input
-                          id="eventDate"
-                          type="date"
-                          className="contact-form__input"
-                          value={form.eventDate}
-                          onChange={update('eventDate')}
-                        />
-                      </div>
+                  <div className="contact-form__field">
+                    <label className="contact-form__label" htmlFor="eventType">
+                      {contactT.formEventTypeLabel} <span className="req-star">*</span>
+                    </label>
+                    <div className="select-wrapper">
+                      <select
+                        id="eventType"
+                        className={`contact-form__input contact-form__select ${errors.eventType ? 'contact-form__input--error' : ''}`}
+                        value={form.eventType}
+                        onChange={update('eventType')}
+                        required
+                      >
+                        <option value="">{contactT.formSelectEventType}</option>
+                        {eventTypes.map(et => (
+                          <option key={et} value={et}>{et}</option>
+                        ))}
+                      </select>
+                    </div>
+                    {errors.eventType && <span className="contact-form__error" role="alert">{errors.eventType}</span>}
+                  </div>
+
+                  <div className="contact-form__row">
+                    <div className="contact-form__field">
+                      <label className="contact-form__label" htmlFor="eventDate">{contactT.formEventDateLabel}</label>
+                      <input
+                        id="eventDate"
+                        type="date"
+                        className="contact-form__input"
+                        value={form.eventDate}
+                        onChange={update('eventDate')}
+                      />
                     </div>
 
-                    <div className="contact-form__field" style={{ marginTop: '0.75rem' }}>
+                    <div className="contact-form__field">
                       <label className="contact-form__label" htmlFor="location">{contactT.formLocationLabel}</label>
                       <input
                         id="location"
@@ -305,7 +295,7 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  {/* Submit Action & Guarantee Strip */}
+                  {/* Submit Action */}
                   <div className="contact-form__footer">
                     <button
                       type="submit"
@@ -313,11 +303,12 @@ export default function Contact() {
                       disabled={submitting}
                       aria-busy={submitting}
                     >
-                      {submitting ? contactT.formSubmittingBtn : `${contactT.formSubmitBtn} →`}
+                      <span>{submitting ? contactT.formSubmittingBtn : `${contactT.formSubmitBtn} →`}</span>
                     </button>
+
                     <div className="contact-form__guarantee">
-                      <span className="guarantee-icon">🛡️</span>
-                      <span>No spam. We contact you only regarding your requested booking.</span>
+                      <ShieldCheck size={16} className="guarantee-icon" />
+                      <span>{language === 'en' ? 'Direct studio booking. We respond promptly.' : 'நேரடி ஸ்டுடியோ முன்பதிவு.'}</span>
                     </div>
                   </div>
                 </form>

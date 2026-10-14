@@ -1,12 +1,16 @@
+/* ── PRELOADER (Glassmorphic Luxury Aesthetic) ─────────────── */
 .preloader {
   position: fixed;
   inset: 0;
   z-index: 99999;
-  background: var(--clr-bg-soft);
+  background: rgba(252, 251, 248, 0.98);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 800ms var(--ease-out), visibility 800ms var(--ease-out);
+  transition: opacity 800ms var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)),
+              visibility 800ms var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1));
 }
 
 .preloader--fade-out {
@@ -19,13 +23,34 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-4);
+  gap: var(--space-4, 1rem);
+  padding: 2.25rem 2.75rem;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(217, 179, 64, 0.2);
+  border-radius: 24px;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.04),
+              0 0 32px rgba(217, 179, 64, 0.1);
+  animation: preloader-float 3s ease-in-out infinite;
+}
+
+@keyframes preloader-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 .preloader__logo {
-  width: 72px;
-  height: 72px;
-  color: var(--clr-accent-dark);
+  width: 76px;
+  height: 76px;
+  color: var(--clr-yellow-deep, #B8860B);
+  filter: drop-shadow(0 0 20px rgba(217, 179, 64, 0.4))
+          drop-shadow(0 4px 12px rgba(184, 134, 11, 0.2));
+  transition: filter var(--dur-mid, 0.35s) ease;
 }
 
 .logo-lens--spin {
@@ -38,13 +63,31 @@
 }
 
 .preloader__text {
-  font-family: var(--font-display);
-  font-size: var(--fs-md);
+  font-family: var(--font-display, 'Playfair Display', serif);
+  font-size: var(--fs-md, 1.125rem);
   font-weight: 600;
-  color: var(--clr-text-dark);
-  letter-spacing: 0.15em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  animation: pulse-text 2s ease-in-out infinite;
+  background: linear-gradient(135deg, #B8860B 0%, #E5C358 50%, #B8860B 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: preloader-shimmer 2.5s ease-in-out infinite;
+}
+
+@keyframes preloader-shimmer {
+  0% {
+    background-position: 0% 50%;
+    opacity: 0.85;
+  }
+  50% {
+    background-position: 100% 50%;
+    opacity: 1;
+  }
+  100% {
+    background-position: 0% 50%;
+    opacity: 0.85;
+  }
 }
 
 @keyframes pulse-text {

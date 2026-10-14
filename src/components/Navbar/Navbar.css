@@ -1,24 +1,27 @@
-/* ── NAVBAR — RJV STUDIOS SIGNATURE ────────────────────────── */
+/* ============================================================
+   NAVBAR — SLEEK FLOATING GLASS LUXURY DESIGN SYSTEM
+   ============================================================ */
+
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  height: var(--nav-h);
-  background: rgba(20, 15, 10, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 2px solid rgba(217, 179, 64, 0.35);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease;
+  height: 68px;
+  background: rgba(18, 13, 9, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(217, 179, 64, 0.16);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .navbar--scrolled {
-  background: rgba(20, 15, 10, 0.98);
-  border-bottom-color: var(--clr-yellow);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
-  height: 70px;
+  height: 60px;
+  background: rgba(14, 10, 7, 0.92);
+  border-bottom: 1px solid rgba(217, 179, 64, 0.28);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(217, 179, 64, 0.08);
 }
 
 .navbar__inner {
@@ -26,27 +29,33 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-6);
+  gap: 1.5rem;
 }
 
-/* ── Brand Logo ── */
+/* ── Brand Logo ────────────────────────────────────────────── */
 .navbar__logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   text-decoration: none;
+  transition: opacity 0.25s ease;
+}
+
+.navbar__logo:hover {
+  opacity: 0.92;
 }
 
 .navbar__logo-icon {
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   color: var(--clr-yellow);
   flex-shrink: 0;
+  filter: drop-shadow(0 0 10px rgba(217, 179, 64, 0.4));
   transition: transform 0.3s ease;
 }
 
 .navbar__logo:hover .navbar__logo-icon {
-  transform: rotate(18deg) scale(1.08);
+  transform: rotate(15deg) scale(1.06);
 }
 
 .navbar__logo-text {
@@ -56,97 +65,316 @@
 
 .navbar__logo-main {
   font-family: var(--font-display);
-  font-size: 1.3rem;
+  font-size: 1.22rem;
   font-weight: 700;
   color: #FFFFFF;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   line-height: 1.1;
 }
 
 .navbar__logo-sub {
   font-family: var(--font-body);
-  font-size: 0.62rem;
-  letter-spacing: 0.28em;
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--clr-yellow);
-  font-weight: 700;
+  font-weight: 600;
 }
 
-/* ── Desktop Navigation (RJV Pill Navigation Links) ── */
+/* ── Desktop Navigation ────────────────────────────────────── */
 .navbar__nav {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 4px 6px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .navbar__link {
   font-family: var(--font-body);
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: rgba(250, 250, 248, 0.85);
-  padding: 8px 18px;
-  border-radius: var(--radius-pill);
-  transition: all 0.25s ease;
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  color: rgba(250, 250, 248, 0.8);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
 }
 
 .navbar__link:hover {
-  color: #171207;
-  background: var(--clr-yellow);
+  color: #FFFFFF;
+  background: rgba(217, 179, 64, 0.12);
 }
 
 .navbar__link--active {
-  color: #171207;
-  background: var(--clr-yellow);
-  box-shadow: 0 2px 10px rgba(217, 179, 64, 0.4);
+  color: #171207 !important;
+  background: linear-gradient(135deg, var(--clr-yellow) 0%, var(--clr-yellow-bright) 100%);
+  font-weight: 600;
+  box-shadow: 0 2px 12px rgba(217, 179, 64, 0.35);
 }
 
-/* ── Language Switcher ── */
+/* ── Desktop CTA Button ────────────────────────────────────── */
+.navbar__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 16px;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #171207;
+  background: linear-gradient(135deg, var(--clr-yellow) 0%, var(--clr-yellow-deep) 100%);
+  border-radius: 9999px;
+  text-decoration: none;
+  border: none;
+  box-shadow: 0 2px 10px rgba(217, 179, 64, 0.3);
+  transition: all 0.25s ease;
+}
+
+.navbar__cta-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(217, 179, 64, 0.45);
+  background: linear-gradient(135deg, #E5C358 0%, var(--clr-yellow) 100%);
+}
+
+/* ── Actions: Language Switcher & Hamburger ────────────────── */
 .navbar__actions {
   display: flex;
   align-items: center;
-  gap: var(--space-4);
+  gap: 12px;
 }
 
 .segmented-lang-switch {
   display: flex;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1.5px solid rgba(217, 179, 64, 0.4);
-  border-radius: var(--radius-pill);
-  padding: 3px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(217, 179, 64, 0.22);
+  border-radius: 9999px;
+  padding: 2px;
   gap: 2px;
 }
 
 .segmented-lang-switch__btn {
-  padding: 5px 14px;
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  border-radius: var(--radius-pill);
-  color: rgba(255, 255, 255, 0.8);
-  transition: all 0.2s;
+  padding: 4px 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  color: rgba(255, 255, 255, 0.7);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.segmented-lang-switch__btn:hover {
+  color: #FFFFFF;
 }
 
 .segmented-lang-switch__btn--active {
-  background: var(--clr-yellow);
-  color: #171207;
+  background: rgba(217, 179, 64, 0.25);
+  color: var(--clr-yellow);
   font-weight: 700;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(217, 179, 64, 0.2);
 }
 
-/* ── Hamburger ── */
+.segmented-lang-switch--full {
+  width: 100%;
+}
+
+.segmented-lang-switch--full .segmented-lang-switch__btn {
+  flex: 1;
+  text-align: center;
+  padding: 8px;
+  font-size: 0.85rem;
+}
+
+/* ── Hamburger Toggle Button ───────────────────────────────── */
 .navbar__hamburger {
   display: none;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(217, 179, 64, 0.2);
+  border-radius: 8px;
   color: #FFFFFF;
-  padding: 6px;
+  padding: 7px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
 }
 
+.navbar__hamburger:hover {
+  background: rgba(217, 179, 64, 0.15);
+  color: var(--clr-yellow);
+  border-color: var(--clr-yellow);
+}
+
+/* ── Mobile Overlay & Menu ─────────────────────────────────── */
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 199;
+  background: rgba(10, 7, 4, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(85vw, 340px);
+  height: 100vh;
+  height: 100dvh;
+  z-index: 200;
+  background: rgba(18, 13, 9, 0.96);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-left: 1px solid rgba(217, 179, 64, 0.2);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
+  visibility: hidden;
+  overflow-y: auto;
+}
+
+.mobile-menu--open {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.mobile-menu__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(217, 179, 64, 0.15);
+  margin-bottom: 1rem;
+}
+
+.mobile-menu__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mobile-menu__brand-icon {
+  width: 28px;
+  height: 28px;
+  color: var(--clr-yellow);
+}
+
+.mobile-menu__brand-text {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.mobile-menu__close-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(217, 179, 64, 0.2);
+  color: #FFFFFF;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mobile-menu__close-btn:hover {
+  background: rgba(217, 179, 64, 0.2);
+  color: var(--clr-yellow);
+}
+
+.mobile-menu__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.mobile-menu__link {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.mobile-menu__link:hover {
+  color: var(--clr-yellow);
+  background: rgba(217, 179, 64, 0.1);
+  transform: translateX(4px);
+}
+
+.mobile-menu__link--active {
+  color: #171207 !important;
+  background: var(--clr-yellow);
+  font-weight: 700;
+}
+
+.mobile-menu__lang-box {
+  margin-top: 1rem;
+  padding: 0.85rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(217, 179, 64, 0.15);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.mobile-menu__lang-title {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--clr-yellow);
+}
+
+.mobile-menu__cta {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 11px 20px;
+  font-size: 0.85rem;
+}
+
+/* ── Responsive Breakpoints ────────────────────────────────── */
 @media (max-width: 960px) {
-  .navbar__nav {
+  .navbar__nav,
+  .navbar__cta-btn {
     display: none;
   }
+
   .navbar__hamburger {
-    display: block;
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 580px) {
+  .segmented-lang-switch--desktop {
+    display: none;
+  }
+
+  .navbar__logo-main {
+    font-size: 1.1rem;
+  }
+
+  .navbar__logo-sub {
+    font-size: 0.52rem;
   }
 }

@@ -1,10 +1,19 @@
-/* ── ABOUT PAGE (EDITORIAL MODERN) ─────────────────────────── */
+/* ── ABOUT PAGE (EDITORIAL MODERN / GLASSMORPHISM) ────────────── */
+
+/* ── Hero ───────────────────────────────────────────────── */
 .about-hero {
   padding-block: var(--space-20) var(--space-16);
-  border-bottom: 1px solid rgba(217, 179, 64, 0.25);
+  border-bottom: 1px solid rgba(217, 179, 64, 0.2);
+  position: relative;
+  overflow: hidden;
 }
 
-.about-story { padding-block: var(--space-16); }
+/* ── Story Section ──────────────────────────────────────── */
+.about-story {
+  padding-block: var(--space-16);
+  position: relative;
+}
+
 .about-story__grid {
   display: grid;
   grid-template-columns: 1fr 1.15fr;
@@ -12,7 +21,7 @@
   align-items: center;
 }
 
-/* Editorial Lead Artist Collage */
+/* Editorial Lead Artist Collage (Soft floating glass aesthetic) */
 .about-story-collage {
   position: relative;
   width: 100%;
@@ -25,10 +34,17 @@
   aspect-ratio: 4 / 5;
   width: 88%;
   max-height: 440px;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  border: 1.5px solid var(--clr-border);
+  box-shadow: 0 16px 40px -10px rgba(45, 35, 24, 0.12), 0 0 0 1px rgba(217, 179, 64, 0.2);
+  border: 1px solid rgba(217, 179, 64, 0.25);
+  background: var(--clr-bg-card);
+  transition: transform var(--dur-mid) var(--ease-smooth), box-shadow var(--dur-mid) var(--ease-smooth);
+}
+
+.about-story-collage__main:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 50px -12px rgba(45, 35, 24, 0.18), 0 0 0 1px rgba(217, 179, 64, 0.35);
 }
 
 .about-story-collage__side-badge {
@@ -38,157 +54,263 @@
   z-index: 3;
 }
 
+/* Glass Experience Badge */
 .about-experience-box {
-  background: linear-gradient(145deg, #1A130B 0%, #291D11 100%);
-  border: 1.5px solid var(--clr-yellow);
+  background: rgba(20, 15, 10, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(217, 179, 64, 0.3);
   color: var(--clr-yellow);
-  padding: 1rem 1.4rem;
-  border-radius: var(--radius-sm);
+  padding: 1.15rem 1.6rem;
+  border-radius: var(--radius-md);
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35), 0 0 20px rgba(217, 179, 64, 0.15);
   line-height: 1;
+  transition: transform var(--dur-mid) var(--ease-spring), box-shadow var(--dur-mid), border-color var(--dur-fast);
 }
+
+.about-experience-box:hover {
+  transform: translateY(-3px) scale(1.02);
+  border-color: rgba(217, 179, 64, 0.55);
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.4), 0 0 28px rgba(217, 179, 64, 0.25);
+}
+
 .about-experience-box__number {
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: 2.25rem;
   font-weight: 700;
   color: var(--clr-yellow);
   margin-bottom: 4px;
+  text-shadow: 0 0 20px rgba(217, 179, 64, 0.3);
 }
+
 .about-experience-box__label {
-  font-size: 0.65rem;
+  font-size: 0.68rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.85);
   font-weight: 600;
+  text-align: center;
 }
 
-.about-story__content { padding-left: var(--space-4); }
-.about-story__text { color: var(--clr-text-mid); margin-bottom: var(--space-4); line-height: 1.65; }
-.about-story__text:first-of-type { color: var(--clr-text-dark); font-size: 1.05rem; }
+.about-story__content {
+  padding-left: var(--space-4);
+}
 
-/* Temple Ritual Specialist Box */
-.about-temple-badge-box {
-  margin-top: var(--space-6);
-  background: linear-gradient(135deg, rgba(217, 179, 64, 0.08) 0%, rgba(217, 179, 64, 0.16) 100%);
-  border: 1px solid var(--clr-border);
-  border-left: 3px solid var(--clr-accent);
-  border-radius: var(--radius-sm);
-  padding: 1.25rem 1.5rem;
+.about-story__text {
+  color: var(--clr-text-mid);
+  margin-bottom: var(--space-4);
+  line-height: 1.7;
 }
-.about-temple-badge-box__header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 0.5rem;
-}
-.about-temple-badge-box__icon {
-  font-size: 1.2rem;
-}
-.about-temple-badge-box__title {
-  color: var(--clr-accent-dark);
-  font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-.about-temple-badge-box__desc {
+
+.about-story__text:first-of-type {
   color: var(--clr-text-dark);
+  font-size: 1.05rem;
   font-weight: 500;
   line-height: 1.6;
 }
 
+/* Temple Ritual Specialist Box (Glass panel with gold left border accent) */
+.about-temple-badge-box {
+  margin-top: var(--space-6);
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(217, 179, 64, 0.22);
+  border-left: 4px solid var(--clr-accent);
+  border-radius: var(--radius-sm);
+  padding: 1.35rem 1.6rem;
+  box-shadow: 0 8px 24px rgba(45, 35, 24, 0.04);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--dur-mid) var(--ease-smooth), box-shadow var(--dur-mid), border-color var(--dur-fast);
+}
+
+.about-temple-badge-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(45, 35, 24, 0.07), 0 0 16px rgba(217, 179, 64, 0.12);
+  border-color: rgba(217, 179, 64, 0.38);
+}
+
+.about-temple-badge-box__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.about-temple-badge-box__icon {
+  font-size: 1.25rem;
+  filter: drop-shadow(0 2px 4px rgba(217, 179, 64, 0.2));
+}
+
+.about-temple-badge-box__title {
+  color: var(--clr-accent-dark);
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.about-temple-badge-box__desc {
+  color: var(--clr-text-dark);
+  font-weight: 500;
+  line-height: 1.65;
+  font-size: 0.88rem;
+}
+
+/* Service Area Box (Glass card) */
 .about-service-area {
   margin-top: var(--space-6);
   padding: var(--space-5) var(--space-6);
-  background: var(--clr-bg-card);
-  border-left: 3px solid var(--clr-skyblue);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(217, 179, 64, 0.18);
+  border-left: 3px solid var(--clr-accent);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 4px 18px rgba(45, 35, 24, 0.04);
 }
+
 .about-service-area__label {
   color: var(--clr-text-dark);
   display: block;
   margin-bottom: var(--space-2);
-  font-size: 0.65rem;
+  font-size: 0.68rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 700;
 }
 
-/* Style Section (Dual Staggered Frames) */
-.about-style { padding-block: var(--space-16); }
+/* ── Photography Style (Dual Staggered Frames) ──────────── */
+.about-style {
+  padding-block: var(--space-16);
+  position: relative;
+}
+
 .about-style__grid {
   display: grid;
   grid-template-columns: 1.05fr 1fr;
   gap: var(--space-12);
   align-items: center;
 }
-.about-style__text { color: var(--clr-text-mid); margin-bottom: var(--space-4); line-height: 1.65; }
-.about-style__text:first-of-type { font-size: 1.05rem; color: var(--clr-text-dark); }
+
+.about-style__text {
+  color: var(--clr-text-mid);
+  margin-bottom: var(--space-4);
+  line-height: 1.7;
+}
+
+.about-style__text:first-of-type {
+  font-size: 1.05rem;
+  color: var(--clr-text-dark);
+  font-weight: 500;
+  line-height: 1.6;
+}
 
 .about-style-collage {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: 16px;
+  gap: 18px;
   align-items: center;
 }
+
 .about-style__img {
   position: relative;
   overflow: hidden;
   background: var(--clr-bg-light);
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--clr-border-light);
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 32px -8px rgba(45, 35, 24, 0.12), 0 0 0 1px rgba(217, 179, 64, 0.15);
+  border: 1px solid rgba(217, 179, 64, 0.2);
+  transition: transform var(--dur-mid) var(--ease-smooth), box-shadow var(--dur-mid) var(--ease-smooth);
 }
-.about-style__img--tall { aspect-ratio: 3 / 4; max-height: 380px; }
-.about-style__img--short { aspect-ratio: 4 / 5; max-height: 300px; transform: translateY(20px); }
-.about-style__img img { transition: transform 800ms var(--ease-out); }
-.about-style__img:hover img { transform: scale(1.05); }
 
-/* Core Values / Philosophy (Editorial Bento) */
-.about-philosophy { padding-block: var(--space-16); }
-.about-philosophy .section-heading { margin-bottom: var(--space-10); }
+.about-style__img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 44px -8px rgba(45, 35, 24, 0.18), 0 0 20px rgba(217, 179, 64, 0.15);
+  border-color: rgba(217, 179, 64, 0.35);
+}
+
+.about-style__img--tall {
+  aspect-ratio: 3 / 4;
+  max-height: 380px;
+}
+
+.about-style__img--short {
+  aspect-ratio: 4 / 5;
+  max-height: 300px;
+  transform: translateY(20px);
+}
+
+.about-style__img img {
+  transition: transform 800ms var(--ease-out);
+}
+
+.about-style__img:hover img {
+  transform: scale(1.06);
+}
+
+/* ── Core Values / Philosophy (Glass Bento Cards) ────────── */
+.about-philosophy {
+  padding-block: var(--space-16);
+  position: relative;
+}
+
+.about-philosophy .section-heading {
+  margin-bottom: var(--space-10);
+}
+
 .about-philosophy__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: 18px;
 }
+
 .about-value {
   padding: var(--space-6);
   background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(217, 179, 64, 0.25);
-  transition: transform var(--dur-mid), border-color var(--dur-mid), box-shadow var(--dur-mid);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(217, 179, 64, 0.15);
+  transition: transform var(--dur-mid) var(--ease-smooth), border-color var(--dur-mid), box-shadow var(--dur-mid), background var(--dur-mid);
   position: relative;
   overflow: hidden;
-  border-radius: var(--radius);
+  border-radius: var(--radius-md);
   display: flex;
   flex-direction: column;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
+
 .about-value:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.07);
   border-color: var(--clr-yellow);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35), 0 0 24px rgba(217, 179, 64, 0.22);
 }
+
 .about-value__top-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: var(--space-4);
 }
+
 .about-value__icon {
-  font-size: 1.6rem;
+  font-size: 1.75rem;
   line-height: 1;
+  filter: drop-shadow(0 2px 8px rgba(217, 179, 64, 0.2));
 }
+
 .about-value__num {
   font-family: var(--font-display);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: var(--clr-yellow);
+  letter-spacing: 0.05em;
 }
+
 .about-value__title {
   color: var(--clr-white);
   margin-bottom: var(--space-2);
@@ -196,26 +318,50 @@
   font-size: var(--fs-lg);
   font-weight: 600;
 }
+
 .about-value__desc {
-  color: rgba(250, 250, 248, 0.72);
+  color: rgba(250, 250, 248, 0.74);
   font-size: var(--fs-xs);
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
-.about-cta-section { padding-block: var(--space-16); }
+/* ── CTA Section ────────────────────────────────────────── */
+.about-cta-section {
+  padding-block: var(--space-16);
+  position: relative;
+}
 
-/* Responsive */
+/* ── Responsive ─────────────────────────────────────────── */
 @media (max-width: 1024px) {
-  .about-philosophy__grid { grid-template-columns: repeat(2, 1fr); }
+  .about-philosophy__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
+
 @media (max-width: 900px) {
   .about-story__grid,
-  .about-style__grid { grid-template-columns: 1fr; gap: var(--space-10); }
-  .about-story__content { padding-left: 0; }
-  .about-style-collage { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
-  .about-style__img--short { transform: none; }
+  .about-style__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+  .about-story__content {
+    padding-left: 0;
+  }
+  .about-style-collage {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  .about-style__img--short {
+    transform: none;
+  }
 }
+
 @media (max-width: 600px) {
-  .about-philosophy__grid { grid-template-columns: 1fr; }
-  .about-story-collage { max-width: 320px; }
+  .about-philosophy__grid {
+    grid-template-columns: 1fr;
+  }
+  .about-story-collage {
+    max-width: 320px;
+  }
 }

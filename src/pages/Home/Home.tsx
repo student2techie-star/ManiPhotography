@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronDown } from 'lucide-react';
 import { useDocumentHead } from '../../hooks/useDocumentHead';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
 import { portfolioItems } from '../../data/portfolio';
@@ -49,11 +48,6 @@ export default function Home() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const scrollToContent = () => {
-    const el = document.getElementById('intro');
-    el?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   const philosophyItems = [
     { num: '01', title: homeT.philosophyItem1Title, desc: homeT.philosophyItem1Desc },
     { num: '02', title: homeT.philosophyItem2Title, desc: homeT.philosophyItem2Desc },
@@ -91,63 +85,62 @@ export default function Home() {
         </div>
 
         <div className="hero__content container">
-          <div className="hero__eyebrow" style={{ flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <span className="hero__eyebrow-line" aria-hidden="true" />
-              <span className="label hero__label">Mani Photography Thirukadaiyur</span>
+          <div className="hero__text-col">
+            <div className="hero__eyebrow">
+              <p className="eyebrow">
+                {language === 'en' ? 'Thirukadaiyur · Premium Photography' : 'திருக்கடையூர் · பிரீமியம் புகைப்பட சேவை'}
+              </p>
+              <div style={{ marginTop: '8px' }}>
+                <span style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  background: 'rgba(217, 179, 64, 0.18)',
+                  border: '1.5px solid var(--clr-yellow)',
+                  color: 'var(--clr-yellow)',
+                  padding: '6px 16px',
+                  borderRadius: 'var(--radius-pill)',
+                  fontSize: '0.82rem',
+                  fontWeight: 700,
+                  letterSpacing: '0.02em',
+                  boxShadow: '0 2px 12px rgba(0, 0, 0, 0.4)'
+                }}>
+                  👑 {language === 'en' ? '60th, 70th & 80th Milestone Weddings Specialist' : '60, 70 & 80ஆம் கல்யாண சடங்கு சிறப்பு புகைப்படக் கலைஞர்'}
+                </span>
+              </div>
             </div>
-            <span style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px',
-              background: 'linear-gradient(135deg, #D9B340 0%, #B8860B 100%)',
-              border: '1px solid #FFD700',
-              color: '#1A130B',
-              padding: '6px 14px',
-              borderRadius: '24px',
-              fontSize: 'clamp(0.72rem, 2.5vw, 0.85rem)',
-              fontWeight: 700,
-              letterSpacing: '0.02em',
-              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.35)',
-              marginTop: '6px',
-              maxWidth: '100%'
-            }}>
-              👑 {language === 'en' ? 'Thirukadaiyur 60th, 70th & 80th Wedding Photography Specialist (Shashtiapthapoorthi & Sadabishegam)' : 'திருக்கடையூர் 60, 70 & 80ஆம் கல்யாண சிறப்பு புகைப்படக் கலைஞர் (சஷ்டியப்தபூர்த்தி & சதாபிஷேகம்)'}
-            </span>
-          </div>
-          <h1 className="hero__headline display-xl">
-            {homeT.heroTitleLine1}<br />
-            <em>{homeT.heroTitleLine2}</em>
-          </h1>
-          <p className="hero__sub body-lg">
-            {homeT.heroSub}
-          </p>
-          <div className="hero__ctas">
-            <Link to="/portfolio" className="btn btn-primary">{t.common.viewWork}</Link>
-            <Link to="/contact" className="btn btn-outline">{t.common.bookShoot}</Link>
+
+            <h1 className="hero__headline">
+              {homeT.heroTitleLine1}<br />
+              <em>{homeT.heroTitleLine2}</em>
+            </h1>
+
+            <p className="hero__sub">
+              {homeT.heroSub}
+            </p>
+
+            <div className="hero__ctas">
+              <Link to="/portfolio" className="btn btn-primary">{t.common.viewWork}</Link>
+              <Link to="/contact" className="btn btn-outline">{t.common.bookShoot}</Link>
+            </div>
+
+            {/* Trust Proof Strip */}
+            <div className="hero__stats" aria-label="Studio statistics">
+              <div className="hero__stat">
+                <span className="hero__stat-num">10+</span>
+                <span className="hero__stat-label">{homeT.statYears}</span>
+              </div>
+              <div className="hero__stat">
+                <span className="hero__stat-num">500+</span>
+                <span className="hero__stat-label">{homeT.statWeddings}</span>
+              </div>
+              <div className="hero__stat">
+                <span className="hero__stat-num">2000+</span>
+                <span className="hero__stat-label">{homeT.statFamilies}</span>
+              </div>
+            </div>
           </div>
         </div>
-
-        {/* Stats strip */}
-        <div className="hero__stats" aria-label="Studio statistics">
-          <div className="hero__stat">
-            <span className="hero__stat-num">10+</span>
-            <span className="hero__stat-label">{homeT.statYears}</span>
-          </div>
-          <div className="hero__stat">
-            <span className="hero__stat-num">500+</span>
-            <span className="hero__stat-label">{homeT.statWeddings}</span>
-          </div>
-          <div className="hero__stat">
-            <span className="hero__stat-num">2000+</span>
-            <span className="hero__stat-label">{homeT.statFamilies}</span>
-          </div>
-        </div>
-
-        <button className="hero__scroll-indicator" onClick={scrollToContent} aria-label="Scroll to content">
-          <span className="hero__scroll-line" aria-hidden="true" />
-          <ChevronDown size={14} />
-        </button>
       </section>
 
       {/* ── INTRO / ABOUT (EDITORIAL COLLAGE) ───────────────── */}
