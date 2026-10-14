@@ -1,6 +1,7 @@
-/* ── SECTION HEADING ───────────────────────────────────────── */
+/* ── SECTION HEADING — RJV STUDIOS SIGNATURE ──────────────── */
 .section-heading {
-  max-width: 640px;
+  max-width: 720px;
+  position: relative;
 }
 .section-heading--center {
   margin-inline: auto;
@@ -11,53 +12,55 @@
   text-align: right;
 }
 
-/* Label */
+/* Eyebrow Label */
 .section-heading__label {
-  color: var(--clr-accent);
+  color: var(--clr-accent-dark);
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
   margin-bottom: var(--space-2);
-  font-size: 0.62rem;
-  letter-spacing: 0.22em;
+  font-size: 0.75rem;
+  letter-spacing: 0.28em;
   font-weight: 700;
   text-transform: uppercase;
+  font-family: var(--font-body);
 }
-.section-heading__label::before {
-  content: '';
-  display: block;
-  width: 20px;
-  height: 2px;
-  background: var(--clr-accent);
-  flex-shrink: 0;
-  opacity: 0.9;
+
+.section-heading--dark .section-heading__label {
+  color: var(--clr-yellow);
 }
-.section-heading--center .section-heading__label::before { display: none; }
-.section-heading--center .section-heading__label {
-  justify-content: center;
+
+/* Accent Line */
+.section-heading .accent-line {
+  margin-block: var(--space-2) var(--space-4);
 }
-.section-heading--light .section-heading__label { color: var(--clr-accent-dark); }
 
 /* Title */
 .section-heading__title {
   font-family: var(--font-display);
-  color: var(--clr-white);
+  color: var(--clr-text-dark);
   line-height: 1.15;
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-3);
   font-weight: 700;
+  letter-spacing: 0.02em;
 }
+
 .section-heading--light .section-heading__title { color: var(--clr-text-dark); }
 .section-heading--dark .section-heading__title { color: var(--clr-white); }
-.section-heading--dark .section-heading__label { color: var(--clr-yellow); }
 
 /* Subtitle */
 .section-heading__subtitle {
-  color: rgba(250, 250, 248, 0.78);
-  max-width: 540px;
-  line-height: 1.6;
-  font-size: 0.92rem;
+  color: var(--clr-text-muted);
+  max-width: 620px;
+  line-height: 1.8;
+  font-size: var(--fs-md);
   font-weight: 400;
 }
-.section-heading--light .section-heading__subtitle { color: var(--clr-text-muted); }
-.section-heading--dark .section-heading__subtitle { color: rgba(250, 250, 248, 0.78); }
-.section-heading--center .section-heading__subtitle { margin-inline: auto; }
+
+.section-heading--dark .section-heading__subtitle {
+  color: rgba(250, 250, 248, 0.85);
+}
+
+.section-heading--center .section-heading__subtitle {
+  margin-inline: auto;
+}
