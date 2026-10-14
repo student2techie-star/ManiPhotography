@@ -8,7 +8,7 @@ import SectionHeading from '../../components/SectionHeading/SectionHeading';
 import PortfolioGrid from '../../components/PortfolioGrid/PortfolioGrid';
 import { getServiceSchema, getBreadcrumbSchema, getFaqSchema } from '../../components/SEO/JsonLd';
 import { useLanguage } from '../../context/LanguageContext';
-import { Phone, MessageCircle, CheckCircle2, ChevronRight, MapPin, Calendar, Camera } from 'lucide-react';
+import { Phone, MessageCircle, CheckCircle2, ChevronRight, MapPin, Calendar, Camera, BookOpen } from 'lucide-react';
 import './DedicatedService.css';
 
 interface DedicatedServiceProps {
@@ -248,6 +248,43 @@ export default function DedicatedService({ routeSlug }: DedicatedServiceProps) {
                 <span className="related-service-card__link">{language === 'en' ? 'View Details →' : 'விவரங்கள் பார்க்க →'}</span>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── HELPFUL CEREMONY GUIDES (INTERNAL LINK GRAPH) ── */}
+      <section className="section section--light" style={{ borderTop: '1px solid #EAEAEA' }}>
+        <div className="container">
+          <SectionHeading
+            label={language === 'en' ? 'Helpful Resources' : 'பயனுள்ள வழிகாட்டிகள்'}
+            title={language === 'en' ? 'Ceremony Guides & Ritual Tips' : 'சடங்கு வழிகாட்டிகள் & புகைப்பட ஆலோசனைகள்'}
+            dark={false}
+          />
+          <div className="related-services-grid">
+            <Link to="/guides/thirukadaiyur-60th-marriage-shashtiapthapoorthi-guide/" className="related-service-card">
+              <div className="related-service-card__icon"><BookOpen size={22} color="var(--clr-accent-dark)" /></div>
+              <h3 className="title-sm">{language === 'en' ? '60th Marriage (Shashtiapthapoorthi) Guide' : '60ஆம் கல்யாண சடங்கு வழிகாட்டி'}</h3>
+              <p className="body-sm text-muted">{language === 'en' ? 'Rituals, 60 Kalasams, timings and mandapam tips at Thirukadaiyur.' : 'திருக்கடையூரில் சஷ்டியப்தபூர்த்தி நடத்தும் முறை மற்றும் கலசாபிஷேகம்.'}</p>
+              <span className="related-service-card__link">{language === 'en' ? 'Read Guide →' : 'வழிகாட்டி வாசிக்க →'}</span>
+            </Link>
+            <Link to="/guides/thirukadaiyur-80th-marriage-sadabishegam-guide/" className="related-service-card">
+              <div className="related-service-card__icon"><BookOpen size={22} color="var(--clr-accent-dark)" /></div>
+              <h3 className="title-sm">{language === 'en' ? '80th Sadabishegam & 70th Bhimaratha Guide' : '80ஆம் சதாபிஷேகம் & 70ஆம் கல்யாண வழிகாட்டி'}</h3>
+              <p className="body-sm text-muted">{language === 'en' ? 'Witnessing 1,000 full moons, Ayush homams, and multi-generational photos.' : '1000 பிறை கண்ட நிகழ்வு மற்றும் குடும்ப ஆசி பெறும் வழிகாட்டி.'}</p>
+              <span className="related-service-card__link">{language === 'en' ? 'Read Guide →' : 'வழிகாட்டி வாசிக்க →'}</span>
+            </Link>
+            <Link to="/guides/thirukadaiyur-temple-photography-rules-timings-tips/" className="related-service-card">
+              <div className="related-service-card__icon"><BookOpen size={22} color="var(--clr-accent-dark)" /></div>
+              <h3 className="title-sm">{language === 'en' ? 'Temple Photography Rules & Timings' : 'கோயில் புகைப்பட விதிமுறைகள் & நேரங்கள்'}</h3>
+              <p className="body-sm text-muted">{language === 'en' ? 'Mandapams, attire, sanctum guidelines & golden hour lighting.' : 'கோயில் வளாகத்தில் போட்டோ எடுப்பதற்கான நடைமுறைகள் மற்றும் நேரங்கள்.'}</p>
+              <span className="related-service-card__link">{language === 'en' ? 'Read Guide →' : 'வழிகாட்டி வாசிக்க →'}</span>
+            </Link>
+            <Link to="/guides/how-to-reach-thirukadaiyur-travel-guide-bus-train-car-flight/" className="related-service-card">
+              <div className="related-service-card__icon"><BookOpen size={22} color="var(--clr-accent-dark)" /></div>
+              <h3 className="title-sm">{language === 'en' ? 'How to Reach Thirukadaiyur Temple' : 'திருக்கடையூர் எவ்வாறு அடைவது?'}</h3>
+              <p className="body-sm text-muted">{language === 'en' ? 'Bus, train, car routes from Chennai, Trichy, Bangalore & Mayiladuthurai.' : 'சென்னை, திருச்சி, பெங்களூரிலிருந்து திருக்கடையூர் பயணம்.'}</p>
+              <span className="related-service-card__link">{language === 'en' ? 'Read Guide →' : 'வழிகாட்டி வாசிக்க →'}</span>
+            </Link>
           </div>
         </div>
       </section>

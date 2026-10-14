@@ -110,6 +110,39 @@ export default function Footer() {
         </div>
 
         <div className="footer__col">
+          <h3 className="footer__heading">{language === 'en' ? 'Ceremony Guides' : 'வழிகாட்டிகள்'}</h3>
+          <nav aria-label="Ceremony Guides">
+            <ul className="footer__links">
+              <li>
+                <Link to="/guides/thirukadaiyur-60th-marriage-shashtiapthapoorthi-guide/" className="footer__link">
+                  {language === 'en' ? '60th Marriage Guide' : '60ஆம் கல்யாண வழிகாட்டி'}
+                </Link>
+              </li>
+              <li>
+                <Link to="/guides/thirukadaiyur-80th-marriage-sadabishegam-guide/" className="footer__link">
+                  {language === 'en' ? '80th Sadabishegam Guide' : '80ஆம் சதாபிஷேக வழிகாட்டி'}
+                </Link>
+              </li>
+              <li>
+                <Link to="/guides/thirukadaiyur-temple-photography-rules-timings-tips/" className="footer__link">
+                  {language === 'en' ? 'Temple Photography Rules' : 'கோயில் புகைப்பட விதிமுறைகள்'}
+                </Link>
+              </li>
+              <li>
+                <Link to="/guides/thirunallar-saneeswarar-temple-parihara-pooja-photography-guide/" className="footer__link">
+                  {language === 'en' ? 'Thirunallar Temple Guide' : 'திருநள்ளாறு கோயில் வழிகாட்டி'}
+                </Link>
+              </li>
+              <li>
+                <Link to="/guides/how-to-reach-thirukadaiyur-travel-guide-bus-train-car-flight/" className="footer__link">
+                  {language === 'en' ? 'How to Reach Thirukadaiyur' : 'திருக்கடையூர் பயணம் வழிகாட்டி'}
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div className="footer__col">
           <h3 className="footer__heading">{t.contact.infoTitle}</h3>
           <ul className="footer__contact">
             <li>

@@ -1,6 +1,10 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+
+  # 301 Redirect old / rejected URL to canonical portfolio category
+  RewriteRule ^portfolio/temple-photography/?$ /portfolio/temple/ [R=301,L]
+
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d

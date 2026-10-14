@@ -293,6 +293,14 @@ export default function Home() {
                 <span>✦ Mangalya Dharanam</span>
                 <span>✦ Family Portraiture</span>
               </div>
+              <div style={{ marginTop: '1rem', display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+                <Link to="/60th-birthday-photography-thirukadaiyur/" className="btn btn-outline" style={{ fontSize: '0.8rem', padding: '0.4rem 0.8rem' }}>
+                  {language === 'en' ? '60th Photography Details →' : '60ஆம் கல்யாண சேவைகள் →'}
+                </Link>
+                <Link to="/guides/thirukadaiyur-60th-marriage-shashtiapthapoorthi-guide/" className="btn btn-outline" style={{ fontSize: '0.8rem', padding: '0.4rem 0.8rem' }}>
+                  {language === 'en' ? 'Rituals Guide →' : 'சடங்கு வழிகாட்டி →'}
+                </Link>
+              </div>
             </div>
 
             {/* Bento Card 2: 70th */}
@@ -309,6 +317,11 @@ export default function Home() {
                   ? 'Honouring 70 years of wisdom with sacred homam, temple rituals, and grand family gatherings in Thirukadaiyur.'
                   : '70 ஆண்டுகள் ஆயுள் சாந்தி சடங்குகள், ஹோமங்கள் மற்றும் குடும்பத்தினர் பங்கேற்கும் புனித சடங்குகளைப் பதிவு செய்தல்.'}
               </p>
+              <div style={{ marginTop: '0.85rem' }}>
+                <Link to="/70th-birthday-photography-thirukadaiyur/" className="editorial-bento-card__title" style={{ fontSize: '0.825rem', color: 'var(--clr-yellow)', textDecoration: 'underline' }}>
+                  {language === 'en' ? 'View 70th Birthday Services & Packages →' : '70ஆம் கல்யாண விவரங்கள் →'}
+                </Link>
+              </div>
             </div>
 
             {/* Bento Card 3: 80th */}
@@ -325,6 +338,15 @@ export default function Home() {
                   ? 'Celebrating 1000 full moons (Sahasra Chandra Darsanam), 80 Kalasa Abhishekam, and multi-generational family blessings.'
                   : '1000 பிறை கண்ட அருமையான 80ஆம் ஆண்டு சதாபிஷேகம், 80 கலச அபிஷேகம் மற்றும் பேரக் குழந்தைகள் ஆசி பெறும் அரிய தருணங்கள்.'}
               </p>
+              <div style={{ marginTop: '0.85rem', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                <Link to="/80th-birthday-photography-thirukadaiyur/" style={{ fontSize: '0.825rem', color: 'var(--clr-yellow)', textDecoration: 'underline' }}>
+                  {language === 'en' ? '80th Services →' : '80ஆம் சேவைகள் →'}
+                </Link>
+                <span style={{ color: 'rgba(255,255,255,0.4)' }}>•</span>
+                <Link to="/guides/thirukadaiyur-80th-marriage-sadabishegam-guide/" style={{ fontSize: '0.825rem', color: 'var(--clr-yellow)', textDecoration: 'underline' }}>
+                  {language === 'en' ? 'Sadabishegam Guide →' : 'வழிகாட்டி வாசிக்க →'}
+                </Link>
+              </div>
             </div>
 
             {/* Bento Card 4: Kanakabhishekam */}
@@ -341,6 +363,11 @@ export default function Home() {
                   ? 'Specialized 90th & 100th milestone shoots, gold coin abhishekam, and Abirami Temple darshan memories.'
                   : '90 மற்றும் 100ஆம் ஆண்டு கனகாபிஷேகம், பொன் நாணய அபிஷேகம் மற்றும் அபிராமி அம்மன் கோயில் தரிசன நினைவுகள்.'}
               </p>
+              <div style={{ marginTop: '0.85rem' }}>
+                <Link to="/temple-photography-thirukadaiyur/" style={{ fontSize: '0.825rem', color: 'var(--clr-yellow)', textDecoration: 'underline' }}>
+                  {language === 'en' ? 'Temple Photography Options →' : 'கோயில் புகைப்பட விவரங்கள் →'}
+                </Link>
+              </div>
             </div>
           </div>
 
