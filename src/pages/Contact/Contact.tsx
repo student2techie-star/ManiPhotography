@@ -2,7 +2,7 @@ import { useState, type FormEvent } from 'react';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
 import { useDocumentHead } from '../../hooks/useDocumentHead';
 import { siteConfig } from '../../data/siteConfig';
-import { Phone, Mail, MapPin, MessageCircle, Send, ShieldCheck } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle, ShieldCheck, User, Sparkles, CheckCircle2, Star, Camera } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 import { translations } from '../../data/translations';
 import './Contact.css';
@@ -10,15 +10,12 @@ import './Contact.css';
 interface FormData {
   name: string;
   phone: string;
-  eventType: string;
-  eventDate: string;
-  location: string;
+  message: string;
 }
 
 interface FormErrors {
   name?: string;
   phone?: string;
-  eventType?: string;
 }
 
 export default function Contact() {
@@ -26,44 +23,18 @@ export default function Contact() {
   const t = translations[language];
   const contactT = t.contact;
 
-  const eventTypes = language === 'en' ? [
-    '60th Marriage (Shashtiapthapoorthi)',
-    '70th Birthday (Bhimaratha Shanthi)',
-    '80th Birthday (Sadabishegam)',
-    'Wedding Photography',
-    'Pre-Wedding Shoot',
-    'Engagement Ceremony',
-    'Thirukadaiyur Temple Shoot',
-    'Baby Shower (Seemantham)',
-    'House Warming (Grihapravesam)',
-    'Family Function',
-    'Other Event',
-  ] : [
-    '60ஆம் கல்யாணம் (சஷ்டியப்தபூர்த்தி)',
-    '70ஆம் கல்யாணம் (பீமரத சாந்தி)',
-    '80ஆம் கல்யாணம் (சதாபிஷேகம்)',
-    'திருமணம் (Wedding Photography)',
-    'திருமணத்திற்கு முந்தைய படம் (Pre-Wedding)',
-    'நிச்சயதார்த்தம் (Engagement)',
-    'திருக்கடையூர் கோயில் படப்பிடிப்பு',
-    'வளைகாப்பு (Seemantham)',
-    'கிரகப்பிரவேசம் (Grihapravesam)',
-    'குடும்ப விழா (Family Function)',
-    'மற்றவை (Other)',
-  ];
-
   useDocumentHead({
     title: language === 'en'
-      ? 'Book Thirukadaiyur 60th, 70th & 80th Photographer | Mani Photography (+91 81110 85865)'
-      : 'திருக்கடையூர் போட்டோகிராஃபர் முன்பதிவு | மணி போட்டோகிராஃபி (+91 81110 85865)',
+      ? 'Contact Mani Photography Thirukadaiyur (+91 81110 85865)'
+      : 'மணி போட்டோகிராஃபி தொடர்பு கொள்ள (+91 81110 85865)',
     description: language === 'en'
-      ? 'Book your Thirukadaiyur 60th Wedding (Shashtiapthapoorthi), 70th & 80th (Sadabishegam) photoshoot. Call +91 81110 85865 or send a WhatsApp message to Mani Photography Thirukadaiyur.'
-      : 'திருக்கடையூர் 60ஆம் கல்யாணம் (சஷ்டியப்தபூர்த்தி), 70ஆம் கல்யாணம் & 80ஆம் கல்யாண (சதாபிஷேகம்) புகைப்பட முன்பதிவுக்கு அழைக்கவும்: +91 81110 85865 (மணி போட்டோகிராஃபி).',
+      ? 'Contact Mani Photography Thirukadaiyur. Call +91 81110 85865 or send a message directly on WhatsApp.'
+      : 'மணி போட்டோகிராஃபி திருக்கடையூர். அழைக்கவும்: +91 81110 85865 அல்லது வாட்ஸ்அப் மூலம் தொடர்புகொள்ளவும்.',
   });
 
   useScrollReveal();
 
-  const [form, setForm] = useState<FormData>({ name: '', phone: '', eventType: '', eventDate: '', location: '' });
+  const [form, setForm] = useState<FormData>({ name: '', phone: '', message: '' });
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -73,7 +44,6 @@ export default function Contact() {
     if (!data.name.trim()) errs.name = contactT.errName;
     if (!data.phone.trim()) errs.phone = contactT.errPhone;
     else if (!/^[+\d\s()-]{7,15}$/.test(data.phone.trim())) errs.phone = contactT.errPhoneValid;
-    if (!data.eventType) errs.eventType = contactT.errEventType;
     return errs;
   };
 
@@ -88,7 +58,7 @@ export default function Contact() {
     if (Object.keys(errs).length) { setErrors(errs); return; }
     setSubmitting(true);
 
-    const waText = `New Enquiry from ${form.name}\nPhone: ${form.phone}\nEvent Type: ${form.eventType}\nEvent Date: ${form.eventDate || 'Not specified'}\nLocation: ${form.location || 'Not specified'}`;
+    const waText = `Hi Mani Photography,\nMy Name: ${form.name}\nPhone: ${form.phone}${form.message ? `\nMessage: ${form.message}` : ''}`;
     const targetWa = siteConfig.whatsapp;
     const waUrl = `https://wa.me/${targetWa}?text=${encodeURIComponent(waText)}`;
 
@@ -102,9 +72,9 @@ export default function Contact() {
   const waLink = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`;
 
   return (
-    <main>
+    <main className="contact-page">
       {/* Hero */}
-      <div className="page-hero page-hero--dark">
+      <div className="page-hero page-hero--dark contact-hero">
         <div className="container">
           <span className="label page-hero__label">{contactT.heroLabel}</span>
           <h1 className="display-md page-hero__title">{contactT.heroTitle}</h1>
@@ -116,92 +86,136 @@ export default function Contact() {
 
       <section className="section section--light contact-section">
         <div className="container">
-          <div className="contact-section__grid">
-            {/* Info Panel */}
-            <div className="contact-info reveal-left">
-              <h2 className="title-lg contact-info__title">
-                {contactT.infoTitle}
-              </h2>
-              <span className="accent-line" aria-hidden="true" />
-              <p className="body-md contact-info__desc">
-                {contactT.infoDesc}
-              </p>
-
-              <ul className="contact-info__list">
-                <li className="contact-info__item">
-                  <Phone size={18} className="contact-info__icon" aria-hidden="true" />
-                  <div>
-                    <span className="contact-info__label">{contactT.phoneLabel}</span>
-                    <a href={`tel:${siteConfig.phone}`} className="contact-info__value">{siteConfig.phone}</a>
-                  </div>
-                </li>
-                <li className="contact-info__item">
-                  <MessageCircle size={18} className="contact-info__icon" aria-hidden="true" />
-                  <div>
-                    <span className="contact-info__label">{contactT.waLabel}</span>
-                    <a href={waLink} target="_blank" rel="noopener noreferrer" className="contact-info__value">
-                      {t.common.chatWhatsApp}
-                    </a>
-                  </div>
-                </li>
-                <li className="contact-info__item">
-                  <Mail size={18} className="contact-info__icon" aria-hidden="true" />
-                  <div>
-                    <span className="contact-info__label">{contactT.emailLabel}</span>
-                    <a href={`mailto:${siteConfig.email}`} className="contact-info__value">{siteConfig.email}</a>
-                  </div>
-                </li>
-                <li className="contact-info__item">
-                  <MapPin size={18} className="contact-info__icon" aria-hidden="true" />
-                  <div>
-                    <span className="contact-info__label">{contactT.locationLabel}</span>
-                    <a href={siteConfig.mapsUrl} target="_blank" rel="noopener noreferrer" className="contact-info__value">
-                      {t.common.location}
-                    </a>
-                  </div>
-                </li>
-                <li className="contact-info__item">
+          <div className="contact-showcase-grid">
+            {/* ── LEFT: Studio Profile & Trust Card ── */}
+            <div className="studio-card reveal-left">
+              {/* Photographer Photo & Status */}
+              <div className="studio-card__hero">
+                <div className="studio-card__avatar-wrap">
                   <img
-                    src={`${import.meta.env.BASE_URL}images/justdial.svg`}
-                    alt="JustDial"
-                    style={{ width: 18, height: 18, opacity: 0.85, flexShrink: 0 }}
-                    aria-hidden="true"
+                    src={`${import.meta.env.BASE_URL}images/about/thirukadaiyur-lead-photographer-mani.webp`}
+                    alt="Mani - Lead Photographer"
+                    className="studio-card__avatar"
+                    loading="lazy"
                   />
+                  <div className="studio-card__available-chip" title="Available for bookings">
+                    <span className="online-indicator" />
+                    <span>{language === 'en' ? 'Available Today' : 'இன்று முன்பதிவு உண்டு'}</span>
+                  </div>
+                </div>
+
+                <div className="studio-card__profile">
+                  <span className="label studio-card__tag">
+                    <Camera size={13} style={{ display: 'inline', marginRight: 4 }} />
+                    {language === 'en' ? 'Lead Master Photographer' : 'முதன்மை புகைப்பட கலைஞர்'}
+                  </span>
+                  <h2 className="studio-card__name">Mani</h2>
+                  <p className="studio-card__role">
+                    {language === 'en' 
+                      ? 'Thirukadaiyur Temple & Ritual Specialist' 
+                      : 'திருக்கடையூர் கோயில் & சடங்கு சிறப்பு புகைப்பட கலைஞர்'}
+                  </p>
+
+                  <div className="studio-card__rating">
+                    <div className="stars">
+                      <Star size={16} fill="var(--clr-yellow)" color="var(--clr-yellow)" />
+                      <Star size={16} fill="var(--clr-yellow)" color="var(--clr-yellow)" />
+                      <Star size={16} fill="var(--clr-yellow)" color="var(--clr-yellow)" />
+                      <Star size={16} fill="var(--clr-yellow)" color="var(--clr-yellow)" />
+                      <Star size={16} fill="var(--clr-yellow)" color="var(--clr-yellow)" />
+                    </div>
+                    <span className="rating-score">4.9 / 5.0</span>
+                    <span className="rating-count">{language === 'en' ? '(100+ Happy Families)' : '(100+ குடும்பங்கள்)'}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Direct Quick Action Buttons */}
+              <div className="studio-card__quick-actions">
+                <a href={`tel:${siteConfig.phone}`} className="studio-action-btn studio-action-btn--phone">
+                  <Phone size={18} />
                   <div>
-                    <span className="contact-info__label">{language === 'en' ? 'JustDial' : 'ஜஸ்ட் டயல்'}</span>
-                    <a
-                      href="https://www.justdial.com/Mayiladuthurai/Mani-Photography-Tirucadaiyur/9999P4364-4364-230128175613-F5L3_BZDET"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="contact-info__value"
-                    >
-                      {language === 'en' ? 'View on JustDial' : 'JustDial-ல் பார்க்க'}
+                    <span className="action-btn-label">{language === 'en' ? 'Call Studio' : 'அழைக்க'}</span>
+                    <strong className="action-btn-val">{siteConfig.phone}</strong>
+                  </div>
+                </a>
+
+                <a href={waLink} target="_blank" rel="noopener noreferrer" className="studio-action-btn studio-action-btn--wa">
+                  <MessageCircle size={18} />
+                  <div>
+                    <span className="action-btn-label">{language === 'en' ? 'Chat WhatsApp' : 'வாட்ஸ்அப்'}</span>
+                    <strong className="action-btn-val">{language === 'en' ? 'Instant Chat' : 'உடனடி அரட்டை'}</strong>
+                  </div>
+                </a>
+              </div>
+
+              {/* Contact Info Items List */}
+              <ul className="studio-contact-list">
+                <li className="studio-contact-item">
+                  <MapPin size={18} className="contact-icon" />
+                  <div>
+                    <span className="contact-label">{contactT.locationLabel}</span>
+                    <a href={siteConfig.mapsUrl} target="_blank" rel="noopener noreferrer" className="contact-val">
+                      {language === 'en' ? 'Sannathi Street, Thirukadaiyur' : 'சன்னதி தெரு, திருக்கடையூர்'}
                     </a>
+                  </div>
+                </li>
+                <li className="studio-contact-item">
+                  <Mail size={18} className="contact-icon" />
+                  <div>
+                    <span className="contact-label">{contactT.emailLabel}</span>
+                    <a href={`mailto:${siteConfig.email}`} className="contact-val">{siteConfig.email}</a>
                   </div>
                 </li>
               </ul>
 
-              <div className="contact-info__socials">
-                <span className="contact-info__social-label label">{contactT.followLabel}</span>
-                <div className="contact-info__social-links">
-                  <a href={siteConfig.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="contact-info__social-btn">
-                    <img src={`${import.meta.env.BASE_URL}images/instagram.svg`} alt="Instagram" style={{ width: 20, height: 20, opacity: 0.8 }} />
+              {/* Social and Listings Bar */}
+              <div className="studio-card__footer">
+                <span className="footer-tag">{language === 'en' ? 'Verified Listings' : 'சரிபார்க்கப்பட்டது'}:</span>
+                <div className="footer-links">
+                  <a
+                    href="https://www.justdial.com/Mayiladuthurai/Mani-Photography-Tirucadaiyur/9999P4364-4364-230128175613-F5L3_BZDET"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer-pill-btn"
+                  >
+                    <img src={`${import.meta.env.BASE_URL}images/justdial.svg`} alt="JustDial" style={{ width: 14, height: 14 }} />
+                    <span>JustDial 4.9★</span>
                   </a>
-                  <a href={siteConfig.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="contact-info__social-btn">
-                    <img src={`${import.meta.env.BASE_URL}images/facebook.svg`} alt="Facebook" style={{ width: 20, height: 20, opacity: 0.8 }} />
+                  <a href={siteConfig.instagram} target="_blank" rel="noopener noreferrer" className="footer-pill-btn" aria-label="Instagram">
+                    <img src={`${import.meta.env.BASE_URL}images/instagram.svg`} alt="Instagram" style={{ width: 14, height: 14 }} />
+                    <span>Instagram</span>
                   </a>
-                  <a href={siteConfig.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="contact-info__social-btn">
-                    <img src={`${import.meta.env.BASE_URL}images/youtube.svg`} alt="YouTube" style={{ width: 20, height: 20, opacity: 0.8 }} />
+                  <a href={siteConfig.youtube} target="_blank" rel="noopener noreferrer" className="footer-pill-btn" aria-label="YouTube">
+                    <img src={`${import.meta.env.BASE_URL}images/youtube.svg`} alt="YouTube" style={{ width: 14, height: 14 }} />
+                    <span>YouTube</span>
                   </a>
                 </div>
               </div>
             </div>
 
-            {/* Modern Form Layout */}
+            {/* ── RIGHT: Sleek Glassmorphism Message Form ── */}
             <div className="contact-form-wrap reveal-right">
+              <div className="contact-form-header">
+                <div className="contact-form-header__badge">
+                  <Sparkles size={14} className="sparkle-icon" />
+                  <span>{language === 'en' ? 'Quick Contact' : 'விரைவு தொடர்பு'}</span>
+                </div>
+                <h3 className="contact-form-header__title">
+                  {language === 'en' ? 'Send a Direct Message' : 'நேரடி செய்தி அனுப்பவும்'}
+                </h3>
+                <p className="contact-form-header__desc">
+                  {language === 'en' 
+                    ? 'Enter your name and number below. Mani Photography will connect with you right away.' 
+                    : 'உங்கள் பெயர் மற்றும் எண்ணைப் பதிவிடவும். மணி போட்டோகிராஃபி உங்களுடன் உடனடியாக தொடர்புகொள்ளும்.'}
+                </p>
+              </div>
+
               {submitted ? (
                 <div className="contact-success" role="alert">
-                  <span className="contact-success__icon" aria-hidden="true">✦</span>
+                  <div className="contact-success__badge">
+                    <CheckCircle2 size={36} color="var(--clr-yellow)" />
+                  </div>
                   <h2 className="title-lg contact-success__title">{contactT.successTitle}</h2>
                   <p className="body-lg contact-success__msg">
                     {contactT.successMsg}
@@ -209,14 +223,26 @@ export default function Contact() {
                   <p className="body-md" style={{ color: 'var(--clr-text-muted)' }}>
                     {contactT.successSub}
                   </p>
+                  <button 
+                    type="button" 
+                    className="btn btn-outline" 
+                    style={{ marginTop: '1.5rem' }}
+                    onClick={() => {
+                      setSubmitted(false);
+                      setForm({ name: '', phone: '', message: '' });
+                    }}
+                  >
+                    {language === 'en' ? 'Send Another Message' : 'மற்றொரு செய்தி அனுப்பவும்'}
+                  </button>
                 </div>
               ) : (
                 <form className="contact-form" onSubmit={handleSubmit} noValidate>
-                  <div className="contact-form__row">
-                    <div className="contact-form__field">
-                      <label className="contact-form__label" htmlFor="name">
-                        {contactT.formNameLabel} <span className="req-star">*</span>
-                      </label>
+                  <div className="contact-form__field">
+                    <label className="contact-form__label" htmlFor="name">
+                      <span>{language === 'en' ? 'Your Full Name' : 'உங்கள் முழு பெயர்'}</span> <span className="req-star">*</span>
+                    </label>
+                    <div className="input-icon-wrap">
+                      <User size={18} className="input-leading-icon" aria-hidden="true" />
                       <input
                         id="name"
                         type="text"
@@ -227,13 +253,16 @@ export default function Contact() {
                         autoComplete="name"
                         required
                       />
-                      {errors.name && <span className="contact-form__error" role="alert">{errors.name}</span>}
                     </div>
+                    {errors.name && <span className="contact-form__error" role="alert">{errors.name}</span>}
+                  </div>
 
-                    <div className="contact-form__field">
-                      <label className="contact-form__label" htmlFor="phone">
-                        {contactT.formPhoneLabel} <span className="req-star">*</span>
-                      </label>
+                  <div className="contact-form__field">
+                    <label className="contact-form__label" htmlFor="phone">
+                      <span>{language === 'en' ? 'Phone / WhatsApp Number' : 'தொலைபேசி / வாட்ஸ்அப் எண்'}</span> <span className="req-star">*</span>
+                    </label>
+                    <div className="input-icon-wrap">
+                      <Phone size={18} className="input-leading-icon" aria-hidden="true" />
                       <input
                         id="phone"
                         type="tel"
@@ -244,55 +273,22 @@ export default function Contact() {
                         autoComplete="tel"
                         required
                       />
-                      {errors.phone && <span className="contact-form__error" role="alert">{errors.phone}</span>}
                     </div>
+                    {errors.phone && <span className="contact-form__error" role="alert">{errors.phone}</span>}
                   </div>
 
                   <div className="contact-form__field">
-                    <label className="contact-form__label" htmlFor="eventType">
-                      {contactT.formEventTypeLabel} <span className="req-star">*</span>
+                    <label className="contact-form__label" htmlFor="message">
+                      <span>{language === 'en' ? 'Message / Ceremony Details (Optional)' : 'செய்தி அல்லது விழா விவரங்கள் (விருப்பத்தேர்வு)'}</span>
                     </label>
-                    <div className="select-wrapper">
-                      <select
-                        id="eventType"
-                        className={`contact-form__input contact-form__select ${errors.eventType ? 'contact-form__input--error' : ''}`}
-                        value={form.eventType}
-                        onChange={update('eventType')}
-                        required
-                      >
-                        <option value="">{contactT.formSelectEventType}</option>
-                        {eventTypes.map(et => (
-                          <option key={et} value={et}>{et}</option>
-                        ))}
-                      </select>
-                    </div>
-                    {errors.eventType && <span className="contact-form__error" role="alert">{errors.eventType}</span>}
-                  </div>
-
-                  <div className="contact-form__row">
-                    <div className="contact-form__field">
-                      <label className="contact-form__label" htmlFor="eventDate">{contactT.formEventDateLabel}</label>
-                      <input
-                        id="eventDate"
-                        type="date"
-                        className="contact-form__input"
-                        value={form.eventDate}
-                        onChange={update('eventDate')}
-                      />
-                    </div>
-
-                    <div className="contact-form__field">
-                      <label className="contact-form__label" htmlFor="location">{contactT.formLocationLabel}</label>
-                      <input
-                        id="location"
-                        type="text"
-                        className="contact-form__input"
-                        value={form.location}
-                        onChange={update('location')}
-                        placeholder={contactT.formLocationPlaceholder}
-                        autoComplete="address-level2"
-                      />
-                    </div>
+                    <textarea
+                      id="message"
+                      rows={4}
+                      className="contact-form__input contact-form__textarea"
+                      value={form.message}
+                      onChange={update('message')}
+                      placeholder={language === 'en' ? 'Tell us about your event date, ritual type or photoshoot questions...' : 'உங்கள் விழா தேதி, நிகழ்வு அல்லது போட்டோஷூட் கேள்விகளை இங்கே குறிப்பிடவும்...'}
+                    />
                   </div>
 
                   {/* Submit Action */}
@@ -303,12 +299,16 @@ export default function Contact() {
                       disabled={submitting}
                       aria-busy={submitting}
                     >
-                      <span>{submitting ? contactT.formSubmittingBtn : `${contactT.formSubmitBtn} →`}</span>
+                      <MessageCircle size={18} className="btn-icon" />
+                      <span>{submitting ? (language === 'en' ? 'Connecting...' : 'இணைக்கிறது...') : (language === 'en' ? 'Message on WhatsApp' : 'வாட்ஸ்அப்பில் அனுப்பவும்')}</span>
                     </button>
 
                     <div className="contact-form__guarantee">
-                      <ShieldCheck size={16} className="guarantee-icon" />
-                      <span>{language === 'en' ? 'Direct studio booking. We respond promptly.' : 'நேரடி ஸ்டுடியோ முன்பதிவு.'}</span>
+                      <ShieldCheck size={18} className="guarantee-icon" />
+                      <div>
+                        <strong>{language === 'en' ? 'Direct Studio Connect' : 'நேரடி ஸ்டுடியோ தொடர்பு'}</strong>
+                        <span>{language === 'en' ? 'Immediate response & genuine package quotes' : 'உடனடி பதில் & சிறந்த கட்டண விவரங்கள்'}</span>
+                      </div>
                     </div>
                   </div>
                 </form>
